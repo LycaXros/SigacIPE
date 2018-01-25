@@ -218,6 +218,7 @@
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
     <Content Include="Content\CSS\bootstrap.css" />
+    <Content Include="Content\CSS\loginCSS.css" />
     <Content Include="Content\CSS\menuCSS.css" />
     <Content Include="Content\CSS\Site.css" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
@@ -231,10 +232,12 @@
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Content\Imagenes\FooterBanner.png" />
     <Content Include="Content\Imagenes\HeaderBanner.png" />
+    <Content Include="Content\Imagenes\LoginBanner.png" />
     <Content Include="Content\Imagenes\LogoIPE.png" />
     <Content Include="Content\Imagenes\nofoto.jpg" />
     <Content Include="Controles\Banner.ascx" />
     <Content Include="Controles\PiePagina.ascx" />
+    <Content Include="Login.aspx" />
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -415,6 +418,13 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

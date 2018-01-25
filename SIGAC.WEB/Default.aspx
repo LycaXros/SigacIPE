@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/SIGAC.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="SIGAC.WEB._Default" %>
+﻿<%@ Page Title="INICIO" Language="C#" MasterPageFile="~/SIGAC.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="SIGAC.WEB._Default" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="BodyCPH" runat="server">
     <div class="w3-center">
