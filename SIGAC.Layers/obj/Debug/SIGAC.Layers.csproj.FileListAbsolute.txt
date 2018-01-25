@@ -1,0 +1,10 @@
+E:\SIGAC\SIGAC\SIGAC.Layers\bin\Debug\SIGAC.Layers.dll
+E:\SIGAC\SIGAC\SIGAC.Layers\bin\Debug\SIGAC.Layers.pdb
+E:\SIGAC\SIGAC\SIGAC.Layers\obj\Debug\SIGAC.Layers.csprojResolveAssemblyReference.cache
+E:\SIGAC\SIGAC\SIGAC.Layers\obj\Debug\SIGAC.Layers.dll
+E:\SIGAC\SIGAC\SIGAC.Layers\obj\Debug\SIGAC.Layers.pdb
+E:\SIGAC\SIGAC\SIGAC.Layers\bin\Debug\Oracle.DataAccess.dll
+E:\SIGAC\SIGAC\SIGAC.Layers\bin\Debug\Oracle.DataAccess.resources.dll
+E:\SIGAC\SIGAC\SIGAC.Layers\bin\Debug\Oracle.ManagedDataAccess.dll
+E:\SIGAC\SIGAC\SIGAC.Layers\bin\Debug\Telerik.Web.UI.dll
+E:\SIGAC\SIGAC\SIGAC.Layers\bin\Debug\Telerik.Web.UI.Skins.dll

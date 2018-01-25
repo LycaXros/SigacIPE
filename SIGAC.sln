@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SIGAC.Layers", "SIGAC.Layers\SIGAC.Layers.csproj", "{4115412D-54E8-4005-AA58-CE6061DC4884}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SIGAC.WEB", "SIGAC.WEB\SIGAC.WEB.csproj", "{6CB01F2D-D027-4DF8-8643-D73DF739302C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4115412D-54E8-4005-AA58-CE6061DC4884}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4115412D-54E8-4005-AA58-CE6061DC4884}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4115412D-54E8-4005-AA58-CE6061DC4884}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4115412D-54E8-4005-AA58-CE6061DC4884}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CB01F2D-D027-4DF8-8643-D73DF739302C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CB01F2D-D027-4DF8-8643-D73DF739302C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CB01F2D-D027-4DF8-8643-D73DF739302C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CB01F2D-D027-4DF8-8643-D73DF739302C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
