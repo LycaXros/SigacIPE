@@ -218,6 +218,7 @@
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
     <Content Include="Content\CSS\bootstrap.css" />
+    <Content Include="Content\CSS\errorCSS.css" />
     <Content Include="Content\CSS\loginCSS.css" />
     <Content Include="Content\CSS\menuCSS.css" />
     <Content Include="Content\CSS\Site.css" />
@@ -237,6 +238,8 @@
     <Content Include="Content\Imagenes\nofoto.jpg" />
     <Content Include="Controles\Banner.ascx" />
     <Content Include="Controles\PiePagina.ascx" />
+    <Content Include="ErrorHandlerPage.aspx" />
+    <Content Include="ErrorPage.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
@@ -415,6 +418,20 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorHandlerPage.aspx.cs">
+      <DependentUpon>ErrorHandlerPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ErrorHandlerPage.aspx.designer.cs">
+      <DependentUpon>ErrorHandlerPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorPage.aspx.cs">
+      <DependentUpon>ErrorPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ErrorPage.aspx.designer.cs">
+      <DependentUpon>ErrorPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

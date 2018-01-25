@@ -45,6 +45,7 @@
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -60,6 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Application\AppContext.cs" />
+    <Compile Include="Application\ExceptionUtility.cs" />
     <Compile Include="Data\DbContext.cs" />
     <Compile Include="Data\FtpContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

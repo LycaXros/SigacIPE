@@ -24,12 +24,13 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
     <link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet"/>
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato" />
+    <link href="../Content/CSS/errorCSS.css" rel="stylesheet" />
 </head>
 <body>
     <div class="page-wrap">
         <h1 id="Number" runat="server"></h1>
         <h2 id="Name" runat="server"></h2>
-        <p>Well, what to say. Hmm? Sorry ...</p>
+        <p>Bueno, que puedo decir. Hmm? Perdon ...</p>
         <p><a href="/">Home</a></p>
         <div>
             <h3>Descripcion</h3><hr />
