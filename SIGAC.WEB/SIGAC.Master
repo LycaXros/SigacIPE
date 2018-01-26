@@ -21,8 +21,8 @@
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width" />
 
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
-    <link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet" />
     <link href="../Content/CSS/bootstrap.css" rel="stylesheet" />
     <link href="../Content/CSS/menuCSS.css" rel="stylesheet" />
     <link href="../Content/CSS/Site.css" rel="stylesheet" />
@@ -32,18 +32,20 @@
 <body>
     <form id="MainForm" runat="server">
         <section id="headerSection">
-            <uc:HeaderBanner runat="server" ID="HeaderBanner" />
-            <%--
-            <div class="Chat">
-                <div class="ChatDiv">
-                    <div class='ChatContenido'>
-                        <div class='ChatFooter'>
+            <div class="w3-row">
+                <uc:HeaderBanner runat="server" ID="HeaderBanner" />
+                <%--
+                    <div class="Chat">
+                        <div class="ChatDiv">
+                            <div class='ChatContenido'>
+                                <div class='ChatFooter'>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-             </div>
-            --%>
-            <div class="container">
+                --%>
+            </div>
+            <div class="w3-row">
                 <div class="HeaderMenu">
                     <nav>
                         <ul class="menu">
@@ -96,6 +98,14 @@
                                     <li><a href="#">USUARIOS</a></li>
                                     <li><a href="#">GRUPOS</a></li>
                                     <li><a href="#">PERMISOS</a></li>
+                                </ul>
+                            </li>
+                            <li style="float: right">
+                                <a href="#"><span runat="server">@USUARIO</span></a>
+                                <ul class="Menu-item">
+                                    <li>
+                                        <asp:LinkButton ID="buttonLogout" runat="server">CERRAR SESION</asp:LinkButton>
+                                    </li>
                                 </ul>
                             </li>
                         </ul>

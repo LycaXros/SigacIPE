@@ -64,6 +64,7 @@
     <Compile Include="Application\ExceptionUtility.cs" />
     <Compile Include="Data\DbContext.cs" />
     <Compile Include="Data\FtpContext.cs" />
+    <Compile Include="GlobalVariables.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

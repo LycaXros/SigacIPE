@@ -22,17 +22,13 @@ namespace SIGAC.WEB
             FriendlyErrorMsg.Text = generalErrorMsg;
 
             // Determine where error was handled.
-            string errorHandler = Request.QueryString["handler"];
-            if (errorHandler == null)
-            {
-                errorHandler = "Error Page";
-            }
+            string errorHandler = Page.RouteData.Values["handler"].ToString() ?? "Error Page";
 
             // Get the last error from the server.
             Exception ex = Server.GetLastError();
 
             // Get the error number passed as a querystring value.
-            string errorMsg = Request.QueryString["msg"];
+            string errorMsg = Page.RouteData.Values["msg"].ToString();
             if (errorMsg == "404")
             {
                 ex = new HttpException(404, httpErrorMsg, ex);

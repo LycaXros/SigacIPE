@@ -11,12 +11,6 @@ namespace SIGAC.Layers.Data
 {
     public static class FtpContext
     {
-        private static string server => ConfigurationManager.AppSettings["ftpServer"].ToString();
-
-        private static string user => ConfigurationManager.AppSettings["ftpUser"].ToString();
-
-        private static string pass => ConfigurationManager.AppSettings["ftpPass"].ToString();
-
         public enum carpetas : int
         {
             Root
@@ -52,11 +46,11 @@ namespace SIGAC.Layers.Data
         {
             try
             {
-                FtpWebRequest request = (FtpWebRequest)WebRequest.Create(server + findFolder(folder) + fileName + fileExtention);
+                FtpWebRequest request = (FtpWebRequest)WebRequest.Create(GlobalVariables.FTPServer + findFolder(folder) + fileName + fileExtention);
 
                 request.Method = WebRequestMethods.Ftp.UploadFile;
 
-                request.Credentials = new NetworkCredential(user, pass);
+                request.Credentials = new NetworkCredential(GlobalVariables.FTPUser, GlobalVariables.FTPPass);
 
                 request.UseBinary = true;
                 request.UsePassive = true;
