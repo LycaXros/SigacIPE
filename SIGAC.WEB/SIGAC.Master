@@ -32,26 +32,28 @@
 <body>
     <form id="MainForm" runat="server">
         <section id="headerSection">
-            <div class="w3-row">
-                <uc:HeaderBanner runat="server" ID="HeaderBanner" />
-                <%--
-                    <div class="Chat">
-                        <div class="ChatDiv">
-                            <div class='ChatContenido'>
-                                <div class='ChatFooter'>
+            <header>
+                <div class="w3-row">
+                    <uc:HeaderBanner runat="server" ID="HeaderBanner" />
+                    <%--
+                        <div class="Chat">
+                            <div class="ChatDiv">
+                                <div class='ChatContenido'>
+                                    <div class='ChatFooter'>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                --%>
-            </div>
-            <div class="w3-row">
-                <div class="HeaderMenu">
-                    <nav>
-                        <ul class="menu">
-                            <li><a href="#"><span class="fa fa-home"></span>INICIO</a></li>
+                    --%>
+                </div>
+                <div class="w3-row">
+                    <nav id='cssmenu'>
+                        <div id="head-mobile"></div>
+                        <div class="button"></div>
+                        <ul>
+                            <li><a href="#" class='active'><span class="fa fa-home"></span> INICIO</a></li>
                             <li><a href="#">ADMINISTRAR PAE</a>
-                                <ul class="Menu-item">
+                                <ul>
                                     <li><a href="#">ADMINISTRAR COBERTURAS</a></li>
                                     <li><a href="#">ADMINISTRAR NECESIDADES</a></li>
                                     <li><a href="#">ADMINISTRAR NECESIDADES CAPACITACION</a></li>
@@ -59,12 +61,12 @@
                                 </ul>
                             </li>
                             <li><a href="#"><span class=""></span>PROGRAMAS</a>
-                                <ul class="Menu-item">
+                                <ul>
                                     <li><a href="#">ADMINISTRAR PROGRAMAS</a></li>
                                 </ul>
                             </li>
                             <li><a href="#">DESARROLLO DE EVENTOS</a>
-                                <ul class="Menu-item">
+                                <ul>
                                     <li><a href="#">ADMINISTRAR PRESUPUESTOS</a></li>
                                     <li><a href="#">ADMINISTRAR PERSONAL EXTERNO</a></li>
                                     <li><a href="#">BUSCAR EVENTOS ESCUELA</a></li>
@@ -78,7 +80,7 @@
                                 </ul>
                             </li>
                             <li><a href="#">EVALUACIONES</a>
-                                <ul class="Menu-item">
+                                <ul>
                                     <li><a href="#">BUSCAR EVALUACION</a></li>
                                     <li><a href="#">AGREGAR EVALUACION</a></li>
                                     <li><a href="#">EDITAR EVALUACION</a></li>
@@ -88,7 +90,7 @@
                                 </ul>
                             </li>
                             <li><a href="#"><span class="fa fa-cog"></span>SISTEMA</a>
-                                <ul class="Menu-item">
+                                <ul>
                                     <li><a href="#">RECINTOS</a></li>
                                     <li><a href="#">ESCUELA</a></li>
                                     <li><a href="#">AULAS</a></li>
@@ -100,19 +102,10 @@
                                     <li><a href="#">PERMISOS</a></li>
                                 </ul>
                             </li>
-                            <li style="float: right">
-                                <a href="#"><span runat="server">@USUARIO</span></a>
-                                <ul class="Menu-item">
-                                    <li>
-                                        <asp:LinkButton ID="buttonLogout" runat="server">CERRAR SESION</asp:LinkButton>
-                                    </li>
-                                </ul>
-                            </li>
                         </ul>
-                        <div class="clearfix"></div>
                     </nav>
                 </div>
-            </div>
+            </header>
         </section>
         <section id="bodySection">
             <asp:ContentPlaceHolder ID="BodyCPH" runat="server">
@@ -123,6 +116,8 @@
         </section>
         <asp:ContentPlaceHolder runat="server" ID="ScriptsCPH">
         </asp:ContentPlaceHolder>
+        <script src="../Scripts/jquery-1.10.2.js"></script>
+        <script src="../Scripts/User%20Scripts/menuJS.js"></script>
     </form>
 </body>
 </html>
