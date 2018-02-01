@@ -23,9 +23,9 @@
 
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
     <link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet" />
-    <link href="../Content/CSS/bootstrap.css" rel="stylesheet" />
-    <link href="../Content/CSS/menuCSS.css" rel="stylesheet" />
-    <link href="../Content/CSS/Site.css" rel="stylesheet" />
+    <link href="~/Content/CSS/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/CSS/menuCSS.css" rel="stylesheet" />
+    <link href="~/Content/CSS/Site.css" rel="stylesheet" />
     <asp:ContentPlaceHolder runat="server" ID="StyleCPH">
     </asp:ContentPlaceHolder>
 </head>
