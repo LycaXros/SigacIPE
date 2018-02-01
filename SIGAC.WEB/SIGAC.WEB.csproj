@@ -97,6 +97,8 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
@@ -223,6 +225,7 @@
     <Content Include="Account\VerifyPhoneNumber.aspx" />
     <Content Include="Content\CSS\bootstrap.css" />
     <Content Include="Content\CSS\errorCSS.css" />
+    <Content Include="Content\CSS\GridStyles.css" />
     <Content Include="Content\CSS\loginCSS.css" />
     <Content Include="Content\CSS\menuCSS.css" />
     <Content Include="Content\CSS\Site.css" />
@@ -279,6 +282,10 @@
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+<<<<<<< HEAD
+=======
+    <Content Include="Vistas\AdministrarPAE\Adm_Pae.aspx" />
+>>>>>>> 9ec6df310172c8c815d9c106161a2ecd4fa4883a
     <Content Include="Vistas\AdministrarProgramas\AdministrarProgramas_Buscar.aspx" />
     <Content Include="Web.config" />
     <Content Include="packages.config" />
@@ -450,6 +457,16 @@
       <DependentUpon>SIGAC.Master</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
+<<<<<<< HEAD
+=======
+    <Compile Include="Vistas\AdministrarPAE\Adm_Pae.aspx.cs">
+      <DependentUpon>Adm_Pae.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\AdministrarPAE\Adm_Pae.aspx.designer.cs">
+      <DependentUpon>Adm_Pae.aspx</DependentUpon>
+    </Compile>
+>>>>>>> 9ec6df310172c8c815d9c106161a2ecd4fa4883a
     <Compile Include="Vistas\AdministrarProgramas\AdministrarProgramas_Buscar.aspx.cs">
       <DependentUpon>AdministrarProgramas_Buscar.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -466,6 +483,9 @@
       <Project>{4115412d-54e8-4005-aa58-ce6061dc4884}</Project>
       <Name>SIGAC.Layers</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

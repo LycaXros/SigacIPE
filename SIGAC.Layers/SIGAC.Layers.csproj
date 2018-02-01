@@ -116,6 +116,9 @@
     <Compile Include="Bussiness\Model\RECINTOS.cs">
       <DependentUpon>OracleSigacCon.tt</DependentUpon>
     </Compile>
+    <Compile Include="Bussiness\Model\SIEDU_ARCHIVO.cs">
+      <DependentUpon>OracleSigacCon.tt</DependentUpon>
+    </Compile>
     <Compile Include="Bussiness\Model\SIEDU_AUDITORIA.cs">
       <DependentUpon>OracleSigacCon.tt</DependentUpon>
     </Compile>
@@ -186,6 +189,9 @@
       <DependentUpon>OracleSigacCon.tt</DependentUpon>
     </Compile>
     <Compile Include="Bussiness\Model\SIEDU_NECESIDAD_E.cs">
+      <DependentUpon>OracleSigacCon.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bussiness\Model\SIEDU_PAE.cs">
       <DependentUpon>OracleSigacCon.tt</DependentUpon>
     </Compile>
     <Compile Include="Bussiness\Model\SIEDU_PAE_CAPACITACION.cs">

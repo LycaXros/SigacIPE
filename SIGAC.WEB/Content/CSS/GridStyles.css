@@ -1,0 +1,40 @@
+﻿
+.GridRow{
+    display:grid;
+    grid-template-columns:repeat(10, 1fr);
+    grid-gap:5px;
+
+}
+.col1{
+    grid-column: span 1;
+}
+.col2{
+    grid-column: span 2;
+}
+.col3{
+    grid-column: span 3;
+}
+.col4{
+    grid-column: span 4;
+}
+.col5{
+    grid-column: span 5;
+}
+.col6{
+    grid-column: span 6;
+}
+.col7{
+    grid-column: span 7;
+}
+.col8{
+    grid-column: span 8;
+}
+.col9{
+    grid-column: span 9;
+}
+.col10{
+    grid-column:span 10;
+}
+.colR{
+    grid-column:auto;
+}

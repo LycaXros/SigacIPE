@@ -8,3 +8,8 @@ Exception Type: System.Web.HttpException
 Exception: An HTTP error occurred. Page Not found. Please try again.
 Source: ErrorSection
 Stack Trace: 
+********** 1/2/2018 1:15:39 p. m. **********
+Exception Type: System.Exception
+Exception: The error was unhandled by application code.
+Source: customerror
+Stack Trace: 

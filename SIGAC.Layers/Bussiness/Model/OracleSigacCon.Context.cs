@@ -67,6 +67,11 @@ namespace SIGAC.Layers.Bussiness.Model
         public virtual DbSet<TIPOS> TIPOS { get; set; }
         public virtual DbSet<TIPOS_ASIGNATURA> TIPOS_ASIGNATURA { get; set; }
         public virtual DbSet<SIEDU_DOMINIO> SIEDU_DOMINIO { get; set; }
+<<<<<<< HEAD
+=======
+        public virtual DbSet<SIEDU_ARCHIVO> SIEDU_ARCHIVO { get; set; }
+        public virtual DbSet<SIEDU_PAE> SIEDU_PAE { get; set; }
+>>>>>>> 9ec6df310172c8c815d9c106161a2ecd4fa4883a
         public virtual DbSet<SIEDU_TIPO_DOMINIO> SIEDU_TIPO_DOMINIO { get; set; }
     }
 }
