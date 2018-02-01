@@ -66,5 +66,7 @@ namespace SIGAC.Layers.Bussiness.Model
         public virtual DbSet<SUB_TIPOS> SUB_TIPOS { get; set; }
         public virtual DbSet<TIPOS> TIPOS { get; set; }
         public virtual DbSet<TIPOS_ASIGNATURA> TIPOS_ASIGNATURA { get; set; }
+        public virtual DbSet<SIEDU_DOMINIO> SIEDU_DOMINIO { get; set; }
+        public virtual DbSet<SIEDU_TIPO_DOMINIO> SIEDU_TIPO_DOMINIO { get; set; }
     }
 }

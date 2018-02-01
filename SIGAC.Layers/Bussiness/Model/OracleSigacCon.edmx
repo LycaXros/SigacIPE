@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Model.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="11.2" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Model.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="11.2" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <!--Errors Found During Generation:
 warning 6002: The table/view 'SIGAC.ACTIVOS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="ACTIVOS">
@@ -364,6 +364,16 @@ warning 6002: The table/view 'SIGAC.RECINTOS' does not have a primary key define
           <Property Name="DOCE_FECHA_MOD" Type="date" />
           <Property Name="DOCE_MAQUINA_MOD" Type="varchar2" MaxLength="100" />
           <Property Name="DOCE_IP_MOD" Type="varchar2" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="SIEDU_DOMINIO">
+          <Key>
+            <PropertyRef Name="ID_DOMINIO" />
+          </Key>
+          <Property Name="ID_DOMINIO" Type="number" Precision="4" Scale="0" Nullable="false" />
+          <Property Name="ID_TIPO_DOMINIO" Type="number" Precision="3" Scale="0" Nullable="false" />
+          <Property Name="NOMBRE" Type="varchar2" MaxLength="100" Nullable="false" />
+          <Property Name="DESCRIPCION" Type="varchar2" MaxLength="500" />
+          <Property Name="VIGENTE" Type="varchar2" MaxLength="5" />
         </EntityType>
         <EntityType Name="SIEDU_EMPLEADO_EXTERNO">
           <Key>
@@ -834,6 +844,14 @@ warning 6002: The table/view 'SIGAC.SIEDU_LOG' does not have a primary key defin
           <Property Name="TEMA_MAQUINA_MOD" Type="varchar2" MaxLength="100" />
           <Property Name="TEMA_IP_MOD" Type="varchar2" MaxLength="100" />
         </EntityType>
+        <EntityType Name="SIEDU_TIPO_DOMINIO">
+          <Key>
+            <PropertyRef Name="ID_TIPO_DOMINIO" />
+          </Key>
+          <Property Name="ID_TIPO_DOMINIO" Type="number" Precision="3" Scale="0" Nullable="false" />
+          <Property Name="NOMBRE" Type="varchar2" MaxLength="100" Nullable="false" />
+          <Property Name="DESCRIPCION" Type="varchar2" MaxLength="500" />
+        </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'SIGAC.SUB_TIPOS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="SUB_TIPOS">
@@ -950,6 +968,7 @@ warning 6002: The table/view 'SIGAC.TIPOS_ASIGNATURA' does not have a primary ke
           <EntitySet Name="SIEDU_CONVENIO" EntityType="Self.SIEDU_CONVENIO" Schema="SIGAC" store:Type="Tables" />
           <EntitySet Name="SIEDU_CONVOCATORIA_EVENTO" EntityType="Self.SIEDU_CONVOCATORIA_EVENTO" Schema="SIGAC" store:Type="Tables" />
           <EntitySet Name="SIEDU_DOCENTE_EVENTO" EntityType="Self.SIEDU_DOCENTE_EVENTO" Schema="SIGAC" store:Type="Tables" />
+          <EntitySet Name="SIEDU_DOMINIO" EntityType="Self.SIEDU_DOMINIO" Schema="SIGAC" store:Type="Tables" />
           <EntitySet Name="SIEDU_EMPLEADO_EXTERNO" EntityType="Self.SIEDU_EMPLEADO_EXTERNO" Schema="SIGAC" store:Type="Tables" />
           <EntitySet Name="SIEDU_ENTIDAD" EntityType="Self.SIEDU_ENTIDAD" Schema="SIGAC" store:Type="Tables" />
           <EntitySet Name="SIEDU_EVAL_DESARROLLO" EntityType="Self.SIEDU_EVAL_DESARROLLO" Schema="SIGAC" store:Type="Tables" />
@@ -970,6 +989,7 @@ warning 6002: The table/view 'SIGAC.TIPOS_ASIGNATURA' does not have a primary ke
           <EntitySet Name="SIEDU_PREGUNTA" EntityType="Self.SIEDU_PREGUNTA" Schema="SIGAC" store:Type="Tables" />
           <EntitySet Name="SIEDU_PRESUPUESTO" EntityType="Self.SIEDU_PRESUPUESTO" Schema="SIGAC" store:Type="Tables" />
           <EntitySet Name="SIEDU_TEMA" EntityType="Self.SIEDU_TEMA" Schema="SIGAC" store:Type="Tables" />
+          <EntitySet Name="SIEDU_TIPO_DOMINIO" EntityType="Self.SIEDU_TIPO_DOMINIO" Schema="SIGAC" store:Type="Tables" />
           <EntitySet Name="ACTIVOS" EntityType="Self.ACTIVOS" store:Type="Tables" store:Schema="SIGAC">
             <DefiningQuery>SELECT 
 "ACTIVOS"."ID" AS "ID", 
@@ -1138,8 +1158,7 @@ FROM "SIGAC"."TIPOS_ASIGNATURA" "TIPOS_ASIGNATURA"</DefiningQuery>
             <End Role="EMPLEADO" EntitySet="EMPLEADO" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -2100,7 +2119,27 @@ FROM "SIGAC"."TIPOS_ASIGNATURA" "TIPOS_ASIGNATURA"</DefiningQuery>
             <End Role="SIEDU_TEMA" EntitySet="SIEDU_TEMA" />
             <End Role="SIEDU_TEMA1" EntitySet="SIEDU_TEMA" />
           </AssociationSet>
+          <EntitySet Name="SIEDU_DOMINIO" EntityType="Model.SIEDU_DOMINIO" />
+          <EntitySet Name="SIEDU_TIPO_DOMINIO" EntityType="Model.SIEDU_TIPO_DOMINIO" />
         </EntityContainer>
+        <EntityType Name="SIEDU_DOMINIO">
+          <Key>
+            <PropertyRef Name="ID_DOMINIO" />
+          </Key>
+          <Property Name="ID_DOMINIO" Type="Int16" Nullable="false" />
+          <Property Name="ID_TIPO_DOMINIO" Type="Byte" Nullable="false" />
+          <Property Name="NOMBRE" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="DESCRIPCION" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="VIGENTE" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="SIEDU_TIPO_DOMINIO">
+          <Key>
+            <PropertyRef Name="ID_TIPO_DOMINIO" />
+          </Key>
+          <Property Name="ID_TIPO_DOMINIO" Type="Byte" Nullable="false" />
+          <Property Name="NOMBRE" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="DESCRIPCION" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -2936,6 +2975,26 @@ FROM "SIGAC"."TIPOS_ASIGNATURA" "TIPOS_ASIGNATURA"</DefiningQuery>
                 <ScalarProperty Name="CAMPO3" ColumnName="CAMPO3" />
                 <ScalarProperty Name="CAMPO4" ColumnName="CAMPO4" />
                 <ScalarProperty Name="ESTATUS" ColumnName="ESTATUS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SIEDU_DOMINIO">
+            <EntityTypeMapping TypeName="Model.SIEDU_DOMINIO">
+              <MappingFragment StoreEntitySet="SIEDU_DOMINIO">
+                <ScalarProperty Name="VIGENTE" ColumnName="VIGENTE" />
+                <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+                <ScalarProperty Name="ID_TIPO_DOMINIO" ColumnName="ID_TIPO_DOMINIO" />
+                <ScalarProperty Name="ID_DOMINIO" ColumnName="ID_DOMINIO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SIEDU_TIPO_DOMINIO">
+            <EntityTypeMapping TypeName="Model.SIEDU_TIPO_DOMINIO">
+              <MappingFragment StoreEntitySet="SIEDU_TIPO_DOMINIO">
+                <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+                <ScalarProperty Name="ID_TIPO_DOMINIO" ColumnName="ID_TIPO_DOMINIO" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

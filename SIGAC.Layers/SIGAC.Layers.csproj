@@ -143,6 +143,9 @@
     <Compile Include="Bussiness\Model\SIEDU_DOCENTE_EVENTO.cs">
       <DependentUpon>OracleSigacCon.tt</DependentUpon>
     </Compile>
+    <Compile Include="Bussiness\Model\SIEDU_DOMINIO.cs">
+      <DependentUpon>OracleSigacCon.tt</DependentUpon>
+    </Compile>
     <Compile Include="Bussiness\Model\SIEDU_EMPLEADO_EXTERNO.cs">
       <DependentUpon>OracleSigacCon.tt</DependentUpon>
     </Compile>
@@ -204,6 +207,9 @@
       <DependentUpon>OracleSigacCon.tt</DependentUpon>
     </Compile>
     <Compile Include="Bussiness\Model\SIEDU_TEMA.cs">
+      <DependentUpon>OracleSigacCon.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bussiness\Model\SIEDU_TIPO_DOMINIO.cs">
       <DependentUpon>OracleSigacCon.tt</DependentUpon>
     </Compile>
     <Compile Include="Bussiness\Model\SUB_TIPOS.cs">

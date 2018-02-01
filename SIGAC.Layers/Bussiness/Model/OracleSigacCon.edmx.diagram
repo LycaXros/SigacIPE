@@ -51,6 +51,8 @@
         <AssociationConnector Association="Model.CONVENIO_ENTI" ManuallyRouted="false" />
         <AssociationConnector Association="Model.SIEDU_EVENTO_ESCU_EVAL_FK" ManuallyRouted="false" />
         <AssociationConnector Association="Model.SIEDU_TEMA_TEMA_FK" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="Model.SIEDU_DOMINIO" Width="1.5" PointX="0.75" PointY="21.75" />
+        <EntityTypeShape EntityType="Model.SIEDU_TIPO_DOMINIO" Width="1.5" PointX="21.75" PointY="19.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
