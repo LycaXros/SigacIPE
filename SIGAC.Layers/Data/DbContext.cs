@@ -15,7 +15,6 @@ namespace SIGAC.Layers.Data
     public sealed class DbContext
     {
         private static DbContext instance = null;
-        private static string connectionString => ConfigurationManager.ConnectionStrings["oracleCS"].ToString();
         private OracleConnection connection;        
 
         /// <summary>
@@ -48,7 +47,7 @@ namespace SIGAC.Layers.Data
         {
             connection = new OracleConnection
             {
-                ConnectionString = connectionString
+                ConnectionString = GlobalVariables.OracleConnectionString
             };
         }
 

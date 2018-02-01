@@ -30,6 +30,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Oracle.DataAccess, Version=4.112.2.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=AMD64">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\SIGAC.WEB\bin\Oracle.DataAccess.dll</HintPath>
@@ -39,12 +47,20 @@
       <HintPath>..\SIGAC.WEB\bin\Oracle.DataAccess.resources.dll</HintPath>
     </Reference>
     <Reference Include="Oracle.ManagedDataAccess, Version=4.122.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\SIGAC.WEB\bin\Oracle.ManagedDataAccess.dll</HintPath>
+      <HintPath>..\packages\Oracle.ManagedDataAccess.12.2.1100\lib\net40\Oracle.ManagedDataAccess.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Oracle.ManagedDataAccess.EntityFramework, Version=6.122.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+      <HintPath>..\packages\Oracle.ManagedDataAccess.EntityFramework.12.2.1100\lib\net45\Oracle.ManagedDataAccess.EntityFramework.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -60,15 +76,178 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Application\AppContext.cs" />
+    <Compile Include="Application\ExceptionUtility.cs" />
+    <Compile Include="Bussiness\Model\ACTIVOS.cs">
+      <DependentUpon>OracleSigacCon.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bussiness\Model\ASIGNATURAS.cs">
+      <DependentUpon>OracleSigacCon.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bussiness\Model\AULAS.cs">
+      <DependentUpon>OracleSigacCon.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bussiness\Model\AULAS_ACTIVOS.cs">
+      <DependentUpon>OracleSigacCon.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bussiness\Model\DEPARTAMENTO.cs">
+      <DependentUpon>OracleSigacCon.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bussiness\Model\EMPLEADO.cs">
+      <DependentUpon>OracleSigacCon.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bussiness\Model\MOVIMIENTO_PERSONAL.cs">
+      <DependentUpon>OracleSigacCon.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bussiness\Model\OracleSigacCon.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OracleSigacCon.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bussiness\Model\OracleSigacCon.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OracleSigacCon.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bussiness\Model\OracleSigacCon.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OracleSigacCon.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Bussiness\Model\RECINTOS.cs">
+      <DependentUpon>OracleSigacCon.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bussiness\Model\SIEDU_AUDITORIA.cs">
+      <DependentUpon>OracleSigacCon.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bussiness\Model\SIEDU_CIERRE_PAE.cs">
+      <DependentUpon>OracleSigacCon.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bussiness\Model\SIEDU_COBERTURA.cs">
+      <DependentUpon>OracleSigacCon.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bussiness\Model\SIEDU_COMPETENCIA.cs">
+      <DependentUpon>OracleSigacCon.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bussiness\Model\SIEDU_COMPETENCIA_EVENTO.cs">
+      <DependentUpon>OracleSigacCon.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bussiness\Model\SIEDU_CONSOLIDA_PAE.cs">
+      <DependentUpon>OracleSigacCon.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bussiness\Model\SIEDU_CONVENIO.cs">
+      <DependentUpon>OracleSigacCon.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bussiness\Model\SIEDU_CONVOCATORIA_EVENTO.cs">
+      <DependentUpon>OracleSigacCon.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bussiness\Model\SIEDU_DOCENTE_EVENTO.cs">
+      <DependentUpon>OracleSigacCon.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bussiness\Model\SIEDU_EMPLEADO_EXTERNO.cs">
+      <DependentUpon>OracleSigacCon.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bussiness\Model\SIEDU_ENTIDAD.cs">
+      <DependentUpon>OracleSigacCon.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bussiness\Model\SIEDU_EVALUACION.cs">
+      <DependentUpon>OracleSigacCon.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bussiness\Model\SIEDU_EVAL_DESARROLLO.cs">
+      <DependentUpon>OracleSigacCon.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bussiness\Model\SIEDU_EVAL_GRADO.cs">
+      <DependentUpon>OracleSigacCon.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bussiness\Model\SIEDU_EVAL_PARTICIPANTE.cs">
+      <DependentUpon>OracleSigacCon.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bussiness\Model\SIEDU_EVENTO.cs">
+      <DependentUpon>OracleSigacCon.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bussiness\Model\SIEDU_EVENTO_CATEGORIA.cs">
+      <DependentUpon>OracleSigacCon.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bussiness\Model\SIEDU_EVENTO_ESCUELA.cs">
+      <DependentUpon>OracleSigacCon.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bussiness\Model\SIEDU_FORMA_ESCUELA_COHORTE.cs">
+      <DependentUpon>OracleSigacCon.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bussiness\Model\SIEDU_INASISTE_EVENTO.cs">
+      <DependentUpon>OracleSigacCon.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bussiness\Model\SIEDU_LOG.cs">
+      <DependentUpon>OracleSigacCon.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bussiness\Model\SIEDU_NECESIDAD.cs">
+      <DependentUpon>OracleSigacCon.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bussiness\Model\SIEDU_NECESIDAD_E.cs">
+      <DependentUpon>OracleSigacCon.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bussiness\Model\SIEDU_PAE_CAPACITACION.cs">
+      <DependentUpon>OracleSigacCon.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bussiness\Model\SIEDU_PAE_FORMACION.cs">
+      <DependentUpon>OracleSigacCon.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bussiness\Model\SIEDU_PARTICIPANTE_EVENTO.cs">
+      <DependentUpon>OracleSigacCon.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bussiness\Model\SIEDU_PERSONA.cs">
+      <DependentUpon>OracleSigacCon.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bussiness\Model\SIEDU_PREGUNTA.cs">
+      <DependentUpon>OracleSigacCon.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bussiness\Model\SIEDU_PRESUPUESTO.cs">
+      <DependentUpon>OracleSigacCon.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bussiness\Model\SIEDU_TEMA.cs">
+      <DependentUpon>OracleSigacCon.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bussiness\Model\SUB_TIPOS.cs">
+      <DependentUpon>OracleSigacCon.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bussiness\Model\TIPOS.cs">
+      <DependentUpon>OracleSigacCon.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bussiness\Model\TIPOS_ASIGNATURA.cs">
+      <DependentUpon>OracleSigacCon.tt</DependentUpon>
+    </Compile>
     <Compile Include="Data\DbContext.cs" />
     <Compile Include="Data\FtpContext.cs" />
+    <Compile Include="Data\XMLContext.cs" />
+    <Compile Include="GlobalVariables.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Bussiness\" />
+    <Content Include="Bussiness\Model\OracleSigacCon.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>OracleSigacCon.edmx</DependentUpon>
+      <LastGenOutput>OracleSigacCon.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Bussiness\Model\OracleSigacCon.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>OracleSigacCon.edmx</DependentUpon>
+      <LastGenOutput>OracleSigacCon.cs</LastGenOutput>
+    </Content>
+    <Content Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ReadMe.txt" />
+    <None Include="App.config" />
+    <EntityDeploy Include="Bussiness\Model\OracleSigacCon.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>OracleSigacCon.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Bussiness\Model\OracleSigacCon.edmx.diagram">
+      <DependentUpon>OracleSigacCon.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -10,9 +10,15 @@ namespace SIGAC.WEB
     {
         public static void RegisterRoutes(RouteCollection routes)
         {
-            var settings = new FriendlyUrlSettings();
-            settings.AutoRedirectMode = RedirectMode.Permanent;
-            routes.EnableFriendlyUrls(settings);
+            //var settings = new FriendlyUrlSettings();
+            //settings.AutoRedirectMode = RedirectMode.Permanent;
+            //routes.EnableFriendlyUrls(settings);
+
+            //routes.MapPageRoute("RouteName", "routeUrl", "physicalFile");
+
+            routes.MapPageRoute("Default", string.Empty , "~/Default.aspx");
+            routes.MapPageRoute("Login", "login", "~/login.aspx");
+            routes.MapPageRoute("ErrorPage", "error/{handler}/{msg}", "~/ErrorPage.aspx");
         }
     }
 }

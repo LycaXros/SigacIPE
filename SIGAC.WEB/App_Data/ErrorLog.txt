@@ -1,0 +1,10 @@
+********** 26/1/2018 12:56:59 p. m. **********
+Exception Type: System.Exception
+Exception: The error was unhandled by application code.
+Source: 404
+Stack Trace: 
+********** 26/1/2018 12:59:51 p. m. **********
+Exception Type: System.Web.HttpException
+Exception: An HTTP error occurred. Page Not found. Please try again.
+Source: ErrorSection
+Stack Trace: 
