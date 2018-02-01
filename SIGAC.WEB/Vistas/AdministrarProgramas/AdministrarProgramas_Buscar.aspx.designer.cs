@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SIGAC.WEB.Vistas.AdministrarPAE
+namespace SIGAC.WEB.Vistas.AdministrarProgramas
 {
 
 
-    public partial class AdministrarPAE_Buscar
+    public partial class AdministrarProgramas_Buscar
     {
     }
 }

@@ -5,9 +5,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace SIGAC.WEB.Vistas.AdministrarPAE
+namespace SIGAC.WEB.Vistas.AdministrarProgramas
 {
-    public partial class AdministrarPAE_Buscar : System.Web.UI.Page
+    public partial class AdministrarProgramas_Buscar : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
