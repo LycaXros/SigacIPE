@@ -28,6 +28,7 @@
         <link href="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>Content/CSS/menuCSS.css" rel="stylesheet" />
         <link href="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>Content/CSS/Site.css" rel="stylesheet" />
         <link href="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>Content/CSS/panelCSS.css" rel="stylesheet" />
+        <link href="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>Content/CSS/buttonCSS.css" rel="stylesheet" />
     </asp:PlaceHolder>
 
     <asp:ContentPlaceHolder runat="server" ID="StyleCPH">
@@ -37,7 +38,7 @@
     <form id="MainForm" runat="server">
         <section id="headerSection">
             <header>
-                <div class="w3-row">
+                <div class="w3-row fixed-top">
                     <uc:HeaderBanner runat="server" ID="HeaderBanner" />
                     <%--
                         <div class="Chat">
@@ -120,9 +121,9 @@
             <asp:ContentPlaceHolder ID="BodyCPH" runat="server">
             </asp:ContentPlaceHolder>
         </section>
-        <section id="footerSection">
+        <footer class="footer fixed-bottom container" id="footerSection">
             <uc:FooterBanner runat="server" />
-        </section>
+        </footer>
         <asp:ContentPlaceHolder runat="server" ID="ScriptsCPH">
         </asp:ContentPlaceHolder>
         <script src="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>Scripts/jquery-1.10.2.js"></script>

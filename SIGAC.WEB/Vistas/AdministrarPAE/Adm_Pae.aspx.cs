@@ -59,14 +59,9 @@ namespace Sigac.WEB.Vistas
             try
             {
                 var Years = dbEntity.SIEDU_DOMINIO
-<<<<<<< HEAD
                 .GroupBy(x => x.VIGENTE)
                 .Select(name => name.First().VIGENTE)
                 .ToList();
-=======
-                    .GroupBy(x => x.VIGENTE)
-                    .Select(name => name.FirstOrDefault().VIGENTE)
-                    .ToList();
 
                 if (Years.Count == 0)
                     ActiveButtons(true);
@@ -80,7 +75,6 @@ namespace Sigac.WEB.Vistas
                 }
 
                 Years = Years.OrderByDescending(x => x).ToList();
->>>>>>> 1e6ca7461d029c245b2178c165b32d5a809bfacf
 
                 //using (var i = new Entities())
                 //{
@@ -88,23 +82,12 @@ namespace Sigac.WEB.Vistas
                 //                group dominio by dominio.VIGENTE into dom
                 //                select dom
                 //}
-<<<<<<< HEAD
 
                 foreach (var item in Years)
                 {
                     ddlVigencia.Items.Add(item.ToString());
                 }
-                //ddlVigencia.DataSource = Years;
-                //ddlVigencia.DataBind();
-            }
-            catch (Exception)
-            {
 
-                throw;
-            }
-            
-=======
-                
                 ddlVigencia.DataSource = Years;
                 ddlVigencia.DataBind();
             }
@@ -120,7 +103,6 @@ namespace Sigac.WEB.Vistas
             btnGenerarPAE.Visible = !val;
             btnGenerarPAE.Enabled = !val;
             btnActivarVigencia.Enabled = val;
->>>>>>> 1e6ca7461d029c245b2178c165b32d5a809bfacf
         }
         #endregion  Metodo Load de la Pagina de Recintos
 
@@ -165,7 +147,7 @@ namespace Sigac.WEB.Vistas
         {
 
             ScriptManager.RegisterStartupScript(this, GetType(), "none", "OpenModal('idModal') ;", true);
-           
+
         }
     }
 }

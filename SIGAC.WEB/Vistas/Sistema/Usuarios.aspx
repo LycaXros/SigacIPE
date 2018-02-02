@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SIGAC.Master" AutoEventWireup="true" CodeBehind="Usuarios.aspx.cs" Inherits="SIGAC.WEB.Vistas.Sistema.Usuarios" %>
+﻿<%@ Page Title="Sistema" Language="C#" MasterPageFile="~/SIGAC.Master" AutoEventWireup="true" CodeBehind="Usuarios.aspx.cs" Inherits="SIGAC.WEB.Vistas.Sistema.Usuarios" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="StyleCPH" runat="server">
 </asp:Content>
@@ -18,7 +18,9 @@
                             <div class="input-group">
                                 <asp:TextBox runat="server" ID="textboxFiltro" CssClass="form-control" />
                                 <div class="input-group-btn">
-                                    <asp:LinkButton ID="buttonFiltro" runat="server" CssClass="button btn btn-primary" OnClick="buttonFiltro_Click"><span class="glyphicon glyphicon-search w3-text-white"/></asp:LinkButton>
+                                    <asp:LinkButton ID="buttonFiltro" runat="server" CssClass="btn btn-custom" OnClick="buttonFiltro_Click">
+                                        <span class="glyphicon glyphicon-search"/>
+                                    </asp:LinkButton>
                                 </div>
                             </div>
                         </div>
