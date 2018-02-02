@@ -2,6 +2,6 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="BodyCPH" runat="server">
     <div class="w3-center">
-        <img id="imgFondo" src="Content/Imagenes/LogoIPE.png"/>
+        <img id="imgFondo" src="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>Content/Imagenes/LogoIPE.png" alt="IPE"/>
     </div>
 </asp:Content>

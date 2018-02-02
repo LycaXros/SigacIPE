@@ -224,10 +224,37 @@
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
     <Content Include="Content\CSS\bootstrap.css" />
+    <Content Include="Content\CSS\buttonCSS.css" />
     <Content Include="Content\CSS\errorCSS.css" />
+    <Content Include="Content\CSS\FontAwesome\css\fa-brands.css" />
+    <Content Include="Content\CSS\FontAwesome\css\fa-brands.min.css" />
+    <Content Include="Content\CSS\FontAwesome\css\fa-regular.css" />
+    <Content Include="Content\CSS\FontAwesome\css\fa-regular.min.css" />
+    <Content Include="Content\CSS\FontAwesome\css\fa-solid.css" />
+    <Content Include="Content\CSS\FontAwesome\css\fa-solid.min.css" />
+    <Content Include="Content\CSS\FontAwesome\css\fontawesome-all.css" />
+    <Content Include="Content\CSS\FontAwesome\css\fontawesome-all.min.css" />
+    <Content Include="Content\CSS\FontAwesome\css\fontawesome.css" />
+    <Content Include="Content\CSS\FontAwesome\css\fontawesome.min.css" />
+    <Content Include="Content\CSS\FontAwesome\webfonts\fa-brands-400.eot" />
+    <Content Include="Content\CSS\FontAwesome\webfonts\fa-brands-400.svg" />
+    <Content Include="Content\CSS\FontAwesome\webfonts\fa-brands-400.ttf" />
+    <Content Include="Content\CSS\FontAwesome\webfonts\fa-brands-400.woff" />
+    <Content Include="Content\CSS\FontAwesome\webfonts\fa-brands-400.woff2" />
+    <Content Include="Content\CSS\FontAwesome\webfonts\fa-regular-400.eot" />
+    <Content Include="Content\CSS\FontAwesome\webfonts\fa-regular-400.svg" />
+    <Content Include="Content\CSS\FontAwesome\webfonts\fa-regular-400.ttf" />
+    <Content Include="Content\CSS\FontAwesome\webfonts\fa-regular-400.woff" />
+    <Content Include="Content\CSS\FontAwesome\webfonts\fa-regular-400.woff2" />
+    <Content Include="Content\CSS\FontAwesome\webfonts\fa-solid-900.eot" />
+    <Content Include="Content\CSS\FontAwesome\webfonts\fa-solid-900.svg" />
+    <Content Include="Content\CSS\FontAwesome\webfonts\fa-solid-900.ttf" />
+    <Content Include="Content\CSS\FontAwesome\webfonts\fa-solid-900.woff" />
+    <Content Include="Content\CSS\FontAwesome\webfonts\fa-solid-900.woff2" />
     <Content Include="Content\CSS\GridStyles.css" />
     <Content Include="Content\CSS\loginCSS.css" />
     <Content Include="Content\CSS\menuCSS.css" />
+    <Content Include="Content\CSS\panelCSS.css" />
     <Content Include="Content\CSS\Site.css" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
@@ -284,7 +311,10 @@
     <Content Include="Global.asax" />
     <Content Include="Vistas\AdministrarPAE\Adm_Pae.aspx" />
     <Content Include="Vistas\AdministrarProgramas\AdministrarProgramas_Buscar.aspx" />
-    <Content Include="Web.config" />
+    <Content Include="Vistas\Sistema\Usuarios.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="packages.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="SIGAC.Master" />
@@ -467,6 +497,13 @@
     </Compile>
     <Compile Include="Vistas\AdministrarProgramas\AdministrarProgramas_Buscar.aspx.designer.cs">
       <DependentUpon>AdministrarProgramas_Buscar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Sistema\Usuarios.aspx.cs">
+      <DependentUpon>Usuarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\Sistema\Usuarios.aspx.designer.cs">
+      <DependentUpon>Usuarios.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

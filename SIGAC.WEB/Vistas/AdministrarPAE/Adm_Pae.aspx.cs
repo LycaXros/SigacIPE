@@ -55,25 +55,33 @@ namespace Sigac.WEB.Vistas
         /// </summary>
         private void fillYears()
         {
-
-            var Years = dbEntity.SIEDU_DOMINIO
+            try
+            {
+                var Years = dbEntity.SIEDU_DOMINIO
                 .GroupBy(x => x.VIGENTE)
                 .Select(name => name.First().VIGENTE)
                 .ToList();
 
-            //using (var i = new Entities())
-            //{
-            //    var Years = from dominio in i.SIEDU_DOMINIO
-            //                group dominio by dominio.VIGENTE into dom
-            //                select dom
-            //}
+                //using (var i = new Entities())
+                //{
+                //    var Years = from dominio in i.SIEDU_DOMINIO
+                //                group dominio by dominio.VIGENTE into dom
+                //                select dom
+                //}
 
-            foreach (var item in Years)
-            {
-                ddlVigencia.Items.Add(item.ToString());
+                foreach (var item in Years)
+                {
+                    ddlVigencia.Items.Add(item.ToString());
+                }
+                //ddlVigencia.DataSource = Years;
+                //ddlVigencia.DataBind();
             }
-            //ddlVigencia.DataSource = Years;
-            //ddlVigencia.DataBind();
+            catch (Exception)
+            {
+
+                throw;
+            }
+            
         }
         #endregion  Metodo Load de la Pagina de Recintos
 

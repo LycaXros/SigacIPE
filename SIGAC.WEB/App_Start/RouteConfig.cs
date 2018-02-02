@@ -16,9 +16,10 @@ namespace SIGAC.WEB
 
             //routes.MapPageRoute("RouteName", "routeUrl", "physicalFile");
 
-            routes.MapPageRoute("DD", "AdminPae", "~/Vistas/AdministrarPAE/Adm_Pae.aspx");
+            routes.MapPageRoute("Sistema.Usuarios", "Sistema/Usuarios", "~/Vistas/Sistema/Usuarios.aspx");
+            routes.MapPageRoute("AdministrarPAE", "PAE/Administrar", "~/Vistas/AdministrarPAE/Adm_Pae.aspx");
             routes.MapPageRoute("Default", string.Empty , "~/Default.aspx");
-            routes.MapPageRoute("Login", "login", "~/login.aspx");
+            routes.MapPageRoute("Login", "IniciarSesion", "~/login.aspx");
             routes.MapPageRoute("ErrorPage", "error/{handler}/{msg}", "~/ErrorPage.aspx");
         }
     }

@@ -16,7 +16,7 @@ header {
 
 nav {
     position: relative;
-    width: 980px;
+    width: 85%;
     margin: 0 auto;
 }
 
@@ -48,7 +48,7 @@ nav {
     font-family: sans-serif;
     background-image: linear-gradient(#fff, #ccc);
     border-radius: 6px;
-    box-shadow: 0px 0px 4px 2px rgba(0,0,0,0.4);
+    box-shadow: 0 0 4px 2px rgba(0,0,0,0.4);
 }
 
     #cssmenu > ul > li {
@@ -70,7 +70,7 @@ nav {
 
         #cssmenu > ul > li:hover, #cssmenu ul li.active:hover, #cssmenu ul li.active, #cssmenu ul li.has-sub.active:hover {
             background-image: linear-gradient(#ededed, #fff);
-            box-shadow: inset 0px 0px 1px 1px rgba(0,0,0,0.1);
+            box-shadow: inset 0 0 1px 1px rgba(0,0,0,0.1);
             -webkit-transition: all .3s ease;
             -ms-transition: all .3s ease;
             transition: all .3s ease;
@@ -558,5 +558,3 @@ nav {
 .Menu-item {
     background-color: #C0C0C0;
 }
-
-*/

@@ -2,7 +2,7 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="es-do">
 <head runat="server">
     <title>
         <% if (string.IsNullOrWhiteSpace(Page.Title))
@@ -22,10 +22,14 @@
     <meta name="viewport" content="width=device-width" />
 
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
-    <link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet" />
-    <link href="~/Content/CSS/bootstrap.css" rel="stylesheet" />
-    <link href="~/Content/CSS/menuCSS.css" rel="stylesheet" />
-    <link href="~/Content/CSS/Site.css" rel="stylesheet" />
+    <asp:PlaceHolder runat="server" ID="PlaceHolder">
+        <link href="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>Content/CSS/FontAwesome/css/fontawesome-all.css" rel="stylesheet" />
+        <link href="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>Content/CSS/bootstrap.css" rel="stylesheet" />
+        <link href="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>Content/CSS/menuCSS.css" rel="stylesheet" />
+        <link href="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>Content/CSS/Site.css" rel="stylesheet" />
+        <link href="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>Content/CSS/panelCSS.css" rel="stylesheet" />
+    </asp:PlaceHolder>
+
     <asp:ContentPlaceHolder runat="server" ID="StyleCPH">
     </asp:ContentPlaceHolder>
 </head>
@@ -51,9 +55,9 @@
                         <div id="head-mobile"></div>
                         <div class="button"></div>
                         <ul>
-                            <li><a href="#" class='active'><span class="fa fa-home"></span> INICIO</a></li>
+                            <li><a href="#" class='active'><i class="fas fa-home"></i>INICIO</a></li>
                             <li><a href="#">ADMINISTRAR PAE</a>
-                                <ul>
+                                <ul style="z-index: 9999;">
                                     <li><a href="#">ADMINISTRAR COBERTURAS</a></li>
                                     <li><a href="#">ADMINISTRAR NECESIDADES</a></li>
                                     <li><a href="#">ADMINISTRAR NECESIDADES CAPACITACION</a></li>
@@ -61,12 +65,12 @@
                                 </ul>
                             </li>
                             <li><a href="#"><span class=""></span>PROGRAMAS</a>
-                                <ul>
+                                <ul style="z-index: 9999;">
                                     <li><a href="#">ADMINISTRAR PROGRAMAS</a></li>
                                 </ul>
                             </li>
                             <li><a href="#">DESARROLLO DE EVENTOS</a>
-                                <ul>
+                                <ul style="z-index: 9999;">
                                     <li><a href="#">ADMINISTRAR PRESUPUESTOS</a></li>
                                     <li><a href="#">ADMINISTRAR PERSONAL EXTERNO</a></li>
                                     <li><a href="#">BUSCAR EVENTOS ESCUELA</a></li>
@@ -80,7 +84,7 @@
                                 </ul>
                             </li>
                             <li><a href="#">EVALUACIONES</a>
-                                <ul>
+                                <ul style="z-index: 9999;">
                                     <li><a href="#">BUSCAR EVALUACION</a></li>
                                     <li><a href="#">AGREGAR EVALUACION</a></li>
                                     <li><a href="#">EDITAR EVALUACION</a></li>
@@ -89,15 +93,15 @@
                                     <li><a href="#">DESARROLLO EVALUACION</a></li>
                                 </ul>
                             </li>
-                            <li><a href="#"><span class="fa fa-cog"></span>SISTEMA</a>
-                                <ul>
+                            <li><a href="#"><i class="fas fa-cog"></i>SISTEMA</a>
+                                <ul style="z-index: 9999;">
                                     <li><a href="#">RECINTOS</a></li>
                                     <li><a href="#">ESCUELA</a></li>
                                     <li><a href="#">AULAS</a></li>
                                     <li><a href="#">CURSOS</a></li>
                                     <li><a href="#">PROGRAMAS ACADEMICOS</a></li>
                                     <li><a href="#">ASIGNATURAS</a></li>
-                                    <li><a href="#">USUARIOS</a></li>
+                                    <li><a href="<%=SIGAC.Layers.GlobalVariables.ServerUrl%>Sistema/Usuarios">USUARIOS</a></li>
                                     <li><a href="#">GRUPOS</a></li>
                                     <li><a href="#">PERMISOS</a></li>
                                 </ul>
@@ -107,6 +111,11 @@
                 </div>
             </header>
         </section>
+        <div class="w3-row">
+            <div class="w3-col s12">
+                <p>&nbsp;</p>
+            </div>
+        </div>
         <section id="bodySection">
             <asp:ContentPlaceHolder ID="BodyCPH" runat="server">
             </asp:ContentPlaceHolder>
@@ -116,8 +125,8 @@
         </section>
         <asp:ContentPlaceHolder runat="server" ID="ScriptsCPH">
         </asp:ContentPlaceHolder>
-        <script src="../Scripts/jquery-1.10.2.js"></script>
-        <script src="../Scripts/User%20Scripts/menuJS.js"></script>
+        <script src="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>Scripts/jquery-1.10.2.js"></script>
+        <script src="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>Scripts/User%20Scripts/menuJS.js"></script>
     </form>
 </body>
 </html>

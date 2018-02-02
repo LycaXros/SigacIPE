@@ -22,16 +22,16 @@ namespace SIGAC.WEB.Vistas.AdministrarProgramas
             }
         }
 
-        //private void fillSelect(DropDownList selectObject, List<object> List, string ValueField = null, string TextField = null)
-        //{
-        //    selectObject.DataSource = List;
-        //    if (!string.IsNullOrWhiteSpace(ValueField))
-        //        selectObject.DataValueField = ValueField;
-        //    if (!string.IsNullOrWhiteSpace(ValueField))
-        //        selectObject.DataTextField = TextField;
+        private void fillSelect(DropDownList selectObject, List<object> List, string ValueField = null, string TextField = null)
+        {
+            selectObject.DataSource = List;
+            if (!string.IsNullOrWhiteSpace(ValueField))
+                selectObject.DataValueField = ValueField;
+            if (!string.IsNullOrWhiteSpace(ValueField))
+                selectObject.DataTextField = TextField;
 
-        //    selectObject.DataBind();
-        //}
+            selectObject.DataBind();
+        }
 
 
         #region    Grid View Administrar Programas

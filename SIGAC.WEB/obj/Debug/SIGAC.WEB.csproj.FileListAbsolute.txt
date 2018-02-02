@@ -243,3 +243,5 @@ E:\Proyecto\sigac\SIGAC.WEB\bin\Microsoft.Owin.Security.OAuth.xml
 E:\Proyecto\sigac\SIGAC.WEB\obj\Debug\SIGAC.WEB.csprojResolveAssemblyReference.cache
 E:\Proyecto\sigac\SIGAC.WEB\obj\Debug\SIGAC.WEB.dll
 E:\Proyecto\sigac\SIGAC.WEB\obj\Debug\SIGAC.WEB.pdb
+E:\SIGAC\SIGAC.WEB\bin\Oracle.ManagedDataAccess.dll
+E:\SIGAC\SIGAC.WEB\bin\Oracle.ManagedDataAccess.EntityFramework.dll
