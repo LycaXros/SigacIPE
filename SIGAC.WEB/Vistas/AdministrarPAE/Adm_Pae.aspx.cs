@@ -1,6 +1,7 @@
 ﻿using System;
 using SIGAC.Layers.Bussiness.Model;
 using System.Collections;
+using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Linq;
@@ -58,9 +59,28 @@ namespace Sigac.WEB.Vistas
             try
             {
                 var Years = dbEntity.SIEDU_DOMINIO
+<<<<<<< HEAD
                 .GroupBy(x => x.VIGENTE)
                 .Select(name => name.First().VIGENTE)
                 .ToList();
+=======
+                    .GroupBy(x => x.VIGENTE)
+                    .Select(name => name.FirstOrDefault().VIGENTE)
+                    .ToList();
+
+                if (Years.Count == 0)
+                    ActiveButtons(true);
+                else
+                    ActiveButtons(false);
+
+
+                if (!Years.Contains(DateTime.Now.Year.ToString()))
+                {
+                    Years.Add(DateTime.Now.Year.ToString());
+                }
+
+                Years = Years.OrderByDescending(x => x).ToList();
+>>>>>>> 1e6ca7461d029c245b2178c165b32d5a809bfacf
 
                 //using (var i = new Entities())
                 //{
@@ -68,6 +88,7 @@ namespace Sigac.WEB.Vistas
                 //                group dominio by dominio.VIGENTE into dom
                 //                select dom
                 //}
+<<<<<<< HEAD
 
                 foreach (var item in Years)
                 {
@@ -82,6 +103,24 @@ namespace Sigac.WEB.Vistas
                 throw;
             }
             
+=======
+                
+                ddlVigencia.DataSource = Years;
+                ddlVigencia.DataBind();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        private void ActiveButtons(bool val)
+        {
+            btnActivarVigencia.Visible = val;
+            btnGenerarPAE.Visible = !val;
+            btnGenerarPAE.Enabled = !val;
+            btnActivarVigencia.Enabled = val;
+>>>>>>> 1e6ca7461d029c245b2178c165b32d5a809bfacf
         }
         #endregion  Metodo Load de la Pagina de Recintos
 
@@ -108,9 +147,9 @@ namespace Sigac.WEB.Vistas
 
             try
             {
-                    stringSqlQuery = "SELECT * FROM /*/* WHERE ID = :codigo";
-                    //gvAdministrarPae.DataSource = conseguirDataFromDatabase.getData(stringSqlQuery, "codigo", ddlVigencia.SelectedValue.ToString());
-                    //gvAdministrarPae.DataBind();
+                stringSqlQuery = "SELECT * FROM /*/* WHERE ID = :codigo";
+                //gvAdministrarPae.DataSource = conseguirDataFromDatabase.getData(stringSqlQuery, "codigo", ddlVigencia.SelectedValue.ToString());
+                //gvAdministrarPae.DataBind();
             }
             catch (Exception)
             {
@@ -119,8 +158,14 @@ namespace Sigac.WEB.Vistas
 
         }
 
+
         #endregion  Evento Click del btnBuscar, para buscar informacion en la base de datos
 
+        protected void btnActivarVigencia_Click(object sender, EventArgs e)
+        {
 
+            ScriptManager.RegisterStartupScript(this, GetType(), "none", "OpenModal('idModal') ;", true);
+           
+        }
     }
 }
