@@ -1,6 +1,7 @@
 ﻿using System;
 using SIGAC.Layers.Bussiness.Model;
 using System.Collections;
+using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Linq;
@@ -55,25 +56,48 @@ namespace Sigac.WEB.Vistas
         /// </summary>
         private void fillYears()
         {
-
-            var Years = dbEntity.SIEDU_DOMINIO
-                .GroupBy(x => x.VIGENTE)
-                .Select(name => name.First().VIGENTE)
-                .ToList();
-
-            //using (var i = new Entities())
-            //{
-            //    var Years = from dominio in i.SIEDU_DOMINIO
-            //                group dominio by dominio.VIGENTE into dom
-            //                select dom
-            //}
-
-            foreach (var item in Years)
+            try
             {
-                ddlVigencia.Items.Add(item.ToString());
+                var Years = dbEntity.SIEDU_DOMINIO
+                    .GroupBy(x => x.VIGENTE)
+                    .Select(name => name.FirstOrDefault().VIGENTE)
+                    .ToList();
+
+                if (Years.Count == 0)
+                    ActiveButtons(true);
+                else
+                    ActiveButtons(false);
+
+
+                if (!Years.Contains(DateTime.Now.Year.ToString()))
+                {
+                    Years.Add(DateTime.Now.Year.ToString());
+                }
+
+                Years = Years.OrderByDescending(x => x).ToList();
+
+                //using (var i = new Entities())
+                //{
+                //    var Years = from dominio in i.SIEDU_DOMINIO
+                //                group dominio by dominio.VIGENTE into dom
+                //                select dom
+                //}
+                
+                ddlVigencia.DataSource = Years;
+                ddlVigencia.DataBind();
             }
-            //ddlVigencia.DataSource = Years;
-            //ddlVigencia.DataBind();
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        private void ActiveButtons(bool val)
+        {
+            btnActivarVigencia.Visible = val;
+            btnGenerarPAE.Visible = !val;
+            btnGenerarPAE.Enabled = !val;
+            btnActivarVigencia.Enabled = val;
         }
         #endregion  Metodo Load de la Pagina de Recintos
 
@@ -100,9 +124,9 @@ namespace Sigac.WEB.Vistas
 
             try
             {
-                    stringSqlQuery = "SELECT * FROM /*/* WHERE ID = :codigo";
-                    //gvAdministrarPae.DataSource = conseguirDataFromDatabase.getData(stringSqlQuery, "codigo", ddlVigencia.SelectedValue.ToString());
-                    //gvAdministrarPae.DataBind();
+                stringSqlQuery = "SELECT * FROM /*/* WHERE ID = :codigo";
+                //gvAdministrarPae.DataSource = conseguirDataFromDatabase.getData(stringSqlQuery, "codigo", ddlVigencia.SelectedValue.ToString());
+                //gvAdministrarPae.DataBind();
             }
             catch (Exception)
             {
@@ -111,8 +135,14 @@ namespace Sigac.WEB.Vistas
 
         }
 
+
         #endregion  Evento Click del btnBuscar, para buscar informacion en la base de datos
 
+        protected void btnActivarVigencia_Click(object sender, EventArgs e)
+        {
 
+            ScriptManager.RegisterStartupScript(this, GetType(), "none", "OpenModal('idModal') ;", true);
+           
+        }
     }
 }

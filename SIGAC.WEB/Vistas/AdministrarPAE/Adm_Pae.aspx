@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SIGAC.Master" AutoEventWireup="true" CodeBehind="Adm_Pae.aspx.cs" Inherits="Sigac.WEB.Vistas.Adm_Pae" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SIGAC.Master" AutoEventWireup="true" CodeBehind="Adm_Pae.aspx.cs" Inherits="Sigac.WEB.Vistas.Adm_Pae"  %>
 
 <%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
 <asp:Content ID="style" runat="server" ContentPlaceHolderID="StyleCPH">
@@ -22,7 +22,7 @@
                         <div class="col6">
                             <asp:LinkButton ID="btnBuscar" runat="server" Visible="True" TabIndex="17" CssClass="btn btn-success" OnClick="btnBuscar_Click" Width="100px"><span class="glyphicon glyphicon-search"></span>&nbsp; Buscar</asp:LinkButton>
                             <asp:LinkButton ID="btnGenerarPAE" runat="server" Visible="True" TabIndex="17" CssClass="btn btn-success" Width="140px"><span class="glyphicon glyphicon-file"></span>&nbsp; Generar PAE</asp:LinkButton>
-                            <asp:LinkButton ID="btnActivarVigencia" runat="server" Visible="True" TabIndex="17" CssClass="btn btn-success" Width="160px"><span class="glyphicon glyphicon-ok"></span>&nbsp; Activar Vigencia</asp:LinkButton>
+                            <asp:LinkButton ID="btnActivarVigencia"  OnClick="btnActivarVigencia_Click" runat="server" Visible="True" TabIndex="17" CssClass="btn btn-success" Width="160px"><span class="glyphicon glyphicon-ok"></span>&nbsp; Activar Vigencia</asp:LinkButton>
                         </div>
                     </div>
                 </div>
@@ -76,6 +76,68 @@
                     </div>
                 </div>
             </asp:Panel>
+
+            <div id="idModal" class="w3-modal">
+
+                <div class="w3-modal-content">
+                    <div class="w3-container">
+                        <span onclick="document.getElementById('idModal').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+                        <div class="">
+                            <h3>Datos del Documento</h3>
+                            <hr />
+                            <div class="GridRow">
+                                <div class="col5">
+                                    <label>TIPO DE DOCUMENTO</label>
+                                </div>
+                                <div class="col5"></div>
+                            </div>
+                            <div class="GridRow">
+                                <div class="col5">
+                                    <label>TIPO DE DOCUMENTO</label>
+                                </div>
+                                <div class="col5"></div>
+
+                            </div>
+                            <div class="GridRow">
+                                <div class="col5">
+                                    <label>TIPO DE DOCUMENTO</label>
+                                </div>
+                                <div class="col5"></div>
+
+                            </div>
+                            <div class="GridRow">
+                                <div class="col5">
+                                    <label>TIPO DE DOCUMENTO</label>
+                                </div>
+                                <div class="col5"></div>
+
+                            </div>
+                            <div class="GridRow">
+                                <div class="col5">
+                                    <label>TIPO DE DOCUMENTO</label>
+                                </div>
+                                <div class="col5"></div>
+
+                            </div>
+                            <div class="GridRow">
+                                <div class="col5">
+                                    <label>TIPO DE DOCUMENTO</label>
+                                </div>
+                                <div class="col5"></div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
+</asp:Content>
+<asp:Content runat="server" ContentPlaceHolderID="ScriptsCPH">
+    <script type="text/javascript">
+        function OpenModal(idM) {
+            document.getElementById(idM).style.display = 'block';
+        }
+    </script>
 </asp:Content>
