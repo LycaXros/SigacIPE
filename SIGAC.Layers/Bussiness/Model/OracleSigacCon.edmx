@@ -2129,8 +2129,11 @@ FROM "SIGAC"."TIPOS_ASIGNATURA" "TIPOS_ASIGNATURA"</DefiningQuery>
             <End Role="SIEDU_TEMA1" EntitySet="SIEDU_TEMA" />
           </AssociationSet>
           <EntitySet Name="SIEDU_DOMINIO" EntityType="Model.SIEDU_DOMINIO" />
+<<<<<<< HEAD
+=======
           <EntitySet Name="SIEDU_ARCHIVO" EntityType="Model.SIEDU_ARCHIVO" />
           <EntitySet Name="SIEDU_PAE" EntityType="Model.SIEDU_PAE" />
+>>>>>>> 9ec6df310172c8c815d9c106161a2ecd4fa4883a
           <EntitySet Name="SIEDU_TIPO_DOMINIO" EntityType="Model.SIEDU_TIPO_DOMINIO" />
         </EntityContainer>
         <EntityType Name="SIEDU_DOMINIO">
@@ -2143,6 +2146,8 @@ FROM "SIGAC"."TIPOS_ASIGNATURA" "TIPOS_ASIGNATURA"</DefiningQuery>
           <Property Name="DESCRIPCION" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
           <Property Name="VIGENTE" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
         </EntityType>
+<<<<<<< HEAD
+=======
         <EntityType Name="SIEDU_ARCHIVO">
           <Key>
             <PropertyRef Name="ARCH_ID" />
@@ -2178,6 +2183,7 @@ FROM "SIGAC"."TIPOS_ASIGNATURA" "TIPOS_ASIGNATURA"</DefiningQuery>
           <Property Name="PAE_MAQUINA_MOD" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="PAE_IP_MOD" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
         </EntityType>
+>>>>>>> 9ec6df310172c8c815d9c106161a2ecd4fa4883a
         <EntityType Name="SIEDU_TIPO_DOMINIO">
           <Key>
             <PropertyRef Name="ID_TIPO_DOMINIO" />
@@ -3035,6 +3041,8 @@ FROM "SIGAC"."TIPOS_ASIGNATURA" "TIPOS_ASIGNATURA"</DefiningQuery>
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+<<<<<<< HEAD
+=======
           <EntitySetMapping Name="SIEDU_ARCHIVO">
             <EntityTypeMapping TypeName="Model.SIEDU_ARCHIVO">
               <MappingFragment StoreEntitySet="SIEDU_ARCHIVO">
@@ -3072,6 +3080,7 @@ FROM "SIGAC"."TIPOS_ASIGNATURA" "TIPOS_ASIGNATURA"</DefiningQuery>
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+>>>>>>> 9ec6df310172c8c815d9c106161a2ecd4fa4883a
           <EntitySetMapping Name="SIEDU_TIPO_DOMINIO">
             <EntityTypeMapping TypeName="Model.SIEDU_TIPO_DOMINIO">
               <MappingFragment StoreEntitySet="SIEDU_TIPO_DOMINIO">
