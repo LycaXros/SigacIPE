@@ -10,13 +10,13 @@ namespace SIGAC.WEB.Vistas.AdministrarProgramas
 {
     public partial class AdministrarProgramas_Buscar : System.Web.UI.Page
     {
-        private static Entities Entities = null;
+        private static SigacEntities Entities = null;
 
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
             {
-                Entities = new Entities();
+                Entities = new SigacEntities();
 
                 //var NivelAcademico = Entities.
             }

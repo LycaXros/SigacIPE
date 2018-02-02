@@ -33,7 +33,7 @@ namespace Sigac.WEB.Vistas
         /// Variable para almacenar el query que se desea correr 
         /// </summary>
         string stringSqlQuery;
-        Entities dbEntity;
+        SigacEntities dbEntity;
 
         #endregion variables a utilizar 
 
@@ -45,7 +45,7 @@ namespace Sigac.WEB.Vistas
         /// <param name="e"></param>
         protected void Page_Load(object sender, EventArgs e)
         {
-            dbEntity = new Entities();
+            dbEntity = new SigacEntities();
             getdataAdministrarPAE();
             fillYears();
         }

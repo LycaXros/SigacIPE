@@ -282,10 +282,7 @@
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-<<<<<<< HEAD
-=======
     <Content Include="Vistas\AdministrarPAE\Adm_Pae.aspx" />
->>>>>>> 9ec6df310172c8c815d9c106161a2ecd4fa4883a
     <Content Include="Vistas\AdministrarProgramas\AdministrarProgramas_Buscar.aspx" />
     <Content Include="Web.config" />
     <Content Include="packages.config" />
@@ -457,8 +454,6 @@
       <DependentUpon>SIGAC.Master</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
-<<<<<<< HEAD
-=======
     <Compile Include="Vistas\AdministrarPAE\Adm_Pae.aspx.cs">
       <DependentUpon>Adm_Pae.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -466,7 +461,6 @@
     <Compile Include="Vistas\AdministrarPAE\Adm_Pae.aspx.designer.cs">
       <DependentUpon>Adm_Pae.aspx</DependentUpon>
     </Compile>
->>>>>>> 9ec6df310172c8c815d9c106161a2ecd4fa4883a
     <Compile Include="Vistas\AdministrarProgramas\AdministrarProgramas_Buscar.aspx.cs">
       <DependentUpon>AdministrarProgramas_Buscar.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
