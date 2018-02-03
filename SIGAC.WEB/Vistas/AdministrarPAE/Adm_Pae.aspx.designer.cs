@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Sigac.WEB.Vistas {
+namespace SIGAC.WEB.Vistas {
     
     
     public partial class Adm_Pae {

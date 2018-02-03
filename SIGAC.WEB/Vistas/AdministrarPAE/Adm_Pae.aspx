@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SIGAC.Master" AutoEventWireup="true" CodeBehind="Adm_Pae.aspx.cs" Inherits="Sigac.WEB.Vistas.Adm_Pae"  %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SIGAC.Master" AutoEventWireup="true" CodeBehind="Adm_Pae.aspx.cs" Inherits="SIGAC.WEB.Vistas.Adm_Pae"  %>
 
 <%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
 <asp:Content ID="style" runat="server" ContentPlaceHolderID="StyleCPH">

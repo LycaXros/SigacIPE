@@ -1,40 +1,79 @@
-﻿
-.GridRow{
-    display:grid;
-    grid-template-columns:repeat(10, 1fr);
-    grid-gap:5px;
+﻿.GridCenter {
+
+    text-align: center !important
 
 }
-.col1{
+
+.GridRow {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-gap: 5px;
+}
+
+.col1 {
     grid-column: span 1;
 }
-.col2{
+
+.col2 {
     grid-column: span 2;
 }
-.col3{
+
+.col3 {
     grid-column: span 3;
 }
-.col4{
+
+.col4 {
     grid-column: span 4;
 }
-.col5{
+
+.col5 {
     grid-column: span 5;
 }
-.col6{
+
+.col6 {
     grid-column: span 6;
 }
-.col7{
+
+.col7 {
     grid-column: span 7;
 }
-.col8{
+
+.col8 {
     grid-column: span 8;
 }
-.col9{
+
+.col9 {
     grid-column: span 9;
 }
-.col10{
-    grid-column:span 10;
+
+.col10 {
+    grid-column: span 10;
 }
-.colR{
-    grid-column:auto;
+
+.colR {
+    grid-column: auto;
+}
+
+.GridContainer { /*Like Boostrapp Container*/
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@media (min-width: 992px) {
+    .GridContainer {
+        max-width: 970px;
+    }
+}
+
+@media (min-width: 768px) {
+    .GridContainer {
+        max-width: 750px;
+    }
+}
+@media (min-width: 1200px) {
+    .GridContainer {
+        max-width: 1170px;
+    }
 }

@@ -17,20 +17,21 @@
     <meta http-equiv="content-type" content="text/html;charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="author" content="ComputoIPE - Instituto Policial de Eduacion" />
-    <meta name="keywords" content="" />
-    <meta name="description" content="" />
+    <meta name="keywords" content="Academico, Sistema, Gestion" />
+    <meta name="description" content="Sistema Integrado de Gestion Academica (SIGAC), Instituto Policial de Educacion, Policia Nacional de R.D." />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="viewport" content="width=device-width" />
 
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
     <asp:PlaceHolder runat="server" ID="PlaceHolder">
+        <link href="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>Content/CSS/w3.css" rel="stylesheet" />
         <link href="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>Content/CSS/FontAwesome/css/fontawesome-all.css" rel="stylesheet" />
         <link href="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>Content/CSS/bootstrap.css" rel="stylesheet" />
         <link href="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>Content/CSS/menuCSS.css" rel="stylesheet" />
         <link href="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>Content/CSS/Site.css" rel="stylesheet" />
+        <link href="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>Content/CSS/GridStyles.css" rel="stylesheet" />
         <link href="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>Content/CSS/panelCSS.css" rel="stylesheet" />
         <link href="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>Content/CSS/buttonCSS.css" rel="stylesheet" />
     </asp:PlaceHolder>
-
     <asp:ContentPlaceHolder runat="server" ID="StyleCPH">
     </asp:ContentPlaceHolder>
 </head>
@@ -38,8 +39,10 @@
     <form id="MainForm" runat="server">
         <section id="headerSection">
             <header>
-                <div class="w3-row fixed-top">
-                    <uc:HeaderBanner runat="server" ID="HeaderBanner" />
+                <div class="GridRow fixed-top">
+                    <div class="col10">
+                        <uc:HeaderBanner runat="server" ID="HeaderBanner" />
+                    </div>
                     <%--
                         <div class="Chat">
                             <div class="ChatDiv">
@@ -51,69 +54,72 @@
                         </div>
                     --%>
                 </div>
-                <div class="w3-row">
-                    <nav id='cssmenu'>
-                        <div id="head-mobile"></div>
-                        <div class="button"></div>
-                        <ul>
-                            <li><a href="#" class='active'><i class="fas fa-home"></i>INICIO</a></li>
-                            <li><a href="#">ADMINISTRAR PAE</a>
-                                <ul style="z-index: 9999;">
-                                    <li><a href="#">ADMINISTRAR COBERTURAS</a></li>
-                                    <li><a href="#">ADMINISTRAR NECESIDADES</a></li>
-                                    <li><a href="#">ADMINISTRAR NECESIDADES CAPACITACION</a></li>
-                                    <li><a href="#">ADMINISTRAR COBERTURAS FORMACION</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#"><span class=""></span>PROGRAMAS</a>
-                                <ul style="z-index: 9999;">
-                                    <li><a href="#">ADMINISTRAR PROGRAMAS</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#">DESARROLLO DE EVENTOS</a>
-                                <ul style="z-index: 9999;">
-                                    <li><a href="#">ADMINISTRAR PRESUPUESTOS</a></li>
-                                    <li><a href="#">ADMINISTRAR PERSONAL EXTERNO</a></li>
-                                    <li><a href="#">BUSCAR EVENTOS ESCUELA</a></li>
-                                    <li><a href="#">EDITAR INFORMACION DESARROLLO DE EVENTOS ESCUELA</a></li>
-                                    <li><a href="#">CONVOCATORIA EVENTO ESCUELA</a></li>
-                                    <li><a href="#">INSERTAR INFORMACION EVENTO ESCUELA</a></li>
-                                    <li><a href="#">PARTICIPANTE EVENTO ESCUELA</a></li>
-                                    <li><a href="#">DOCENTE EVENTO ESCUELA</a></li>
-                                    <li><a href="#">INASISTENTE EVENTO ESCUELA</a></li>
-                                    <li><a href="#">ENVIAR EVALUACION EVENTO ESCUELA</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#">EVALUACIONES</a>
-                                <ul style="z-index: 9999;">
-                                    <li><a href="#">BUSCAR EVALUACION</a></li>
-                                    <li><a href="#">AGREGAR EVALUACION</a></li>
-                                    <li><a href="#">EDITAR EVALUACION</a></li>
-                                    <li><a href="#">ELIMINAR EVALUACION</a></li>
-                                    <li><a href="#">ADMINISTRAR PREGUNTAS EVALUACION</a></li>
-                                    <li><a href="#">DESARROLLO EVALUACION</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#"><i class="fas fa-cog"></i>SISTEMA</a>
-                                <ul style="z-index: 9999;">
-                                    <li><a href="#">RECINTOS</a></li>
-                                    <li><a href="#">ESCUELA</a></li>
-                                    <li><a href="#">AULAS</a></li>
-                                    <li><a href="#">CURSOS</a></li>
-                                    <li><a href="#">PROGRAMAS ACADEMICOS</a></li>
-                                    <li><a href="#">ASIGNATURAS</a></li>
-                                    <li><a href="<%=SIGAC.Layers.GlobalVariables.ServerUrl%>Sistema/Usuarios">USUARIOS</a></li>
-                                    <li><a href="#">GRUPOS</a></li>
-                                    <li><a href="#">PERMISOS</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </nav>
+                <div class="GridRow">
+                    <div class="col10">
+                        <nav id='cssmenu'>
+                            <div id="head-mobile"></div>
+                            <div class="button"></div>
+                            <ul>
+                                <li><a href="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>" class='active'><i class="fas fa-home"></i> INICIO</a></li>
+                                <li><a href="#"><i class="fas fa-sticky-note"></i> ADMINISTRAR PAE</a>
+                                    <ul style="z-index: 9999;">
+                                        <li><a href="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>PAE/Administrar">ADMINISTRAR PAE</a></li>
+                                        <li><a href="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>">ADMINISTRAR COBERTURAS</a></li>
+                                        <li><a href="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>">ADMINISTRAR NECESIDADES</a></li>
+                                        <li><a href="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>">ADMINISTRAR NECESIDADES CAPACITACION</a></li>
+                                        <li><a href="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>">ADMINISTRAR COBERTURAS FORMACION</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#"><i class="fas fa-list-alt"></i> PROGRAMAS</a>
+                                    <ul style="z-index: 9999;">
+                                        <li><a href="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>Programas/Administrar">ADMINISTRAR PROGRAMAS</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#"><i class="fas fa-calendar-alt"></i> DESARROLLO DE EVENTOS</a>
+                                    <ul style="z-index: 9999;">
+                                        <li><a href="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>">ADMINISTRAR PRESUPUESTOS</a></li>
+                                        <li><a href="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>">ADMINISTRAR PERSONAL EXTERNO</a></li>
+                                        <li><a href="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>">BUSCAR EVENTOS ESCUELA</a></li>
+                                        <li><a href="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>">EDITAR INFORMACION DESARROLLO DE EVENTOS ESCUELA</a></li>
+                                        <li><a href="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>">CONVOCATORIA EVENTO ESCUELA</a></li>
+                                        <li><a href="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>">INSERTAR INFORMACION EVENTO ESCUELA</a></li>
+                                        <li><a href="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>">PARTICIPANTE EVENTO ESCUELA</a></li>
+                                        <li><a href="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>">DOCENTE EVENTO ESCUELA</a></li>
+                                        <li><a href="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>">INASISTENTE EVENTO ESCUELA</a></li>
+                                        <li><a href="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>">ENVIAR EVALUACION EVENTO ESCUELA</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#"><i class="fas fa-check-circle"></i> EVALUACIONES</a>
+                                    <ul style="z-index: 9999;">
+                                        <li><a href="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>">BUSCAR EVALUACION</a></li>
+                                        <li><a href="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>">AGREGAR EVALUACION</a></li>
+                                        <li><a href="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>">EDITAR EVALUACION</a></li>
+                                        <li><a href="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>">ELIMINAR EVALUACION</a></li>
+                                        <li><a href="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>">ADMINISTRAR PREGUNTAS EVALUACION</a></li>
+                                        <li><a href="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>">DESARROLLO EVALUACION</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#"><i class="fas fa-cog"></i> SISTEMA</a>
+                                    <ul style="z-index: 9999;">
+                                        <li><a href="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>">RECINTOS</a></li>
+                                        <li><a href="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>">ESCUELA</a></li>
+                                        <li><a href="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>">AULAS</a></li>
+                                        <li><a href="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>">CURSOS</a></li>
+                                        <li><a href="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>">PROGRAMAS ACADEMICOS</a></li>
+                                        <li><a href="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>">ASIGNATURAS</a></li>
+                                        <li><a href="<%=SIGAC.Layers.GlobalVariables.ServerUrl%>Sistema/Usuarios">USUARIOS</a></li>
+                                        <li><a href="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>">GRUPOS</a></li>
+                                        <li><a href="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>">PERMISOS</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
                 </div>
             </header>
         </section>
-        <div class="w3-row">
-            <div class="w3-col s12">
+        <div class="GridRow">
+            <div class="col10">
                 <p>&nbsp;</p>
             </div>
         </div>

@@ -13,3 +13,8 @@ Exception Type: System.Exception
 Exception: The error was unhandled by application code.
 Source: customerror
 Stack Trace: 
+********** 2/2/2018 8:29:18 p. m. **********
+Exception Type: System.Web.HttpException
+Exception: An HTTP error occurred. Page Not found. Please try again.
+Source: errorsection
+Stack Trace: 

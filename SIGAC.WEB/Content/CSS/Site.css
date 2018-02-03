@@ -12,11 +12,11 @@ ol, ul {
 	margin: 4em auto;
 }
 
-img.ImgBP {
+.ImgBP {
 	width: 100%;
-	height: auto;
-	overflow: hidden;
-	vertical-align: text-top;
+	/*height: auto;
+	overflow: hidden;*/
+	/*vertical-align: text-top;*/
 	border: 0;
 	margin: 0;
 }
@@ -25,7 +25,7 @@ img.ImgBP {
 	float: right;
 	width: 450px;
 	height: 350px;
-	background: url(images/notificaciones.png) no-repeat !important;
+	background: url(images/notificaciones.png) no-repeat;
 	display: block;
 	right: -420px;
 	padding: 0;
@@ -35,7 +35,7 @@ img.ImgBP {
 }
 .ChatDiv{
 	color: rgb(255, 255, 255);
-	padding: 8px 5px 0pt 50px;
+	padding: 8px 5px 0 50px;
 }
 
 .ChatContenido {
@@ -44,7 +44,7 @@ img.ImgBP {
 	color: #FFFFFF;
 	padding: 2px;
 	margin-left: 20px;
-	border: solid 0px #000;
+	border: solid 0#000;
 	margin-top: 130px;
 }
 
@@ -53,8 +53,8 @@ img.ImgBP {
 	height: 5px;
 	color: #7c93ba;
 	margin-left: 1px;
-	border: solid 0px #000;
+	border: solid 0 #000;
 	margin-top: 1px;
-	margin-right: 0px;
+	margin-right: 0;
 }
 

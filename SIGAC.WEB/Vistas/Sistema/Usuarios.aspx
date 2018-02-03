@@ -3,28 +3,28 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="StyleCPH" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="BodyCPH" runat="server">
-    <div class="container">
+    <div class="GridContainer">
         <div class="panel panel-custom">
             <div class="panel-heading">
                 <h4 class="panel-title">Busqueda de Usuarios</h4>
             </div>
             <div class="panel-body">
-                <div class="w3-container">
-                    <div class="w3-row">
-                        <div class="w3-col s1">
+                <div class="GridContainer">
+                    <div class="GridRow">
+                        <div class="col1">
                             <p>&nbsp;</p>
                         </div>
-                        <div class="w3-col s10">
+                        <div class="col8">
                             <div class="input-group">
                                 <asp:TextBox runat="server" ID="textboxFiltro" CssClass="form-control" />
                                 <div class="input-group-btn">
                                     <asp:LinkButton ID="buttonFiltro" runat="server" CssClass="btn btn-custom" OnClick="buttonFiltro_Click">
-                                        <span class="glyphicon glyphicon-search"/>
+                                        <span class="fas fa-search"></span>
                                     </asp:LinkButton>
                                 </div>
                             </div>
                         </div>
-                        <div class="w3-col s1">
+                        <div class="col1">
                             <p>&nbsp;</p>
                         </div>
                     </div>
@@ -36,11 +36,11 @@
                 <h4 class="panel-title">Detalles</h4>
             </div>
             <div class="panel-body">
-                <div class="w3-row">
-                    <div class="w3-col s1">
+                <div class="GridRow">
+                    <div class="col1">
                         <p>&nbsp;</p>
                     </div>
-                    <div class="w3-col s10">
+                    <div class="col8">
                         <asp:GridView runat="server" ID="gridViewUsuarios"
                             AllowPaging="true" PageSize="10"
                             CssClass="w3-table-all"
@@ -55,7 +55,7 @@
                             </Columns>
                         </asp:GridView>
                     </div>
-                    <div class="w3-col s1">
+                    <div class="col1">
                         <p>&nbsp;</p>
                     </div>
                 </div>

@@ -10,14 +10,24 @@ namespace SIGAC.WEB
     {
         public static void RegisterRoutes(RouteCollection routes)
         {
-            //var settings = new FriendlyUrlSettings();
-            //settings.AutoRedirectMode = RedirectMode.Permanent;
-            //routes.EnableFriendlyUrls(settings);
-
-            //routes.MapPageRoute("RouteName", "routeUrl", "physicalFile");
-
+            //
+            //Sistema
+            //
             routes.MapPageRoute("Sistema.Usuarios", "Sistema/Usuarios", "~/Vistas/Sistema/Usuarios.aspx");
-            routes.MapPageRoute("AdministrarPAE", "PAE/Administrar", "~/Vistas/AdministrarPAE/Adm_Pae.aspx");
+
+            //
+            // Programas
+            //
+            routes.MapPageRoute("Programas.Administrar", "Programas/Administrar", "~/Vistas/AdministrarProgramas.aspx");
+
+            //
+            // PAE
+            //
+            routes.MapPageRoute("PAE.Administrar", "PAE/Administrar", "~/Vistas/AdministrarPAE/Adm_Pae.aspx");
+
+            //
+            // Default, Login, ErrorPage
+            //
             routes.MapPageRoute("Default", string.Empty , "~/Default.aspx");
             routes.MapPageRoute("Login", "IniciarSesion", "~/login.aspx");
             routes.MapPageRoute("ErrorPage", "error/{handler}/{msg}", "~/ErrorPage.aspx");

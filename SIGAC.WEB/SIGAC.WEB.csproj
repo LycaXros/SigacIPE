@@ -256,6 +256,7 @@
     <Content Include="Content\CSS\menuCSS.css" />
     <Content Include="Content\CSS\panelCSS.css" />
     <Content Include="Content\CSS\Site.css" />
+    <Content Include="Content\CSS\w3.css" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />

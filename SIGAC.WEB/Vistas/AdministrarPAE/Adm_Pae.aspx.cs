@@ -24,16 +24,12 @@ using System.IO;
 using System.Drawing;
 using Newtonsoft.Json;
 
-namespace Sigac.WEB.Vistas
+namespace SIGAC.WEB.Vistas
 {
     public partial class Adm_Pae : System.Web.UI.Page
     {
         #region variables a utilizar 
 
-        /// <summary>
-        /// Variable para almacenar el query que se desea correr 
-        /// </summary>
-        string stringSqlQuery;
         SigacEntities dbEntity;
 
         #endregion variables a utilizar 
@@ -114,7 +110,7 @@ namespace Sigac.WEB.Vistas
         private void getdataAdministrarPAE()
         {
 
-            stringSqlQuery = "SELECT * FROM /*/*";
+            //stringSqlQuery = "SELECT * FROM /*/*";
             //gvAdministrarPae.DataSource = conseguirDataFromDatabase.getData(stringSqlQuery);
             //gvAdministrarPae.DataBind();
 
@@ -129,7 +125,7 @@ namespace Sigac.WEB.Vistas
 
             try
             {
-                stringSqlQuery = "SELECT * FROM /*/* WHERE ID = :codigo";
+                //stringSqlQuery = "SELECT * FROM /*/* WHERE ID = :codigo";
                 //gvAdministrarPae.DataSource = conseguirDataFromDatabase.getData(stringSqlQuery, "codigo", ddlVigencia.SelectedValue.ToString());
                 //gvAdministrarPae.DataBind();
             }
