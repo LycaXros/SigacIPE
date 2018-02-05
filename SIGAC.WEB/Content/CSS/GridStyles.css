@@ -1,7 +1,6 @@
 ﻿.GridCenter {
-
-    text-align: center !important
-
+    text-align: center !important;
+    align-self: center !important;
 }
 
 .GridRow {
