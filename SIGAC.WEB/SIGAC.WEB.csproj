@@ -312,6 +312,7 @@
     <Content Include="Global.asax" />
     <Content Include="Vistas\AdministrarPAE\Adm_Pae.aspx" />
     <Content Include="Vistas\AdministrarProgramas\AdministrarProgramas_Buscar.aspx" />
+    <Content Include="Vistas\Sistema\Recintos.aspx" />
     <Content Include="Vistas\Sistema\Usuarios.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -498,6 +499,13 @@
     </Compile>
     <Compile Include="Vistas\AdministrarProgramas\AdministrarProgramas_Buscar.aspx.designer.cs">
       <DependentUpon>AdministrarProgramas_Buscar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Sistema\Recintos.aspx.cs">
+      <DependentUpon>Recintos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\Sistema\Recintos.aspx.designer.cs">
+      <DependentUpon>Recintos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vistas\Sistema\Usuarios.aspx.cs">
       <DependentUpon>Usuarios.aspx</DependentUpon>

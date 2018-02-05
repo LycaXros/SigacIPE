@@ -56,7 +56,7 @@ namespace SIGAC.WEB.Vistas
             {
                 var Years = dbEntity.SIEDU_DOMINIO
                 .GroupBy(x => x.VIGENTE)
-                .Select(name => name.First().VIGENTE)
+                .Select(name => name.FirstOrDefault().VIGENTE)
                 .ToList();
 
                 if (Years.Count == 0)
