@@ -3,6 +3,10 @@
 	line-height: 1;
 }
 
+body, header {
+	background-color: #C7C7C7 !important;
+}
+
 ol, ul {
 	list-style: none;
 }
@@ -33,7 +37,8 @@ ol, ul {
 	top: 480px;
 	z-index: 1002;
 }
-.ChatDiv{
+
+.ChatDiv {
 	color: rgb(255, 255, 255);
 	padding: 8px 5px 0 50px;
 }
@@ -57,4 +62,3 @@ ol, ul {
 	margin-top: 1px;
 	margin-right: 0;
 }
-
