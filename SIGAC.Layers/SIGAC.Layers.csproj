@@ -98,6 +98,21 @@
     <Compile Include="Bussiness\Model\MOVIMIENTO_PERSONAL.cs">
       <DependentUpon>OracleSigacModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Bussiness\Model\OracleSiathModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OracleSiathModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bussiness\Model\OracleSiathModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OracleSiathModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bussiness\Model\OracleSiathModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OracleSiathModel.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Bussiness\Model\OracleSigacModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -218,6 +233,30 @@
     <Compile Include="Bussiness\Model\SIEDU_TIPO_DOMINIO.cs">
       <DependentUpon>OracleSigacModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Bussiness\Model\SIGAC_CARGOS.cs">
+      <DependentUpon>OracleSiathModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bussiness\Model\SIGAC_CARRERAS.cs">
+      <DependentUpon>OracleSiathModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bussiness\Model\SIGAC_CATEGORIAS.cs">
+      <DependentUpon>OracleSiathModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bussiness\Model\SIGAC_EMPLEADOS.cs">
+      <DependentUpon>OracleSiathModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bussiness\Model\SIGAC_GRADOS.cs">
+      <DependentUpon>OracleSiathModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bussiness\Model\SIGAC_LUGARES_GEOGRAFICOS.cs">
+      <DependentUpon>OracleSiathModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bussiness\Model\SIGAC_NIVELES_ACADEMICOS.cs">
+      <DependentUpon>OracleSiathModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bussiness\Model\SIGAC_UNIDADES_DEPENDENCIA.cs">
+      <DependentUpon>OracleSiathModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Bussiness\Model\SUB_TIPOS.cs">
       <DependentUpon>OracleSigacModel.tt</DependentUpon>
     </Compile>
@@ -235,6 +274,16 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="Bussiness\Model\OracleSiathModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>OracleSiathModel.edmx</DependentUpon>
+      <LastGenOutput>OracleSiathModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Bussiness\Model\OracleSiathModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>OracleSiathModel.edmx</DependentUpon>
+      <LastGenOutput>OracleSiathModel.cs</LastGenOutput>
+    </Content>
     <Content Include="Bussiness\Model\OracleSigacModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>OracleSigacModel.edmx</DependentUpon>
@@ -248,11 +297,20 @@
     <Content Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <EntityDeploy Include="Bussiness\Model\OracleSigacModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>OracleSigacModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <EntityDeploy Include="Bussiness\Model\OracleSiathModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>OracleSiathModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Bussiness\Model\OracleSiathModel.edmx.diagram">
+      <DependentUpon>OracleSiathModel.edmx</DependentUpon>
+    </None>
     <None Include="Bussiness\Model\OracleSigacModel.edmx.diagram">
       <DependentUpon>OracleSigacModel.edmx</DependentUpon>
     </None>

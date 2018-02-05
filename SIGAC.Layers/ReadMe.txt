@@ -23,3 +23,6 @@ Aqui estan los metodos, procedimientos, funciones y propiedades referentes al en
 
 Aqui estan los metodos, procedimientos, funciones y propiedades referentes a la manipulacion de datos a traves de los proveedores de base de datos usados en el sistema
 		-Oracle DB
+
+
+https://www.aspsnippets.com/Articles/Entity-Framework-CRUD-Select-Insert-Edit-Update-Delete-using-Entity-Framework-in-ASPNet.aspx
