@@ -113,6 +113,62 @@ warning 6002: The table/view 'USR_IPE.SIGAC_CATEGORIAS' does not have a primary 
           <Property Name="REG_MAQUINA_ACT" Type="varchar2" MaxLength="30" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6002: The table/view 'USR_IPE.SIGAC_CURSOS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="SIGAC_CURSOS">
+          <Key>
+            <PropertyRef Name="ID_CURSO" />
+            <PropertyRef Name="FECHA" />
+            <PropertyRef Name="DESCRIPCION" />
+            <PropertyRef Name="VIGENTE" />
+          </Key>
+          <Property Name="ID_CURSO" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="FECHA" Type="date" Nullable="false" />
+          <Property Name="DESCRIPCION" Type="varchar2" MaxLength="100" Nullable="false" />
+          <Property Name="RAMA_PROFESIONAL" Type="varchar2" MaxLength="50" />
+          <Property Name="TIPO" Type="number" Precision="38" Scale="0" />
+          <Property Name="VIGENTE" Type="varchar2" MaxLength="2" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'USR_IPE.SIGAC_CURSOS_EMPLEADOS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="SIGAC_CURSOS_EMPLEADOS">
+          <Key>
+            <PropertyRef Name="CURSOS_EMPLEADOS_ID" />
+            <PropertyRef Name="EMPL_CONSECUTIVO" />
+            <PropertyRef Name="EMPL_UNDE_FUERZA" />
+            <PropertyRef Name="ID_CURSO" />
+            <PropertyRef Name="USUARIO_CREACION" />
+            <PropertyRef Name="FECHA_CREACION" />
+          </Key>
+          <Property Name="CURSOS_EMPLEADOS_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="EMPL_CONSECUTIVO" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="EMPL_UNDE_FUERZA" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="ID_CURSO" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="ID_CENTRO_EDUCATIVO" Type="number" Precision="38" Scale="0" />
+          <Property Name="FECHA_INICIO" Type="date" />
+          <Property Name="FECHA_FIN" Type="date" />
+          <Property Name="DURACION" Type="number" Precision="38" Scale="0" />
+          <Property Name="DURACION_TIPO" Type="number" Precision="38" Scale="0" />
+          <Property Name="OBSERVACION" Type="varchar2" MaxLength="255" />
+          <Property Name="USUARIO_CREACION" Type="varchar2" MaxLength="300" Nullable="false" />
+          <Property Name="FECHA_CREACION" Type="date" Nullable="false" />
+          <Property Name="MAQUINA_CREACION" Type="varchar2" MaxLength="100" />
+          <Property Name="ID_TIPO" Type="number" Precision="38" Scale="0" />
+          <Property Name="EMPL_UNDE_CONSECUTIVO" Type="number" Precision="38" Scale="0" />
+          <Property Name="TARJETA_PROFESIONAL" Type="varchar2" MaxLength="255" />
+          <Property Name="FECHA_GRADO" Type="date" />
+          <Property Name="PUESTO" Type="number" Precision="38" Scale="0" />
+          <Property Name="TITULO" Type="varchar2" MaxLength="255" />
+          <Property Name="USUARIO_MODIFICA" Type="varchar2" MaxLength="255" />
+          <Property Name="FECHA_MODIFICA" Type="date" />
+          <Property Name="MAQUINA_MODIFICA" Type="varchar2" MaxLength="255" />
+          <Property Name="CARRERA_PRINCIPAL" Type="varchar2" MaxLength="255" />
+          <Property Name="MOTIVO_OPERACION" Type="varchar2" MaxLength="255" />
+          <Property Name="REG_VALIDADO" Type="varchar2" MaxLength="1" />
+          <Property Name="REG_ACT_POR" Type="varchar2" MaxLength="30" />
+          <Property Name="REG_FECHA_ACT" Type="date" />
+          <Property Name="REG_MAQUINA_ACT" Type="varchar2" MaxLength="30" />
+        </EntityType>
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'USR_IPE.SIGAC_EMPLEADOS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="SIGAC_EMPLEADOS">
           <Key>
@@ -523,6 +579,48 @@ FROM "USR_IPE"."SIGAC_CARRERAS" "SIGAC_CARRERAS"</DefiningQuery>
 "SIGAC_CATEGORIAS"."REG_MAQUINA_ACT" AS "REG_MAQUINA_ACT"
 FROM "USR_IPE"."SIGAC_CATEGORIAS" "SIGAC_CATEGORIAS"</DefiningQuery>
           </EntitySet>
+          <EntitySet Name="SIGAC_CURSOS" EntityType="Self.SIGAC_CURSOS" store:Type="Views" store:Schema="USR_IPE">
+            <DefiningQuery>SELECT 
+"SIGAC_CURSOS"."ID_CURSO" AS "ID_CURSO", 
+"SIGAC_CURSOS"."FECHA" AS "FECHA", 
+"SIGAC_CURSOS"."DESCRIPCION" AS "DESCRIPCION", 
+"SIGAC_CURSOS"."RAMA_PROFESIONAL" AS "RAMA_PROFESIONAL", 
+"SIGAC_CURSOS"."TIPO" AS "TIPO", 
+"SIGAC_CURSOS"."VIGENTE" AS "VIGENTE"
+FROM "USR_IPE"."SIGAC_CURSOS" "SIGAC_CURSOS"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="SIGAC_CURSOS_EMPLEADOS" EntityType="Self.SIGAC_CURSOS_EMPLEADOS" store:Type="Views" store:Schema="USR_IPE">
+            <DefiningQuery>SELECT 
+"SIGAC_CURSOS_EMPLEADOS"."CURSOS_EMPLEADOS_ID" AS "CURSOS_EMPLEADOS_ID", 
+"SIGAC_CURSOS_EMPLEADOS"."EMPL_CONSECUTIVO" AS "EMPL_CONSECUTIVO", 
+"SIGAC_CURSOS_EMPLEADOS"."EMPL_UNDE_FUERZA" AS "EMPL_UNDE_FUERZA", 
+"SIGAC_CURSOS_EMPLEADOS"."ID_CURSO" AS "ID_CURSO", 
+"SIGAC_CURSOS_EMPLEADOS"."ID_CENTRO_EDUCATIVO" AS "ID_CENTRO_EDUCATIVO", 
+"SIGAC_CURSOS_EMPLEADOS"."FECHA_INICIO" AS "FECHA_INICIO", 
+"SIGAC_CURSOS_EMPLEADOS"."FECHA_FIN" AS "FECHA_FIN", 
+"SIGAC_CURSOS_EMPLEADOS"."DURACION" AS "DURACION", 
+"SIGAC_CURSOS_EMPLEADOS"."DURACION_TIPO" AS "DURACION_TIPO", 
+"SIGAC_CURSOS_EMPLEADOS"."OBSERVACION" AS "OBSERVACION", 
+"SIGAC_CURSOS_EMPLEADOS"."USUARIO_CREACION" AS "USUARIO_CREACION", 
+"SIGAC_CURSOS_EMPLEADOS"."FECHA_CREACION" AS "FECHA_CREACION", 
+"SIGAC_CURSOS_EMPLEADOS"."MAQUINA_CREACION" AS "MAQUINA_CREACION", 
+"SIGAC_CURSOS_EMPLEADOS"."ID_TIPO" AS "ID_TIPO", 
+"SIGAC_CURSOS_EMPLEADOS"."EMPL_UNDE_CONSECUTIVO" AS "EMPL_UNDE_CONSECUTIVO", 
+"SIGAC_CURSOS_EMPLEADOS"."TARJETA_PROFESIONAL" AS "TARJETA_PROFESIONAL", 
+"SIGAC_CURSOS_EMPLEADOS"."FECHA_GRADO" AS "FECHA_GRADO", 
+"SIGAC_CURSOS_EMPLEADOS"."PUESTO" AS "PUESTO", 
+"SIGAC_CURSOS_EMPLEADOS"."TITULO" AS "TITULO", 
+"SIGAC_CURSOS_EMPLEADOS"."USUARIO_MODIFICA" AS "USUARIO_MODIFICA", 
+"SIGAC_CURSOS_EMPLEADOS"."FECHA_MODIFICA" AS "FECHA_MODIFICA", 
+"SIGAC_CURSOS_EMPLEADOS"."MAQUINA_MODIFICA" AS "MAQUINA_MODIFICA", 
+"SIGAC_CURSOS_EMPLEADOS"."CARRERA_PRINCIPAL" AS "CARRERA_PRINCIPAL", 
+"SIGAC_CURSOS_EMPLEADOS"."MOTIVO_OPERACION" AS "MOTIVO_OPERACION", 
+"SIGAC_CURSOS_EMPLEADOS"."REG_VALIDADO" AS "REG_VALIDADO", 
+"SIGAC_CURSOS_EMPLEADOS"."REG_ACT_POR" AS "REG_ACT_POR", 
+"SIGAC_CURSOS_EMPLEADOS"."REG_FECHA_ACT" AS "REG_FECHA_ACT", 
+"SIGAC_CURSOS_EMPLEADOS"."REG_MAQUINA_ACT" AS "REG_MAQUINA_ACT"
+FROM "USR_IPE"."SIGAC_CURSOS_EMPLEADOS" "SIGAC_CURSOS_EMPLEADOS"</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="SIGAC_EMPLEADOS" EntityType="Self.SIGAC_EMPLEADOS" store:Type="Views" store:Schema="USR_IPE">
             <DefiningQuery>SELECT 
 "SIGAC_EMPLEADOS"."CONSECUTIVO" AS "CONSECUTIVO", 
@@ -800,168 +898,17 @@ FROM "USR_IPE"."SIGAC_UNIDADES_DEPENDENCIA" "SIGAC_UNIDADES_DEPENDENCIA"</Defini
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="SiathModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="SIGAC_EMPLEADOS">
-          <Key>
-            <PropertyRef Name="CONSECUTIVO" />
-            <PropertyRef Name="UNDE_FUERZA" />
-            <PropertyRef Name="UNDE_CONSECUTIVO" />
-            <PropertyRef Name="TIPO_IDENTIFICACION" />
-            <PropertyRef Name="IDENTIFICACION" />
-            <PropertyRef Name="NOMBRES" />
-            <PropertyRef Name="APELLIDOS" />
-            <PropertyRef Name="FECHA_NACIMIENTO" />
-            <PropertyRef Name="ESTADO_CIVIL" />
-            <PropertyRef Name="SEXO" />
-            <PropertyRef Name="TIPO_EMPLEADO" />
-            <PropertyRef Name="ACTIVO" />
-            <PropertyRef Name="ID_GRADO" />
-            <PropertyRef Name="CARG_CARGO" />
-            <PropertyRef Name="CARG_FUERZA" />
-            <PropertyRef Name="UNDE_FUERZA_LABORANDO" />
-            <PropertyRef Name="UNDE_CONSECUTIVO_LABORANDO" />
-            <PropertyRef Name="CREADO_POR" />
-            <PropertyRef Name="FECHA_CREACION" />
-            <PropertyRef Name="MAQUINA_CREACION" />
-            <PropertyRef Name="SILA_ID_SITUAC_LABOR" />
-          </Key>
-          <Property Name="CONSECUTIVO" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
-          <Property Name="UNDE_FUERZA" Type="Boolean" Nullable="false" />
-          <Property Name="UNDE_CONSECUTIVO" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
-          <Property Name="TIPO_IDENTIFICACION" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="IDENTIFICACION" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="CODIGO_MILITAR" Type="Decimal" Precision="38" Scale="0" />
-          <Property Name="NOMBRES" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="APELLIDOS" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="FECHA_NACIMIENTO" Type="DateTime" Nullable="false" />
-          <Property Name="GRUPO_SANGUINEO" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
-          <Property Name="FACTOR_RH" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
-          <Property Name="ESTADO_CIVIL" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="SEXO" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="DIRECCION" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
-          <Property Name="TELEFONO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="CLASE_LIBRETA" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
-          <Property Name="TIPO_EMPLEADO" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="ESTADO_EMPLEADO" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
-          <Property Name="ACTIVO" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="DIAS_VACACIONES" Type="Byte" />
-          <Property Name="FECHA_VACACIONES" Type="DateTime" />
-          <Property Name="PLACA" Type="Int32" />
-          <Property Name="HOJA_VIDA" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="NUMERO_CARNE" Type="Decimal" Precision="38" Scale="0" />
-          <Property Name="HORAS_LABORADAS" Type="Decimal" Precision="38" Scale="0" />
-          <Property Name="NUMERO_CURSO" Type="Byte" />
-          <Property Name="UBICACION_ESCALAFON" Type="Decimal" Precision="38" Scale="0" />
-          <Property Name="ENCARGO" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
-          <Property Name="CARRERA_ADTVA" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
-          <Property Name="LEY_100" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
-          <Property Name="JUSTICIA_PENAL" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
-          <Property Name="RESERVA" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
-          <Property Name="CONDICION_SANIDAD" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
-          <Property Name="CLASE_NOMINA" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
-          <Property Name="FECHA_DEFUNCION" Type="DateTime" />
-          <Property Name="VALIDA_ARCO" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
-          <Property Name="ID_GRADO" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
-          <Property Name="LUGE_CODIGO_NACE" Type="Int32" />
-          <Property Name="LUGE_CODIGO_LABORA" Type="Int32" />
-          <Property Name="LUBA_BARRI_CODIGO" Type="Decimal" Precision="38" Scale="0" />
-          <Property Name="LUGE_CODIGO_RESIDE" Type="Int32" />
-          <Property Name="CARG_CARGO" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
-          <Property Name="CARG_FUERZA" Type="Boolean" Nullable="false" />
-          <Property Name="EMPR_UNDE_FUERZA" Type="Boolean" />
-          <Property Name="EMPR_UNDE_CONSECUTIVO" Type="Decimal" Precision="38" Scale="0" />
-          <Property Name="EMPR_IDENTIFICACION" Type="Int64" />
-          <Property Name="EMPR_TIPO_IDENTIFICACION" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
-          <Property Name="UNDE_FUERZA_ATENDIDO" Type="Boolean" />
-          <Property Name="UNDE_CONSECUTIVO_ATENDIDO" Type="Decimal" Precision="38" Scale="0" />
-          <Property Name="UNDE_CONSECUTIVO_NOMINADO" Type="Decimal" Precision="38" Scale="0" />
-          <Property Name="UNDE_FUERZA_LABORANDO" Type="Boolean" Nullable="false" />
-          <Property Name="UNDE_CONSECUTIVO_LABORANDO" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
-          <Property Name="ARCU_FUERZA" Type="Boolean" />
-          <Property Name="ARCU_ID_ARMA_CUERPO" Type="Byte" />
-          <Property Name="ESPE_FUERZA" Type="Boolean" />
-          <Property Name="ESPE_ID_ESPECIALIDAD" Type="Decimal" Precision="38" Scale="0" />
-          <Property Name="CARR_FUERZA" Type="Boolean" />
-          <Property Name="CARRE_ID_CARRERA" Type="Int32" />
-          <Property Name="CREADO_POR" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="FECHA_CREACION" Type="DateTime" Nullable="false" />
-          <Property Name="MAQUINA_CREACION" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="ACTUALIZADO_POR" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="FECHA_ACTUALIZA" Type="DateTime" />
-          <Property Name="MAQUINA_ACTUALIZA" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="SILA_ID_SITUAC_LABOR" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
-          <Property Name="CENTRO_SOCIAL" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
-          <Property Name="CENTRO_VACACIONAL" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
-          <Property Name="EDIFICIO" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
-          <Property Name="SIGLA_LABORANDO" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="CONDICION_OFITE" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
-          <Property Name="LIBRETA_MILITAR" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
-          <Property Name="DRAGONEANTE" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
-          <Property Name="DESIGNADO" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
-          <Property Name="REGISTRO_DUPLICADO" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
-          <Property Name="MIGRADO_ORDEN" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
-          <Property Name="ID_FUENTE" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
-          <Property Name="ID_NOMINA" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
-          <Property Name="CON_NIVEL" Type="Int32" />
-          <Property Name="USUARIO_EMPRESARIAL" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="FECHA_EXPEDICION_LIBRETA" Type="DateTime" />
-          <Property Name="UNRE_CONSECUTIVO" Type="Decimal" Precision="38" Scale="0" />
-          <Property Name="REGISTRO_DEFUNCION" Type="Decimal" Precision="38" Scale="0" />
-          <Property Name="FECHA_PRESUNCION" Type="DateTime" />
-          <Property Name="CLASE_PRESUNCION" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
-          <Property Name="AUDIOCONSULTA_PIN" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="CHEQUEO_PIN" Type="Boolean" />
-          <Property Name="RESPUESTA_PIN" Type="Boolean" />
-          <Property Name="CORREO_ELECTRONICO" Type="String" MaxLength="240" FixedLength="false" Unicode="false" />
-          <Property Name="PLACA_CHIP" Type="Decimal" Precision="38" Scale="0" />
-          <Property Name="MOTIVO_OPERACION" Type="String" MaxLength="240" FixedLength="false" Unicode="false" />
-          <Property Name="NUMERO_CELULAR" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="LICENCIAC_TIPO" Type="Decimal" Precision="38" Scale="0" />
-          <Property Name="LICENCIAC_NUMERO" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
-          <Property Name="COLOR_PIEL" Type="Decimal" Precision="38" Scale="0" />
-          <Property Name="COLOR_CABELLO" Type="Decimal" Precision="38" Scale="0" />
-          <Property Name="COLOR_OJOS" Type="Decimal" Precision="38" Scale="0" />
-          <Property Name="ESTATURA" Type="Decimal" Precision="3" Scale="2" />
-          <Property Name="UNIDAD_PAGO_NOMINA" Type="Int16" />
-          <Property Name="ID_DIRECCION_PERTENECE" Type="Int16" />
-          <Property Name="ID_DEPARTAMENTO_PERTENECE" Type="Int16" />
-          <Property Name="ID_SUPERVISORIA_PERTENECE" Type="Int16" />
-          <Property Name="ID_DEPENDIENTE_PERTENECE" Type="Int16" />
-          <Property Name="REG_VALIDADO" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
-          <Property Name="REG_ACT_POR" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="REG_FECHA_ACT" Type="DateTime" />
-          <Property Name="REG_MAQUINA_ACT" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="ID_ESTRUCTURA_ORGANIZACIONAL" Type="Decimal" Precision="38" Scale="0" />
-          <Property Name="CEJAS" Type="Decimal" Precision="38" Scale="0" />
-          <Property Name="DENTADURA" Type="Decimal" Precision="38" Scale="0" />
-          <Property Name="NARIZ" Type="Decimal" Precision="38" Scale="0" />
-          <Property Name="PESO" Type="Decimal" Precision="38" Scale="0" />
-          <Property Name="RECOMENDADO" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
-          <Property Name="SENAPARTICULAR" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
-          <Property Name="CORREA" Type="Decimal" Precision="38" Scale="0" />
-          <Property Name="PANTALON" Type="Decimal" Precision="38" Scale="0" />
-          <Property Name="CAMISA" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
-          <Property Name="CALZADOS" Type="Decimal" Precision="38" Scale="0" />
-          <Property Name="TELEFONO2" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="CELULAR1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="CELULAR2" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="CENSO_PROVINCIA" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
-          <Property Name="CENSO_MUNICIPIO" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
-          <Property Name="CENSO_DISTRITO_MUNICIPAL" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
-          <Property Name="CENSO_BARRIO_SECTOR" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
-          <Property Name="CENSO_COMENTARIO" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
-          <Property Name="CENSO_DATOS_ARMA" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
-          <Property Name="MOTIVO" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="CORREO_ELECTRONICOP" Type="String" MaxLength="240" FixedLength="false" Unicode="false" />
-        </EntityType>
         <EntityContainer Name="SiathEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="SIGAC_EMPLEADOS" EntityType="Self.SIGAC_EMPLEADOS" />
           <EntitySet Name="SIGAC_CARGOS" EntityType="SiathModel.SIGAC_CARGOS" />
           <EntitySet Name="SIGAC_CARRERAS" EntityType="SiathModel.SIGAC_CARRERAS" />
           <EntitySet Name="SIGAC_CATEGORIAS" EntityType="SiathModel.SIGAC_CATEGORIAS" />
+          <EntitySet Name="SIGAC_CURSOS_EMPLEADOS" EntityType="SiathModel.SIGAC_CURSOS_EMPLEADOS" />
+          <EntitySet Name="SIGAC_EMPLEADOS" EntityType="SiathModel.SIGAC_EMPLEADOS" />
           <EntitySet Name="SIGAC_GRADOS" EntityType="SiathModel.SIGAC_GRADOS" />
           <EntitySet Name="SIGAC_LUGARES_GEOGRAFICOS" EntityType="SiathModel.SIGAC_LUGARES_GEOGRAFICOS" />
           <EntitySet Name="SIGAC_NIVELES_ACADEMICOS" EntityType="SiathModel.SIGAC_NIVELES_ACADEMICOS" />
           <EntitySet Name="SIGAC_UNIDADES_DEPENDENCIA" EntityType="SiathModel.SIGAC_UNIDADES_DEPENDENCIA" />
+          <EntitySet Name="SIGAC_CURSOS" EntityType="SiathModel.SIGAC_CURSOS" />
         </EntityContainer>
         <EntityType Name="SIGAC_CARGOS">
           <Key>
@@ -1063,6 +1010,197 @@ FROM "USR_IPE"."SIGAC_UNIDADES_DEPENDENCIA" "SIGAC_UNIDADES_DEPENDENCIA"</Defini
           <Property Name="REG_ACT_POR" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="REG_FECHA_ACT" Type="DateTime" />
           <Property Name="REG_MAQUINA_ACT" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="SIGAC_CURSOS_EMPLEADOS">
+          <Key>
+            <PropertyRef Name="CURSOS_EMPLEADOS_ID" />
+            <PropertyRef Name="EMPL_CONSECUTIVO" />
+            <PropertyRef Name="EMPL_UNDE_FUERZA" />
+            <PropertyRef Name="ID_CURSO" />
+            <PropertyRef Name="USUARIO_CREACION" />
+            <PropertyRef Name="FECHA_CREACION" />
+          </Key>
+          <Property Name="CURSOS_EMPLEADOS_ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="EMPL_CONSECUTIVO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="EMPL_UNDE_FUERZA" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="ID_CURSO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="ID_CENTRO_EDUCATIVO" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="FECHA_INICIO" Type="DateTime" />
+          <Property Name="FECHA_FIN" Type="DateTime" />
+          <Property Name="DURACION" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="DURACION_TIPO" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="OBSERVACION" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="USUARIO_CREACION" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="FECHA_CREACION" Type="DateTime" Nullable="false" />
+          <Property Name="MAQUINA_CREACION" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ID_TIPO" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="EMPL_UNDE_CONSECUTIVO" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="TARJETA_PROFESIONAL" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="FECHA_GRADO" Type="DateTime" />
+          <Property Name="PUESTO" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="TITULO" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="USUARIO_MODIFICA" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="FECHA_MODIFICA" Type="DateTime" />
+          <Property Name="MAQUINA_MODIFICA" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="CARRERA_PRINCIPAL" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="MOTIVO_OPERACION" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="REG_VALIDADO" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="REG_ACT_POR" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="REG_FECHA_ACT" Type="DateTime" />
+          <Property Name="REG_MAQUINA_ACT" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="SIGAC_EMPLEADOS">
+          <Key>
+            <PropertyRef Name="CONSECUTIVO" />
+            <PropertyRef Name="UNDE_FUERZA" />
+            <PropertyRef Name="UNDE_CONSECUTIVO" />
+            <PropertyRef Name="TIPO_IDENTIFICACION" />
+            <PropertyRef Name="IDENTIFICACION" />
+            <PropertyRef Name="NOMBRES" />
+            <PropertyRef Name="APELLIDOS" />
+            <PropertyRef Name="FECHA_NACIMIENTO" />
+            <PropertyRef Name="ESTADO_CIVIL" />
+            <PropertyRef Name="SEXO" />
+            <PropertyRef Name="TIPO_EMPLEADO" />
+            <PropertyRef Name="ACTIVO" />
+            <PropertyRef Name="ID_GRADO" />
+            <PropertyRef Name="CARG_CARGO" />
+            <PropertyRef Name="CARG_FUERZA" />
+            <PropertyRef Name="UNDE_FUERZA_LABORANDO" />
+            <PropertyRef Name="UNDE_CONSECUTIVO_LABORANDO" />
+            <PropertyRef Name="CREADO_POR" />
+            <PropertyRef Name="FECHA_CREACION" />
+            <PropertyRef Name="MAQUINA_CREACION" />
+            <PropertyRef Name="SILA_ID_SITUAC_LABOR" />
+          </Key>
+          <Property Name="CONSECUTIVO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="UNDE_FUERZA" Type="Boolean" Nullable="false" />
+          <Property Name="UNDE_CONSECUTIVO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="TIPO_IDENTIFICACION" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="IDENTIFICACION" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="CODIGO_MILITAR" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="NOMBRES" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="APELLIDOS" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="FECHA_NACIMIENTO" Type="DateTime" Nullable="false" />
+          <Property Name="GRUPO_SANGUINEO" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="FACTOR_RH" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="ESTADO_CIVIL" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="SEXO" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="DIRECCION" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+          <Property Name="TELEFONO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="CLASE_LIBRETA" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="TIPO_EMPLEADO" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="ESTADO_EMPLEADO" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="ACTIVO" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="DIAS_VACACIONES" Type="Byte" />
+          <Property Name="FECHA_VACACIONES" Type="DateTime" />
+          <Property Name="PLACA" Type="Int32" />
+          <Property Name="HOJA_VIDA" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="NUMERO_CARNE" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="HORAS_LABORADAS" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="NUMERO_CURSO" Type="Byte" />
+          <Property Name="UBICACION_ESCALAFON" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="ENCARGO" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="CARRERA_ADTVA" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="LEY_100" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="JUSTICIA_PENAL" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="RESERVA" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="CONDICION_SANIDAD" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="CLASE_NOMINA" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="FECHA_DEFUNCION" Type="DateTime" />
+          <Property Name="VALIDA_ARCO" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="ID_GRADO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="LUGE_CODIGO_NACE" Type="Int32" />
+          <Property Name="LUGE_CODIGO_LABORA" Type="Int32" />
+          <Property Name="LUBA_BARRI_CODIGO" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="LUGE_CODIGO_RESIDE" Type="Int32" />
+          <Property Name="CARG_CARGO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="CARG_FUERZA" Type="Boolean" Nullable="false" />
+          <Property Name="EMPR_UNDE_FUERZA" Type="Boolean" />
+          <Property Name="EMPR_UNDE_CONSECUTIVO" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="EMPR_IDENTIFICACION" Type="Int64" />
+          <Property Name="EMPR_TIPO_IDENTIFICACION" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="UNDE_FUERZA_ATENDIDO" Type="Boolean" />
+          <Property Name="UNDE_CONSECUTIVO_ATENDIDO" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="UNDE_CONSECUTIVO_NOMINADO" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="UNDE_FUERZA_LABORANDO" Type="Boolean" Nullable="false" />
+          <Property Name="UNDE_CONSECUTIVO_LABORANDO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="ARCU_FUERZA" Type="Boolean" />
+          <Property Name="ARCU_ID_ARMA_CUERPO" Type="Byte" />
+          <Property Name="ESPE_FUERZA" Type="Boolean" />
+          <Property Name="ESPE_ID_ESPECIALIDAD" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="CARR_FUERZA" Type="Boolean" />
+          <Property Name="CARRE_ID_CARRERA" Type="Int32" />
+          <Property Name="CREADO_POR" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="FECHA_CREACION" Type="DateTime" Nullable="false" />
+          <Property Name="MAQUINA_CREACION" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="ACTUALIZADO_POR" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="FECHA_ACTUALIZA" Type="DateTime" />
+          <Property Name="MAQUINA_ACTUALIZA" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="SILA_ID_SITUAC_LABOR" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="CENTRO_SOCIAL" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="CENTRO_VACACIONAL" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="EDIFICIO" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="SIGLA_LABORANDO" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="CONDICION_OFITE" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="LIBRETA_MILITAR" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="DRAGONEANTE" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="DESIGNADO" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="REGISTRO_DUPLICADO" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="MIGRADO_ORDEN" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="ID_FUENTE" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
+          <Property Name="ID_NOMINA" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
+          <Property Name="CON_NIVEL" Type="Int32" />
+          <Property Name="USUARIO_EMPRESARIAL" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="FECHA_EXPEDICION_LIBRETA" Type="DateTime" />
+          <Property Name="UNRE_CONSECUTIVO" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="REGISTRO_DEFUNCION" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="FECHA_PRESUNCION" Type="DateTime" />
+          <Property Name="CLASE_PRESUNCION" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="AUDIOCONSULTA_PIN" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CHEQUEO_PIN" Type="Boolean" />
+          <Property Name="RESPUESTA_PIN" Type="Boolean" />
+          <Property Name="CORREO_ELECTRONICO" Type="String" MaxLength="240" FixedLength="false" Unicode="false" />
+          <Property Name="PLACA_CHIP" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="MOTIVO_OPERACION" Type="String" MaxLength="240" FixedLength="false" Unicode="false" />
+          <Property Name="NUMERO_CELULAR" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="LICENCIAC_TIPO" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="LICENCIAC_NUMERO" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="COLOR_PIEL" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="COLOR_CABELLO" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="COLOR_OJOS" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="ESTATURA" Type="Decimal" Precision="3" Scale="2" />
+          <Property Name="UNIDAD_PAGO_NOMINA" Type="Int16" />
+          <Property Name="ID_DIRECCION_PERTENECE" Type="Int16" />
+          <Property Name="ID_DEPARTAMENTO_PERTENECE" Type="Int16" />
+          <Property Name="ID_SUPERVISORIA_PERTENECE" Type="Int16" />
+          <Property Name="ID_DEPENDIENTE_PERTENECE" Type="Int16" />
+          <Property Name="REG_VALIDADO" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="REG_ACT_POR" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="REG_FECHA_ACT" Type="DateTime" />
+          <Property Name="REG_MAQUINA_ACT" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="ID_ESTRUCTURA_ORGANIZACIONAL" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="CEJAS" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="DENTADURA" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="NARIZ" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PESO" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="RECOMENDADO" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+          <Property Name="SENAPARTICULAR" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+          <Property Name="CORREA" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PANTALON" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="CAMISA" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="CALZADOS" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="TELEFONO2" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="CELULAR1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="CELULAR2" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="CENSO_PROVINCIA" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="CENSO_MUNICIPIO" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="CENSO_DISTRITO_MUNICIPAL" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="CENSO_BARRIO_SECTOR" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="CENSO_COMENTARIO" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="CENSO_DATOS_ARMA" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+          <Property Name="MOTIVO" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="CORREO_ELECTRONICOP" Type="String" MaxLength="240" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="SIGAC_GRADOS">
           <Key>
@@ -1234,146 +1372,26 @@ FROM "USR_IPE"."SIGAC_UNIDADES_DEPENDENCIA" "SIGAC_UNIDADES_DEPENDENCIA"</Defini
           <Property Name="REG_MAQUINA_ACT" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="AREA" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
         </EntityType>
-      </Schema>
+        <EntityType Name="SIGAC_CURSOS">
+          <Key>
+            <PropertyRef Name="ID_CURSO" />
+            <PropertyRef Name="FECHA" />
+            <PropertyRef Name="DESCRIPCION" />
+            <PropertyRef Name="VIGENTE" />
+          </Key>
+          <Property Name="ID_CURSO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="FECHA" Type="DateTime" Nullable="false" />
+          <Property Name="DESCRIPCION" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="RAMA_PROFESIONAL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TIPO" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="VIGENTE" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+        </EntityType>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="SiathModelStoreContainer" CdmEntityContainer="SiathEntities">
-          <EntitySetMapping Name="SIGAC_EMPLEADOS">
-            <EntityTypeMapping TypeName="SiathModel.SIGAC_EMPLEADOS">
-              <MappingFragment StoreEntitySet="SIGAC_EMPLEADOS">
-                <ScalarProperty Name="CONSECUTIVO" ColumnName="CONSECUTIVO" />
-                <ScalarProperty Name="UNDE_FUERZA" ColumnName="UNDE_FUERZA" />
-                <ScalarProperty Name="UNDE_CONSECUTIVO" ColumnName="UNDE_CONSECUTIVO" />
-                <ScalarProperty Name="TIPO_IDENTIFICACION" ColumnName="TIPO_IDENTIFICACION" />
-                <ScalarProperty Name="IDENTIFICACION" ColumnName="IDENTIFICACION" />
-                <ScalarProperty Name="CODIGO_MILITAR" ColumnName="CODIGO_MILITAR" />
-                <ScalarProperty Name="NOMBRES" ColumnName="NOMBRES" />
-                <ScalarProperty Name="APELLIDOS" ColumnName="APELLIDOS" />
-                <ScalarProperty Name="FECHA_NACIMIENTO" ColumnName="FECHA_NACIMIENTO" />
-                <ScalarProperty Name="GRUPO_SANGUINEO" ColumnName="GRUPO_SANGUINEO" />
-                <ScalarProperty Name="FACTOR_RH" ColumnName="FACTOR_RH" />
-                <ScalarProperty Name="ESTADO_CIVIL" ColumnName="ESTADO_CIVIL" />
-                <ScalarProperty Name="SEXO" ColumnName="SEXO" />
-                <ScalarProperty Name="DIRECCION" ColumnName="DIRECCION" />
-                <ScalarProperty Name="TELEFONO" ColumnName="TELEFONO" />
-                <ScalarProperty Name="CLASE_LIBRETA" ColumnName="CLASE_LIBRETA" />
-                <ScalarProperty Name="TIPO_EMPLEADO" ColumnName="TIPO_EMPLEADO" />
-                <ScalarProperty Name="ESTADO_EMPLEADO" ColumnName="ESTADO_EMPLEADO" />
-                <ScalarProperty Name="ACTIVO" ColumnName="ACTIVO" />
-                <ScalarProperty Name="DIAS_VACACIONES" ColumnName="DIAS_VACACIONES" />
-                <ScalarProperty Name="FECHA_VACACIONES" ColumnName="FECHA_VACACIONES" />
-                <ScalarProperty Name="PLACA" ColumnName="PLACA" />
-                <ScalarProperty Name="HOJA_VIDA" ColumnName="HOJA_VIDA" />
-                <ScalarProperty Name="NUMERO_CARNE" ColumnName="NUMERO_CARNE" />
-                <ScalarProperty Name="HORAS_LABORADAS" ColumnName="HORAS_LABORADAS" />
-                <ScalarProperty Name="NUMERO_CURSO" ColumnName="NUMERO_CURSO" />
-                <ScalarProperty Name="UBICACION_ESCALAFON" ColumnName="UBICACION_ESCALAFON" />
-                <ScalarProperty Name="ENCARGO" ColumnName="ENCARGO" />
-                <ScalarProperty Name="CARRERA_ADTVA" ColumnName="CARRERA_ADTVA" />
-                <ScalarProperty Name="LEY_100" ColumnName="LEY_100" />
-                <ScalarProperty Name="JUSTICIA_PENAL" ColumnName="JUSTICIA_PENAL" />
-                <ScalarProperty Name="RESERVA" ColumnName="RESERVA" />
-                <ScalarProperty Name="CONDICION_SANIDAD" ColumnName="CONDICION_SANIDAD" />
-                <ScalarProperty Name="CLASE_NOMINA" ColumnName="CLASE_NOMINA" />
-                <ScalarProperty Name="FECHA_DEFUNCION" ColumnName="FECHA_DEFUNCION" />
-                <ScalarProperty Name="VALIDA_ARCO" ColumnName="VALIDA_ARCO" />
-                <ScalarProperty Name="ID_GRADO" ColumnName="ID_GRADO" />
-                <ScalarProperty Name="LUGE_CODIGO_NACE" ColumnName="LUGE_CODIGO_NACE" />
-                <ScalarProperty Name="LUGE_CODIGO_LABORA" ColumnName="LUGE_CODIGO_LABORA" />
-                <ScalarProperty Name="LUBA_BARRI_CODIGO" ColumnName="LUBA_BARRI_CODIGO" />
-                <ScalarProperty Name="LUGE_CODIGO_RESIDE" ColumnName="LUGE_CODIGO_RESIDE" />
-                <ScalarProperty Name="CARG_CARGO" ColumnName="CARG_CARGO" />
-                <ScalarProperty Name="CARG_FUERZA" ColumnName="CARG_FUERZA" />
-                <ScalarProperty Name="EMPR_UNDE_FUERZA" ColumnName="EMPR_UNDE_FUERZA" />
-                <ScalarProperty Name="EMPR_UNDE_CONSECUTIVO" ColumnName="EMPR_UNDE_CONSECUTIVO" />
-                <ScalarProperty Name="EMPR_IDENTIFICACION" ColumnName="EMPR_IDENTIFICACION" />
-                <ScalarProperty Name="EMPR_TIPO_IDENTIFICACION" ColumnName="EMPR_TIPO_IDENTIFICACION" />
-                <ScalarProperty Name="UNDE_FUERZA_ATENDIDO" ColumnName="UNDE_FUERZA_ATENDIDO" />
-                <ScalarProperty Name="UNDE_CONSECUTIVO_ATENDIDO" ColumnName="UNDE_CONSECUTIVO_ATENDIDO" />
-                <ScalarProperty Name="UNDE_CONSECUTIVO_NOMINADO" ColumnName="UNDE_CONSECUTIVO_NOMINADO" />
-                <ScalarProperty Name="UNDE_FUERZA_LABORANDO" ColumnName="UNDE_FUERZA_LABORANDO" />
-                <ScalarProperty Name="UNDE_CONSECUTIVO_LABORANDO" ColumnName="UNDE_CONSECUTIVO_LABORANDO" />
-                <ScalarProperty Name="ARCU_FUERZA" ColumnName="ARCU_FUERZA" />
-                <ScalarProperty Name="ARCU_ID_ARMA_CUERPO" ColumnName="ARCU_ID_ARMA_CUERPO" />
-                <ScalarProperty Name="ESPE_FUERZA" ColumnName="ESPE_FUERZA" />
-                <ScalarProperty Name="ESPE_ID_ESPECIALIDAD" ColumnName="ESPE_ID_ESPECIALIDAD" />
-                <ScalarProperty Name="CARR_FUERZA" ColumnName="CARR_FUERZA" />
-                <ScalarProperty Name="CARRE_ID_CARRERA" ColumnName="CARRE_ID_CARRERA" />
-                <ScalarProperty Name="CREADO_POR" ColumnName="CREADO_POR" />
-                <ScalarProperty Name="FECHA_CREACION" ColumnName="FECHA_CREACION" />
-                <ScalarProperty Name="MAQUINA_CREACION" ColumnName="MAQUINA_CREACION" />
-                <ScalarProperty Name="ACTUALIZADO_POR" ColumnName="ACTUALIZADO_POR" />
-                <ScalarProperty Name="FECHA_ACTUALIZA" ColumnName="FECHA_ACTUALIZA" />
-                <ScalarProperty Name="MAQUINA_ACTUALIZA" ColumnName="MAQUINA_ACTUALIZA" />
-                <ScalarProperty Name="SILA_ID_SITUAC_LABOR" ColumnName="SILA_ID_SITUAC_LABOR" />
-                <ScalarProperty Name="CENTRO_SOCIAL" ColumnName="CENTRO_SOCIAL" />
-                <ScalarProperty Name="CENTRO_VACACIONAL" ColumnName="CENTRO_VACACIONAL" />
-                <ScalarProperty Name="EDIFICIO" ColumnName="EDIFICIO" />
-                <ScalarProperty Name="SIGLA_LABORANDO" ColumnName="SIGLA_LABORANDO" />
-                <ScalarProperty Name="CONDICION_OFITE" ColumnName="CONDICION_OFITE" />
-                <ScalarProperty Name="LIBRETA_MILITAR" ColumnName="LIBRETA_MILITAR" />
-                <ScalarProperty Name="DRAGONEANTE" ColumnName="DRAGONEANTE" />
-                <ScalarProperty Name="DESIGNADO" ColumnName="DESIGNADO" />
-                <ScalarProperty Name="REGISTRO_DUPLICADO" ColumnName="REGISTRO_DUPLICADO" />
-                <ScalarProperty Name="MIGRADO_ORDEN" ColumnName="MIGRADO_ORDEN" />
-                <ScalarProperty Name="ID_FUENTE" ColumnName="ID_FUENTE" />
-                <ScalarProperty Name="ID_NOMINA" ColumnName="ID_NOMINA" />
-                <ScalarProperty Name="CON_NIVEL" ColumnName="CON_NIVEL" />
-                <ScalarProperty Name="USUARIO_EMPRESARIAL" ColumnName="USUARIO_EMPRESARIAL" />
-                <ScalarProperty Name="FECHA_EXPEDICION_LIBRETA" ColumnName="FECHA_EXPEDICION_LIBRETA" />
-                <ScalarProperty Name="UNRE_CONSECUTIVO" ColumnName="UNRE_CONSECUTIVO" />
-                <ScalarProperty Name="REGISTRO_DEFUNCION" ColumnName="REGISTRO_DEFUNCION" />
-                <ScalarProperty Name="FECHA_PRESUNCION" ColumnName="FECHA_PRESUNCION" />
-                <ScalarProperty Name="CLASE_PRESUNCION" ColumnName="CLASE_PRESUNCION" />
-                <ScalarProperty Name="AUDIOCONSULTA_PIN" ColumnName="AUDIOCONSULTA_PIN" />
-                <ScalarProperty Name="CHEQUEO_PIN" ColumnName="CHEQUEO_PIN" />
-                <ScalarProperty Name="RESPUESTA_PIN" ColumnName="RESPUESTA_PIN" />
-                <ScalarProperty Name="CORREO_ELECTRONICO" ColumnName="CORREO_ELECTRONICO" />
-                <ScalarProperty Name="PLACA_CHIP" ColumnName="PLACA_CHIP" />
-                <ScalarProperty Name="MOTIVO_OPERACION" ColumnName="MOTIVO_OPERACION" />
-                <ScalarProperty Name="NUMERO_CELULAR" ColumnName="NUMERO_CELULAR" />
-                <ScalarProperty Name="LICENCIAC_TIPO" ColumnName="LICENCIAC_TIPO" />
-                <ScalarProperty Name="LICENCIAC_NUMERO" ColumnName="LICENCIAC_NUMERO" />
-                <ScalarProperty Name="COLOR_PIEL" ColumnName="COLOR_PIEL" />
-                <ScalarProperty Name="COLOR_CABELLO" ColumnName="COLOR_CABELLO" />
-                <ScalarProperty Name="COLOR_OJOS" ColumnName="COLOR_OJOS" />
-                <ScalarProperty Name="ESTATURA" ColumnName="ESTATURA" />
-                <ScalarProperty Name="UNIDAD_PAGO_NOMINA" ColumnName="UNIDAD_PAGO_NOMINA" />
-                <ScalarProperty Name="ID_DIRECCION_PERTENECE" ColumnName="ID_DIRECCION_PERTENECE" />
-                <ScalarProperty Name="ID_DEPARTAMENTO_PERTENECE" ColumnName="ID_DEPARTAMENTO_PERTENECE" />
-                <ScalarProperty Name="ID_SUPERVISORIA_PERTENECE" ColumnName="ID_SUPERVISORIA_PERTENECE" />
-                <ScalarProperty Name="ID_DEPENDIENTE_PERTENECE" ColumnName="ID_DEPENDIENTE_PERTENECE" />
-                <ScalarProperty Name="REG_VALIDADO" ColumnName="REG_VALIDADO" />
-                <ScalarProperty Name="REG_ACT_POR" ColumnName="REG_ACT_POR" />
-                <ScalarProperty Name="REG_FECHA_ACT" ColumnName="REG_FECHA_ACT" />
-                <ScalarProperty Name="REG_MAQUINA_ACT" ColumnName="REG_MAQUINA_ACT" />
-                <ScalarProperty Name="ID_ESTRUCTURA_ORGANIZACIONAL" ColumnName="ID_ESTRUCTURA_ORGANIZACIONAL" />
-                <ScalarProperty Name="CEJAS" ColumnName="CEJAS" />
-                <ScalarProperty Name="DENTADURA" ColumnName="DENTADURA" />
-                <ScalarProperty Name="NARIZ" ColumnName="NARIZ" />
-                <ScalarProperty Name="PESO" ColumnName="PESO" />
-                <ScalarProperty Name="RECOMENDADO" ColumnName="RECOMENDADO" />
-                <ScalarProperty Name="SENAPARTICULAR" ColumnName="SENAPARTICULAR" />
-                <ScalarProperty Name="CORREA" ColumnName="CORREA" />
-                <ScalarProperty Name="PANTALON" ColumnName="PANTALON" />
-                <ScalarProperty Name="CAMISA" ColumnName="CAMISA" />
-                <ScalarProperty Name="CALZADOS" ColumnName="CALZADOS" />
-                <ScalarProperty Name="TELEFONO2" ColumnName="TELEFONO2" />
-                <ScalarProperty Name="CELULAR1" ColumnName="CELULAR1" />
-                <ScalarProperty Name="CELULAR2" ColumnName="CELULAR2" />
-                <ScalarProperty Name="CENSO_PROVINCIA" ColumnName="CENSO_PROVINCIA" />
-                <ScalarProperty Name="CENSO_MUNICIPIO" ColumnName="CENSO_MUNICIPIO" />
-                <ScalarProperty Name="CENSO_DISTRITO_MUNICIPAL" ColumnName="CENSO_DISTRITO_MUNICIPAL" />
-                <ScalarProperty Name="CENSO_BARRIO_SECTOR" ColumnName="CENSO_BARRIO_SECTOR" />
-                <ScalarProperty Name="CENSO_COMENTARIO" ColumnName="CENSO_COMENTARIO" />
-                <ScalarProperty Name="CENSO_DATOS_ARMA" ColumnName="CENSO_DATOS_ARMA" />
-                <ScalarProperty Name="MOTIVO" ColumnName="MOTIVO" />
-                <ScalarProperty Name="CORREO_ELECTRONICOP" ColumnName="CORREO_ELECTRONICOP" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="SIGAC_CARGOS">
             <EntityTypeMapping TypeName="SiathModel.SIGAC_CARGOS">
               <MappingFragment StoreEntitySet="SIGAC_CARGOS">
@@ -1454,6 +1472,174 @@ FROM "USR_IPE"."SIGAC_UNIDADES_DEPENDENCIA" "SIGAC_UNIDADES_DEPENDENCIA"</Defini
                 <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
                 <ScalarProperty Name="ID_CATEGORIA" ColumnName="ID_CATEGORIA" />
                 <ScalarProperty Name="FUERZA" ColumnName="FUERZA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SIGAC_CURSOS_EMPLEADOS">
+            <EntityTypeMapping TypeName="SiathModel.SIGAC_CURSOS_EMPLEADOS">
+              <MappingFragment StoreEntitySet="SIGAC_CURSOS_EMPLEADOS">
+                <ScalarProperty Name="REG_MAQUINA_ACT" ColumnName="REG_MAQUINA_ACT" />
+                <ScalarProperty Name="REG_FECHA_ACT" ColumnName="REG_FECHA_ACT" />
+                <ScalarProperty Name="REG_ACT_POR" ColumnName="REG_ACT_POR" />
+                <ScalarProperty Name="REG_VALIDADO" ColumnName="REG_VALIDADO" />
+                <ScalarProperty Name="MOTIVO_OPERACION" ColumnName="MOTIVO_OPERACION" />
+                <ScalarProperty Name="CARRERA_PRINCIPAL" ColumnName="CARRERA_PRINCIPAL" />
+                <ScalarProperty Name="MAQUINA_MODIFICA" ColumnName="MAQUINA_MODIFICA" />
+                <ScalarProperty Name="FECHA_MODIFICA" ColumnName="FECHA_MODIFICA" />
+                <ScalarProperty Name="USUARIO_MODIFICA" ColumnName="USUARIO_MODIFICA" />
+                <ScalarProperty Name="TITULO" ColumnName="TITULO" />
+                <ScalarProperty Name="PUESTO" ColumnName="PUESTO" />
+                <ScalarProperty Name="FECHA_GRADO" ColumnName="FECHA_GRADO" />
+                <ScalarProperty Name="TARJETA_PROFESIONAL" ColumnName="TARJETA_PROFESIONAL" />
+                <ScalarProperty Name="EMPL_UNDE_CONSECUTIVO" ColumnName="EMPL_UNDE_CONSECUTIVO" />
+                <ScalarProperty Name="ID_TIPO" ColumnName="ID_TIPO" />
+                <ScalarProperty Name="MAQUINA_CREACION" ColumnName="MAQUINA_CREACION" />
+                <ScalarProperty Name="FECHA_CREACION" ColumnName="FECHA_CREACION" />
+                <ScalarProperty Name="USUARIO_CREACION" ColumnName="USUARIO_CREACION" />
+                <ScalarProperty Name="OBSERVACION" ColumnName="OBSERVACION" />
+                <ScalarProperty Name="DURACION_TIPO" ColumnName="DURACION_TIPO" />
+                <ScalarProperty Name="DURACION" ColumnName="DURACION" />
+                <ScalarProperty Name="FECHA_FIN" ColumnName="FECHA_FIN" />
+                <ScalarProperty Name="FECHA_INICIO" ColumnName="FECHA_INICIO" />
+                <ScalarProperty Name="ID_CENTRO_EDUCATIVO" ColumnName="ID_CENTRO_EDUCATIVO" />
+                <ScalarProperty Name="ID_CURSO" ColumnName="ID_CURSO" />
+                <ScalarProperty Name="EMPL_UNDE_FUERZA" ColumnName="EMPL_UNDE_FUERZA" />
+                <ScalarProperty Name="EMPL_CONSECUTIVO" ColumnName="EMPL_CONSECUTIVO" />
+                <ScalarProperty Name="CURSOS_EMPLEADOS_ID" ColumnName="CURSOS_EMPLEADOS_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SIGAC_EMPLEADOS">
+            <EntityTypeMapping TypeName="SiathModel.SIGAC_EMPLEADOS">
+              <MappingFragment StoreEntitySet="SIGAC_EMPLEADOS">
+                <ScalarProperty Name="CORREO_ELECTRONICOP" ColumnName="CORREO_ELECTRONICOP" />
+                <ScalarProperty Name="MOTIVO" ColumnName="MOTIVO" />
+                <ScalarProperty Name="CENSO_DATOS_ARMA" ColumnName="CENSO_DATOS_ARMA" />
+                <ScalarProperty Name="CENSO_COMENTARIO" ColumnName="CENSO_COMENTARIO" />
+                <ScalarProperty Name="CENSO_BARRIO_SECTOR" ColumnName="CENSO_BARRIO_SECTOR" />
+                <ScalarProperty Name="CENSO_DISTRITO_MUNICIPAL" ColumnName="CENSO_DISTRITO_MUNICIPAL" />
+                <ScalarProperty Name="CENSO_MUNICIPIO" ColumnName="CENSO_MUNICIPIO" />
+                <ScalarProperty Name="CENSO_PROVINCIA" ColumnName="CENSO_PROVINCIA" />
+                <ScalarProperty Name="CELULAR2" ColumnName="CELULAR2" />
+                <ScalarProperty Name="CELULAR1" ColumnName="CELULAR1" />
+                <ScalarProperty Name="TELEFONO2" ColumnName="TELEFONO2" />
+                <ScalarProperty Name="CALZADOS" ColumnName="CALZADOS" />
+                <ScalarProperty Name="CAMISA" ColumnName="CAMISA" />
+                <ScalarProperty Name="PANTALON" ColumnName="PANTALON" />
+                <ScalarProperty Name="CORREA" ColumnName="CORREA" />
+                <ScalarProperty Name="SENAPARTICULAR" ColumnName="SENAPARTICULAR" />
+                <ScalarProperty Name="RECOMENDADO" ColumnName="RECOMENDADO" />
+                <ScalarProperty Name="PESO" ColumnName="PESO" />
+                <ScalarProperty Name="NARIZ" ColumnName="NARIZ" />
+                <ScalarProperty Name="DENTADURA" ColumnName="DENTADURA" />
+                <ScalarProperty Name="CEJAS" ColumnName="CEJAS" />
+                <ScalarProperty Name="ID_ESTRUCTURA_ORGANIZACIONAL" ColumnName="ID_ESTRUCTURA_ORGANIZACIONAL" />
+                <ScalarProperty Name="REG_MAQUINA_ACT" ColumnName="REG_MAQUINA_ACT" />
+                <ScalarProperty Name="REG_FECHA_ACT" ColumnName="REG_FECHA_ACT" />
+                <ScalarProperty Name="REG_ACT_POR" ColumnName="REG_ACT_POR" />
+                <ScalarProperty Name="REG_VALIDADO" ColumnName="REG_VALIDADO" />
+                <ScalarProperty Name="ID_DEPENDIENTE_PERTENECE" ColumnName="ID_DEPENDIENTE_PERTENECE" />
+                <ScalarProperty Name="ID_SUPERVISORIA_PERTENECE" ColumnName="ID_SUPERVISORIA_PERTENECE" />
+                <ScalarProperty Name="ID_DEPARTAMENTO_PERTENECE" ColumnName="ID_DEPARTAMENTO_PERTENECE" />
+                <ScalarProperty Name="ID_DIRECCION_PERTENECE" ColumnName="ID_DIRECCION_PERTENECE" />
+                <ScalarProperty Name="UNIDAD_PAGO_NOMINA" ColumnName="UNIDAD_PAGO_NOMINA" />
+                <ScalarProperty Name="ESTATURA" ColumnName="ESTATURA" />
+                <ScalarProperty Name="COLOR_OJOS" ColumnName="COLOR_OJOS" />
+                <ScalarProperty Name="COLOR_CABELLO" ColumnName="COLOR_CABELLO" />
+                <ScalarProperty Name="COLOR_PIEL" ColumnName="COLOR_PIEL" />
+                <ScalarProperty Name="LICENCIAC_NUMERO" ColumnName="LICENCIAC_NUMERO" />
+                <ScalarProperty Name="LICENCIAC_TIPO" ColumnName="LICENCIAC_TIPO" />
+                <ScalarProperty Name="NUMERO_CELULAR" ColumnName="NUMERO_CELULAR" />
+                <ScalarProperty Name="MOTIVO_OPERACION" ColumnName="MOTIVO_OPERACION" />
+                <ScalarProperty Name="PLACA_CHIP" ColumnName="PLACA_CHIP" />
+                <ScalarProperty Name="CORREO_ELECTRONICO" ColumnName="CORREO_ELECTRONICO" />
+                <ScalarProperty Name="RESPUESTA_PIN" ColumnName="RESPUESTA_PIN" />
+                <ScalarProperty Name="CHEQUEO_PIN" ColumnName="CHEQUEO_PIN" />
+                <ScalarProperty Name="AUDIOCONSULTA_PIN" ColumnName="AUDIOCONSULTA_PIN" />
+                <ScalarProperty Name="CLASE_PRESUNCION" ColumnName="CLASE_PRESUNCION" />
+                <ScalarProperty Name="FECHA_PRESUNCION" ColumnName="FECHA_PRESUNCION" />
+                <ScalarProperty Name="REGISTRO_DEFUNCION" ColumnName="REGISTRO_DEFUNCION" />
+                <ScalarProperty Name="UNRE_CONSECUTIVO" ColumnName="UNRE_CONSECUTIVO" />
+                <ScalarProperty Name="FECHA_EXPEDICION_LIBRETA" ColumnName="FECHA_EXPEDICION_LIBRETA" />
+                <ScalarProperty Name="USUARIO_EMPRESARIAL" ColumnName="USUARIO_EMPRESARIAL" />
+                <ScalarProperty Name="CON_NIVEL" ColumnName="CON_NIVEL" />
+                <ScalarProperty Name="ID_NOMINA" ColumnName="ID_NOMINA" />
+                <ScalarProperty Name="ID_FUENTE" ColumnName="ID_FUENTE" />
+                <ScalarProperty Name="MIGRADO_ORDEN" ColumnName="MIGRADO_ORDEN" />
+                <ScalarProperty Name="REGISTRO_DUPLICADO" ColumnName="REGISTRO_DUPLICADO" />
+                <ScalarProperty Name="DESIGNADO" ColumnName="DESIGNADO" />
+                <ScalarProperty Name="DRAGONEANTE" ColumnName="DRAGONEANTE" />
+                <ScalarProperty Name="LIBRETA_MILITAR" ColumnName="LIBRETA_MILITAR" />
+                <ScalarProperty Name="CONDICION_OFITE" ColumnName="CONDICION_OFITE" />
+                <ScalarProperty Name="SIGLA_LABORANDO" ColumnName="SIGLA_LABORANDO" />
+                <ScalarProperty Name="EDIFICIO" ColumnName="EDIFICIO" />
+                <ScalarProperty Name="CENTRO_VACACIONAL" ColumnName="CENTRO_VACACIONAL" />
+                <ScalarProperty Name="CENTRO_SOCIAL" ColumnName="CENTRO_SOCIAL" />
+                <ScalarProperty Name="SILA_ID_SITUAC_LABOR" ColumnName="SILA_ID_SITUAC_LABOR" />
+                <ScalarProperty Name="MAQUINA_ACTUALIZA" ColumnName="MAQUINA_ACTUALIZA" />
+                <ScalarProperty Name="FECHA_ACTUALIZA" ColumnName="FECHA_ACTUALIZA" />
+                <ScalarProperty Name="ACTUALIZADO_POR" ColumnName="ACTUALIZADO_POR" />
+                <ScalarProperty Name="MAQUINA_CREACION" ColumnName="MAQUINA_CREACION" />
+                <ScalarProperty Name="FECHA_CREACION" ColumnName="FECHA_CREACION" />
+                <ScalarProperty Name="CREADO_POR" ColumnName="CREADO_POR" />
+                <ScalarProperty Name="CARRE_ID_CARRERA" ColumnName="CARRE_ID_CARRERA" />
+                <ScalarProperty Name="CARR_FUERZA" ColumnName="CARR_FUERZA" />
+                <ScalarProperty Name="ESPE_ID_ESPECIALIDAD" ColumnName="ESPE_ID_ESPECIALIDAD" />
+                <ScalarProperty Name="ESPE_FUERZA" ColumnName="ESPE_FUERZA" />
+                <ScalarProperty Name="ARCU_ID_ARMA_CUERPO" ColumnName="ARCU_ID_ARMA_CUERPO" />
+                <ScalarProperty Name="ARCU_FUERZA" ColumnName="ARCU_FUERZA" />
+                <ScalarProperty Name="UNDE_CONSECUTIVO_LABORANDO" ColumnName="UNDE_CONSECUTIVO_LABORANDO" />
+                <ScalarProperty Name="UNDE_FUERZA_LABORANDO" ColumnName="UNDE_FUERZA_LABORANDO" />
+                <ScalarProperty Name="UNDE_CONSECUTIVO_NOMINADO" ColumnName="UNDE_CONSECUTIVO_NOMINADO" />
+                <ScalarProperty Name="UNDE_CONSECUTIVO_ATENDIDO" ColumnName="UNDE_CONSECUTIVO_ATENDIDO" />
+                <ScalarProperty Name="UNDE_FUERZA_ATENDIDO" ColumnName="UNDE_FUERZA_ATENDIDO" />
+                <ScalarProperty Name="EMPR_TIPO_IDENTIFICACION" ColumnName="EMPR_TIPO_IDENTIFICACION" />
+                <ScalarProperty Name="EMPR_IDENTIFICACION" ColumnName="EMPR_IDENTIFICACION" />
+                <ScalarProperty Name="EMPR_UNDE_CONSECUTIVO" ColumnName="EMPR_UNDE_CONSECUTIVO" />
+                <ScalarProperty Name="EMPR_UNDE_FUERZA" ColumnName="EMPR_UNDE_FUERZA" />
+                <ScalarProperty Name="CARG_FUERZA" ColumnName="CARG_FUERZA" />
+                <ScalarProperty Name="CARG_CARGO" ColumnName="CARG_CARGO" />
+                <ScalarProperty Name="LUGE_CODIGO_RESIDE" ColumnName="LUGE_CODIGO_RESIDE" />
+                <ScalarProperty Name="LUBA_BARRI_CODIGO" ColumnName="LUBA_BARRI_CODIGO" />
+                <ScalarProperty Name="LUGE_CODIGO_LABORA" ColumnName="LUGE_CODIGO_LABORA" />
+                <ScalarProperty Name="LUGE_CODIGO_NACE" ColumnName="LUGE_CODIGO_NACE" />
+                <ScalarProperty Name="ID_GRADO" ColumnName="ID_GRADO" />
+                <ScalarProperty Name="VALIDA_ARCO" ColumnName="VALIDA_ARCO" />
+                <ScalarProperty Name="FECHA_DEFUNCION" ColumnName="FECHA_DEFUNCION" />
+                <ScalarProperty Name="CLASE_NOMINA" ColumnName="CLASE_NOMINA" />
+                <ScalarProperty Name="CONDICION_SANIDAD" ColumnName="CONDICION_SANIDAD" />
+                <ScalarProperty Name="RESERVA" ColumnName="RESERVA" />
+                <ScalarProperty Name="JUSTICIA_PENAL" ColumnName="JUSTICIA_PENAL" />
+                <ScalarProperty Name="LEY_100" ColumnName="LEY_100" />
+                <ScalarProperty Name="CARRERA_ADTVA" ColumnName="CARRERA_ADTVA" />
+                <ScalarProperty Name="ENCARGO" ColumnName="ENCARGO" />
+                <ScalarProperty Name="UBICACION_ESCALAFON" ColumnName="UBICACION_ESCALAFON" />
+                <ScalarProperty Name="NUMERO_CURSO" ColumnName="NUMERO_CURSO" />
+                <ScalarProperty Name="HORAS_LABORADAS" ColumnName="HORAS_LABORADAS" />
+                <ScalarProperty Name="NUMERO_CARNE" ColumnName="NUMERO_CARNE" />
+                <ScalarProperty Name="HOJA_VIDA" ColumnName="HOJA_VIDA" />
+                <ScalarProperty Name="PLACA" ColumnName="PLACA" />
+                <ScalarProperty Name="FECHA_VACACIONES" ColumnName="FECHA_VACACIONES" />
+                <ScalarProperty Name="DIAS_VACACIONES" ColumnName="DIAS_VACACIONES" />
+                <ScalarProperty Name="ACTIVO" ColumnName="ACTIVO" />
+                <ScalarProperty Name="ESTADO_EMPLEADO" ColumnName="ESTADO_EMPLEADO" />
+                <ScalarProperty Name="TIPO_EMPLEADO" ColumnName="TIPO_EMPLEADO" />
+                <ScalarProperty Name="CLASE_LIBRETA" ColumnName="CLASE_LIBRETA" />
+                <ScalarProperty Name="TELEFONO" ColumnName="TELEFONO" />
+                <ScalarProperty Name="DIRECCION" ColumnName="DIRECCION" />
+                <ScalarProperty Name="SEXO" ColumnName="SEXO" />
+                <ScalarProperty Name="ESTADO_CIVIL" ColumnName="ESTADO_CIVIL" />
+                <ScalarProperty Name="FACTOR_RH" ColumnName="FACTOR_RH" />
+                <ScalarProperty Name="GRUPO_SANGUINEO" ColumnName="GRUPO_SANGUINEO" />
+                <ScalarProperty Name="FECHA_NACIMIENTO" ColumnName="FECHA_NACIMIENTO" />
+                <ScalarProperty Name="APELLIDOS" ColumnName="APELLIDOS" />
+                <ScalarProperty Name="NOMBRES" ColumnName="NOMBRES" />
+                <ScalarProperty Name="CODIGO_MILITAR" ColumnName="CODIGO_MILITAR" />
+                <ScalarProperty Name="IDENTIFICACION" ColumnName="IDENTIFICACION" />
+                <ScalarProperty Name="TIPO_IDENTIFICACION" ColumnName="TIPO_IDENTIFICACION" />
+                <ScalarProperty Name="UNDE_CONSECUTIVO" ColumnName="UNDE_CONSECUTIVO" />
+                <ScalarProperty Name="UNDE_FUERZA" ColumnName="UNDE_FUERZA" />
+                <ScalarProperty Name="CONSECUTIVO" ColumnName="CONSECUTIVO" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1602,6 +1788,18 @@ FROM "USR_IPE"."SIGAC_UNIDADES_DEPENDENCIA" "SIGAC_UNIDADES_DEPENDENCIA"</Defini
                 <ScalarProperty Name="DESCRIPCION_DEPENDENCIA" ColumnName="DESCRIPCION_DEPENDENCIA" />
                 <ScalarProperty Name="CONSECUTIVO" ColumnName="CONSECUTIVO" />
                 <ScalarProperty Name="FUERZA" ColumnName="FUERZA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SIGAC_CURSOS">
+            <EntityTypeMapping TypeName="SiathModel.SIGAC_CURSOS">
+              <MappingFragment StoreEntitySet="SIGAC_CURSOS">
+                <ScalarProperty Name="VIGENTE" ColumnName="VIGENTE" />
+                <ScalarProperty Name="TIPO" ColumnName="TIPO" />
+                <ScalarProperty Name="RAMA_PROFESIONAL" ColumnName="RAMA_PROFESIONAL" />
+                <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+                <ScalarProperty Name="FECHA" ColumnName="FECHA" />
+                <ScalarProperty Name="ID_CURSO" ColumnName="ID_CURSO" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="SIGAC.master.cs" Inherits="SIGAC.WEB.SIGAC" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="SIGAC.master.cs" Inherits="SIGAC.WEB.SIGAC" ClientIDMode="Static"%>
 
 <!DOCTYPE html>
 
@@ -39,7 +39,7 @@
     <form id="MainForm" runat="server">
         <section id="headerSection">
             <header>
-                <div class="GridRow fixed-top">
+                <div class="GridRow">
                     <div class="col10">
                         <uc:HeaderBanner runat="server" ID="HeaderBanner" />
                     </div>
@@ -60,8 +60,9 @@
                             <div id="head-mobile"></div>
                             <div class="button"></div>
                             <ul>
-                                <li><a href="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>" class='active'><i class="fas fa-home"></i> INICIO</a></li>
-                                <li><a href="#"><i class="fas fa-sticky-note"></i> ADMINISTRAR PAE</a>
+                                <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+                                <li><a href="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>" class='active'><i class="fas fa-home"></i>INICIO</a></li>
+                                <li><a href="#"><i class="fas fa-sticky-note"></i>ADMINISTRAR PAE</a>
                                     <ul style="z-index: 9999;">
                                         <li><a href="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>PAE/Administrar">ADMINISTRAR PAE</a></li>
                                         <li><a href="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>">ADMINISTRAR COBERTURAS</a></li>
@@ -70,12 +71,12 @@
                                         <li><a href="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>">ADMINISTRAR COBERTURAS FORMACION</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="#"><i class="fas fa-list-alt"></i> PROGRAMAS</a>
+                                <li><a href="#"><i class="fas fa-list-alt"></i>PROGRAMAS</a>
                                     <ul style="z-index: 9999;">
                                         <li><a href="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>Programas/Administrar">ADMINISTRAR PROGRAMAS</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="#"><i class="fas fa-calendar-alt"></i> DESARROLLO DE EVENTOS</a>
+                                <li><a href="#"><i class="fas fa-calendar-alt"></i>DESARROLLO DE EVENTOS</a>
                                     <ul style="z-index: 9999;">
                                         <li><a href="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>">ADMINISTRAR PRESUPUESTOS</a></li>
                                         <li><a href="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>">ADMINISTRAR PERSONAL EXTERNO</a></li>
@@ -89,7 +90,7 @@
                                         <li><a href="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>">ENVIAR EVALUACION EVENTO ESCUELA</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="#"><i class="fas fa-check-circle"></i> EVALUACIONES</a>
+                                <li><a href="#"><i class="fas fa-check-circle"></i>EVALUACIONES</a>
                                     <ul style="z-index: 9999;">
                                         <li><a href="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>">BUSCAR EVALUACION</a></li>
                                         <li><a href="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>">AGREGAR EVALUACION</a></li>
@@ -99,15 +100,14 @@
                                         <li><a href="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>">DESARROLLO EVALUACION</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="#"><i class="fas fa-cog"></i> SISTEMA</a>
+                                <li><a href="#"><i class="fas fa-cog"></i>SISTEMA</a>
                                     <ul style="z-index: 9999;">
                                         <li><a href="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>">RECINTOS</a></li>
                                         <li><a href="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>">ESCUELA</a></li>
                                         <li><a href="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>">AULAS</a></li>
-                                        <li><a href="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>">CURSOS</a></li>
-                                        <li><a href="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>">PROGRAMAS ACADEMICOS</a></li>
+                                        <li><a href="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>Sistema/Cursos">CURSOS</a></li>
                                         <li><a href="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>">ASIGNATURAS</a></li>
-                                        <li><a href="<%=SIGAC.Layers.GlobalVariables.ServerUrl%>Sistema/Usuarios">USUARIOS</a></li>
+                                        <li><a href="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>Sistema/Usuarios">USUARIOS</a></li>
                                         <li><a href="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>">GRUPOS</a></li>
                                         <li><a href="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>">PERMISOS</a></li>
                                     </ul>
@@ -132,7 +132,7 @@
         </footer>
         <asp:ContentPlaceHolder runat="server" ID="ScriptsCPH">
         </asp:ContentPlaceHolder>
-        <script src="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>Scripts/jquery-1.10.2.js"></script>
+        <script src="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>Scripts/jquery-3.3.1.js"></script>
         <script src="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>Scripts/User%20Scripts/menuJS.js"></script>
     </form>
 </body>
