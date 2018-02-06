@@ -42,55 +42,81 @@
                         <p>&nbsp;</p>
                     </div>
                     <div class="col8">
-                        <asp:GridView runat="server" ID="gridViewRecintos"
-                            AllowPaging="True"
-                            CssClass="w3-table-all"
-                            HeaderStyle-CssClass=""
-                            ShowHeaderWhenEmpty="True"
-                            AutoGenerateColumns="false"
-                            DataKeyNames="ID">
+                        <asp:GridView runat="server" ID="gridViewRecintos" DataKeyNames="ID" AutoGenerateColumns="false" ShowHeaderWhenEmpty="True"
+                            AllowPaging="True" CssClass="w3-table-all" OnRowDataBound="gridViewRecintos_RowDataBound"
+                            OnRowUpdating="gridViewRecintos_RowUpdating" OnRowEditing="gridViewRecintos_RowEditing"
+                            OnRowDeleting="gridViewRecintos_RowDeleting" OnRowCancelingEdit="gridViewRecintos_RowCancelingEdit"
+                            OnPageIndexChanging="gridViewRecintos_PageIndexChanging" EmptyDataText="No records has been added.">
 
                             <Columns>
-                                <asp:TemplateField HeaderText="Opciones">
+                                
+                                <asp:CommandField ButtonType="Link" HeaderText="Opciones"
+                                    ShowEditButton="true" ShowDeleteButton="true"
+                                    EditText="Editar" DeleteText="Eliminar" />
+                                <asp:TemplateField HeaderText="Id del Recinto" SortExpression="ID">
                                     <ItemTemplate>
-                                        <asp:LinkButton ID="editBtn" runat="server"
-                                                    CausesValidation="false"
-                                                    CssClass="w3-button w3-bar-item"
-                                                    CommandName="Edit" OnClick="accionBtn_Click"
-                                                    CommandArgument='<%#Eval("ID")%>'>
-                                                    Editar
-                                                </asp:LinkButton>
-                                        &nbsp;|&nbsp;
-                                        <asp:LinkButton ID="deleteBtn" runat="server"
-                                                    CausesValidation="false"
-                                                    CssClass="w3-button w3-bar-item"
-                                                    CommandName="Delete" OnClick="accionBtn_Click"
-                                                    CommandArgument='<%#Eval("ID")%>'>
-                                                    Eliminar
-                                                </asp:LinkButton>
+                                        <asp:Label ID="lblID" runat="server" Text='<%# Eval("ID") %>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                
+                                <asp:TemplateField HeaderText="Nombre del Recinto">
+                                    <ItemTemplate>
+                                        <asp:Label ID="lblNombre" runat="server" Text='<%# Eval("NOMBRE") %>'></asp:Label>
+                                    </ItemTemplate>
+                                    <EditItemTemplate>
+                                        <asp:TextBox ID="e_txtNombre" runat="server" Text='<%# Eval("NOMBRE")%>' />
+                                    </EditItemTemplate>
+                                </asp:TemplateField>
+                                
+                                <asp:TemplateField  HeaderText="Direccion del Recinto">
+                                    <ItemTemplate>
+                                        <asp:Label ID="lblDir" runat="server" Text='<%# Eval("DIRECCION") %>'></asp:Label>
+                                    </ItemTemplate>
+                                    <EditItemTemplate>
+                                        <asp:TextBox ID="e_txtDir" runat="server" Text='<%# Eval("DIRECCION") %>' />
+                                    </EditItemTemplate>
+                                </asp:TemplateField>
 
-                                    </ItemTemplate>
-                                </asp:TemplateField>
-                                <asp:BoundField DataField="ID" HeaderText="Id del Recinto" SortExpression="ID" />
-                                <asp:BoundField DataField="NOMBRE" HeaderText="Nombre del Recinto" />
-                                <asp:BoundField DataField="DIRECCION" HeaderText="Direccion del Recinto" />
-                                <asp:BoundField DataField="TELEFONO1" HeaderText="1er Telefono" />
-                                <asp:BoundField DataField="TELEFONO2" HeaderText="2do Telefono" />
-                                <asp:TemplateField>
-                                    <HeaderTemplate>
-                                        <p>Notas</p>
-                                    </HeaderTemplate>
+                                <asp:TemplateField  HeaderText="1er Telefono">
                                     <ItemTemplate>
-                                        <div>
-                                            <p><%# Eval("NOTA") %></p>
-                                        </div>
+                                        <asp:Label ID="lblTel1" runat="server" Text='<%# Eval("TELEFONO1") %>'></asp:Label>
                                     </ItemTemplate>
+                                    <EditItemTemplate>
+                                        <asp:TextBox ID="e_txtTel1" TextMode="Phone" Text='<%# Eval("TELEFONO1") %>' runat="server" />
+                                    </EditItemTemplate>
                                 </asp:TemplateField>
-                                <asp:BoundField DataField="ESTATUS" HeaderText="Estado" />
+
+                                <asp:TemplateField HeaderText="2do Telefono">
+                                    <ItemTemplate>
+                                        <asp:Label ID="lblTel2" runat="server" Text='<%# Eval("TELEFONO2") %>'></asp:Label>
+                                    </ItemTemplate>
+                                    <EditItemTemplate>
+                                        <asp:TextBox ID="e_txtTel2" TextMode="Phone" Text='<%# Eval("TELEFONO2") %>' runat="server" />
+                                    </EditItemTemplate>
+                                </asp:TemplateField>
+                                
+                                <asp:TemplateField HeaderText="Notas">
+                                    <ItemTemplate>
+                                        <p id="lbNotas" runat="server"><%# Eval("NOTA") %></p>
+                                    </ItemTemplate>
+                                    <EditItemTemplate>
+                                        <asp:TextBox ID="e_txtNotas" TextMode="MultiLine" runat="server" Height="200px" Width="100" />
+                                    </EditItemTemplate>
+                                </asp:TemplateField>
+                               
+                                <asp:TemplateField HeaderText="Estado">
+                                    <ItemTemplate>
+                                        <asp:Label ID="lblEstado" runat="server" Text='<%# Eval("ESTATUS") %>'></asp:Label>
+                                    </ItemTemplate>
+                                    <EditItemTemplate>
+                                        <asp:DropDownList ID="e_ddlEstado" runat="server"  >
+                                            <asp:ListItem Text="Activo" Value="1"  />
+                                            <asp:ListItem Text="Inactivo" Value="0" />
+                                        </asp:DropDownList>
+                                    </EditItemTemplate>
+                                </asp:TemplateField>
                             </Columns>
                         </asp:GridView>
-                        <asp:EntityDataSource ID="Entitycon_Recintos" runat="server">
-                        </asp:EntityDataSource>
                     </div>
                     <div class="col1">
                         <p>&nbsp;</p>
@@ -104,18 +130,15 @@
             </div>
             <style>
                 .inputStyle {
-                
-                    width:350px;
-                    height:auto;
-                
+                    width: 350px;
+                    height: auto;
                 }
-
             </style>
             <div class="panel panel-body">
                 <div class="GridRow">
                     <div class="col4">
                         <asp:RequiredFieldValidator
-                            ControlToValidate="txtNombre" Display="Dynamic"  Text="*" ValidationGroup="FormVal"
+                            ControlToValidate="txtNombre" Display="Dynamic" Text="*" ValidationGroup="FormVal"
                             ID="RequiredFieldValidator1" runat="server" ErrorMessage="Nombre es requerido"></asp:RequiredFieldValidator>
                         <label>Nombre del Recinto:</label>
                     </div>
@@ -127,19 +150,19 @@
                 <div class="GridRow">
                     <div class="col4">
                         <asp:RequiredFieldValidator
-                            ControlToValidate="txtDir" Display="Dynamic"  Text="*" ValidationGroup="FormVal"
+                            ControlToValidate="txtDir" Display="Dynamic" Text="*" ValidationGroup="FormVal"
                             ID="RequiredFieldValidator2" runat="server" ErrorMessage="Direccion es requerida"></asp:RequiredFieldValidator>
                         <label>Direccion del Recinto:</label>
                     </div>
                     <div class="col6">
-                        <asp:TextBox ID="txtDir" runat="server" CssClass="inputStyle"/>
+                        <asp:TextBox ID="txtDir" runat="server" CssClass="inputStyle" />
                     </div>
                 </div>
                 <br />
                 <div class="GridRow">
                     <div class="col4">
                         <asp:RequiredFieldValidator
-                            ControlToValidate="txtTel1" Display="Dynamic"  Text="*" ValidationGroup="FormVal"
+                            ControlToValidate="txtTel1" Display="Dynamic" Text="*" ValidationGroup="FormVal"
                             ID="RequiredFieldValidator3" runat="server" ErrorMessage="Telefono es requerido"></asp:RequiredFieldValidator>
                         <label>1er Telefono:</label>
                     </div>
@@ -182,12 +205,11 @@
                 <br />
                 <div class="w3-content">
                     <asp:Button ID="btnAgregar" runat="server" CssClass="btn btn-primary"
-                        Text="Agregar" ValidationGroup="FormVal" 
-                        OnClick="btnAdd_Click" CommandName="Add"/> &nbsp;
-                    <asp:Button ID="btnModificar" runat="server" CssClass="btn btn-info" 
-                        Text="Modificar" ValidationGroup="FormVal"
-                        OnClick="btnAdd_Click" CommandName="Mod"/> &nbsp;
-                    <asp:Button ID="btnCancelar" runat="server" CssClass="btn btn-danger" Text="Cancelar" OnClick="btnCancelar_Click"/> &nbsp;
+                        Text="Agregar" ValidationGroup="FormVal"
+                        OnClick="btnAdd_Click" />
+                    <asp:Button ID="btnCancelar" runat="server" CssClass="btn btn-danger"
+                        Text="Cancelar" OnClick="btnCancelar_Click" />
+
 
                 </div>
 

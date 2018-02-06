@@ -189,8 +189,6 @@ warning 6013: The table/view 'SIGAC.PROVEEDOR' does not have a primary key defin
           <Property Name="NOTA" Type="blob" />
           <Property Name="ESTATUS" Type="number" Precision="1" Scale="0" />
         </EntityType>-->
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'SIGAC.RECINTOS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="RECINTOS">
           <Key>
             <PropertyRef Name="ID" />
@@ -994,6 +992,7 @@ warning 6002: The table/view 'SIGAC.TIPOS_ASIGNATURA' does not have a primary ke
         <EntityContainer Name="SigacModelStoreContainer">
           <EntitySet Name="DEPARTAMENTO" EntityType="Self.DEPARTAMENTO" Schema="SIGAC" store:Type="Tables" />
           <EntitySet Name="EMPLEADO" EntityType="Self.EMPLEADO" Schema="SIGAC" store:Type="Tables" />
+          <EntitySet Name="RECINTOS" EntityType="Self.RECINTOS" Schema="SIGAC" store:Type="Tables" />
           <EntitySet Name="SIEDU_ARCHIVO" EntityType="Self.SIEDU_ARCHIVO" Schema="SIGAC" store:Type="Tables" />
           <EntitySet Name="SIEDU_AUDITORIA" EntityType="Self.SIEDU_AUDITORIA" Schema="SIGAC" store:Type="Tables" />
           <EntitySet Name="SIEDU_CIERRE_PAE" EntityType="Self.SIEDU_CIERRE_PAE" Schema="SIGAC" store:Type="Tables" />
@@ -1127,17 +1126,6 @@ FROM "SIGAC"."AULAS_ACTIVOS" "AULAS_ACTIVOS"</DefiningQuery>
 "MOVIMIENTO_PERSONAL"."DATOS5" AS "DATOS5"
 FROM "SIGAC"."MOVIMIENTO_PERSONAL" "MOVIMIENTO_PERSONAL"</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="RECINTOS" EntityType="Self.RECINTOS" store:Type="Tables" store:Schema="SIGAC">
-            <DefiningQuery>SELECT 
-"RECINTOS"."ID" AS "ID", 
-"RECINTOS"."NOMBRE" AS "NOMBRE", 
-"RECINTOS"."DIRECCION" AS "DIRECCION", 
-"RECINTOS"."TELEFONO1" AS "TELEFONO1", 
-"RECINTOS"."TELEFONO2" AS "TELEFONO2", 
-"RECINTOS"."NOTA" AS "NOTA", 
-"RECINTOS"."ESTATUS" AS "ESTATUS"
-FROM "SIGAC"."RECINTOS" "RECINTOS"</DefiningQuery>
-          </EntitySet>
           <EntitySet Name="SIEDU_LOG" EntityType="Self.SIEDU_LOG" store:Type="Tables" store:Schema="SIGAC">
             <DefiningQuery>SELECT 
 "SIEDU_LOG"."LOG_LOG" AS "LOG_LOG", 
@@ -1224,6 +1212,18 @@ FROM "SIGAC"."TIPOS_ASIGNATURA" "TIPOS_ASIGNATURA"</DefiningQuery>
           <NavigationProperty Name="DEPARTAMENTO" Relationship="Self.SYS_C007001" FromRole="EMPLEADO" ToRole="DEPARTAMENTO" />
           <NavigationProperty Name="EMPLEADO1" Relationship="Self.SYS_C007000" FromRole="EMPLEADO" ToRole="EMPLEADO1" />
           <NavigationProperty Name="EMPLEADO2" Relationship="Self.SYS_C007000" FromRole="EMPLEADO1" ToRole="EMPLEADO" />
+        </EntityType>
+        <EntityType Name="RECINTOS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="NOMBRE" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="DIRECCION" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="TELEFONO1" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="TELEFONO2" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="NOTA" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="ESTATUS" Type="Decimal" Precision="38" Scale="0" />
         </EntityType>
         <EntityType Name="SIEDU_ARCHIVO">
           <Key>
@@ -2031,18 +2031,6 @@ FROM "SIGAC"."TIPOS_ASIGNATURA" "TIPOS_ASIGNATURA"</DefiningQuery>
           <Property Name="DATOS4" Type="Int32" />
           <Property Name="DATOS5" Type="Int32" />
         </EntityType>
-        <EntityType Name="RECINTOS">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
-          <Property Name="NOMBRE" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
-          <Property Name="DIRECCION" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
-          <Property Name="TELEFONO1" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
-          <Property Name="TELEFONO2" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
-          <Property Name="NOTA" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <Property Name="ESTATUS" Type="Decimal" Precision="38" Scale="0" />
-        </EntityType>
         <EntityType Name="SIEDU_LOG">
           <Key>
             <PropertyRef Name="LOG_LOG" />
@@ -2148,9 +2136,10 @@ FROM "SIGAC"."TIPOS_ASIGNATURA" "TIPOS_ASIGNATURA"</DefiningQuery>
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="SigacEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="DEPARTAMENTO" EntityType="Self.DEPARTAMENTO" />
           <EntitySet Name="EMPLEADO" EntityType="Self.EMPLEADO" />
+          <EntitySet Name="RECINTOS" EntityType="Self.RECINTOS" />
           <EntitySet Name="SIEDU_ARCHIVO" EntityType="Self.SIEDU_ARCHIVO" />
           <EntitySet Name="SIEDU_AUDITORIA" EntityType="Self.SIEDU_AUDITORIA" />
           <EntitySet Name="SIEDU_CIERRE_PAE" EntityType="Self.SIEDU_CIERRE_PAE" />
@@ -2189,7 +2178,6 @@ FROM "SIGAC"."TIPOS_ASIGNATURA" "TIPOS_ASIGNATURA"</DefiningQuery>
           <EntitySet Name="AULAS" EntityType="Self.AULAS" />
           <EntitySet Name="AULAS_ACTIVOS" EntityType="Self.AULAS_ACTIVOS" />
           <EntitySet Name="MOVIMIENTO_PERSONAL" EntityType="Self.MOVIMIENTO_PERSONAL" />
-          <EntitySet Name="RECINTOS" EntityType="Self.RECINTOS" />
           <EntitySet Name="SIEDU_LOG" EntityType="Self.SIEDU_LOG" />
           <EntitySet Name="SUB_TIPOS" EntityType="Self.SUB_TIPOS" />
           <EntitySet Name="TIPOS" EntityType="Self.TIPOS" />
@@ -2220,7 +2208,7 @@ FROM "SIGAC"."TIPOS_ASIGNATURA" "TIPOS_ASIGNATURA"</DefiningQuery>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="SigacModelStoreContainer" CdmEntityContainer="SigacEntities">
+        <EntityContainerMapping StorageEntityContainer="SigacModelStoreContainer" CdmEntityContainer="Entities">
           <EntitySetMapping Name="DEPARTAMENTO">
             <EntityTypeMapping TypeName="SigacModel.DEPARTAMENTO">
               <MappingFragment StoreEntitySet="DEPARTAMENTO">
@@ -2241,6 +2229,19 @@ FROM "SIGAC"."TIPOS_ASIGNATURA" "TIPOS_ASIGNATURA"</DefiningQuery>
                 <ScalarProperty Name="SAL" ColumnName="SAL" />
                 <ScalarProperty Name="COMM" ColumnName="COMM" />
                 <ScalarProperty Name="DEPTNO" ColumnName="DEPTNO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RECINTOS">
+            <EntityTypeMapping TypeName="SigacModel.RECINTOS">
+              <MappingFragment StoreEntitySet="RECINTOS">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+                <ScalarProperty Name="DIRECCION" ColumnName="DIRECCION" />
+                <ScalarProperty Name="TELEFONO1" ColumnName="TELEFONO1" />
+                <ScalarProperty Name="TELEFONO2" ColumnName="TELEFONO2" />
+                <ScalarProperty Name="NOTA" ColumnName="NOTA" />
+                <ScalarProperty Name="ESTATUS" ColumnName="ESTATUS" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -3050,19 +3051,6 @@ FROM "SIGAC"."TIPOS_ASIGNATURA" "TIPOS_ASIGNATURA"</DefiningQuery>
                 <ScalarProperty Name="DATOS3" ColumnName="DATOS3" />
                 <ScalarProperty Name="DATOS4" ColumnName="DATOS4" />
                 <ScalarProperty Name="DATOS5" ColumnName="DATOS5" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="RECINTOS">
-            <EntityTypeMapping TypeName="SigacModel.RECINTOS">
-              <MappingFragment StoreEntitySet="RECINTOS">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
-                <ScalarProperty Name="DIRECCION" ColumnName="DIRECCION" />
-                <ScalarProperty Name="TELEFONO1" ColumnName="TELEFONO1" />
-                <ScalarProperty Name="TELEFONO2" ColumnName="TELEFONO2" />
-                <ScalarProperty Name="NOTA" ColumnName="NOTA" />
-                <ScalarProperty Name="ESTATUS" ColumnName="ESTATUS" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

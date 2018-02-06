@@ -4,52 +4,52 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="ac607d38f0804daebff59bbcb002f5cc" Name="Diagram1" ZoomLevel="48">
+      <Diagram DiagramId="ef6243b6fe944f49a52b326e5414a463" Name="Diagram1">
         <EntityTypeShape EntityType="SigacModel.DEPARTAMENTO" Width="1.5" PointX="0.75" PointY="1.625" IsExpanded="true" />
         <EntityTypeShape EntityType="SigacModel.EMPLEADO" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="SigacModel.SIEDU_ARCHIVO" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SigacModel.SIEDU_AUDITORIA" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SigacModel.SIEDU_CIERRE_PAE" Width="1.5" PointX="10.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SigacModel.SIEDU_COBERTURA" Width="1.5" PointX="10.75" PointY="9.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SigacModel.SIEDU_COMPETENCIA" Width="1.5" PointX="11.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SigacModel.SIEDU_COMPETENCIA_EVENTO" Width="1.5" PointX="12.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SigacModel.SIEDU_CONSOLIDA_PAE" Width="1.5" PointX="5.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SigacModel.RECINTOS" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SigacModel.SIEDU_ARCHIVO" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SigacModel.SIEDU_AUDITORIA" Width="1.5" PointX="10.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SigacModel.SIEDU_CIERRE_PAE" Width="1.5" PointX="10.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SigacModel.SIEDU_COBERTURA" Width="1.5" PointX="11.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SigacModel.SIEDU_COMPETENCIA" Width="1.5" PointX="12.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SigacModel.SIEDU_COMPETENCIA_EVENTO" Width="1.5" PointX="5.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SigacModel.SIEDU_CONSOLIDA_PAE" Width="1.5" PointX="7.75" PointY="12.75" IsExpanded="true" />
         <EntityTypeShape EntityType="SigacModel.SIEDU_CONVENIO" Width="1.5" PointX="8" PointY="7.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="SigacModel.SIEDU_CONVOCATORIA_EVENTO" Width="1.5" PointX="7.75" PointY="12.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SigacModel.SIEDU_DOCENTE_EVENTO" Width="1.5" PointX="12.75" PointY="8.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SigacModel.SIEDU_DOMINIO" Width="1.5" PointX="13.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SigacModel.SIEDU_EMPLEADO_EXTERNO" Width="1.5" PointX="12.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SigacModel.SIEDU_CONVOCATORIA_EVENTO" Width="1.5" PointX="12.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SigacModel.SIEDU_DOCENTE_EVENTO" Width="1.5" PointX="13.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SigacModel.SIEDU_DOMINIO" Width="1.5" PointX="14.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SigacModel.SIEDU_EMPLEADO_EXTERNO" Width="1.5" PointX="14.75" PointY="8.75" IsExpanded="true" />
         <EntityTypeShape EntityType="SigacModel.SIEDU_ENTIDAD" Width="1.5" PointX="5.75" PointY="7" IsExpanded="true" />
-        <EntityTypeShape EntityType="SigacModel.SIEDU_EVAL_DESARROLLO" Width="1.5" PointX="14.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SigacModel.SIEDU_EVAL_GRADO" Width="1.5" PointX="14.75" PointY="8.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SigacModel.SIEDU_EVAL_PARTICIPANTE" Width="1.5" PointX="9.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SigacModel.SIEDU_EVAL_DESARROLLO" Width="1.5" PointX="9.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SigacModel.SIEDU_EVAL_GRADO" Width="1.5" PointX="11.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SigacModel.SIEDU_EVAL_PARTICIPANTE" Width="1.5" PointX="15.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="SigacModel.SIEDU_EVALUACION" Width="1.5" PointX="0.75" PointY="8.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="SigacModel.SIEDU_EVENTO" Width="1.5" PointX="14.75" PointY="12.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SigacModel.SIEDU_EVENTO_CATEGORIA" Width="1.5" PointX="0.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SigacModel.SIEDU_EVENTO" Width="1.5" PointX="0.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SigacModel.SIEDU_EVENTO_CATEGORIA" Width="1.5" PointX="2.75" PointY="15.75" IsExpanded="true" />
         <EntityTypeShape EntityType="SigacModel.SIEDU_EVENTO_ESCUELA" Width="1.5" PointX="3" PointY="7.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="SigacModel.SIEDU_FORMA_ESCUELA_COHORTE" Width="1.5" PointX="2.75" PointY="15.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SigacModel.SIEDU_INASISTE_EVENTO" Width="1.5" PointX="16.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SigacModel.SIEDU_NECESIDAD" Width="1.5" PointX="16.75" PointY="5.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SigacModel.SIEDU_NECESIDAD_E" Width="1.5" PointX="16.75" PointY="12.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SigacModel.SIEDU_PAE" Width="1.5" PointX="4.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SigacModel.SIEDU_FORMA_ESCUELA_COHORTE" Width="1.5" PointX="13.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SigacModel.SIEDU_INASISTE_EVENTO" Width="1.5" PointX="15.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SigacModel.SIEDU_NECESIDAD" Width="1.5" PointX="4.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SigacModel.SIEDU_NECESIDAD_E" Width="1.5" PointX="16.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SigacModel.SIEDU_PAE" Width="1.5" PointX="16.75" PointY="10.75" IsExpanded="true" />
         <EntityTypeShape EntityType="SigacModel.SIEDU_PAE_CAPACITACION" Width="1.5" PointX="6.75" PointY="17.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SigacModel.SIEDU_PAE_FORMACION" Width="1.5" PointX="16.75" PointY="17.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SigacModel.SIEDU_PARTICIPANTE_EVENTO" Width="1.5" PointX="18.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SigacModel.SIEDU_PERSONA" Width="1.5" PointX="18.75" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SigacModel.SIEDU_PREGUNTA" Width="1.5" PointX="18.75" PointY="12.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SigacModel.SIEDU_PRESUPUESTO" Width="1.5" PointX="18.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SigacModel.SIEDU_PAE_FORMACION" Width="1.5" PointX="17.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SigacModel.SIEDU_PARTICIPANTE_EVENTO" Width="1.5" PointX="17.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SigacModel.SIEDU_PERSONA" Width="1.5" PointX="18.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SigacModel.SIEDU_PREGUNTA" Width="1.5" PointX="18.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SigacModel.SIEDU_PRESUPUESTO" Width="1.5" PointX="19.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="SigacModel.SIEDU_TEMA" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="SigacModel.SIEDU_TIPO_DOMINIO" Width="1.5" PointX="8.75" PointY="19.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SigacModel.ACTIVOS" Width="1.5" PointX="20.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SigacModel.ASIGNATURAS" Width="1.5" PointX="20.75" PointY="8.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SigacModel.AULAS" Width="1.5" PointX="10.75" PointY="20.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SigacModel.AULAS_ACTIVOS" Width="1.5" PointX="12.75" PointY="20.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SigacModel.MOVIMIENTO_PERSONAL" Width="1.5" PointX="20.75" PointY="14.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SigacModel.RECINTOS" Width="1.5" PointX="20.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SigacModel.ACTIVOS" Width="1.5" PointX="10.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SigacModel.ASIGNATURAS" Width="1.5" PointX="19.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SigacModel.AULAS" Width="1.5" PointX="20.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SigacModel.AULAS_ACTIVOS" Width="1.5" PointX="20.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SigacModel.MOVIMIENTO_PERSONAL" Width="1.5" PointX="21.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="SigacModel.SIEDU_LOG" Width="1.5" PointX="0.75" PointY="21.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SigacModel.SUB_TIPOS" Width="1.5" PointX="22.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SigacModel.TIPOS" Width="1.5" PointX="2.75" PointY="22.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SigacModel.TIPOS_ASIGNATURA" Width="1.5" PointX="22.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SigacModel.SUB_TIPOS" Width="1.5" PointX="12.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SigacModel.TIPOS" Width="1.5" PointX="21.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SigacModel.TIPOS_ASIGNATURA" Width="1.5" PointX="14.75" PointY="21.75" IsExpanded="true" />
         <AssociationConnector Association="SigacModel.SYS_C007001" ManuallyRouted="false" />
         <AssociationConnector Association="SigacModel.SYS_C007000" ManuallyRouted="false" />
         <AssociationConnector Association="SigacModel.CONVENIO_ENTI" ManuallyRouted="false" />

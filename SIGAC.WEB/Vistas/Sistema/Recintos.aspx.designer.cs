@@ -40,15 +40,6 @@ namespace SIGAC.WEB.Vistas.Sistema {
         protected global::System.Web.UI.WebControls.GridView gridViewRecintos;
         
         /// <summary>
-        /// Entitycon_Recintos control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.EntityDataSource Entitycon_Recintos;
-        
-        /// <summary>
         /// lblAccion control.
         /// </summary>
         /// <remarks>
@@ -155,15 +146,6 @@ namespace SIGAC.WEB.Vistas.Sistema {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnAgregar;
-        
-        /// <summary>
-        /// btnModificar control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnModificar;
         
         /// <summary>
         /// btnCancelar control.

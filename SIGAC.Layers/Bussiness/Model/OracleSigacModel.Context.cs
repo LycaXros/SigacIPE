@@ -27,6 +27,7 @@ namespace SIGAC.Layers.Bussiness.Model
     
         public virtual DbSet<DEPARTAMENTO> DEPARTAMENTO { get; set; }
         public virtual DbSet<EMPLEADO> EMPLEADO { get; set; }
+        public virtual DbSet<RECINTOS> RECINTOS { get; set; }
         public virtual DbSet<SIEDU_ARCHIVO> SIEDU_ARCHIVO { get; set; }
         public virtual DbSet<SIEDU_AUDITORIA> SIEDU_AUDITORIA { get; set; }
         public virtual DbSet<SIEDU_CIERRE_PAE> SIEDU_CIERRE_PAE { get; set; }
@@ -65,7 +66,6 @@ namespace SIGAC.Layers.Bussiness.Model
         public virtual DbSet<AULAS> AULAS { get; set; }
         public virtual DbSet<AULAS_ACTIVOS> AULAS_ACTIVOS { get; set; }
         public virtual DbSet<MOVIMIENTO_PERSONAL> MOVIMIENTO_PERSONAL { get; set; }
-        public virtual DbSet<RECINTOS> RECINTOS { get; set; }
         public virtual DbSet<SIEDU_LOG> SIEDU_LOG { get; set; }
         public virtual DbSet<SUB_TIPOS> SUB_TIPOS { get; set; }
         public virtual DbSet<TIPOS> TIPOS { get; set; }

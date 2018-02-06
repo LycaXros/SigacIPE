@@ -23,3 +23,624 @@ Exception Type: System.Web.HttpException
 Exception: An HTTP error occurred. Page Not found. Please try again.
 Source: errorsection
 Stack Trace: 
+********** 6/2/2018 10:18:23 a. m. **********
+Inner Exception Type: Oracle.ManagedDataAccess.Client.OracleException
+Inner Exception: ORA-00932: inconsistent datatypes: expected - got NCLOB
+Inner Source: Oracle Data Provider for .NET, Managed Driver
+Inner Stack Trace: 
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteReader(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, OracleDataReaderImpl& rdrImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[] scnForExecution, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, Int64& internalInitialLOBFS, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, IEnumerable`1 adrianParsedStmt, Boolean isDescribeOnly, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   en System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   en System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.<Reader>b__c(DbCommand t, DbCommandInterceptionContext`1 c)
+   en System.Data.Entity.Infrastructure.Interception.InternalDispatcher`1.Dispatch[TTarget,TInterceptionContext,TResult](TTarget target, Func`3 operation, TInterceptionContext interceptionContext, Action`3 executing, Action`3 executed)
+   en System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.Reader(DbCommand command, DbCommandInterceptionContext interceptionContext)
+   en System.Data.Entity.Internal.InterceptableDbCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   en System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   en System.Data.Entity.Core.EntityClient.Internal.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+Exception Type: System.Data.Entity.Core.EntityCommandExecutionException
+Exception: An error occurred while executing the command definition. See the inner exception for details.
+Source: Editando la data
+Stack Trace: 
+   en System.Data.Entity.Core.EntityClient.Internal.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+   en System.Data.Entity.Core.Objects.Internal.ObjectQueryExecutionPlan.Execute[TResultType](ObjectContext context, ObjectParameterCollection parameterValues)
+   en System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__6()
+   en System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   en System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__5()
+   en System.Data.Entity.Infrastructure.DefaultExecutionStrategy.Execute[TResult](Func`1 operation)
+   en System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   en System.Data.Entity.Core.Objects.ObjectQuery`1.<System.Collections.Generic.IEnumerable<T>.GetEnumerator>b__0()
+   en System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   en System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   en System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.<GetElementFunction>b__1[TResult](IEnumerable`1 sequence)
+   en System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.ExecuteSingle[TResult](IEnumerable`1 query, Expression queryRoot)
+   en System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.System.Linq.IQueryProvider.Execute[TResult](Expression expression)
+   en System.Data.Entity.Internal.Linq.DbQueryProvider.Execute[TResult](Expression expression)
+   en System.Linq.Queryable.FirstOrDefault[TSource](IQueryable`1 source)
+   en SIGAC.WEB.Vistas.Sistema.Recintos.EditData(String argument) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\Sistema\Recintos.aspx.cs:línea 110
+
+********** 6/2/2018 10:32:55 a. m. **********
+Exception Type: System.ArgumentNullException
+Exception: El valor no puede ser nulo.
+Nombre del parámetro: inArray
+Source: Editando la data
+Stack Trace: 
+   en System.Convert.ToBase64String(Byte[] inArray)
+   en SIGAC.WEB.Vistas.Sistema.Recintos.EditData(String argument) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\Sistema\Recintos.aspx.cs:línea 117
+
+********** 6/2/2018 11:00:33 a. m. **********
+Inner Exception Type: Oracle.ManagedDataAccess.Client.OracleException
+Inner Exception: ORA-00932: inconsistent datatypes: expected - got NCLOB
+Inner Source: Oracle Data Provider for .NET, Managed Driver
+Inner Stack Trace: 
+   en OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   en OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteReader(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, OracleDataReaderImpl& rdrImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[] scnForExecution, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, Int64& internalInitialLOBFS, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, IEnumerable`1 adrianParsedStmt, Boolean isDescribeOnly, Boolean isFromEF)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   en Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   en System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   en System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.<Reader>b__c(DbCommand t, DbCommandInterceptionContext`1 c)
+   en System.Data.Entity.Infrastructure.Interception.InternalDispatcher`1.Dispatch[TTarget,TInterceptionContext,TResult](TTarget target, Func`3 operation, TInterceptionContext interceptionContext, Action`3 executing, Action`3 executed)
+   en System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.Reader(DbCommand command, DbCommandInterceptionContext interceptionContext)
+   en System.Data.Entity.Internal.InterceptableDbCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   en System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   en System.Data.Entity.Core.EntityClient.Internal.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+Exception Type: System.Data.Entity.Core.EntityCommandExecutionException
+Exception: An error occurred while executing the command definition. See the inner exception for details.
+Source: Recintos V
+Stack Trace: 
+   en System.Data.Entity.Core.EntityClient.Internal.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+   en System.Data.Entity.Core.Objects.Internal.ObjectQueryExecutionPlan.Execute[TResultType](ObjectContext context, ObjectParameterCollection parameterValues)
+   en System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__6()
+   en System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   en System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__5()
+   en System.Data.Entity.Infrastructure.DefaultExecutionStrategy.Execute[TResult](Func`1 operation)
+   en System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   en System.Data.Entity.Core.Objects.ObjectQuery`1.<System.Collections.Generic.IEnumerable<T>.GetEnumerator>b__0()
+   en System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   en System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   en System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.<GetElementFunction>b__1[TResult](IEnumerable`1 sequence)
+   en System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.ExecuteSingle[TResult](IEnumerable`1 query, Expression queryRoot)
+   en System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.System.Linq.IQueryProvider.Execute[TResult](Expression expression)
+   en System.Data.Entity.Internal.Linq.DbQueryProvider.Execute[TResult](Expression expression)
+   en System.Linq.Queryable.FirstOrDefault[TSource](IQueryable`1 source)
+   en SIGAC.WEB.Vistas.Sistema.Recintos.btnAdd_Click(Object sender, EventArgs e) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\Sistema\Recintos.aspx.cs:línea 182
+
+********** 6/2/2018 12:47:28 p. m. **********
+Exception Type: System.NullReferenceException
+Exception: Referencia a objeto no establecida como instancia de un objeto.
+Source: Recintos Fill Grid Method
+Stack Trace: 
+   en SIGAC.WEB.Vistas.Sistema.Recintos.gridViewRecintos_RowDataBound(Object sender, GridViewRowEventArgs e) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\Sistema\Recintos.aspx.cs:línea 204
+   en System.Web.UI.WebControls.GridView.OnRowDataBound(GridViewRowEventArgs e)
+   en System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   en System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   en System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   en System.Web.UI.DataSourceView.Select(DataSourceSelectArguments arguments, DataSourceViewSelectCallback callback)
+   en System.Web.UI.WebControls.DataBoundControl.PerformSelect()
+   en System.Web.UI.WebControls.BaseDataBoundControl.DataBind()
+   en System.Web.UI.WebControls.GridView.DataBind()
+   en SIGAC.WEB.Vistas.Sistema.Recintos.RefreshGridDataSource(IEnumerable datasource, String source) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\Sistema\Recintos.aspx.cs:línea 42
+
+********** 6/2/2018 12:50:52 p. m. **********
+Exception Type: System.NullReferenceException
+Exception: Referencia a objeto no establecida como instancia de un objeto.
+Source: Recintos Fill Grid Method
+Stack Trace: 
+   en SIGAC.WEB.Vistas.Sistema.Recintos.gridViewRecintos_RowDataBound(Object sender, GridViewRowEventArgs e) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\Sistema\Recintos.aspx.cs:línea 204
+   en System.Web.UI.WebControls.GridView.OnRowDataBound(GridViewRowEventArgs e)
+   en System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   en System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   en System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   en System.Web.UI.DataSourceView.Select(DataSourceSelectArguments arguments, DataSourceViewSelectCallback callback)
+   en System.Web.UI.WebControls.DataBoundControl.PerformSelect()
+   en System.Web.UI.WebControls.BaseDataBoundControl.DataBind()
+   en System.Web.UI.WebControls.GridView.DataBind()
+   en SIGAC.WEB.Vistas.Sistema.Recintos.RefreshGridDataSource(IEnumerable datasource, String source) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\Sistema\Recintos.aspx.cs:línea 42
+
+********** 6/2/2018 12:51:06 p. m. **********
+Exception Type: System.NullReferenceException
+Exception: Referencia a objeto no establecida como instancia de un objeto.
+Source: Recintos Fill Grid Method
+Stack Trace: 
+   en SIGAC.WEB.Vistas.Sistema.Recintos.gridViewRecintos_RowDataBound(Object sender, GridViewRowEventArgs e) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\Sistema\Recintos.aspx.cs:línea 204
+   en System.Web.UI.WebControls.GridView.OnRowDataBound(GridViewRowEventArgs e)
+   en System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   en System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   en System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   en System.Web.UI.DataSourceView.Select(DataSourceSelectArguments arguments, DataSourceViewSelectCallback callback)
+   en System.Web.UI.WebControls.DataBoundControl.PerformSelect()
+   en System.Web.UI.WebControls.BaseDataBoundControl.DataBind()
+   en System.Web.UI.WebControls.GridView.DataBind()
+   en SIGAC.WEB.Vistas.Sistema.Recintos.RefreshGridDataSource(IEnumerable datasource, String source) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\Sistema\Recintos.aspx.cs:línea 42
+
+********** 6/2/2018 12:59:56 p. m. **********
+Exception Type: System.NullReferenceException
+Exception: Referencia a objeto no establecida como instancia de un objeto.
+Source: Recintos Fill Grid Method
+Stack Trace: 
+   en SIGAC.WEB.Vistas.Sistema.Recintos.gridViewRecintos_RowDataBound(Object sender, GridViewRowEventArgs e) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\Sistema\Recintos.aspx.cs:línea 204
+   en System.Web.UI.WebControls.GridView.OnRowDataBound(GridViewRowEventArgs e)
+   en System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   en System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   en System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   en System.Web.UI.DataSourceView.Select(DataSourceSelectArguments arguments, DataSourceViewSelectCallback callback)
+   en System.Web.UI.WebControls.DataBoundControl.PerformSelect()
+   en System.Web.UI.WebControls.BaseDataBoundControl.DataBind()
+   en System.Web.UI.WebControls.GridView.DataBind()
+   en SIGAC.WEB.Vistas.Sistema.Recintos.RefreshGridDataSource(IEnumerable datasource, String source) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\Sistema\Recintos.aspx.cs:línea 42
+
+********** 6/2/2018 1:02:26 p. m. **********
+Exception Type: System.NullReferenceException
+Exception: Referencia a objeto no establecida como instancia de un objeto.
+Source: Recintos resultados de busqueda
+Stack Trace: 
+   en SIGAC.WEB.Vistas.Sistema.Recintos.gridViewRecintos_RowDataBound(Object sender, GridViewRowEventArgs e) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\Sistema\Recintos.aspx.cs:línea 204
+   en System.Web.UI.WebControls.GridView.OnRowDataBound(GridViewRowEventArgs e)
+   en System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   en System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   en System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   en System.Web.UI.DataSourceView.Select(DataSourceSelectArguments arguments, DataSourceViewSelectCallback callback)
+   en System.Web.UI.WebControls.DataBoundControl.PerformSelect()
+   en System.Web.UI.WebControls.BaseDataBoundControl.DataBind()
+   en System.Web.UI.WebControls.GridView.DataBind()
+   en SIGAC.WEB.Vistas.Sistema.Recintos.RefreshGridDataSource(IEnumerable datasource, String source) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\Sistema\Recintos.aspx.cs:línea 42
+
+********** 6/2/2018 1:02:28 p. m. **********
+Exception Type: System.NullReferenceException
+Exception: Referencia a objeto no establecida como instancia de un objeto.
+Source: Recintos Fill Grid Method
+Stack Trace: 
+   en SIGAC.WEB.Vistas.Sistema.Recintos.gridViewRecintos_RowDataBound(Object sender, GridViewRowEventArgs e) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\Sistema\Recintos.aspx.cs:línea 204
+   en System.Web.UI.WebControls.GridView.OnRowDataBound(GridViewRowEventArgs e)
+   en System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   en System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   en System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   en System.Web.UI.DataSourceView.Select(DataSourceSelectArguments arguments, DataSourceViewSelectCallback callback)
+   en System.Web.UI.WebControls.DataBoundControl.PerformSelect()
+   en System.Web.UI.WebControls.BaseDataBoundControl.DataBind()
+   en System.Web.UI.WebControls.GridView.DataBind()
+   en SIGAC.WEB.Vistas.Sistema.Recintos.RefreshGridDataSource(IEnumerable datasource, String source) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\Sistema\Recintos.aspx.cs:línea 42
+
+********** 6/2/2018 1:02:42 p. m. **********
+Exception Type: System.NullReferenceException
+Exception: Referencia a objeto no establecida como instancia de un objeto.
+Source: Recintos Fill Grid Method
+Stack Trace: 
+   en SIGAC.WEB.Vistas.Sistema.Recintos.gridViewRecintos_RowDataBound(Object sender, GridViewRowEventArgs e) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\Sistema\Recintos.aspx.cs:línea 204
+   en System.Web.UI.WebControls.GridView.OnRowDataBound(GridViewRowEventArgs e)
+   en System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   en System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   en System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   en System.Web.UI.DataSourceView.Select(DataSourceSelectArguments arguments, DataSourceViewSelectCallback callback)
+   en System.Web.UI.WebControls.DataBoundControl.PerformSelect()
+   en System.Web.UI.WebControls.BaseDataBoundControl.DataBind()
+   en System.Web.UI.WebControls.GridView.DataBind()
+   en SIGAC.WEB.Vistas.Sistema.Recintos.RefreshGridDataSource(IEnumerable datasource, String source) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\Sistema\Recintos.aspx.cs:línea 42
+
+********** 6/2/2018 1:02:46 p. m. **********
+Exception Type: System.NullReferenceException
+Exception: Referencia a objeto no establecida como instancia de un objeto.
+Source: Recintos Fill Grid Method
+Stack Trace: 
+   en SIGAC.WEB.Vistas.Sistema.Recintos.gridViewRecintos_RowDataBound(Object sender, GridViewRowEventArgs e) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\Sistema\Recintos.aspx.cs:línea 204
+   en System.Web.UI.WebControls.GridView.OnRowDataBound(GridViewRowEventArgs e)
+   en System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   en System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   en System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   en System.Web.UI.DataSourceView.Select(DataSourceSelectArguments arguments, DataSourceViewSelectCallback callback)
+   en System.Web.UI.WebControls.DataBoundControl.PerformSelect()
+   en System.Web.UI.WebControls.BaseDataBoundControl.DataBind()
+   en System.Web.UI.WebControls.GridView.DataBind()
+   en SIGAC.WEB.Vistas.Sistema.Recintos.RefreshGridDataSource(IEnumerable datasource, String source) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\Sistema\Recintos.aspx.cs:línea 42
+
+********** 6/2/2018 1:02:50 p. m. **********
+Exception Type: System.NullReferenceException
+Exception: Referencia a objeto no establecida como instancia de un objeto.
+Source: Recintos Fill Grid Method
+Stack Trace: 
+   en SIGAC.WEB.Vistas.Sistema.Recintos.gridViewRecintos_RowDataBound(Object sender, GridViewRowEventArgs e) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\Sistema\Recintos.aspx.cs:línea 204
+   en System.Web.UI.WebControls.GridView.OnRowDataBound(GridViewRowEventArgs e)
+   en System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   en System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   en System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   en System.Web.UI.DataSourceView.Select(DataSourceSelectArguments arguments, DataSourceViewSelectCallback callback)
+   en System.Web.UI.WebControls.DataBoundControl.PerformSelect()
+   en System.Web.UI.WebControls.BaseDataBoundControl.DataBind()
+   en System.Web.UI.WebControls.GridView.DataBind()
+   en SIGAC.WEB.Vistas.Sistema.Recintos.RefreshGridDataSource(IEnumerable datasource, String source) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\Sistema\Recintos.aspx.cs:línea 42
+
+********** 6/2/2018 1:03:26 p. m. **********
+Exception Type: System.NullReferenceException
+Exception: Referencia a objeto no establecida como instancia de un objeto.
+Source: Recintos Fill Grid Method
+Stack Trace: 
+   en SIGAC.WEB.Vistas.Sistema.Recintos.gridViewRecintos_RowDataBound(Object sender, GridViewRowEventArgs e) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\Sistema\Recintos.aspx.cs:línea 204
+   en System.Web.UI.WebControls.GridView.OnRowDataBound(GridViewRowEventArgs e)
+   en System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   en System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   en System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   en System.Web.UI.DataSourceView.Select(DataSourceSelectArguments arguments, DataSourceViewSelectCallback callback)
+   en System.Web.UI.WebControls.DataBoundControl.PerformSelect()
+   en System.Web.UI.WebControls.BaseDataBoundControl.DataBind()
+   en System.Web.UI.WebControls.GridView.DataBind()
+   en SIGAC.WEB.Vistas.Sistema.Recintos.RefreshGridDataSource(IEnumerable datasource, String source) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\Sistema\Recintos.aspx.cs:línea 42
+
+********** 6/2/2018 1:03:31 p. m. **********
+Exception Type: System.NullReferenceException
+Exception: Referencia a objeto no establecida como instancia de un objeto.
+Source: Recintos resultados de busqueda
+Stack Trace: 
+   en SIGAC.WEB.Vistas.Sistema.Recintos.gridViewRecintos_RowDataBound(Object sender, GridViewRowEventArgs e) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\Sistema\Recintos.aspx.cs:línea 204
+   en System.Web.UI.WebControls.GridView.OnRowDataBound(GridViewRowEventArgs e)
+   en System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   en System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   en System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   en System.Web.UI.DataSourceView.Select(DataSourceSelectArguments arguments, DataSourceViewSelectCallback callback)
+   en System.Web.UI.WebControls.DataBoundControl.PerformSelect()
+   en System.Web.UI.WebControls.BaseDataBoundControl.DataBind()
+   en System.Web.UI.WebControls.GridView.DataBind()
+   en SIGAC.WEB.Vistas.Sistema.Recintos.RefreshGridDataSource(IEnumerable datasource, String source) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\Sistema\Recintos.aspx.cs:línea 42
+
+********** 6/2/2018 1:03:36 p. m. **********
+Exception Type: System.NullReferenceException
+Exception: Referencia a objeto no establecida como instancia de un objeto.
+Source: Recintos Fill Grid Method
+Stack Trace: 
+   en SIGAC.WEB.Vistas.Sistema.Recintos.gridViewRecintos_RowDataBound(Object sender, GridViewRowEventArgs e) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\Sistema\Recintos.aspx.cs:línea 204
+   en System.Web.UI.WebControls.GridView.OnRowDataBound(GridViewRowEventArgs e)
+   en System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   en System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   en System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   en System.Web.UI.DataSourceView.Select(DataSourceSelectArguments arguments, DataSourceViewSelectCallback callback)
+   en System.Web.UI.WebControls.DataBoundControl.PerformSelect()
+   en System.Web.UI.WebControls.BaseDataBoundControl.DataBind()
+   en System.Web.UI.WebControls.GridView.DataBind()
+   en SIGAC.WEB.Vistas.Sistema.Recintos.RefreshGridDataSource(IEnumerable datasource, String source) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\Sistema\Recintos.aspx.cs:línea 42
+
+********** 6/2/2018 1:03:41 p. m. **********
+Exception Type: System.NullReferenceException
+Exception: Referencia a objeto no establecida como instancia de un objeto.
+Source: Recintos Fill Grid Method
+Stack Trace: 
+   en SIGAC.WEB.Vistas.Sistema.Recintos.gridViewRecintos_RowDataBound(Object sender, GridViewRowEventArgs e) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\Sistema\Recintos.aspx.cs:línea 204
+   en System.Web.UI.WebControls.GridView.OnRowDataBound(GridViewRowEventArgs e)
+   en System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   en System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   en System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   en System.Web.UI.DataSourceView.Select(DataSourceSelectArguments arguments, DataSourceViewSelectCallback callback)
+   en System.Web.UI.WebControls.DataBoundControl.PerformSelect()
+   en System.Web.UI.WebControls.BaseDataBoundControl.DataBind()
+   en System.Web.UI.WebControls.GridView.DataBind()
+   en SIGAC.WEB.Vistas.Sistema.Recintos.RefreshGridDataSource(IEnumerable datasource, String source) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\Sistema\Recintos.aspx.cs:línea 42
+
+********** 6/2/2018 1:10:16 p. m. **********
+Inner Exception Type: System.Data.Entity.Core.UpdateException
+Inner Exception: An error occurred while updating the entries. See the inner exception for details.
+Inner Source: EntityFramework
+Inner Stack Trace: 
+   en System.Data.Entity.Core.Mapping.Update.Internal.UpdateTranslator.Update()
+   en System.Data.Entity.Core.EntityClient.Internal.EntityAdapter.<Update>b__2(UpdateTranslator ut)
+   en System.Data.Entity.Core.EntityClient.Internal.EntityAdapter.Update[T](T noChangesResult, Func`2 updateFunction)
+   en System.Data.Entity.Core.EntityClient.Internal.EntityAdapter.Update()
+   en System.Data.Entity.Core.Objects.ObjectContext.<SaveChangesToStore>b__35()
+   en System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   en System.Data.Entity.Core.Objects.ObjectContext.SaveChangesToStore(SaveOptions options, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction)
+   en System.Data.Entity.Core.Objects.ObjectContext.<>c__DisplayClass2a.<SaveChangesInternal>b__27()
+   en System.Data.Entity.Infrastructure.DefaultExecutionStrategy.Execute[TResult](Func`1 operation)
+   en System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   en System.Data.Entity.Core.Objects.ObjectContext.SaveChanges(SaveOptions options)
+   en System.Data.Entity.Internal.InternalContext.SaveChanges()
+Exception Type: System.Data.Entity.Infrastructure.DbUpdateException
+Exception: An error occurred while updating the entries. See the inner exception for details.
+Source: Recintos V
+Stack Trace: 
+   en System.Data.Entity.Internal.InternalContext.SaveChanges()
+   en System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   en System.Data.Entity.DbContext.SaveChanges()
+   en SIGAC.WEB.Vistas.Sistema.Recintos.btnAdd_Click(Object sender, EventArgs e) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\Sistema\Recintos.aspx.cs:línea 87
+
+********** 6/2/2018 1:10:17 p. m. **********
+Exception Type: System.NullReferenceException
+Exception: Referencia a objeto no establecida como instancia de un objeto.
+Source: Recintos Fill Grid Method
+Stack Trace: 
+   en SIGAC.WEB.Vistas.Sistema.Recintos.gridViewRecintos_RowDataBound(Object sender, GridViewRowEventArgs e) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\Sistema\Recintos.aspx.cs:línea 204
+   en System.Web.UI.WebControls.GridView.OnRowDataBound(GridViewRowEventArgs e)
+   en System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   en System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   en System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   en System.Web.UI.DataSourceView.Select(DataSourceSelectArguments arguments, DataSourceViewSelectCallback callback)
+   en System.Web.UI.WebControls.DataBoundControl.PerformSelect()
+   en System.Web.UI.WebControls.BaseDataBoundControl.DataBind()
+   en System.Web.UI.WebControls.GridView.DataBind()
+   en SIGAC.WEB.Vistas.Sistema.Recintos.RefreshGridDataSource(IEnumerable datasource, String source) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\Sistema\Recintos.aspx.cs:línea 42
+
+********** 6/2/2018 1:11:36 p. m. **********
+Exception Type: System.NullReferenceException
+Exception: Referencia a objeto no establecida como instancia de un objeto.
+Source: Recintos resultados de busqueda
+Stack Trace: 
+   en SIGAC.WEB.Vistas.Sistema.Recintos.gridViewRecintos_RowDataBound(Object sender, GridViewRowEventArgs e) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\Sistema\Recintos.aspx.cs:línea 204
+   en System.Web.UI.WebControls.GridView.OnRowDataBound(GridViewRowEventArgs e)
+   en System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   en System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   en System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   en System.Web.UI.DataSourceView.Select(DataSourceSelectArguments arguments, DataSourceViewSelectCallback callback)
+   en System.Web.UI.WebControls.DataBoundControl.PerformSelect()
+   en System.Web.UI.WebControls.BaseDataBoundControl.DataBind()
+   en System.Web.UI.WebControls.GridView.DataBind()
+   en SIGAC.WEB.Vistas.Sistema.Recintos.RefreshGridDataSource(IEnumerable datasource, String source) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\Sistema\Recintos.aspx.cs:línea 42
+
+********** 6/2/2018 1:12:11 p. m. **********
+Exception Type: System.NullReferenceException
+Exception: Referencia a objeto no establecida como instancia de un objeto.
+Source: Recintos resultados de busqueda
+Stack Trace: 
+   en SIGAC.WEB.Vistas.Sistema.Recintos.gridViewRecintos_RowDataBound(Object sender, GridViewRowEventArgs e) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\Sistema\Recintos.aspx.cs:línea 204
+   en System.Web.UI.WebControls.GridView.OnRowDataBound(GridViewRowEventArgs e)
+   en System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   en System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   en System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   en System.Web.UI.DataSourceView.Select(DataSourceSelectArguments arguments, DataSourceViewSelectCallback callback)
+   en System.Web.UI.WebControls.DataBoundControl.PerformSelect()
+   en System.Web.UI.WebControls.BaseDataBoundControl.DataBind()
+   en System.Web.UI.WebControls.GridView.DataBind()
+   en SIGAC.WEB.Vistas.Sistema.Recintos.RefreshGridDataSource(IEnumerable datasource, String source) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\Sistema\Recintos.aspx.cs:línea 42
+
+********** 6/2/2018 1:12:17 p. m. **********
+Exception Type: System.NullReferenceException
+Exception: Referencia a objeto no establecida como instancia de un objeto.
+Source: Recintos Fill Grid Method
+Stack Trace: 
+   en SIGAC.WEB.Vistas.Sistema.Recintos.gridViewRecintos_RowDataBound(Object sender, GridViewRowEventArgs e) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\Sistema\Recintos.aspx.cs:línea 204
+   en System.Web.UI.WebControls.GridView.OnRowDataBound(GridViewRowEventArgs e)
+   en System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   en System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   en System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   en System.Web.UI.DataSourceView.Select(DataSourceSelectArguments arguments, DataSourceViewSelectCallback callback)
+   en System.Web.UI.WebControls.DataBoundControl.PerformSelect()
+   en System.Web.UI.WebControls.BaseDataBoundControl.DataBind()
+   en System.Web.UI.WebControls.GridView.DataBind()
+   en SIGAC.WEB.Vistas.Sistema.Recintos.RefreshGridDataSource(IEnumerable datasource, String source) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\Sistema\Recintos.aspx.cs:línea 42
+
+********** 6/2/2018 1:12:28 p. m. **********
+Exception Type: System.NullReferenceException
+Exception: Referencia a objeto no establecida como instancia de un objeto.
+Source: Recintos resultados de busqueda
+Stack Trace: 
+   en SIGAC.WEB.Vistas.Sistema.Recintos.gridViewRecintos_RowDataBound(Object sender, GridViewRowEventArgs e) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\Sistema\Recintos.aspx.cs:línea 204
+   en System.Web.UI.WebControls.GridView.OnRowDataBound(GridViewRowEventArgs e)
+   en System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   en System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   en System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   en System.Web.UI.DataSourceView.Select(DataSourceSelectArguments arguments, DataSourceViewSelectCallback callback)
+   en System.Web.UI.WebControls.DataBoundControl.PerformSelect()
+   en System.Web.UI.WebControls.BaseDataBoundControl.DataBind()
+   en System.Web.UI.WebControls.GridView.DataBind()
+   en SIGAC.WEB.Vistas.Sistema.Recintos.RefreshGridDataSource(IEnumerable datasource, String source) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\Sistema\Recintos.aspx.cs:línea 42
+
+********** 6/2/2018 1:13:09 p. m. **********
+Exception Type: System.NullReferenceException
+Exception: Referencia a objeto no establecida como instancia de un objeto.
+Source: Recintos Fill Grid Method
+Stack Trace: 
+   en SIGAC.WEB.Vistas.Sistema.Recintos.gridViewRecintos_RowDataBound(Object sender, GridViewRowEventArgs e) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\Sistema\Recintos.aspx.cs:línea 204
+   en System.Web.UI.WebControls.GridView.OnRowDataBound(GridViewRowEventArgs e)
+   en System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   en System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   en System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   en System.Web.UI.DataSourceView.Select(DataSourceSelectArguments arguments, DataSourceViewSelectCallback callback)
+   en System.Web.UI.WebControls.DataBoundControl.PerformSelect()
+   en System.Web.UI.WebControls.BaseDataBoundControl.DataBind()
+   en System.Web.UI.WebControls.GridView.DataBind()
+   en SIGAC.WEB.Vistas.Sistema.Recintos.RefreshGridDataSource(IEnumerable datasource, String source) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\Sistema\Recintos.aspx.cs:línea 42
+
+********** 6/2/2018 1:54:32 p. m. **********
+Exception Type: System.NullReferenceException
+Exception: Referencia a objeto no establecida como instancia de un objeto.
+Source: Recintos Fill Grid Method
+Stack Trace: 
+   en SIGAC.WEB.Vistas.Sistema.Recintos.gridViewRecintos_RowDataBound(Object sender, GridViewRowEventArgs e) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\Sistema\Recintos.aspx.cs:línea 204
+   en System.Web.UI.WebControls.GridView.OnRowDataBound(GridViewRowEventArgs e)
+   en System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   en System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   en System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   en System.Web.UI.DataSourceView.Select(DataSourceSelectArguments arguments, DataSourceViewSelectCallback callback)
+   en System.Web.UI.WebControls.DataBoundControl.PerformSelect()
+   en System.Web.UI.WebControls.BaseDataBoundControl.DataBind()
+   en System.Web.UI.WebControls.GridView.DataBind()
+   en SIGAC.WEB.Vistas.Sistema.Recintos.RefreshGridDataSource(IEnumerable datasource, String source) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\Sistema\Recintos.aspx.cs:línea 42
+
+********** 6/2/2018 1:58:22 p. m. **********
+Exception Type: System.NullReferenceException
+Exception: Referencia a objeto no establecida como instancia de un objeto.
+Source: Recintos Fill Grid Method
+Stack Trace: 
+   en SIGAC.WEB.Vistas.Sistema.Recintos.gridViewRecintos_RowDataBound(Object sender, GridViewRowEventArgs e) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\Sistema\Recintos.aspx.cs:línea 204
+   en System.Web.UI.WebControls.GridView.OnRowDataBound(GridViewRowEventArgs e)
+   en System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   en System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   en System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   en System.Web.UI.DataSourceView.Select(DataSourceSelectArguments arguments, DataSourceViewSelectCallback callback)
+   en System.Web.UI.WebControls.DataBoundControl.PerformSelect()
+   en System.Web.UI.WebControls.BaseDataBoundControl.DataBind()
+   en System.Web.UI.WebControls.GridView.DataBind()
+   en SIGAC.WEB.Vistas.Sistema.Recintos.RefreshGridDataSource(IEnumerable datasource, String source) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\Sistema\Recintos.aspx.cs:línea 42
+
+********** 6/2/2018 2:19:04 p. m. **********
+Exception Type: System.NullReferenceException
+Exception: Referencia a objeto no establecida como instancia de un objeto.
+Source: Recintos Fill Grid Method
+Stack Trace: 
+   en SIGAC.WEB.Vistas.Sistema.Recintos.gridViewRecintos_RowDataBound(Object sender, GridViewRowEventArgs e) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\Sistema\Recintos.aspx.cs:línea 205
+   en System.Web.UI.WebControls.GridView.OnRowDataBound(GridViewRowEventArgs e)
+   en System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   en System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   en System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   en System.Web.UI.DataSourceView.Select(DataSourceSelectArguments arguments, DataSourceViewSelectCallback callback)
+   en System.Web.UI.WebControls.DataBoundControl.PerformSelect()
+   en System.Web.UI.WebControls.BaseDataBoundControl.DataBind()
+   en System.Web.UI.WebControls.GridView.DataBind()
+   en SIGAC.WEB.Vistas.Sistema.Recintos.RefreshGridDataSource(List`1 datasource, String source) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\Sistema\Recintos.aspx.cs:línea 43
+
+********** 6/2/2018 2:24:58 p. m. **********
+Exception Type: System.NullReferenceException
+Exception: Referencia a objeto no establecida como instancia de un objeto.
+Source: Recintos Fill Grid Method
+Stack Trace: 
+   en SIGAC.WEB.Vistas.Sistema.Recintos.gridViewRecintos_RowDataBound(Object sender, GridViewRowEventArgs e) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\Sistema\Recintos.aspx.cs:línea 205
+   en System.Web.UI.WebControls.GridView.OnRowDataBound(GridViewRowEventArgs e)
+   en System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   en System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   en System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   en System.Web.UI.DataSourceView.Select(DataSourceSelectArguments arguments, DataSourceViewSelectCallback callback)
+   en System.Web.UI.WebControls.DataBoundControl.PerformSelect()
+   en System.Web.UI.WebControls.BaseDataBoundControl.DataBind()
+   en System.Web.UI.WebControls.GridView.DataBind()
+   en SIGAC.WEB.Vistas.Sistema.Recintos.RefreshGridDataSource(List`1 datasource, String source) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\Sistema\Recintos.aspx.cs:línea 43
+
+********** 6/2/2018 2:29:37 p. m. **********
+Inner Exception Type: System.Data.Entity.Core.UpdateException
+Inner Exception: An error occurred while updating the entries. See the inner exception for details.
+Inner Source: EntityFramework
+Inner Stack Trace: 
+   en System.Data.Entity.Core.Mapping.Update.Internal.UpdateTranslator.Update()
+   en System.Data.Entity.Core.EntityClient.Internal.EntityAdapter.<Update>b__2(UpdateTranslator ut)
+   en System.Data.Entity.Core.EntityClient.Internal.EntityAdapter.Update[T](T noChangesResult, Func`2 updateFunction)
+   en System.Data.Entity.Core.EntityClient.Internal.EntityAdapter.Update()
+   en System.Data.Entity.Core.Objects.ObjectContext.<SaveChangesToStore>b__35()
+   en System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   en System.Data.Entity.Core.Objects.ObjectContext.SaveChangesToStore(SaveOptions options, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction)
+   en System.Data.Entity.Core.Objects.ObjectContext.<>c__DisplayClass2a.<SaveChangesInternal>b__27()
+   en System.Data.Entity.Infrastructure.DefaultExecutionStrategy.Execute[TResult](Func`1 operation)
+   en System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   en System.Data.Entity.Core.Objects.ObjectContext.SaveChanges(SaveOptions options)
+   en System.Data.Entity.Internal.InternalContext.SaveChanges()
+Exception Type: System.Data.Entity.Infrastructure.DbUpdateException
+Exception: An error occurred while updating the entries. See the inner exception for details.
+Source: Recintos V
+Stack Trace: 
+   en System.Data.Entity.Internal.InternalContext.SaveChanges()
+   en System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   en System.Data.Entity.DbContext.SaveChanges()
+   en SIGAC.WEB.Vistas.Sistema.Recintos.btnAdd_Click(Object sender, EventArgs e) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\Sistema\Recintos.aspx.cs:línea 88
+
+********** 6/2/2018 2:31:00 p. m. **********
+Exception Type: System.NullReferenceException
+Exception: Referencia a objeto no establecida como instancia de un objeto.
+Source: Recintos Fill Grid Method
+Stack Trace: 
+   en SIGAC.WEB.Vistas.Sistema.Recintos.gridViewRecintos_RowDataBound(Object sender, GridViewRowEventArgs e) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\Sistema\Recintos.aspx.cs:línea 205
+   en System.Web.UI.WebControls.GridView.OnRowDataBound(GridViewRowEventArgs e)
+   en System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   en System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   en System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   en System.Web.UI.DataSourceView.Select(DataSourceSelectArguments arguments, DataSourceViewSelectCallback callback)
+   en System.Web.UI.WebControls.DataBoundControl.PerformSelect()
+   en System.Web.UI.WebControls.BaseDataBoundControl.DataBind()
+   en System.Web.UI.WebControls.GridView.DataBind()
+   en SIGAC.WEB.Vistas.Sistema.Recintos.RefreshGridDataSource(List`1 datasource, String source) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\Sistema\Recintos.aspx.cs:línea 43
+
+********** 6/2/2018 2:32:54 p. m. **********
+Exception Type: System.NullReferenceException
+Exception: Referencia a objeto no establecida como instancia de un objeto.
+Source: Recintos resultados de busqueda
+Stack Trace: 
+   en SIGAC.WEB.Vistas.Sistema.Recintos.gridViewRecintos_RowDataBound(Object sender, GridViewRowEventArgs e) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\Sistema\Recintos.aspx.cs:línea 205
+   en System.Web.UI.WebControls.GridView.OnRowDataBound(GridViewRowEventArgs e)
+   en System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   en System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   en System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   en System.Web.UI.DataSourceView.Select(DataSourceSelectArguments arguments, DataSourceViewSelectCallback callback)
+   en System.Web.UI.WebControls.DataBoundControl.PerformSelect()
+   en System.Web.UI.WebControls.BaseDataBoundControl.DataBind()
+   en System.Web.UI.WebControls.GridView.DataBind()
+   en SIGAC.WEB.Vistas.Sistema.Recintos.RefreshGridDataSource(List`1 datasource, String source) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\Sistema\Recintos.aspx.cs:línea 43
+
+********** 6/2/2018 2:34:22 p. m. **********
+Exception Type: System.NullReferenceException
+Exception: Referencia a objeto no establecida como instancia de un objeto.
+Source: Recintos Fill Grid Method
+Stack Trace: 
+   en SIGAC.WEB.Vistas.Sistema.Recintos.gridViewRecintos_RowDataBound(Object sender, GridViewRowEventArgs e) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\Sistema\Recintos.aspx.cs:línea 205
+   en System.Web.UI.WebControls.GridView.OnRowDataBound(GridViewRowEventArgs e)
+   en System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   en System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   en System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   en System.Web.UI.DataSourceView.Select(DataSourceSelectArguments arguments, DataSourceViewSelectCallback callback)
+   en System.Web.UI.WebControls.DataBoundControl.PerformSelect()
+   en System.Web.UI.WebControls.BaseDataBoundControl.DataBind()
+   en System.Web.UI.WebControls.GridView.DataBind()
+   en SIGAC.WEB.Vistas.Sistema.Recintos.RefreshGridDataSource(List`1 datasource, String source) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\Sistema\Recintos.aspx.cs:línea 43
+
+********** 6/2/2018 2:35:34 p. m. **********
+Exception Type: System.NullReferenceException
+Exception: Referencia a objeto no establecida como instancia de un objeto.
+Source: Recintos resultados de busqueda
+Stack Trace: 
+   en SIGAC.WEB.Vistas.Sistema.Recintos.gridViewRecintos_RowDataBound(Object sender, GridViewRowEventArgs e) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\Sistema\Recintos.aspx.cs:línea 205
+   en System.Web.UI.WebControls.GridView.OnRowDataBound(GridViewRowEventArgs e)
+   en System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   en System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   en System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   en System.Web.UI.DataSourceView.Select(DataSourceSelectArguments arguments, DataSourceViewSelectCallback callback)
+   en System.Web.UI.WebControls.DataBoundControl.PerformSelect()
+   en System.Web.UI.WebControls.BaseDataBoundControl.DataBind()
+   en System.Web.UI.WebControls.GridView.DataBind()
+   en SIGAC.WEB.Vistas.Sistema.Recintos.RefreshGridDataSource(List`1 datasource, String source) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\Sistema\Recintos.aspx.cs:línea 43
+
