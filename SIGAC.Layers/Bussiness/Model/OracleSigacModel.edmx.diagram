@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="ef6243b6fe944f49a52b326e5414a463" Name="Diagram1">
+      <Diagram DiagramId="209305121e084ed28bb36df17c62ddce" Name="Diagram1" ZoomLevel="59">
         <EntityTypeShape EntityType="SigacModel.DEPARTAMENTO" Width="1.5" PointX="0.75" PointY="1.625" IsExpanded="true" />
         <EntityTypeShape EntityType="SigacModel.EMPLEADO" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="SigacModel.RECINTOS" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />

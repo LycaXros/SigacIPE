@@ -16,7 +16,6 @@ warning 6002: The table/view 'SIGAC.ACTIVOS' does not have a primary key defined
             <PropertyRef Name="MARCA" />
             <PropertyRef Name="MODELO" />
             <PropertyRef Name="LOCALIZACION" />
-            <PropertyRef Name="ESTATUS" />
           </Key>
           <Property Name="ID" Type="number" Precision="6" Scale="0" Nullable="false" />
           <Property Name="CODIGO" Type="varchar2" MaxLength="20" Nullable="false" />
@@ -891,8 +890,6 @@ warning 6002: The table/view 'SIGAC.SUB_TIPOS' does not have a primary key defin
           <Key>
             <PropertyRef Name="ID" />
             <PropertyRef Name="ID_TIPO" />
-            <PropertyRef Name="NOMBRE" />
-            <PropertyRef Name="ESTATUS" />
           </Key>
           <Property Name="ID" Type="number" Precision="6" Scale="0" Nullable="false" />
           <Property Name="ID_TIPO" Type="number" Precision="6" Scale="0" Nullable="false" />
@@ -918,8 +915,6 @@ warning 6002: The table/view 'SIGAC.TIPOS_ASIGNATURA' does not have a primary ke
         <EntityType Name="TIPOS_ASIGNATURA">
           <Key>
             <PropertyRef Name="ID" />
-            <PropertyRef Name="DESCRIPCION" />
-            <PropertyRef Name="ESTATUS" />
           </Key>
           <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" />
           <Property Name="DESCRIPCION" Type="varchar2" MaxLength="50" Nullable="false" />
@@ -1217,7 +1212,7 @@ FROM "SIGAC"."TIPOS_ASIGNATURA" "TIPOS_ASIGNATURA"</DefiningQuery>
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="ID" Type="Int32" Nullable="false" />
           <Property Name="NOMBRE" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
           <Property Name="DIRECCION" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
           <Property Name="TELEFONO1" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
@@ -1915,7 +1910,6 @@ FROM "SIGAC"."TIPOS_ASIGNATURA" "TIPOS_ASIGNATURA"</DefiningQuery>
             <PropertyRef Name="MARCA" />
             <PropertyRef Name="MODELO" />
             <PropertyRef Name="LOCALIZACION" />
-            <PropertyRef Name="ESTATUS" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" />
           <Property Name="CODIGO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
@@ -2042,8 +2036,6 @@ FROM "SIGAC"."TIPOS_ASIGNATURA" "TIPOS_ASIGNATURA"</DefiningQuery>
           <Key>
             <PropertyRef Name="ID" />
             <PropertyRef Name="ID_TIPO" />
-            <PropertyRef Name="NOMBRE" />
-            <PropertyRef Name="ESTATUS" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" />
           <Property Name="ID_TIPO" Type="Int32" Nullable="false" />
@@ -2065,8 +2057,6 @@ FROM "SIGAC"."TIPOS_ASIGNATURA" "TIPOS_ASIGNATURA"</DefiningQuery>
         <EntityType Name="TIPOS_ASIGNATURA">
           <Key>
             <PropertyRef Name="ID" />
-            <PropertyRef Name="DESCRIPCION" />
-            <PropertyRef Name="ESTATUS" />
           </Key>
           <Property Name="ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
           <Property Name="DESCRIPCION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
@@ -2136,7 +2126,7 @@ FROM "SIGAC"."TIPOS_ASIGNATURA" "TIPOS_ASIGNATURA"</DefiningQuery>
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="SigacEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="DEPARTAMENTO" EntityType="Self.DEPARTAMENTO" />
           <EntitySet Name="EMPLEADO" EntityType="Self.EMPLEADO" />
           <EntitySet Name="RECINTOS" EntityType="Self.RECINTOS" />
@@ -2208,7 +2198,7 @@ FROM "SIGAC"."TIPOS_ASIGNATURA" "TIPOS_ASIGNATURA"</DefiningQuery>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="SigacModelStoreContainer" CdmEntityContainer="Entities">
+        <EntityContainerMapping StorageEntityContainer="SigacModelStoreContainer" CdmEntityContainer="SigacEntities">
           <EntitySetMapping Name="DEPARTAMENTO">
             <EntityTypeMapping TypeName="SigacModel.DEPARTAMENTO">
               <MappingFragment StoreEntitySet="DEPARTAMENTO">
