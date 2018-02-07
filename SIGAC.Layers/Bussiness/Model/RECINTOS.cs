@@ -14,7 +14,7 @@ namespace SIGAC.Layers.Bussiness.Model
     
     public partial class RECINTOS
     {
-        public int ID { get; set; }
+        public decimal ID { get; set; }
         public string NOMBRE { get; set; }
         public string DIRECCION { get; set; }
         public string TELEFONO1 { get; set; }

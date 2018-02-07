@@ -306,6 +306,10 @@
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
+    <EntityDeploy Include="Bussiness\Model\OracleSigacModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>OracleSigacModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
     <EntityDeploy Include="Bussiness\Model\OracleSiathModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>OracleSiathModel.Designer.cs</LastGenOutput>
@@ -313,10 +317,6 @@
     <None Include="Bussiness\Model\OracleSiathModel.edmx.diagram">
       <DependentUpon>OracleSiathModel.edmx</DependentUpon>
     </None>
-    <EntityDeploy Include="Bussiness\Model\OracleSigacModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>OracleSigacModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
     <None Include="Bussiness\Model\OracleSigacModel.edmx.diagram">
       <DependentUpon>OracleSigacModel.edmx</DependentUpon>
     </None>

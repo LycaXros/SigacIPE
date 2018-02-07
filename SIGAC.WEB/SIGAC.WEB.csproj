@@ -322,6 +322,17 @@
     <Content Include="Scripts\jquery-3.3.1.min.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <Content Include="Scripts\jquery.searchabledropdown-v1.0.8\jquery.searchabledropdown-1.0.8.min.js" />
+    <Content Include="Scripts\jquery.searchabledropdown-v1.0.8\jquery.searchabledropdown-1.0.8.src.js" />
+    <Content Include="Scripts\jquery.searchabledropdown-v1.0.8\sh\help.png" />
+    <Content Include="Scripts\jquery.searchabledropdown-v1.0.8\sh\magnifier.png" />
+    <Content Include="Scripts\jquery.searchabledropdown-v1.0.8\sh\page_white_code.png" />
+    <Content Include="Scripts\jquery.searchabledropdown-v1.0.8\sh\page_white_copy.png" />
+    <Content Include="Scripts\jquery.searchabledropdown-v1.0.8\sh\printer.png" />
+    <Content Include="Scripts\jquery.searchabledropdown-v1.0.8\sh\shBrushJScript.js" />
+    <Content Include="Scripts\jquery.searchabledropdown-v1.0.8\sh\shCore.css" />
+    <Content Include="Scripts\jquery.searchabledropdown-v1.0.8\sh\shCore.js" />
+    <Content Include="Scripts\jquery.searchabledropdown-v1.0.8\sh\shThemeDefault.css" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\popper-utils.js" />
     <Content Include="Scripts\popper-utils.min.js" />
@@ -336,6 +347,7 @@
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
     <Content Include="Scripts\User Scripts\menuJS.js" />
+    <Content Include="Scripts\User Scripts\selectJS.js" />
     <Content Include="Scripts\WebForms\DetailsView.js" />
     <Content Include="Scripts\WebForms\Focus.js" />
     <Content Include="Scripts\WebForms\GridView.js" />

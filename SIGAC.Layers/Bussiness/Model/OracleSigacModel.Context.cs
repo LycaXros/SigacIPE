@@ -25,6 +25,7 @@ namespace SIGAC.Layers.Bussiness.Model
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<ASIGNATURAS> ASIGNATURAS { get; set; }
         public virtual DbSet<DEPARTAMENTO> DEPARTAMENTO { get; set; }
         public virtual DbSet<EMPLEADO> EMPLEADO { get; set; }
         public virtual DbSet<RECINTOS> RECINTOS { get; set; }
@@ -61,14 +62,13 @@ namespace SIGAC.Layers.Bussiness.Model
         public virtual DbSet<SIEDU_PRESUPUESTO> SIEDU_PRESUPUESTO { get; set; }
         public virtual DbSet<SIEDU_TEMA> SIEDU_TEMA { get; set; }
         public virtual DbSet<SIEDU_TIPO_DOMINIO> SIEDU_TIPO_DOMINIO { get; set; }
+        public virtual DbSet<TIPOS_ASIGNATURA> TIPOS_ASIGNATURA { get; set; }
         public virtual DbSet<ACTIVOS> ACTIVOS { get; set; }
-        public virtual DbSet<ASIGNATURAS> ASIGNATURAS { get; set; }
         public virtual DbSet<AULAS> AULAS { get; set; }
         public virtual DbSet<AULAS_ACTIVOS> AULAS_ACTIVOS { get; set; }
         public virtual DbSet<MOVIMIENTO_PERSONAL> MOVIMIENTO_PERSONAL { get; set; }
         public virtual DbSet<SIEDU_LOG> SIEDU_LOG { get; set; }
         public virtual DbSet<SUB_TIPOS> SUB_TIPOS { get; set; }
         public virtual DbSet<TIPOS> TIPOS { get; set; }
-        public virtual DbSet<TIPOS_ASIGNATURA> TIPOS_ASIGNATURA { get; set; }
     }
 }

@@ -644,3 +644,29 @@ Stack Trace:
    en System.Web.UI.WebControls.GridView.DataBind()
    en SIGAC.WEB.Vistas.Sistema.Recintos.RefreshGridDataSource(List`1 datasource, String source) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\Sistema\Recintos.aspx.cs:línea 43
 
+********** 7/2/2018 11:45:31 a. m. **********
+Exception Type: System.Web.HttpException
+Exception: DataBinding: 'SIGAC.Layers.Bussiness.Model.SIGAC_CURSOS' no contiene una propiedad con el nombre 'ID_CURSOS'.
+Source: Asignaturas Fill DropDown Method
+Stack Trace: 
+   en System.Web.UI.DataBinder.GetPropertyValue(Object container, String propName)
+   en System.Web.UI.DataBinder.GetPropertyValue(Object container, String propName, String format)
+   en System.Web.UI.WebControls.ListControl.PerformDataBinding(IEnumerable dataSource)
+   en System.Web.UI.WebControls.ListControl.OnDataBinding(EventArgs e)
+   en System.Web.UI.WebControls.ListControl.PerformSelect()
+   en System.Web.UI.WebControls.BaseDataBoundControl.DataBind()
+   en SIGAC.WEB.Vistas.Sistema.Asignaturas.RefreshDropDownSource(IEnumerable dataSource, DropDownList dropDownList, KeyValuePair`2 Fields, String source) en E:\PROYECTS\SIGAC\SIGAC.WEB\Vistas\Sistema\Asignaturas.aspx.cs:línea 101
+
+********** 7/2/2018 11:45:48 a. m. **********
+Exception Type: System.Web.HttpException
+Exception: DataBinding: 'SIGAC.Layers.Bussiness.Model.SIGAC_CURSOS' no contiene una propiedad con el nombre 'ID_CURSOS'.
+Source: Asignaturas Fill DropDown Method
+Stack Trace: 
+   en System.Web.UI.DataBinder.GetPropertyValue(Object container, String propName)
+   en System.Web.UI.DataBinder.GetPropertyValue(Object container, String propName, String format)
+   en System.Web.UI.WebControls.ListControl.PerformDataBinding(IEnumerable dataSource)
+   en System.Web.UI.WebControls.ListControl.OnDataBinding(EventArgs e)
+   en System.Web.UI.WebControls.ListControl.PerformSelect()
+   en System.Web.UI.WebControls.BaseDataBoundControl.DataBind()
+   en SIGAC.WEB.Vistas.Sistema.Asignaturas.RefreshDropDownSource(IEnumerable dataSource, DropDownList dropDownList, KeyValuePair`2 Fields, String source) en E:\PROYECTS\SIGAC\SIGAC.WEB\Vistas\Sistema\Asignaturas.aspx.cs:línea 101
+

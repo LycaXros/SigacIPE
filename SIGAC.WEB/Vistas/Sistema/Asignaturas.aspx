@@ -15,10 +15,11 @@
                         <div class="col1">
                             <p>&nbsp;</p>
                         </div>
-                        <div class="col3">
+                        <%--<div class="col3">
+                            asp:TextBox runat="server" />
                             <asp:DropDownList runat="server" ID="selectCurso" CssClass="form-control" Width="100%" AutoPostBack="true"></asp:DropDownList>
-                        </div>
-                        <div class="col5">
+                        </div>--%>
+                        <div class="col8">
                             <div class="input-group">
                                 <asp:TextBox runat="server" ID="textboxFiltro" CssClass="form-control" />
                                 <div class="input-group-btn">
@@ -35,19 +36,18 @@
                 </div>
             </div>
         </div>
-        <div class="GridContainer">
-            <div class="panel panel-custom">
-                <div class="panel-heading">
-                    <h4 class="panel-title">Detalles</h4>
-                </div>
-                <div class="panel-body">
-                    <div class="GridContainer">
-                        <div class="GridRow">
-                            <div class="col1">
-                                <p>&nbsp;</p>
-                            </div>
-                            <div class="col8">
-                                <asp:GridView runat="server" ID="gridViewAsignaturas"
+        <div class="panel panel-custom">
+            <div class="panel-heading">
+                <h4 class="panel-title">Detalles</h4>
+            </div>
+            <div class="panel-body">
+                <div class="GridContainer">
+                    <div class="GridRow">
+                        <div class="col1">
+                            <p>&nbsp;</p>
+                        </div>
+                        <div class="col8 w3-responsive">
+                            <asp:GridView runat="server" ID="gridViewAsignaturas"
                                 AllowPaging="true" PageSize="5"
                                 CssClass="w3-table-all"
                                 HeaderStyle-CssClass="GridCenter"
@@ -57,48 +57,68 @@
                                 OnRowUpdating="gridViewAsignaturas_RowUpdating"
                                 OnPageIndexChanging="gridViewAsignaturas_PageIndexChanging">
                                 <Columns>
-                                    <asp:BoundField DataField="ID_CURSO" HeaderText="ID" />
-                                    <asp:TemplateField HeaderText="Fecha Creacion">
+                                    <asp:BoundField DataField="ID" HeaderText="ID" />
+                                    <asp:TemplateField HeaderText="Nombre">
                                         <ItemTemplate>
                                             <div class="GridCenter">
-                                                <p><%# Eval("FECHA", "{0:d}") %></p>
-                                            </div>
-                                        </ItemTemplate>
-                                    </asp:TemplateField>
-                                    <asp:TemplateField HeaderText="Descripcion">
-                                        <ItemTemplate>
-                                            <div class="GridCenter">
-                                                <p><%# Eval("DESCRIPCION") %></p>
-                                            </div>
-                                        </ItemTemplate>
-                                    </asp:TemplateField>
-                                    <asp:TemplateField HeaderText="Rama Profesional">
-                                        <ItemTemplate>
-                                            <div class="GridCenter">
-                                                <p><%# Eval("RAMA_PROFESIONAL") %></p>
+                                                <p><%# Eval("NOMBRE") %></p>
                                             </div>
                                         </ItemTemplate>
                                     </asp:TemplateField>
                                     <asp:TemplateField HeaderText="Tipo">
                                         <ItemTemplate>
                                             <div class="GridCenter">
-                                                <p><%# Eval("TIPO") %></p>
+                                                <p><%# Eval("NOMBRE_TIPO") %></p>
                                             </div>
                                         </ItemTemplate>
                                     </asp:TemplateField>
-                                    <asp:TemplateField HeaderText="Vigente">
+                                    <asp:TemplateField HeaderText="Curso">
                                         <ItemTemplate>
                                             <div class="GridCenter">
-                                                <p><%# Eval("VIGENTE") %></p>
+                                                <p><%# Eval("NOMBRE_CURSO") %></p>
+                                            </div>
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+                                    <asp:TemplateField HeaderText="Creditos">
+                                        <ItemTemplate>
+                                            <div class="GridCenter">
+                                                <p><%# Eval("CREDITOS") %></p>
+                                            </div>
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+                                    <asp:TemplateField HeaderText="Horas">
+                                        <ItemTemplate>
+                                            <div class="GridCenter">
+                                                <p><%# Eval("HORAS") %></p>
+                                            </div>
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+                                    <asp:TemplateField HeaderText="Fechas">
+                                        <ItemTemplate>
+                                            <div class="GridCenter">
+                                                <p><%# Eval("FECHAS") %></p>
+                                            </div>
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+                                    <asp:TemplateField HeaderText="Horarios">
+                                        <ItemTemplate>
+                                            <div class="GridCenter">
+                                                <p><%# Eval("HORARIOS") %></p>
+                                            </div>
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+                                    <asp:TemplateField HeaderText="Estatus">
+                                        <ItemTemplate>
+                                            <div class="GridCenter">
+                                                <p><%# Eval("ESTATUS") %></p>
                                             </div>
                                         </ItemTemplate>
                                     </asp:TemplateField>
                                 </Columns>
                             </asp:GridView>
-                            </div>
-                            <div class="col1">
-                                <p>&nbsp;</p>
-                            </div>
+                        </div>
+                        <div class="col1">
+                            <p>&nbsp;</p>
                         </div>
                     </div>
                 </div>

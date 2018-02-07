@@ -16,9 +16,9 @@ namespace SIGAC.Layers.Bussiness.Model
     {
         public decimal ID { get; set; }
         public string DESCRIPCION { get; set; }
-        public Nullable<decimal> CAMPO1 { get; set; }
-        public Nullable<decimal> CAMPO2 { get; set; }
-        public Nullable<decimal> CAMPO3 { get; set; }
+        public string CAMPO1 { get; set; }
+        public string CAMPO2 { get; set; }
+        public string CAMPO3 { get; set; }
         public string CAMPO4 { get; set; }
         public decimal ESTATUS { get; set; }
     }
