@@ -26,3 +26,4 @@ Aqui estan los metodos, procedimientos, funciones y propiedades referentes a la 
 
 
 https://www.aspsnippets.com/Articles/Entity-Framework-CRUD-Select-Insert-Edit-Update-Delete-using-Entity-Framework-in-ASPNet.aspx
+https://oracle-base.com/articles/misc/autonumber-and-identity

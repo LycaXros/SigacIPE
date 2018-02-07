@@ -76,6 +76,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Application\AppContext.cs" />
+    <Compile Include="Application\DataTransformUtility.cs" />
     <Compile Include="Application\ExceptionUtility.cs" />
     <Compile Include="Bussiness\Model\ACTIVOS.cs">
       <DependentUpon>OracleSigacModel.tt</DependentUpon>

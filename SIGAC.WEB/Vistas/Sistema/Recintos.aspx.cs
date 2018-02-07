@@ -27,7 +27,7 @@ namespace SIGAC.WEB.Vistas.Sistema
             using (dbContext = new Layers.Bussiness.Model.SigacEntities())
             {
                 var datosRecintos = dbContext.RECINTOS
-                    //.Where(x => x.ESTATUS == 1)
+                    .Where(x => x.ESTATUS == 1)
                     .ToList();
                 RefreshGridDataSource(datosRecintos, "Recintos Fill Grid Method");
 
@@ -39,6 +39,7 @@ namespace SIGAC.WEB.Vistas.Sistema
         {
             try
             {
+                datasource = datasource.OrderBy(x => x.ID).ToList();
                 gridViewRecintos.DataSource = datasource;
                 gridViewRecintos.DataBind();
             }
@@ -58,7 +59,7 @@ namespace SIGAC.WEB.Vistas.Sistema
             {
                 string texto = txtFiltro.Text.Trim();
                 var resultados = dbContext.RECINTOS
-                    .Where(x => x.NOMBRE.Contains(texto)).ToList();
+                    .Where(x => x.NOMBRE.Contains(texto) && x.ESTATUS == 1).ToList();
 
                 RefreshGridDataSource(resultados, "Recintos resultados de busqueda");
             }
@@ -103,7 +104,8 @@ namespace SIGAC.WEB.Vistas.Sistema
             string dir = txtDir.Text;
             string tel1 = txtTel1.Text;
             string tel2 = txtTel2.Text;
-            var notas = new byte[16];//Convert.FromBase64String(txtNotas.Text.Trim().ToString());
+            var notas = //Convert.FromBase64String(txtNotas.Text.Trim().ToString());
+                Layers.Application.DataTransformUtility.StringToByte(txtNotas.Text.Trim().ToString(), System.Text.Encoding.ASCII);
             int estado = int.Parse(ddlEstado.SelectedItem.Value);
 
             Layers.Bussiness.Model.RECINTOS recinto = new Layers.Bussiness.Model.RECINTOS()
@@ -127,7 +129,8 @@ namespace SIGAC.WEB.Vistas.Sistema
             string dir = (row.FindControl("e_txtDir") as TextBox).Text;
             string tel1 = (row.FindControl("e_txtTel1") as TextBox).Text;
             string tel2 = (row.FindControl("e_txtTel2") as TextBox).Text;
-            var notas = new byte[16];//Convert.FromBase64String(txtNotas.Text.Trim().ToString());
+            var notas = //new byte[16]; Convert.FromBase64String(txtNotas.Text.Trim().ToString());
+                Layers.Application.DataTransformUtility.StringToByte(txtNotas.Text.Trim().ToString(), System.Text.Encoding.ASCII);
             int estado = int.Parse(  (row.FindControl("e_ddlEstado") as DropDownList).SelectedItem.Value  );
             using (dbContext = new Layers.Bussiness.Model.SigacEntities())
             {
@@ -202,7 +205,7 @@ namespace SIGAC.WEB.Vistas.Sistema
         {
             if (e.Row.RowType == DataControlRowType.DataRow && e.Row.RowIndex != gridViewRecintos.EditIndex)
             {
-                (e.Row.Cells[2].Controls[2] as LinkButton).Attributes["onclick"] = "return confirm('Desea Eliminar este registro');";
+                (e.Row.Cells[0].Controls[2] as LinkButton).Attributes["onclick"] = "return confirm('Desea Eliminar este registro');";
             }
         }
     }

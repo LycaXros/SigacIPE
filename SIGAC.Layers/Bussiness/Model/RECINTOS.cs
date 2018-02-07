@@ -11,7 +11,7 @@ namespace SIGAC.Layers.Bussiness.Model
 {
     using System;
     using System.Collections.Generic;
-    
+
     public partial class RECINTOS
     {
         public int ID { get; set; }
@@ -21,5 +21,17 @@ namespace SIGAC.Layers.Bussiness.Model
         public string TELEFONO2 { get; set; }
         public byte[] NOTA { get; set; }
         public Nullable<decimal> ESTATUS { get; set; }
+
+        public string TransformNota
+        {
+
+            get
+            {
+                if (NOTA == null)
+                    return string.Empty;
+                return Layers.Application.DataTransformUtility.StringFromByte(NOTA, System.Text.Encoding.ASCII);
+            }
+        } 
+        
     }
 }
