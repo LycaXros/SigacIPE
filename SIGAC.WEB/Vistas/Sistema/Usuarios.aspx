@@ -52,6 +52,28 @@
                             OnRowDeleting="gridViewUsuarios_RowDeleting"
                             OnPageIndexChanging="gridViewUsuarios_PageIndexChanging">
                             <Columns>
+                                <asp:BoundField DataField="ID" HeaderText="ID" />
+                                <asp:TemplateField HeaderText="Usuarios">
+                                    <ItemTemplate>
+                                        <div class="GridCenter">
+                                            <p><%= Eval("Persona"); %></p>
+                                        </div>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Usuarios">
+                                    <ItemTemplate>
+                                        <div class="GridCenter">
+                                            <p><%= Eval("Usuario"); %></p>
+                                        </div>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Roles">
+                                    <ItemTemplate>
+                                        <div class="GridCenter">
+                                            <p><%= Eval("Rol"); %></p>
+                                        </div>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
                             </Columns>
                         </asp:GridView>
                     </div>

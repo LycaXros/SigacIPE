@@ -25,13 +25,15 @@ namespace SIGAC.Layers.Bussiness.Model
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<SIGAC_EMPLEADOS> SIGAC_EMPLEADOS { get; set; }
         public virtual DbSet<SIGAC_CARGOS> SIGAC_CARGOS { get; set; }
         public virtual DbSet<SIGAC_CARRERAS> SIGAC_CARRERAS { get; set; }
         public virtual DbSet<SIGAC_CATEGORIAS> SIGAC_CATEGORIAS { get; set; }
+        public virtual DbSet<SIGAC_CURSOS_EMPLEADOS> SIGAC_CURSOS_EMPLEADOS { get; set; }
+        public virtual DbSet<SIGAC_EMPLEADOS> SIGAC_EMPLEADOS { get; set; }
         public virtual DbSet<SIGAC_GRADOS> SIGAC_GRADOS { get; set; }
         public virtual DbSet<SIGAC_LUGARES_GEOGRAFICOS> SIGAC_LUGARES_GEOGRAFICOS { get; set; }
         public virtual DbSet<SIGAC_NIVELES_ACADEMICOS> SIGAC_NIVELES_ACADEMICOS { get; set; }
         public virtual DbSet<SIGAC_UNIDADES_DEPENDENCIA> SIGAC_UNIDADES_DEPENDENCIA { get; set; }
+        public virtual DbSet<SIGAC_CURSOS> SIGAC_CURSOS { get; set; }
     }
 }

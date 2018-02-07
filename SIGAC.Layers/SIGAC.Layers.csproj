@@ -242,6 +242,12 @@
     <Compile Include="Bussiness\Model\SIGAC_CATEGORIAS.cs">
       <DependentUpon>OracleSiathModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Bussiness\Model\SIGAC_CURSOS.cs">
+      <DependentUpon>OracleSiathModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bussiness\Model\SIGAC_CURSOS_EMPLEADOS.cs">
+      <DependentUpon>OracleSiathModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Bussiness\Model\SIGAC_EMPLEADOS.cs">
       <DependentUpon>OracleSiathModel.tt</DependentUpon>
     </Compile>
