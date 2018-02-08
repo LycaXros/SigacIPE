@@ -41,12 +41,13 @@
                     <div class="col1">
                         <p>&nbsp;</p>
                     </div>
-                    <div class="col8">
+                    <div class="col8 w3-responsive">
                         <asp:GridView runat="server" ID="gridViewRecintos" DataKeyNames="ID" AutoGenerateColumns="false" ShowHeaderWhenEmpty="True"
                             AllowPaging="True" CssClass="w3-table-all" OnRowDataBound="gridViewRecintos_RowDataBound"
                             OnRowUpdating="gridViewRecintos_RowUpdating" OnRowEditing="gridViewRecintos_RowEditing"
                             OnRowDeleting="gridViewRecintos_RowDeleting" OnRowCancelingEdit="gridViewRecintos_RowCancelingEdit"
-                            OnPageIndexChanging="gridViewRecintos_PageIndexChanging" EmptyDataText="No records has been added.">
+                            OnPageIndexChanging="gridViewRecintos_PageIndexChanging" EmptyDataText="No records has been added."
+                            >
 
                             <Columns>
                                 
@@ -97,10 +98,11 @@
                                 
                                 <asp:TemplateField HeaderText="Notas">
                                     <ItemTemplate>
-                                        <p id="lbNotas" runat="server"><%# Eval("NOTA") %></p>
+                                       <p id="lbNotas" runat="server"> <%#Eval("TransformNota") %></p>
                                     </ItemTemplate>
                                     <EditItemTemplate>
-                                        <asp:TextBox ID="e_txtNotas" TextMode="MultiLine" runat="server" Height="200px" Width="100" />
+                                        <asp:TextBox ID="e_txtNotas" TextMode="MultiLine" runat="server" Height="200px" Width="100" 
+                                            Text='<%#Eval("TransformNota") %>'/>
                                     </EditItemTemplate>
                                 </asp:TemplateField>
                                

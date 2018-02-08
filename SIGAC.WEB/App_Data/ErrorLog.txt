@@ -644,6 +644,7 @@ Stack Trace:
    en System.Web.UI.WebControls.GridView.DataBind()
    en SIGAC.WEB.Vistas.Sistema.Recintos.RefreshGridDataSource(List`1 datasource, String source) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\Sistema\Recintos.aspx.cs:línea 43
 
+<<<<<<< HEAD
 ********** 7/2/2018 11:45:31 a. m. **********
 Exception Type: System.Web.HttpException
 Exception: DataBinding: 'SIGAC.Layers.Bussiness.Model.SIGAC_CURSOS' no contiene una propiedad con el nombre 'ID_CURSOS'.
@@ -669,4 +670,685 @@ Stack Trace:
    en System.Web.UI.WebControls.ListControl.PerformSelect()
    en System.Web.UI.WebControls.BaseDataBoundControl.DataBind()
    en SIGAC.WEB.Vistas.Sistema.Asignaturas.RefreshDropDownSource(IEnumerable dataSource, DropDownList dropDownList, KeyValuePair`2 Fields, String source) en E:\PROYECTS\SIGAC\SIGAC.WEB\Vistas\Sistema\Asignaturas.aspx.cs:línea 101
+=======
+********** 7/2/2018 10:55:41 a. m. **********
+Exception Type: System.NullReferenceException
+Exception: Referencia a objeto no establecida como instancia de un objeto.
+Source: Recintos Fill Grid Method
+Stack Trace: 
+   en SIGAC.WEB.Vistas.Sistema.Recintos.gridViewRecintos_RowDataBound(Object sender, GridViewRowEventArgs e) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\Sistema\Recintos.aspx.cs:línea 205
+   en System.Web.UI.WebControls.GridView.OnRowDataBound(GridViewRowEventArgs e)
+   en System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   en System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   en System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   en System.Web.UI.DataSourceView.Select(DataSourceSelectArguments arguments, DataSourceViewSelectCallback callback)
+   en System.Web.UI.WebControls.DataBoundControl.PerformSelect()
+   en System.Web.UI.WebControls.BaseDataBoundControl.DataBind()
+   en System.Web.UI.WebControls.GridView.DataBind()
+   en SIGAC.WEB.Vistas.Sistema.Recintos.RefreshGridDataSource(List`1 datasource, String source) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\Sistema\Recintos.aspx.cs:línea 43
+
+********** 7/2/2018 10:58:16 a. m. **********
+Inner Exception Type: System.Data.Entity.Core.UpdateException
+Inner Exception: An error occurred while updating the entries. See the inner exception for details.
+Inner Source: EntityFramework
+Inner Stack Trace: 
+   en System.Data.Entity.Core.Mapping.Update.Internal.UpdateTranslator.Update()
+   en System.Data.Entity.Core.EntityClient.Internal.EntityAdapter.<Update>b__2(UpdateTranslator ut)
+   en System.Data.Entity.Core.EntityClient.Internal.EntityAdapter.Update[T](T noChangesResult, Func`2 updateFunction)
+   en System.Data.Entity.Core.EntityClient.Internal.EntityAdapter.Update()
+   en System.Data.Entity.Core.Objects.ObjectContext.<SaveChangesToStore>b__35()
+   en System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   en System.Data.Entity.Core.Objects.ObjectContext.SaveChangesToStore(SaveOptions options, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction)
+   en System.Data.Entity.Core.Objects.ObjectContext.<>c__DisplayClass2a.<SaveChangesInternal>b__27()
+   en System.Data.Entity.Infrastructure.DefaultExecutionStrategy.Execute[TResult](Func`1 operation)
+   en System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   en System.Data.Entity.Core.Objects.ObjectContext.SaveChanges(SaveOptions options)
+   en System.Data.Entity.Internal.InternalContext.SaveChanges()
+Exception Type: System.Data.Entity.Infrastructure.DbUpdateException
+Exception: An error occurred while updating the entries. See the inner exception for details.
+Source: Recintos V
+Stack Trace: 
+   en System.Data.Entity.Internal.InternalContext.SaveChanges()
+   en System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   en System.Data.Entity.DbContext.SaveChanges()
+   en SIGAC.WEB.Vistas.Sistema.Recintos.btnAdd_Click(Object sender, EventArgs e) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\Sistema\Recintos.aspx.cs:línea 88
+
+********** 7/2/2018 11:00:24 a. m. **********
+Exception Type: System.NullReferenceException
+Exception: Referencia a objeto no establecida como instancia de un objeto.
+Source: Recintos Fill Grid Method
+Stack Trace: 
+   en SIGAC.WEB.Vistas.Sistema.Recintos.gridViewRecintos_RowDataBound(Object sender, GridViewRowEventArgs e)
+   en System.Web.UI.WebControls.GridView.OnRowDataBound(GridViewRowEventArgs e)
+   en System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   en System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   en System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   en System.Web.UI.DataSourceView.Select(DataSourceSelectArguments arguments, DataSourceViewSelectCallback callback)
+   en System.Web.UI.WebControls.DataBoundControl.PerformSelect()
+   en System.Web.UI.WebControls.BaseDataBoundControl.DataBind()
+   en System.Web.UI.WebControls.GridView.DataBind()
+   en SIGAC.WEB.Vistas.Sistema.Recintos.RefreshGridDataSource(List`1 datasource, String source)
+
+********** 7/2/2018 11:55:36 a. m. **********
+Inner Exception Type: System.Data.Entity.Core.UpdateException
+Inner Exception: An error occurred while updating the entries. See the inner exception for details.
+Inner Source: EntityFramework
+Inner Stack Trace: 
+   en System.Data.Entity.Core.Mapping.Update.Internal.UpdateTranslator.Update()
+   en System.Data.Entity.Core.EntityClient.Internal.EntityAdapter.<Update>b__2(UpdateTranslator ut)
+   en System.Data.Entity.Core.EntityClient.Internal.EntityAdapter.Update[T](T noChangesResult, Func`2 updateFunction)
+   en System.Data.Entity.Core.EntityClient.Internal.EntityAdapter.Update()
+   en System.Data.Entity.Core.Objects.ObjectContext.<SaveChangesToStore>b__35()
+   en System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   en System.Data.Entity.Core.Objects.ObjectContext.SaveChangesToStore(SaveOptions options, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction)
+   en System.Data.Entity.Core.Objects.ObjectContext.<>c__DisplayClass2a.<SaveChangesInternal>b__27()
+   en System.Data.Entity.Infrastructure.DefaultExecutionStrategy.Execute[TResult](Func`1 operation)
+   en System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   en System.Data.Entity.Core.Objects.ObjectContext.SaveChanges(SaveOptions options)
+   en System.Data.Entity.Internal.InternalContext.SaveChanges()
+Exception Type: System.Data.Entity.Infrastructure.DbUpdateException
+Exception: An error occurred while updating the entries. See the inner exception for details.
+Source: Recintos V
+Stack Trace: 
+   en System.Data.Entity.Internal.InternalContext.SaveChanges()
+   en System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   en System.Data.Entity.DbContext.SaveChanges()
+   en SIGAC.WEB.Vistas.Sistema.Recintos.btnAdd_Click(Object sender, EventArgs e) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\Sistema\Recintos.aspx.cs:línea 89
+
+********** 7/2/2018 11:55:45 a. m. **********
+Exception Type: System.NullReferenceException
+Exception: Referencia a objeto no establecida como instancia de un objeto.
+Source: Recintos Fill Grid Method
+Stack Trace: 
+   en SIGAC.WEB.Vistas.Sistema.Recintos.gridViewRecintos_RowDataBound(Object sender, GridViewRowEventArgs e) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\Sistema\Recintos.aspx.cs:línea 206
+   en System.Web.UI.WebControls.GridView.OnRowDataBound(GridViewRowEventArgs e)
+   en System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   en System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   en System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   en System.Web.UI.DataSourceView.Select(DataSourceSelectArguments arguments, DataSourceViewSelectCallback callback)
+   en System.Web.UI.WebControls.DataBoundControl.PerformSelect()
+   en System.Web.UI.WebControls.BaseDataBoundControl.DataBind()
+   en System.Web.UI.WebControls.GridView.DataBind()
+   en SIGAC.WEB.Vistas.Sistema.Recintos.RefreshGridDataSource(List`1 datasource, String source) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\Sistema\Recintos.aspx.cs:línea 44
+
+********** 7/2/2018 11:56:52 a. m. **********
+Inner Exception Type: System.Data.Entity.Core.UpdateException
+Inner Exception: An error occurred while updating the entries. See the inner exception for details.
+Inner Source: EntityFramework
+Inner Stack Trace: 
+   en System.Data.Entity.Core.Mapping.Update.Internal.UpdateTranslator.Update()
+   en System.Data.Entity.Core.EntityClient.Internal.EntityAdapter.<Update>b__2(UpdateTranslator ut)
+   en System.Data.Entity.Core.EntityClient.Internal.EntityAdapter.Update[T](T noChangesResult, Func`2 updateFunction)
+   en System.Data.Entity.Core.EntityClient.Internal.EntityAdapter.Update()
+   en System.Data.Entity.Core.Objects.ObjectContext.<SaveChangesToStore>b__35()
+   en System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   en System.Data.Entity.Core.Objects.ObjectContext.SaveChangesToStore(SaveOptions options, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction)
+   en System.Data.Entity.Core.Objects.ObjectContext.<>c__DisplayClass2a.<SaveChangesInternal>b__27()
+   en System.Data.Entity.Infrastructure.DefaultExecutionStrategy.Execute[TResult](Func`1 operation)
+   en System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   en System.Data.Entity.Core.Objects.ObjectContext.SaveChanges(SaveOptions options)
+   en System.Data.Entity.Internal.InternalContext.SaveChanges()
+Exception Type: System.Data.Entity.Infrastructure.DbUpdateException
+Exception: An error occurred while updating the entries. See the inner exception for details.
+Source: Recintos V
+Stack Trace: 
+   en System.Data.Entity.Internal.InternalContext.SaveChanges()
+   en System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   en System.Data.Entity.DbContext.SaveChanges()
+   en SIGAC.WEB.Vistas.Sistema.Recintos.btnAdd_Click(Object sender, EventArgs e) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\Sistema\Recintos.aspx.cs:línea 89
+
+********** 7/2/2018 11:56:53 a. m. **********
+Exception Type: System.NullReferenceException
+Exception: Referencia a objeto no establecida como instancia de un objeto.
+Source: Recintos Fill Grid Method
+Stack Trace: 
+   en SIGAC.WEB.Vistas.Sistema.Recintos.gridViewRecintos_RowDataBound(Object sender, GridViewRowEventArgs e) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\Sistema\Recintos.aspx.cs:línea 206
+   en System.Web.UI.WebControls.GridView.OnRowDataBound(GridViewRowEventArgs e)
+   en System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   en System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   en System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   en System.Web.UI.DataSourceView.Select(DataSourceSelectArguments arguments, DataSourceViewSelectCallback callback)
+   en System.Web.UI.WebControls.DataBoundControl.PerformSelect()
+   en System.Web.UI.WebControls.BaseDataBoundControl.DataBind()
+   en System.Web.UI.WebControls.GridView.DataBind()
+   en SIGAC.WEB.Vistas.Sistema.Recintos.RefreshGridDataSource(List`1 datasource, String source) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\Sistema\Recintos.aspx.cs:línea 44
+
+********** 7/2/2018 11:59:27 a. m. **********
+Exception Type: System.NullReferenceException
+Exception: Referencia a objeto no establecida como instancia de un objeto.
+Source: Recintos Fill Grid Method
+Stack Trace: 
+   en SIGAC.WEB.Vistas.Sistema.Recintos.gridViewRecintos_RowDataBound(Object sender, GridViewRowEventArgs e) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\Sistema\Recintos.aspx.cs:línea 206
+   en System.Web.UI.WebControls.GridView.OnRowDataBound(GridViewRowEventArgs e)
+   en System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   en System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   en System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   en System.Web.UI.DataSourceView.Select(DataSourceSelectArguments arguments, DataSourceViewSelectCallback callback)
+   en System.Web.UI.WebControls.DataBoundControl.PerformSelect()
+   en System.Web.UI.WebControls.BaseDataBoundControl.DataBind()
+   en System.Web.UI.WebControls.GridView.DataBind()
+   en SIGAC.WEB.Vistas.Sistema.Recintos.RefreshGridDataSource(List`1 datasource, String source) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\Sistema\Recintos.aspx.cs:línea 44
+
+********** 7/2/2018 12:00:05 p. m. **********
+Exception Type: System.NullReferenceException
+Exception: Referencia a objeto no establecida como instancia de un objeto.
+Source: Recintos Fill Grid Method
+Stack Trace: 
+   en SIGAC.WEB.Vistas.Sistema.Recintos.gridViewRecintos_RowDataBound(Object sender, GridViewRowEventArgs e) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\Sistema\Recintos.aspx.cs:línea 206
+   en System.Web.UI.WebControls.GridView.OnRowDataBound(GridViewRowEventArgs e)
+   en System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   en System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   en System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   en System.Web.UI.DataSourceView.Select(DataSourceSelectArguments arguments, DataSourceViewSelectCallback callback)
+   en System.Web.UI.WebControls.DataBoundControl.PerformSelect()
+   en System.Web.UI.WebControls.BaseDataBoundControl.DataBind()
+   en System.Web.UI.WebControls.GridView.DataBind()
+   en SIGAC.WEB.Vistas.Sistema.Recintos.RefreshGridDataSource(List`1 datasource, String source) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\Sistema\Recintos.aspx.cs:línea 44
+
+********** 7/2/2018 12:04:50 p. m. **********
+Exception Type: System.NullReferenceException
+Exception: Referencia a objeto no establecida como instancia de un objeto.
+Source: Recintos Fill Grid Method
+Stack Trace: 
+   en SIGAC.WEB.Vistas.Sistema.Recintos.gridViewRecintos_RowDataBound(Object sender, GridViewRowEventArgs e) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\Sistema\Recintos.aspx.cs:línea 206
+   en System.Web.UI.WebControls.GridView.OnRowDataBound(GridViewRowEventArgs e)
+   en System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   en System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   en System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   en System.Web.UI.DataSourceView.Select(DataSourceSelectArguments arguments, DataSourceViewSelectCallback callback)
+   en System.Web.UI.WebControls.DataBoundControl.PerformSelect()
+   en System.Web.UI.WebControls.BaseDataBoundControl.DataBind()
+   en System.Web.UI.WebControls.GridView.DataBind()
+   en SIGAC.WEB.Vistas.Sistema.Recintos.RefreshGridDataSource(List`1 datasource, String source) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\Sistema\Recintos.aspx.cs:línea 44
+
+********** 7/2/2018 12:07:22 p. m. **********
+Exception Type: System.NullReferenceException
+Exception: Referencia a objeto no establecida como instancia de un objeto.
+Source: Recintos Fill Grid Method
+Stack Trace: 
+   en SIGAC.WEB.Vistas.Sistema.Recintos.gridViewRecintos_RowDataBound(Object sender, GridViewRowEventArgs e)
+   en System.Web.UI.WebControls.GridView.OnRowDataBound(GridViewRowEventArgs e)
+   en System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   en System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   en System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   en System.Web.UI.DataSourceView.Select(DataSourceSelectArguments arguments, DataSourceViewSelectCallback callback)
+   en System.Web.UI.WebControls.DataBoundControl.PerformSelect()
+   en System.Web.UI.WebControls.BaseDataBoundControl.DataBind()
+   en System.Web.UI.WebControls.GridView.DataBind()
+   en SIGAC.WEB.Vistas.Sistema.Recintos.RefreshGridDataSource(List`1 datasource, String source)
+
+********** 7/2/2018 12:09:21 p. m. **********
+Exception Type: System.NullReferenceException
+Exception: Referencia a objeto no establecida como instancia de un objeto.
+Source: Recintos Fill Grid Method
+Stack Trace: 
+   en SIGAC.WEB.Vistas.Sistema.Recintos.gridViewRecintos_RowDataBound(Object sender, GridViewRowEventArgs e)
+   en System.Web.UI.WebControls.GridView.OnRowDataBound(GridViewRowEventArgs e)
+   en System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   en System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   en System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   en System.Web.UI.DataSourceView.Select(DataSourceSelectArguments arguments, DataSourceViewSelectCallback callback)
+   en System.Web.UI.WebControls.DataBoundControl.PerformSelect()
+   en System.Web.UI.WebControls.BaseDataBoundControl.DataBind()
+   en System.Web.UI.WebControls.GridView.DataBind()
+   en SIGAC.WEB.Vistas.Sistema.Recintos.RefreshGridDataSource(List`1 datasource, String source)
+
+********** 7/2/2018 2:10:34 p. m. **********
+Inner Exception Type: System.ArgumentNullException
+Inner Exception: El búfer no puede ser nulo.
+Nombre del parámetro: buffer
+Inner Source: mscorlib
+Inner Stack Trace: 
+   en System.IO.MemoryStream..ctor(Byte[] buffer, Boolean writable)
+   en System.IO.MemoryStream..ctor(Byte[] buffer)
+   en SIGAC.Layers.Application.DataTransformUtility.StringFromByte(Byte[] values, Encoding encoding) en E:\Proyecto\sigac\SIGAC.Layers\Application\DataTransformUtility.cs:línea 20
+   en SIGAC.Layers.Bussiness.Model.RECINTOS.get_TransformNota() en E:\Proyecto\sigac\SIGAC.Layers\Bussiness\Model\RECINTOS.cs:línea 25
+Exception Type: System.Reflection.TargetInvocationException
+Exception: El descriptor de acceso de la propiedad 'TransformNota' inició la excepción 'El búfer no puede ser nulo.
+Nombre del parámetro: buffer' en el objeto 'SIGAC.Layers.Bussiness.Model.RECINTOS'
+Source: Recintos Fill Grid Method
+Stack Trace: 
+   en System.ComponentModel.ReflectPropertyDescriptor.GetValue(Object component)
+   en System.Web.UI.DataBinder.GetPropertyValue(Object container, String propName)
+   en System.Web.UI.DataBinder.Eval(Object container, String[] expressionParts)
+   en System.Web.UI.DataBinder.Eval(Object container, String expression)
+   en System.Web.UI.TemplateControl.Eval(String expression)
+   en ASP.vistas_sistema_recintos_aspx.__DataBind__control54(Object sender, EventArgs e) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\Sistema\Recintos.aspx:línea 101
+   en System.Web.UI.Control.OnDataBinding(EventArgs e)
+   en System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   en System.Web.UI.Control.DataBind()
+   en System.Web.UI.Control.DataBindChildren()
+   en System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   en System.Web.UI.Control.DataBind()
+   en System.Web.UI.Control.DataBindChildren()
+   en System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   en System.Web.UI.Control.DataBind()
+   en System.Web.UI.Control.DataBindChildren()
+   en System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   en System.Web.UI.Control.DataBind()
+   en System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   en System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   en System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   en System.Web.UI.DataSourceView.Select(DataSourceSelectArguments arguments, DataSourceViewSelectCallback callback)
+   en System.Web.UI.WebControls.DataBoundControl.PerformSelect()
+   en System.Web.UI.WebControls.BaseDataBoundControl.DataBind()
+   en System.Web.UI.WebControls.GridView.DataBind()
+   en SIGAC.WEB.Vistas.Sistema.Recintos.RefreshGridDataSource(List`1 datasource, String source) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\Sistema\Recintos.aspx.cs:línea 44
+
+********** 7/2/2018 2:13:27 p. m. **********
+Inner Exception Type: System.ArgumentNullException
+Inner Exception: El búfer no puede ser nulo.
+Nombre del parámetro: buffer
+Inner Source: mscorlib
+Inner Stack Trace: 
+   en System.IO.MemoryStream..ctor(Byte[] buffer, Boolean writable)
+   en System.IO.MemoryStream..ctor(Byte[] buffer)
+   en SIGAC.Layers.Application.DataTransformUtility.StringFromByte(Byte[] values, Encoding encoding) en E:\Proyecto\sigac\SIGAC.Layers\Application\DataTransformUtility.cs:línea 20
+   en SIGAC.Layers.Bussiness.Model.RECINTOS.get_TransformNota() en E:\Proyecto\sigac\SIGAC.Layers\Bussiness\Model\RECINTOS.cs:línea 25
+Exception Type: System.Reflection.TargetInvocationException
+Exception: El descriptor de acceso de la propiedad 'TransformNota' inició la excepción 'El búfer no puede ser nulo.
+Nombre del parámetro: buffer' en el objeto 'SIGAC.Layers.Bussiness.Model.RECINTOS'
+Source: Recintos Fill Grid Method
+Stack Trace: 
+   en System.ComponentModel.ReflectPropertyDescriptor.GetValue(Object component)
+   en System.Web.UI.DataBinder.GetPropertyValue(Object container, String propName)
+   en System.Web.UI.DataBinder.Eval(Object container, String[] expressionParts)
+   en System.Web.UI.DataBinder.Eval(Object container, String expression)
+   en System.Web.UI.TemplateControl.Eval(String expression)
+   en ASP.vistas_sistema_recintos_aspx.__DataBind__control54(Object sender, EventArgs e) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\Sistema\Recintos.aspx:línea 101
+   en System.Web.UI.Control.OnDataBinding(EventArgs e)
+   en System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   en System.Web.UI.Control.DataBind()
+   en System.Web.UI.Control.DataBindChildren()
+   en System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   en System.Web.UI.Control.DataBind()
+   en System.Web.UI.Control.DataBindChildren()
+   en System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   en System.Web.UI.Control.DataBind()
+   en System.Web.UI.Control.DataBindChildren()
+   en System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   en System.Web.UI.Control.DataBind()
+   en System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   en System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   en System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   en System.Web.UI.DataSourceView.Select(DataSourceSelectArguments arguments, DataSourceViewSelectCallback callback)
+   en System.Web.UI.WebControls.DataBoundControl.PerformSelect()
+   en System.Web.UI.WebControls.BaseDataBoundControl.DataBind()
+   en System.Web.UI.WebControls.GridView.DataBind()
+   en SIGAC.WEB.Vistas.Sistema.Recintos.RefreshGridDataSource(List`1 datasource, String source) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\Sistema\Recintos.aspx.cs:línea 44
+
+********** 7/2/2018 2:13:42 p. m. **********
+Inner Exception Type: System.ArgumentNullException
+Inner Exception: El búfer no puede ser nulo.
+Nombre del parámetro: buffer
+Inner Source: mscorlib
+Inner Stack Trace: 
+   en System.IO.MemoryStream..ctor(Byte[] buffer, Boolean writable)
+   en System.IO.MemoryStream..ctor(Byte[] buffer)
+   en SIGAC.Layers.Application.DataTransformUtility.StringFromByte(Byte[] values, Encoding encoding) en E:\Proyecto\sigac\SIGAC.Layers\Application\DataTransformUtility.cs:línea 20
+   en SIGAC.Layers.Bussiness.Model.RECINTOS.get_TransformNota() en E:\Proyecto\sigac\SIGAC.Layers\Bussiness\Model\RECINTOS.cs:línea 25
+Exception Type: System.Reflection.TargetInvocationException
+Exception: El descriptor de acceso de la propiedad 'TransformNota' inició la excepción 'El búfer no puede ser nulo.
+Nombre del parámetro: buffer' en el objeto 'SIGAC.Layers.Bussiness.Model.RECINTOS'
+Source: Recintos Fill Grid Method
+Stack Trace: 
+   en System.ComponentModel.ReflectPropertyDescriptor.GetValue(Object component)
+   en System.Web.UI.DataBinder.GetPropertyValue(Object container, String propName)
+   en System.Web.UI.DataBinder.Eval(Object container, String[] expressionParts)
+   en System.Web.UI.DataBinder.Eval(Object container, String expression)
+   en System.Web.UI.TemplateControl.Eval(String expression)
+   en ASP.vistas_sistema_recintos_aspx.__DataBind__control54(Object sender, EventArgs e) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\Sistema\Recintos.aspx:línea 101
+   en System.Web.UI.Control.OnDataBinding(EventArgs e)
+   en System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   en System.Web.UI.Control.DataBind()
+   en System.Web.UI.Control.DataBindChildren()
+   en System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   en System.Web.UI.Control.DataBind()
+   en System.Web.UI.Control.DataBindChildren()
+   en System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   en System.Web.UI.Control.DataBind()
+   en System.Web.UI.Control.DataBindChildren()
+   en System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   en System.Web.UI.Control.DataBind()
+   en System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   en System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   en System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   en System.Web.UI.DataSourceView.Select(DataSourceSelectArguments arguments, DataSourceViewSelectCallback callback)
+   en System.Web.UI.WebControls.DataBoundControl.PerformSelect()
+   en System.Web.UI.WebControls.BaseDataBoundControl.DataBind()
+   en System.Web.UI.WebControls.GridView.DataBind()
+   en SIGAC.WEB.Vistas.Sistema.Recintos.RefreshGridDataSource(List`1 datasource, String source) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\Sistema\Recintos.aspx.cs:línea 44
+
+********** 7/2/2018 2:13:46 p. m. **********
+Inner Exception Type: System.ArgumentNullException
+Inner Exception: El búfer no puede ser nulo.
+Nombre del parámetro: buffer
+Inner Source: mscorlib
+Inner Stack Trace: 
+   en System.IO.MemoryStream..ctor(Byte[] buffer, Boolean writable)
+   en System.IO.MemoryStream..ctor(Byte[] buffer)
+   en SIGAC.Layers.Application.DataTransformUtility.StringFromByte(Byte[] values, Encoding encoding) en E:\Proyecto\sigac\SIGAC.Layers\Application\DataTransformUtility.cs:línea 20
+   en SIGAC.Layers.Bussiness.Model.RECINTOS.get_TransformNota() en E:\Proyecto\sigac\SIGAC.Layers\Bussiness\Model\RECINTOS.cs:línea 25
+Exception Type: System.Reflection.TargetInvocationException
+Exception: El descriptor de acceso de la propiedad 'TransformNota' inició la excepción 'El búfer no puede ser nulo.
+Nombre del parámetro: buffer' en el objeto 'SIGAC.Layers.Bussiness.Model.RECINTOS'
+Source: Recintos Fill Grid Method
+Stack Trace: 
+   en System.ComponentModel.ReflectPropertyDescriptor.GetValue(Object component)
+   en System.Web.UI.DataBinder.GetPropertyValue(Object container, String propName)
+   en System.Web.UI.DataBinder.Eval(Object container, String[] expressionParts)
+   en System.Web.UI.DataBinder.Eval(Object container, String expression)
+   en System.Web.UI.TemplateControl.Eval(String expression)
+   en ASP.vistas_sistema_recintos_aspx.__DataBind__control54(Object sender, EventArgs e) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\Sistema\Recintos.aspx:línea 101
+   en System.Web.UI.Control.OnDataBinding(EventArgs e)
+   en System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   en System.Web.UI.Control.DataBind()
+   en System.Web.UI.Control.DataBindChildren()
+   en System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   en System.Web.UI.Control.DataBind()
+   en System.Web.UI.Control.DataBindChildren()
+   en System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   en System.Web.UI.Control.DataBind()
+   en System.Web.UI.Control.DataBindChildren()
+   en System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   en System.Web.UI.Control.DataBind()
+   en System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   en System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   en System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   en System.Web.UI.DataSourceView.Select(DataSourceSelectArguments arguments, DataSourceViewSelectCallback callback)
+   en System.Web.UI.WebControls.DataBoundControl.PerformSelect()
+   en System.Web.UI.WebControls.BaseDataBoundControl.DataBind()
+   en System.Web.UI.WebControls.GridView.DataBind()
+   en SIGAC.WEB.Vistas.Sistema.Recintos.RefreshGridDataSource(List`1 datasource, String source) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\Sistema\Recintos.aspx.cs:línea 44
+
+********** 7/2/2018 2:13:50 p. m. **********
+Inner Exception Type: System.ArgumentNullException
+Inner Exception: El búfer no puede ser nulo.
+Nombre del parámetro: buffer
+Inner Source: mscorlib
+Inner Stack Trace: 
+   en System.IO.MemoryStream..ctor(Byte[] buffer, Boolean writable)
+   en System.IO.MemoryStream..ctor(Byte[] buffer)
+   en SIGAC.Layers.Application.DataTransformUtility.StringFromByte(Byte[] values, Encoding encoding) en E:\Proyecto\sigac\SIGAC.Layers\Application\DataTransformUtility.cs:línea 20
+   en SIGAC.Layers.Bussiness.Model.RECINTOS.get_TransformNota() en E:\Proyecto\sigac\SIGAC.Layers\Bussiness\Model\RECINTOS.cs:línea 25
+Exception Type: System.Reflection.TargetInvocationException
+Exception: El descriptor de acceso de la propiedad 'TransformNota' inició la excepción 'El búfer no puede ser nulo.
+Nombre del parámetro: buffer' en el objeto 'SIGAC.Layers.Bussiness.Model.RECINTOS'
+Source: Recintos resultados de busqueda
+Stack Trace: 
+   en System.ComponentModel.ReflectPropertyDescriptor.GetValue(Object component)
+   en System.Web.UI.DataBinder.GetPropertyValue(Object container, String propName)
+   en System.Web.UI.DataBinder.Eval(Object container, String[] expressionParts)
+   en System.Web.UI.DataBinder.Eval(Object container, String expression)
+   en System.Web.UI.TemplateControl.Eval(String expression)
+   en ASP.vistas_sistema_recintos_aspx.__DataBind__control54(Object sender, EventArgs e) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\Sistema\Recintos.aspx:línea 101
+   en System.Web.UI.Control.OnDataBinding(EventArgs e)
+   en System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   en System.Web.UI.Control.DataBind()
+   en System.Web.UI.Control.DataBindChildren()
+   en System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   en System.Web.UI.Control.DataBind()
+   en System.Web.UI.Control.DataBindChildren()
+   en System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   en System.Web.UI.Control.DataBind()
+   en System.Web.UI.Control.DataBindChildren()
+   en System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   en System.Web.UI.Control.DataBind()
+   en System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   en System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   en System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   en System.Web.UI.DataSourceView.Select(DataSourceSelectArguments arguments, DataSourceViewSelectCallback callback)
+   en System.Web.UI.WebControls.DataBoundControl.PerformSelect()
+   en System.Web.UI.WebControls.BaseDataBoundControl.DataBind()
+   en System.Web.UI.WebControls.GridView.DataBind()
+   en SIGAC.WEB.Vistas.Sistema.Recintos.RefreshGridDataSource(List`1 datasource, String source) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\Sistema\Recintos.aspx.cs:línea 44
+
+********** 7/2/2018 2:13:54 p. m. **********
+Inner Exception Type: System.ArgumentNullException
+Inner Exception: El búfer no puede ser nulo.
+Nombre del parámetro: buffer
+Inner Source: mscorlib
+Inner Stack Trace: 
+   en System.IO.MemoryStream..ctor(Byte[] buffer, Boolean writable)
+   en System.IO.MemoryStream..ctor(Byte[] buffer)
+   en SIGAC.Layers.Application.DataTransformUtility.StringFromByte(Byte[] values, Encoding encoding) en E:\Proyecto\sigac\SIGAC.Layers\Application\DataTransformUtility.cs:línea 20
+   en SIGAC.Layers.Bussiness.Model.RECINTOS.get_TransformNota() en E:\Proyecto\sigac\SIGAC.Layers\Bussiness\Model\RECINTOS.cs:línea 25
+Exception Type: System.Reflection.TargetInvocationException
+Exception: El descriptor de acceso de la propiedad 'TransformNota' inició la excepción 'El búfer no puede ser nulo.
+Nombre del parámetro: buffer' en el objeto 'SIGAC.Layers.Bussiness.Model.RECINTOS'
+Source: Recintos Fill Grid Method
+Stack Trace: 
+   en System.ComponentModel.ReflectPropertyDescriptor.GetValue(Object component)
+   en System.Web.UI.DataBinder.GetPropertyValue(Object container, String propName)
+   en System.Web.UI.DataBinder.Eval(Object container, String[] expressionParts)
+   en System.Web.UI.DataBinder.Eval(Object container, String expression)
+   en System.Web.UI.TemplateControl.Eval(String expression)
+   en ASP.vistas_sistema_recintos_aspx.__DataBind__control54(Object sender, EventArgs e) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\Sistema\Recintos.aspx:línea 101
+   en System.Web.UI.Control.OnDataBinding(EventArgs e)
+   en System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   en System.Web.UI.Control.DataBind()
+   en System.Web.UI.Control.DataBindChildren()
+   en System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   en System.Web.UI.Control.DataBind()
+   en System.Web.UI.Control.DataBindChildren()
+   en System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   en System.Web.UI.Control.DataBind()
+   en System.Web.UI.Control.DataBindChildren()
+   en System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   en System.Web.UI.Control.DataBind()
+   en System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   en System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   en System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   en System.Web.UI.DataSourceView.Select(DataSourceSelectArguments arguments, DataSourceViewSelectCallback callback)
+   en System.Web.UI.WebControls.DataBoundControl.PerformSelect()
+   en System.Web.UI.WebControls.BaseDataBoundControl.DataBind()
+   en System.Web.UI.WebControls.GridView.DataBind()
+   en SIGAC.WEB.Vistas.Sistema.Recintos.RefreshGridDataSource(List`1 datasource, String source) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\Sistema\Recintos.aspx.cs:línea 44
+
+********** 7/2/2018 2:14:16 p. m. **********
+Inner Exception Type: System.ArgumentNullException
+Inner Exception: El búfer no puede ser nulo.
+Nombre del parámetro: buffer
+Inner Source: mscorlib
+Inner Stack Trace: 
+   en System.IO.MemoryStream..ctor(Byte[] buffer, Boolean writable)
+   en System.IO.MemoryStream..ctor(Byte[] buffer)
+   en SIGAC.Layers.Application.DataTransformUtility.StringFromByte(Byte[] values, Encoding encoding) en E:\Proyecto\sigac\SIGAC.Layers\Application\DataTransformUtility.cs:línea 20
+   en SIGAC.Layers.Bussiness.Model.RECINTOS.get_TransformNota() en E:\Proyecto\sigac\SIGAC.Layers\Bussiness\Model\RECINTOS.cs:línea 25
+Exception Type: System.Reflection.TargetInvocationException
+Exception: El descriptor de acceso de la propiedad 'TransformNota' inició la excepción 'El búfer no puede ser nulo.
+Nombre del parámetro: buffer' en el objeto 'SIGAC.Layers.Bussiness.Model.RECINTOS'
+Source: Recintos Fill Grid Method
+Stack Trace: 
+   en System.ComponentModel.ReflectPropertyDescriptor.GetValue(Object component)
+   en System.Web.UI.DataBinder.GetPropertyValue(Object container, String propName)
+   en System.Web.UI.DataBinder.Eval(Object container, String[] expressionParts)
+   en System.Web.UI.DataBinder.Eval(Object container, String expression)
+   en System.Web.UI.TemplateControl.Eval(String expression)
+   en ASP.vistas_sistema_recintos_aspx.__DataBind__control54(Object sender, EventArgs e) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\Sistema\Recintos.aspx:línea 101
+   en System.Web.UI.Control.OnDataBinding(EventArgs e)
+   en System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   en System.Web.UI.Control.DataBind()
+   en System.Web.UI.Control.DataBindChildren()
+   en System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   en System.Web.UI.Control.DataBind()
+   en System.Web.UI.Control.DataBindChildren()
+   en System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   en System.Web.UI.Control.DataBind()
+   en System.Web.UI.Control.DataBindChildren()
+   en System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   en System.Web.UI.Control.DataBind()
+   en System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   en System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   en System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   en System.Web.UI.DataSourceView.Select(DataSourceSelectArguments arguments, DataSourceViewSelectCallback callback)
+   en System.Web.UI.WebControls.DataBoundControl.PerformSelect()
+   en System.Web.UI.WebControls.BaseDataBoundControl.DataBind()
+   en System.Web.UI.WebControls.GridView.DataBind()
+   en SIGAC.WEB.Vistas.Sistema.Recintos.RefreshGridDataSource(List`1 datasource, String source) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\Sistema\Recintos.aspx.cs:línea 44
+
+********** 7/2/2018 2:14:31 p. m. **********
+Inner Exception Type: System.ArgumentNullException
+Inner Exception: El búfer no puede ser nulo.
+Nombre del parámetro: buffer
+Inner Source: mscorlib
+Inner Stack Trace: 
+   en System.IO.MemoryStream..ctor(Byte[] buffer, Boolean writable)
+   en System.IO.MemoryStream..ctor(Byte[] buffer)
+   en SIGAC.Layers.Application.DataTransformUtility.StringFromByte(Byte[] values, Encoding encoding) en E:\Proyecto\sigac\SIGAC.Layers\Application\DataTransformUtility.cs:línea 20
+   en SIGAC.Layers.Bussiness.Model.RECINTOS.get_TransformNota() en E:\Proyecto\sigac\SIGAC.Layers\Bussiness\Model\RECINTOS.cs:línea 25
+Exception Type: System.Reflection.TargetInvocationException
+Exception: El descriptor de acceso de la propiedad 'TransformNota' inició la excepción 'El búfer no puede ser nulo.
+Nombre del parámetro: buffer' en el objeto 'SIGAC.Layers.Bussiness.Model.RECINTOS'
+Source: Recintos resultados de busqueda
+Stack Trace: 
+   en System.ComponentModel.ReflectPropertyDescriptor.GetValue(Object component)
+   en System.Web.UI.DataBinder.GetPropertyValue(Object container, String propName)
+   en System.Web.UI.DataBinder.Eval(Object container, String[] expressionParts)
+   en System.Web.UI.DataBinder.Eval(Object container, String expression)
+   en System.Web.UI.TemplateControl.Eval(String expression)
+   en ASP.vistas_sistema_recintos_aspx.__DataBind__control54(Object sender, EventArgs e) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\Sistema\Recintos.aspx:línea 101
+   en System.Web.UI.Control.OnDataBinding(EventArgs e)
+   en System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   en System.Web.UI.Control.DataBind()
+   en System.Web.UI.Control.DataBindChildren()
+   en System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   en System.Web.UI.Control.DataBind()
+   en System.Web.UI.Control.DataBindChildren()
+   en System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   en System.Web.UI.Control.DataBind()
+   en System.Web.UI.Control.DataBindChildren()
+   en System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   en System.Web.UI.Control.DataBind()
+   en System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   en System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   en System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   en System.Web.UI.DataSourceView.Select(DataSourceSelectArguments arguments, DataSourceViewSelectCallback callback)
+   en System.Web.UI.WebControls.DataBoundControl.PerformSelect()
+   en System.Web.UI.WebControls.BaseDataBoundControl.DataBind()
+   en System.Web.UI.WebControls.GridView.DataBind()
+   en SIGAC.WEB.Vistas.Sistema.Recintos.RefreshGridDataSource(List`1 datasource, String source) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\Sistema\Recintos.aspx.cs:línea 44
+
+********** 7/2/2018 2:14:31 p. m. **********
+Inner Exception Type: System.ArgumentNullException
+Inner Exception: El búfer no puede ser nulo.
+Nombre del parámetro: buffer
+Inner Source: mscorlib
+Inner Stack Trace: 
+   en System.IO.MemoryStream..ctor(Byte[] buffer, Boolean writable)
+   en System.IO.MemoryStream..ctor(Byte[] buffer)
+   en SIGAC.Layers.Application.DataTransformUtility.StringFromByte(Byte[] values, Encoding encoding) en E:\Proyecto\sigac\SIGAC.Layers\Application\DataTransformUtility.cs:línea 20
+   en SIGAC.Layers.Bussiness.Model.RECINTOS.get_TransformNota() en E:\Proyecto\sigac\SIGAC.Layers\Bussiness\Model\RECINTOS.cs:línea 25
+Exception Type: System.Reflection.TargetInvocationException
+Exception: El descriptor de acceso de la propiedad 'TransformNota' inició la excepción 'El búfer no puede ser nulo.
+Nombre del parámetro: buffer' en el objeto 'SIGAC.Layers.Bussiness.Model.RECINTOS'
+Source: Recintos resultados de busqueda
+Stack Trace: 
+   en System.ComponentModel.ReflectPropertyDescriptor.GetValue(Object component)
+   en System.Web.UI.DataBinder.GetPropertyValue(Object container, String propName)
+   en System.Web.UI.DataBinder.Eval(Object container, String[] expressionParts)
+   en System.Web.UI.DataBinder.Eval(Object container, String expression)
+   en System.Web.UI.TemplateControl.Eval(String expression)
+   en ASP.vistas_sistema_recintos_aspx.__DataBind__control54(Object sender, EventArgs e) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\Sistema\Recintos.aspx:línea 101
+   en System.Web.UI.Control.OnDataBinding(EventArgs e)
+   en System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   en System.Web.UI.Control.DataBind()
+   en System.Web.UI.Control.DataBindChildren()
+   en System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   en System.Web.UI.Control.DataBind()
+   en System.Web.UI.Control.DataBindChildren()
+   en System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   en System.Web.UI.Control.DataBind()
+   en System.Web.UI.Control.DataBindChildren()
+   en System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   en System.Web.UI.Control.DataBind()
+   en System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   en System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   en System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   en System.Web.UI.DataSourceView.Select(DataSourceSelectArguments arguments, DataSourceViewSelectCallback callback)
+   en System.Web.UI.WebControls.DataBoundControl.PerformSelect()
+   en System.Web.UI.WebControls.BaseDataBoundControl.DataBind()
+   en System.Web.UI.WebControls.GridView.DataBind()
+   en SIGAC.WEB.Vistas.Sistema.Recintos.RefreshGridDataSource(List`1 datasource, String source) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\Sistema\Recintos.aspx.cs:línea 44
+
+********** 7/2/2018 2:15:01 p. m. **********
+Inner Exception Type: System.ArgumentNullException
+Inner Exception: El búfer no puede ser nulo.
+Nombre del parámetro: buffer
+Inner Source: mscorlib
+Inner Stack Trace: 
+   en System.IO.MemoryStream..ctor(Byte[] buffer, Boolean writable)
+   en System.IO.MemoryStream..ctor(Byte[] buffer)
+   en SIGAC.Layers.Application.DataTransformUtility.StringFromByte(Byte[] values, Encoding encoding) en E:\Proyecto\sigac\SIGAC.Layers\Application\DataTransformUtility.cs:línea 20
+   en SIGAC.Layers.Bussiness.Model.RECINTOS.get_TransformNota() en E:\Proyecto\sigac\SIGAC.Layers\Bussiness\Model\RECINTOS.cs:línea 25
+Exception Type: System.Reflection.TargetInvocationException
+Exception: El descriptor de acceso de la propiedad 'TransformNota' inició la excepción 'El búfer no puede ser nulo.
+Nombre del parámetro: buffer' en el objeto 'SIGAC.Layers.Bussiness.Model.RECINTOS'
+Source: Recintos Fill Grid Method
+Stack Trace: 
+   en System.ComponentModel.ReflectPropertyDescriptor.GetValue(Object component)
+   en System.Web.UI.DataBinder.GetPropertyValue(Object container, String propName)
+   en System.Web.UI.DataBinder.Eval(Object container, String[] expressionParts)
+   en System.Web.UI.DataBinder.Eval(Object container, String expression)
+   en System.Web.UI.TemplateControl.Eval(String expression)
+   en ASP.vistas_sistema_recintos_aspx.__DataBind__control54(Object sender, EventArgs e) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\Sistema\Recintos.aspx:línea 101
+   en System.Web.UI.Control.OnDataBinding(EventArgs e)
+   en System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   en System.Web.UI.Control.DataBind()
+   en System.Web.UI.Control.DataBindChildren()
+   en System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   en System.Web.UI.Control.DataBind()
+   en System.Web.UI.Control.DataBindChildren()
+   en System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   en System.Web.UI.Control.DataBind()
+   en System.Web.UI.Control.DataBindChildren()
+   en System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   en System.Web.UI.Control.DataBind()
+   en System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   en System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   en System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   en System.Web.UI.DataSourceView.Select(DataSourceSelectArguments arguments, DataSourceViewSelectCallback callback)
+   en System.Web.UI.WebControls.DataBoundControl.PerformSelect()
+   en System.Web.UI.WebControls.BaseDataBoundControl.DataBind()
+   en System.Web.UI.WebControls.GridView.DataBind()
+   en SIGAC.WEB.Vistas.Sistema.Recintos.RefreshGridDataSource(List`1 datasource, String source) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\Sistema\Recintos.aspx.cs:línea 44
+>>>>>>> 8c2404be8414c7011a25912404833461c5b75656
 
