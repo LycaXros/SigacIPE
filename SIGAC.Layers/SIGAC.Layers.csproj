@@ -207,6 +207,9 @@
     <Compile Include="Bussiness\Model\SIEDU_NECESIDAD_E.cs">
       <DependentUpon>OracleSigacModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Bussiness\Model\SIEDU_NOVEDAD_PAE.cs">
+      <DependentUpon>OracleSigacModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Bussiness\Model\SIEDU_PAE.cs">
       <DependentUpon>OracleSigacModel.tt</DependentUpon>
     </Compile>
@@ -214,6 +217,9 @@
       <DependentUpon>OracleSigacModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Bussiness\Model\SIEDU_PAE_FORMACION.cs">
+      <DependentUpon>OracleSigacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bussiness\Model\SIEDU_PAE_FORMA_ESCUELA.cs">
       <DependentUpon>OracleSigacModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Bussiness\Model\SIEDU_PARTICIPANTE_EVENTO.cs">

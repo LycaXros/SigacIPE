@@ -89,43 +89,65 @@
                                 <div class="col5">
                                     <label>TIPO DE DOCUMENTO</label>
                                 </div>
-                                <div class="col5"></div>
+                                <div class="col5">
+                                    <asp:DropDownList ID="ddlTipoDocumento" runat="server" CssClass="form-control"></asp:DropDownList>
+                                </div>
                             </div>
+                            <br />
                             <div class="GridRow">
                                 <div class="col5">
-                                    <label>TIPO DE DOCUMENTO</label>
+                                    <label>NUMERO DE DOCUMENTO</label>
                                 </div>
-                                <div class="col5"></div>
+                                <div class="col5">
+                                    <asp:TextBox ID="txtNumeroDocumento" runat="server" CssClass="form-control"></asp:TextBox>
+                                </div>
 
                             </div>
+                            <br />
                             <div class="GridRow">
                                 <div class="col5">
-                                    <label>TIPO DE DOCUMENTO</label>
+                                    <label>FECHA DE DOCUMENTO</label>
                                 </div>
-                                <div class="col5"></div>
+                                <div class="col5">
+                                    <input id="fechaDoc" runat="server" type="date" class="form-control" />
+                                </div>
 
                             </div>
+                            <br />
                             <div class="GridRow">
                                 <div class="col5">
-                                    <label>TIPO DE DOCUMENTO</label>
+                                    <label>OBSERVACIONES</label>
                                 </div>
-                                <div class="col5"></div>
+                                <div class="col5">
+                                    <asp:TextBox ID="txtObservaciones" runat="server" TextMode="MultiLine" CssClass="form-control" Height="200"></asp:TextBox>
+
+                                </div>
 
                             </div>
+                            <br />
                             <div class="GridRow">
                                 <div class="col5">
-                                    <label>TIPO DE DOCUMENTO</label>
+                                    <label>ANEXO</label>
                                 </div>
-                                <div class="col5"></div>
+                                <div class="col5">
+                                    <asp:Label ID="lbAnexo" runat="server" Text="Label"></asp:Label>
+                                    <asp:FileUpload ID="fuAnexo" runat="server" AllowMultiple="false"/>
+                                </div>
 
                             </div>
+                            <br />
                             <div class="GridRow">
                                 <div class="col5">
-                                    <label>TIPO DE DOCUMENTO</label>
+                                    &nbsp;
                                 </div>
-                                <div class="col5"></div>
+                                <div class="col2">
+                                    &nbsp;
+                                </div>
+                                <div class="col3">
 
+                                </div>
                             </div>
+                            <br />
                         </div>
                     </div>
                 </div>

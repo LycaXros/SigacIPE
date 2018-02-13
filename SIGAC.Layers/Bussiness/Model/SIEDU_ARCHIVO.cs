@@ -14,6 +14,12 @@ namespace SIGAC.Layers.Bussiness.Model
     
     public partial class SIEDU_ARCHIVO
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public SIEDU_ARCHIVO()
+        {
+            this.SIEDU_NOVEDAD_PAE = new HashSet<SIEDU_NOVEDAD_PAE>();
+        }
+    
         public int ARCH_ID { get; set; }
         public string ARCH_NOMBRE { get; set; }
         public string ARCH_EXT { get; set; }
@@ -27,5 +33,8 @@ namespace SIGAC.Layers.Bussiness.Model
         public Nullable<System.DateTime> ARCH_FECHA_MOD { get; set; }
         public string ARCH_MAQUINA_MOD { get; set; }
         public string ARCH_IP_MOD { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<SIEDU_NOVEDAD_PAE> SIEDU_NOVEDAD_PAE { get; set; }
     }
 }

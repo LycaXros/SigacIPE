@@ -29,5 +29,7 @@ namespace SIGAC.Layers.Bussiness.Model
         public Nullable<System.DateTime> PPTO_FECHA_MOD { get; set; }
         public string PPTO_MAQUINA_MOD { get; set; }
         public string PPTO_IP_MOD { get; set; }
+    
+        public virtual SIEDU_PAE_CAPACITACION SIEDU_PAE_CAPACITACION { get; set; }
     }
 }

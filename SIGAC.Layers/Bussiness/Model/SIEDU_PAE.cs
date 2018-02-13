@@ -14,6 +14,14 @@ namespace SIGAC.Layers.Bussiness.Model
     
     public partial class SIEDU_PAE
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public SIEDU_PAE()
+        {
+            this.SIEDU_NOVEDAD_PAE = new HashSet<SIEDU_NOVEDAD_PAE>();
+            this.SIEDU_PAE_CAPACITACION = new HashSet<SIEDU_PAE_CAPACITACION>();
+            this.SIEDU_PAE_FORMACION = new HashSet<SIEDU_PAE_FORMACION>();
+        }
+    
         public int PAE_PAE { get; set; }
         public string PAE_VIGENCIA { get; set; }
         public string PAE_ESTADO { get; set; }
@@ -26,5 +34,12 @@ namespace SIGAC.Layers.Bussiness.Model
         public Nullable<System.DateTime> PAE_FECHA_MOD { get; set; }
         public string PAE_MAQUINA_MOD { get; set; }
         public string PAE_IP_MOD { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<SIEDU_NOVEDAD_PAE> SIEDU_NOVEDAD_PAE { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<SIEDU_PAE_CAPACITACION> SIEDU_PAE_CAPACITACION { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<SIEDU_PAE_FORMACION> SIEDU_PAE_FORMACION { get; set; }
     }
 }
