@@ -67,16 +67,20 @@ namespace SIGAC.WEB.Vistas.Sistema
 
         protected void btnCancelar_Click(object sender, EventArgs e)
         {
+            CleanForm();
+            Response.Redirect(Request.RawUrl);
+        }
 
+        private void CleanForm()
+        {
             txtNombre.Text = string.Empty;
             txtDir.Text = string.Empty;
             txtTel1.Text = string.Empty;
             txtTel2.Text = string.Empty;
             txtNotas.Text = string.Empty;
             ddlEstado.SelectedIndex = 0;
-            Response.Redirect(Request.RawUrl);
         }
-        
+
         protected void btnAdd_Click(object sender, EventArgs e)
         {
             if (Page.IsValid)
@@ -87,6 +91,7 @@ namespace SIGAC.WEB.Vistas.Sistema
                     {
                         dbContext.RECINTOS.Add(PrepareModel());
                         dbContext.SaveChanges();
+                        CleanForm();
                     }
                     catch (Exception ex)
                     {
@@ -130,7 +135,7 @@ namespace SIGAC.WEB.Vistas.Sistema
             string tel1 = (row.FindControl("e_txtTel1") as TextBox).Text;
             string tel2 = (row.FindControl("e_txtTel2") as TextBox).Text;
             var notas = //new byte[16]; Convert.FromBase64String(txtNotas.Text.Trim().ToString());
-                Layers.Application.DataTransformUtility.StringToByte(txtNotas.Text.Trim().ToString(), System.Text.Encoding.ASCII);
+                Layers.Application.DataTransformUtility.StringToByte((row.FindControl("e_txtNotas") as TextBox).Text.Trim().ToString(), System.Text.Encoding.ASCII);
             int estado = int.Parse(  (row.FindControl("e_ddlEstado") as DropDownList).SelectedItem.Value  );
             using (dbContext = new Layers.Bussiness.Model.SigacEntities())
             {
@@ -181,7 +186,7 @@ namespace SIGAC.WEB.Vistas.Sistema
                 try
                 {
                     var recinto = dbContext.RECINTOS
-                                    .Where(x => x.ID == argId).FirstOrDefault();
+                                    .Where(x => x.ID == argId).First();
                     recinto.ESTATUS = 0;
                     dbContext.SaveChanges();
 

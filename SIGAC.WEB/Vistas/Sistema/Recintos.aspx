@@ -46,7 +46,7 @@
                             AllowPaging="True" CssClass="w3-table-all" OnRowDataBound="gridViewRecintos_RowDataBound"
                             OnRowUpdating="gridViewRecintos_RowUpdating" OnRowEditing="gridViewRecintos_RowEditing"
                             OnRowDeleting="gridViewRecintos_RowDeleting" OnRowCancelingEdit="gridViewRecintos_RowCancelingEdit"
-                            OnPageIndexChanging="gridViewRecintos_PageIndexChanging" EmptyDataText="No records has been added."
+                            OnPageIndexChanging="gridViewRecintos_PageIndexChanging" EmptyDataText="No se han encontrado registros."
                             >
 
                             <Columns>
