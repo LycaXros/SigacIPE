@@ -12,7 +12,7 @@ using System.Collections;
 
 namespace SIGAC.WEB.Vistas.Sistema
 {
-    public partial class Asignaturas : System.Web.UI.Page
+    public partial class Aulas : System.Web.UI.Page
     {
         SigacEntities SIGACEntities = null;
         SiathEntities SIATHEntities = null;

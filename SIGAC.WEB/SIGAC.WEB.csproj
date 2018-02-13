@@ -379,6 +379,7 @@
     <Content Include="Global.asax" />
     <Content Include="Vistas\AdministrarPAE\Adm_Pae.aspx" />
     <Content Include="Vistas\AdministrarProgramas\AdministrarProgramas_Buscar.aspx" />
+    <Content Include="Vistas\Sistema\Aulas.aspx" />
     <Content Include="Vistas\Sistema\Asignaturas.aspx" />
     <Content Include="Vistas\Sistema\Cursos.aspx" />
     <Content Include="Vistas\Sistema\Recintos.aspx" />
@@ -578,6 +579,13 @@
     </Compile>
     <Compile Include="Vistas\AdministrarProgramas\AdministrarProgramas_Buscar.aspx.designer.cs">
       <DependentUpon>AdministrarProgramas_Buscar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Sistema\Aulas.aspx.cs">
+      <DependentUpon>Aulas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\Sistema\Aulas.aspx.designer.cs">
+      <DependentUpon>Aulas.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vistas\Sistema\Asignaturas.aspx.cs">
       <DependentUpon>Asignaturas.aspx</DependentUpon>

@@ -60,7 +60,10 @@
                 <div class="GridRow">
                     <div class="col10">
                         <nav id='cssmenu'>
-                            <div id="head-mobile"></div>
+                            <div id="head-mobile">
+                                <asp:ScriptManager ID="ScriptManager1" runat="server">
+                                </asp:ScriptManager>
+                            </div>
                             <div class="button"></div>
                             <ul>
                                 <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
@@ -109,7 +112,7 @@
                                         <li><a href="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>">ESCUELA</a></li>
                                         <li><a href="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>">AULAS</a></li>
                                         <li><a href="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>Sistema/Cursos">CURSOS</a></li>
-                                        <li><a href="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>">ASIGNATURAS</a></li>
+                                        <li><a href="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>Sistema/Asignaturas">ASIGNATURAS</a></li>
                                         <li><a href="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>Sistema/Usuarios">USUARIOS</a></li>
                                         <li><a href="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>">GRUPOS</a></li>
                                         <li><a href="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>">PERMISOS</a></li>

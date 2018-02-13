@@ -10,7 +10,7 @@
 namespace SIGAC.WEB.Vistas.Sistema {
     
     
-    public partial class Asignaturas {
+    public partial class Aulas {
         
         /// <summary>
         /// textboxFiltro control.
