@@ -77,7 +77,7 @@ namespace SIGAC.Layers.Bussiness.Model
         {
             get
             {
-                return string.Format("Horario1 #1: {0} a {1} \nHorario #2: {2} a {3}",
+                return string.Format("{0} de {1} y {2} de {3}",
                     HORARIO1, HORA1, HORARIO2, HORA2);
             }
         }
