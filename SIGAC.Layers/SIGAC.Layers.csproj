@@ -302,6 +302,7 @@
       <LastGenOutput>OracleSigacModel.cs</LastGenOutput>
     </Content>
     <Content Include="ReadMe.txt" />
+    <Content Include="Repository para codigos.txt" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
