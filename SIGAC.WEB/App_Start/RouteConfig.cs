@@ -13,6 +13,8 @@ namespace SIGAC.WEB
             //
             //Sistema
             //
+            //
+            routes.MapPageRoute("Sistema.Aulas", "Sistema/Aulas", "~/Vistas/Sistema/Aulas.aspx");
             routes.MapPageRoute("Sistema.Usuarios", "Sistema/Usuarios", "~/Vistas/Sistema/Usuarios.aspx");
             routes.MapPageRoute("Sistema.Cursos", "Sistema/Cursos", "~/Vistas/Sistema/Cursos.aspx");
             routes.MapPageRoute("Sistema.Recintos", "Sistema/Recintos", "~/Vistas/Sistema/Recintos.aspx");

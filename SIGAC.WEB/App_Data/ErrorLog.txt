@@ -1352,3 +1352,123 @@ Stack Trace:
    en SIGAC.WEB.Vistas.Sistema.Recintos.RefreshGridDataSource(List`1 datasource, String source) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\Sistema\Recintos.aspx.cs:línea 44
 >>>>>>> 8c2404be8414c7011a25912404833461c5b75656
 
+********** 13/2/2018 1:48:11 p. m. **********
+Exception Type: System.Web.HttpException
+Exception: DataBinding: 'SIGAC.Layers.Bussiness.Model.ASIGNATURAS' no contiene una propiedad con el nombre 'AULA'.
+Source: Asignaturas Fill Grid Method
+Stack Trace: 
+   en System.Web.UI.DataBinder.GetPropertyValue(Object container, String propName)
+   en System.Web.UI.DataBinder.Eval(Object container, String[] expressionParts)
+   en System.Web.UI.DataBinder.Eval(Object container, String expression)
+   en System.Web.UI.TemplateControl.Eval(String expression)
+   en ASP.vistas_sistema_aulas_aspx.__DataBind__control16(Object sender, EventArgs e) en E:\PROYECTS\SIGAC\SIGAC.WEB\Vistas\Sistema\Aulas.aspx:línea 70
+   en System.Web.UI.Control.OnDataBinding(EventArgs e)
+   en System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   en System.Web.UI.Control.DataBind()
+   en System.Web.UI.Control.DataBindChildren()
+   en System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   en System.Web.UI.Control.DataBind()
+   en System.Web.UI.Control.DataBindChildren()
+   en System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   en System.Web.UI.Control.DataBind()
+   en System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   en System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   en System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   en System.Web.UI.DataSourceView.Select(DataSourceSelectArguments arguments, DataSourceViewSelectCallback callback)
+   en System.Web.UI.WebControls.DataBoundControl.PerformSelect()
+   en System.Web.UI.WebControls.BaseDataBoundControl.DataBind()
+   en System.Web.UI.WebControls.GridView.DataBind()
+   en SIGAC.WEB.Vistas.Sistema.Aulas.RefreshGridDataSource(IEnumerable dataSource, String source) en E:\PROYECTS\SIGAC\SIGAC.WEB\Vistas\Sistema\Aulas.aspx.cs:línea 164
+
+********** 13/2/2018 1:48:57 p. m. **********
+Exception Type: System.Web.HttpException
+Exception: DataBinding: 'SIGAC.Layers.Bussiness.Model.ASIGNATURAS' no contiene una propiedad con el nombre 'AULA'.
+Source: Asignaturas Fill Grid Method
+Stack Trace: 
+   en System.Web.UI.DataBinder.GetPropertyValue(Object container, String propName)
+   en System.Web.UI.DataBinder.Eval(Object container, String[] expressionParts)
+   en System.Web.UI.DataBinder.Eval(Object container, String expression)
+   en System.Web.UI.TemplateControl.Eval(String expression)
+   en ASP.vistas_sistema_aulas_aspx.__DataBind__control16(Object sender, EventArgs e) en E:\PROYECTS\SIGAC\SIGAC.WEB\Vistas\Sistema\Aulas.aspx:línea 70
+   en System.Web.UI.Control.OnDataBinding(EventArgs e)
+   en System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   en System.Web.UI.Control.DataBind()
+   en System.Web.UI.Control.DataBindChildren()
+   en System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   en System.Web.UI.Control.DataBind()
+   en System.Web.UI.Control.DataBindChildren()
+   en System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   en System.Web.UI.Control.DataBind()
+   en System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   en System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   en System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   en System.Web.UI.DataSourceView.Select(DataSourceSelectArguments arguments, DataSourceViewSelectCallback callback)
+   en System.Web.UI.WebControls.DataBoundControl.PerformSelect()
+   en System.Web.UI.WebControls.BaseDataBoundControl.DataBind()
+   en System.Web.UI.WebControls.GridView.DataBind()
+   en SIGAC.WEB.Vistas.Sistema.Aulas.RefreshGridDataSource(IEnumerable dataSource, String source) en E:\PROYECTS\SIGAC\SIGAC.WEB\Vistas\Sistema\Aulas.aspx.cs:línea 164
+
+********** 13/2/2018 1:57:05 p. m. **********
+Exception Type: System.Web.HttpException
+Exception: DataBinding: 'SIGAC.Layers.Bussiness.Model.ASIGNATURAS' no contiene una propiedad con el nombre 'AULA'.
+Source: Asignaturas Fill Grid Method
+Stack Trace: 
+   en System.Web.UI.DataBinder.GetPropertyValue(Object container, String propName)
+   en System.Web.UI.DataBinder.Eval(Object container, String[] expressionParts)
+   en System.Web.UI.DataBinder.Eval(Object container, String expression)
+   en System.Web.UI.TemplateControl.Eval(String expression)
+   en ASP.vistas_sistema_aulas_aspx.__DataBind__control16(Object sender, EventArgs e) en E:\PROYECTS\SIGAC\SIGAC.WEB\Vistas\Sistema\Aulas.aspx:línea 70
+   en System.Web.UI.Control.OnDataBinding(EventArgs e)
+   en System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   en System.Web.UI.Control.DataBind()
+   en System.Web.UI.Control.DataBindChildren()
+   en System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   en System.Web.UI.Control.DataBind()
+   en System.Web.UI.Control.DataBindChildren()
+   en System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   en System.Web.UI.Control.DataBind()
+   en System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   en System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   en System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   en System.Web.UI.DataSourceView.Select(DataSourceSelectArguments arguments, DataSourceViewSelectCallback callback)
+   en System.Web.UI.WebControls.DataBoundControl.PerformSelect()
+   en System.Web.UI.WebControls.BaseDataBoundControl.DataBind()
+   en System.Web.UI.WebControls.GridView.DataBind()
+   en SIGAC.WEB.Vistas.Sistema.Aulas.RefreshGridDataSource(IEnumerable dataSource, String source) en E:\PROYECTS\SIGAC\SIGAC.WEB\Vistas\Sistema\Aulas.aspx.cs:línea 164
+
+********** 13/2/2018 1:58:15 p. m. **********
+Exception Type: System.Web.HttpException
+Exception: DataBinding: 'SIGAC.Layers.Bussiness.Model.ASIGNATURAS' no contiene una propiedad con el nombre 'AULA'.
+Source: Asignaturas Search Method
+Stack Trace: 
+   en System.Web.UI.DataBinder.GetPropertyValue(Object container, String propName)
+   en System.Web.UI.DataBinder.Eval(Object container, String[] expressionParts)
+   en System.Web.UI.DataBinder.Eval(Object container, String expression)
+   en System.Web.UI.TemplateControl.Eval(String expression)
+   en ASP.vistas_sistema_aulas_aspx.__DataBind__control16(Object sender, EventArgs e) en E:\PROYECTS\SIGAC\SIGAC.WEB\Vistas\Sistema\Aulas.aspx:línea 70
+   en System.Web.UI.Control.OnDataBinding(EventArgs e)
+   en System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   en System.Web.UI.Control.DataBind()
+   en System.Web.UI.Control.DataBindChildren()
+   en System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   en System.Web.UI.Control.DataBind()
+   en System.Web.UI.Control.DataBindChildren()
+   en System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   en System.Web.UI.Control.DataBind()
+   en System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   en System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   en System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   en System.Web.UI.DataSourceView.Select(DataSourceSelectArguments arguments, DataSourceViewSelectCallback callback)
+   en System.Web.UI.WebControls.DataBoundControl.PerformSelect()
+   en System.Web.UI.WebControls.BaseDataBoundControl.DataBind()
+   en System.Web.UI.WebControls.GridView.DataBind()
+   en SIGAC.WEB.Vistas.Sistema.Aulas.RefreshGridDataSource(IEnumerable dataSource, String source) en E:\PROYECTS\SIGAC\SIGAC.WEB\Vistas\Sistema\Aulas.aspx.cs:línea 165
+

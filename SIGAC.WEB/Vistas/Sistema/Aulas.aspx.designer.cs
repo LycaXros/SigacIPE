@@ -31,13 +31,13 @@ namespace SIGAC.WEB.Vistas.Sistema {
         protected global::System.Web.UI.WebControls.LinkButton buttonFiltro;
         
         /// <summary>
-        /// gridViewAsignaturas control.
+        /// gridViewAulas control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gridViewAsignaturas;
+        protected global::System.Web.UI.WebControls.GridView gridViewAulas;
         
         /// <summary>
         /// requiredCurso control.

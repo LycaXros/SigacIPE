@@ -47,8 +47,8 @@ namespace SIGAC.WEB.Vistas.Sistema
             else
                 searchAsignaturaByNameOrCourseName();
 
-            gridViewAsignaturas.PageIndex = e.NewPageIndex;
-            gridViewAsignaturas.DataBind();
+            gridViewAulas.PageIndex = e.NewPageIndex;
+            gridViewAulas.DataBind();
         }
 
         protected void gridViewAsignaturas_RowCommand(object sender, GridViewCommandEventArgs e)
@@ -119,11 +119,14 @@ namespace SIGAC.WEB.Vistas.Sistema
             using (SIGACEntities = new SigacEntities())
             {
 
-                var search = SIGACEntities.ASIGNATURAS
-                    .Where(x => (x.NOMBRE.ToLower().Contains(textboxFiltro.Text.ToLower())
-                    || x.CURSOS.ToString().ToLower().Contains(textboxFiltro.Text.ToLower())
-                    && x.ESTATUS != 0))
-                    .OrderBy(y => y.FECHA_INICIO)
+                var search = SIGACEntities.AULAS
+                    .Where(x => (x.AULA.ToLower().Contains(textboxFiltro.Text.ToLower())
+                    || x.ESCUELA.ToString().ToLower().Contains(textboxFiltro.Text.ToLower())
+                    || x.RECINTO.ToString().ToLower().Contains(textboxFiltro.Text.ToLower())
+                    || x.UBICACION.ToString().ToLower().Contains(textboxFiltro.Text.ToLower())
+                    )                    )
+                    .OrderBy(y => y.ID)
+                    .OrderBy(y => y.AULA)
                     .ToList();
 
                 RefreshGridDataSource(search, "Asignaturas Search Method");
@@ -136,13 +139,14 @@ namespace SIGAC.WEB.Vistas.Sistema
         {
             using (SIGACEntities = new SigacEntities())
             {
-                var Asignaturas = SIGACEntities.ASIGNATURAS
+                var Asignaturas = SIGACEntities.AULAS
                      .Select(y => y)
-                     .Where(z => z.ESTATUS != 0)
-                     .OrderBy(x => x.FECHA_INICIO)
+                    // .Where(z => z.ESTATUS != 0)
+                     .OrderBy(x => x.ID)
+                     .OrderBy(X => X.UBICACION)
                      .ToList();
 
-                RefreshGridDataSource(Asignaturas, "Asignaturas Fill Grid Method");
+                RefreshGridDataSource(Asignaturas, "Aulas Fill Grid Method");
 
             }
         }
@@ -160,8 +164,8 @@ namespace SIGAC.WEB.Vistas.Sistema
         {
             try
             {
-                gridViewAsignaturas.DataSource = dataSource;
-                gridViewAsignaturas.DataBind();
+                gridViewAulas.DataSource = dataSource;
+                gridViewAulas.DataBind();
             }
             catch (Exception ex)
             {
