@@ -14,6 +14,12 @@ namespace SIGAC.Layers.Bussiness.Model
     
     public partial class SIEDU_PAE_CAPACITACION
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public SIEDU_PAE_CAPACITACION()
+        {
+            this.SIEDU_PRESUPUESTO = new HashSet<SIEDU_PRESUPUESTO>();
+        }
+    
         public int CAPA_CAPA { get; set; }
         public int CAPA_PAE { get; set; }
         public bool CAPA_UDE_FUERZA_ESCU { get; set; }
@@ -45,5 +51,9 @@ namespace SIGAC.Layers.Bussiness.Model
         public string CAPA_MAQUINA_MOD { get; set; }
         public string CAPA_IP_MOD { get; set; }
         public string CAPA_EXTERNO { get; set; }
+    
+        public virtual SIEDU_PAE SIEDU_PAE { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<SIEDU_PRESUPUESTO> SIEDU_PRESUPUESTO { get; set; }
     }
 }

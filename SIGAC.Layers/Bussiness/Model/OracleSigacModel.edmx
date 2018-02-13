@@ -697,6 +697,28 @@ warning 6002: The table/view 'SIGAC.SIEDU_LOG' does not have a primary key defin
           <Property Name="ENEC_NRO" Type="number" Precision="6" Scale="0" Nullable="false" />
           <Property Name="ENEC_ENVIADO" Type="varchar2" MaxLength="1" Nullable="false" />
         </EntityType>
+        <EntityType Name="SIEDU_NOVEDAD_PAE">
+          <Key>
+            <PropertyRef Name="NOVE_NOVE" />
+          </Key>
+          <Property Name="NOVE_NOVE" Type="number" Precision="4" Scale="0" Nullable="false" />
+          <Property Name="NOVE_PAE" Type="number" Precision="6" Scale="0" Nullable="false" />
+          <Property Name="NOVE_FECHA" Type="date" Nullable="false" />
+          <Property Name="NOVE_PROCEDI" Type="varchar2" MaxLength="10" Nullable="false" />
+          <Property Name="NOVE_TPO_DOC" Type="varchar2" MaxLength="100" Nullable="false" />
+          <Property Name="NOVE_NRO_DOC" Type="varchar2" MaxLength="30" Nullable="false" />
+          <Property Name="NOVE_FECHA_DOC" Type="date" Nullable="false" />
+          <Property Name="NOVE_OBSERVA" Type="varchar2" MaxLength="1000" />
+          <Property Name="NOVE_ANEXO_PDF" Type="number" Precision="8" Scale="0" />
+          <Property Name="NOVE_USU_CREA" Type="varchar2" MaxLength="30" Nullable="false" />
+          <Property Name="NOVE_FECHA_CREA" Type="date" Nullable="false" />
+          <Property Name="NOVE_MAQUINA_CREA" Type="varchar2" MaxLength="100" Nullable="false" />
+          <Property Name="NOVE_IP_CREA" Type="varchar2" MaxLength="100" Nullable="false" />
+          <Property Name="NOVE_USU_MOD" Type="varchar2" MaxLength="30" />
+          <Property Name="NOVE_FECHA_MOD" Type="date" />
+          <Property Name="NOVE_MAQUINA_MOD" Type="varchar2" MaxLength="100" />
+          <Property Name="NOVE_IP_MOD" Type="varchar2" MaxLength="100" />
+        </EntityType>
         <EntityType Name="SIEDU_PAE">
           <Key>
             <PropertyRef Name="PAE_PAE" />
@@ -749,6 +771,24 @@ warning 6002: The table/view 'SIGAC.SIEDU_LOG' does not have a primary key defin
           <Property Name="CAPA_MAQUINA_MOD" Type="varchar2" MaxLength="100" />
           <Property Name="CAPA_IP_MOD" Type="varchar2" MaxLength="100" />
           <Property Name="CAPA_EXTERNO" Type="varchar2" MaxLength="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SIEDU_PAE_FORMA_ESCUELA">
+          <Key>
+            <PropertyRef Name="FRME_FORM" />
+            <PropertyRef Name="FRME_UDE_FUERZA" />
+            <PropertyRef Name="FRME_UDE_ESCU" />
+          </Key>
+          <Property Name="FRME_FORM" Type="number" Precision="6" Scale="0" Nullable="false" />
+          <Property Name="FRME_UDE_FUERZA" Type="number" Precision="1" Scale="0" Nullable="false" />
+          <Property Name="FRME_UDE_ESCU" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="FRMS_USU_CREA" Type="varchar2" MaxLength="30" Nullable="false" />
+          <Property Name="FRMS_FECHA_CREA" Type="date" Nullable="false" />
+          <Property Name="FRMS_MAQUINA_CREA" Type="varchar2" MaxLength="100" Nullable="false" />
+          <Property Name="FRMS_IP_CREA" Type="varchar2" MaxLength="100" Nullable="false" />
+          <Property Name="FRMS_USU_MOD" Type="varchar2" MaxLength="30" />
+          <Property Name="FRMS_FECHA_MOD" Type="date" />
+          <Property Name="FRMS_MAQUINA_MOD" Type="varchar2" MaxLength="100" />
+          <Property Name="FRMS_IP_MOD" Type="varchar2" MaxLength="100" />
         </EntityType>
         <EntityType Name="SIEDU_PAE_FORMACION">
           <Key>
@@ -946,6 +986,78 @@ warning 6002: The table/view 'SIGAC.TIPOS' does not have a primary key defined. 
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="SIEDU_FORM_ESCUELAS_FORM_FK">
+          <End Role="SIEDU_PAE_FORMACION" Type="Self.SIEDU_PAE_FORMACION" Multiplicity="1" />
+          <End Role="SIEDU_PAE_FORMA_ESCUELA" Type="Self.SIEDU_PAE_FORMA_ESCUELA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SIEDU_PAE_FORMACION">
+              <PropertyRef Name="FORM_FORM" />
+            </Principal>
+            <Dependent Role="SIEDU_PAE_FORMA_ESCUELA">
+              <PropertyRef Name="FRME_FORM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SIEDU_NOVEDAD_ARCHIVO_FK">
+          <End Role="SIEDU_ARCHIVO" Type="Self.SIEDU_ARCHIVO" Multiplicity="0..1" />
+          <End Role="SIEDU_NOVEDAD_PAE" Type="Self.SIEDU_NOVEDAD_PAE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SIEDU_ARCHIVO">
+              <PropertyRef Name="ARCH_ID" />
+            </Principal>
+            <Dependent Role="SIEDU_NOVEDAD_PAE">
+              <PropertyRef Name="NOVE_ANEXO_PDF" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SIEDU_NOVEDAD_PAE_FK">
+          <End Role="SIEDU_PAE" Type="Self.SIEDU_PAE" Multiplicity="1" />
+          <End Role="SIEDU_NOVEDAD_PAE" Type="Self.SIEDU_NOVEDAD_PAE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SIEDU_PAE">
+              <PropertyRef Name="PAE_PAE" />
+            </Principal>
+            <Dependent Role="SIEDU_NOVEDAD_PAE">
+              <PropertyRef Name="NOVE_PAE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SIEDU_PAE_CAPACITACION_PAE_FK">
+          <End Role="SIEDU_PAE" Type="Self.SIEDU_PAE" Multiplicity="1" />
+          <End Role="SIEDU_PAE_CAPACITACION" Type="Self.SIEDU_PAE_CAPACITACION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SIEDU_PAE">
+              <PropertyRef Name="PAE_PAE" />
+            </Principal>
+            <Dependent Role="SIEDU_PAE_CAPACITACION">
+              <PropertyRef Name="CAPA_PAE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SIEDU_PAE_FORMACION_PAE_FK">
+          <End Role="SIEDU_PAE" Type="Self.SIEDU_PAE" Multiplicity="1" />
+          <End Role="SIEDU_PAE_FORMACION" Type="Self.SIEDU_PAE_FORMACION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SIEDU_PAE">
+              <PropertyRef Name="PAE_PAE" />
+            </Principal>
+            <Dependent Role="SIEDU_PAE_FORMACION">
+              <PropertyRef Name="FORM_PAE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SIEDU_PRESUPU_PAE_FK">
+          <End Role="SIEDU_PAE_CAPACITACION" Type="Self.SIEDU_PAE_CAPACITACION" Multiplicity="1" />
+          <End Role="SIEDU_PRESUPUESTO" Type="Self.SIEDU_PRESUPUESTO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SIEDU_PAE_CAPACITACION">
+              <PropertyRef Name="CAPA_CAPA" />
+            </Principal>
+            <Dependent Role="SIEDU_PRESUPUESTO">
+              <PropertyRef Name="PPTO_CAPA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="SIEDU_TEMA_TEMA_FK">
           <End Role="SIEDU_TEMA" Type="Self.SIEDU_TEMA" Multiplicity="0..1" />
           <End Role="SIEDU_TEMA1" Type="Self.SIEDU_TEMA" Multiplicity="*" />
@@ -1011,8 +1123,10 @@ warning 6002: The table/view 'SIGAC.TIPOS' does not have a primary key defined. 
           <EntitySet Name="SIEDU_INASISTE_EVENTO" EntityType="Self.SIEDU_INASISTE_EVENTO" Schema="SIGAC" store:Type="Tables" />
           <EntitySet Name="SIEDU_NECESIDAD" EntityType="Self.SIEDU_NECESIDAD" Schema="SIGAC" store:Type="Tables" />
           <EntitySet Name="SIEDU_NECESIDAD_E" EntityType="Self.SIEDU_NECESIDAD_E" Schema="SIGAC" store:Type="Tables" />
+          <EntitySet Name="SIEDU_NOVEDAD_PAE" EntityType="Self.SIEDU_NOVEDAD_PAE" Schema="SIGAC" store:Type="Tables" />
           <EntitySet Name="SIEDU_PAE" EntityType="Self.SIEDU_PAE" Schema="SIGAC" store:Type="Tables" />
           <EntitySet Name="SIEDU_PAE_CAPACITACION" EntityType="Self.SIEDU_PAE_CAPACITACION" Schema="SIGAC" store:Type="Tables" />
+          <EntitySet Name="SIEDU_PAE_FORMA_ESCUELA" EntityType="Self.SIEDU_PAE_FORMA_ESCUELA" Schema="SIGAC" store:Type="Tables" />
           <EntitySet Name="SIEDU_PAE_FORMACION" EntityType="Self.SIEDU_PAE_FORMACION" Schema="SIGAC" store:Type="Tables" />
           <EntitySet Name="SIEDU_PARTICIPANTE_EVENTO" EntityType="Self.SIEDU_PARTICIPANTE_EVENTO" Schema="SIGAC" store:Type="Tables" />
           <EntitySet Name="SIEDU_PERSONA" EntityType="Self.SIEDU_PERSONA" Schema="SIGAC" store:Type="Tables" />
@@ -1131,6 +1245,30 @@ FROM "SIGAC"."TIPOS" "TIPOS"</DefiningQuery>
             <End Role="SIEDU_EVALUACION" EntitySet="SIEDU_EVALUACION" />
             <End Role="SIEDU_EVENTO_ESCUELA" EntitySet="SIEDU_EVENTO_ESCUELA" />
           </AssociationSet>
+          <AssociationSet Name="SIEDU_FORM_ESCUELAS_FORM_FK" Association="Self.SIEDU_FORM_ESCUELAS_FORM_FK">
+            <End Role="SIEDU_PAE_FORMACION" EntitySet="SIEDU_PAE_FORMACION" />
+            <End Role="SIEDU_PAE_FORMA_ESCUELA" EntitySet="SIEDU_PAE_FORMA_ESCUELA" />
+          </AssociationSet>
+          <AssociationSet Name="SIEDU_NOVEDAD_ARCHIVO_FK" Association="Self.SIEDU_NOVEDAD_ARCHIVO_FK">
+            <End Role="SIEDU_ARCHIVO" EntitySet="SIEDU_ARCHIVO" />
+            <End Role="SIEDU_NOVEDAD_PAE" EntitySet="SIEDU_NOVEDAD_PAE" />
+          </AssociationSet>
+          <AssociationSet Name="SIEDU_NOVEDAD_PAE_FK" Association="Self.SIEDU_NOVEDAD_PAE_FK">
+            <End Role="SIEDU_PAE" EntitySet="SIEDU_PAE" />
+            <End Role="SIEDU_NOVEDAD_PAE" EntitySet="SIEDU_NOVEDAD_PAE" />
+          </AssociationSet>
+          <AssociationSet Name="SIEDU_PAE_CAPACITACION_PAE_FK" Association="Self.SIEDU_PAE_CAPACITACION_PAE_FK">
+            <End Role="SIEDU_PAE" EntitySet="SIEDU_PAE" />
+            <End Role="SIEDU_PAE_CAPACITACION" EntitySet="SIEDU_PAE_CAPACITACION" />
+          </AssociationSet>
+          <AssociationSet Name="SIEDU_PAE_FORMACION_PAE_FK" Association="Self.SIEDU_PAE_FORMACION_PAE_FK">
+            <End Role="SIEDU_PAE" EntitySet="SIEDU_PAE" />
+            <End Role="SIEDU_PAE_FORMACION" EntitySet="SIEDU_PAE_FORMACION" />
+          </AssociationSet>
+          <AssociationSet Name="SIEDU_PRESUPU_PAE_FK" Association="Self.SIEDU_PRESUPU_PAE_FK">
+            <End Role="SIEDU_PAE_CAPACITACION" EntitySet="SIEDU_PAE_CAPACITACION" />
+            <End Role="SIEDU_PRESUPUESTO" EntitySet="SIEDU_PRESUPUESTO" />
+          </AssociationSet>
           <AssociationSet Name="SIEDU_TEMA_TEMA_FK" Association="Self.SIEDU_TEMA_TEMA_FK">
             <End Role="SIEDU_TEMA" EntitySet="SIEDU_TEMA" />
             <End Role="SIEDU_TEMA1" EntitySet="SIEDU_TEMA" />
@@ -1214,6 +1352,32 @@ FROM "SIGAC"."TIPOS" "TIPOS"</DefiningQuery>
             <End Role="SIEDU_TEMA" EntitySet="SIEDU_TEMA" />
             <End Role="SIEDU_TEMA1" EntitySet="SIEDU_TEMA" />
           </AssociationSet>
+          <EntitySet Name="SIEDU_NOVEDAD_PAE" EntityType="SigacModel.SIEDU_NOVEDAD_PAE" />
+          <EntitySet Name="SIEDU_PAE_FORMA_ESCUELA" EntityType="SigacModel.SIEDU_PAE_FORMA_ESCUELA" />
+          <AssociationSet Name="SIEDU_NOVEDAD_ARCHIVO_FK" Association="SigacModel.SIEDU_NOVEDAD_ARCHIVO_FK">
+            <End Role="SIEDU_ARCHIVO" EntitySet="SIEDU_ARCHIVO" />
+            <End Role="SIEDU_NOVEDAD_PAE" EntitySet="SIEDU_NOVEDAD_PAE" />
+          </AssociationSet>
+          <AssociationSet Name="SIEDU_NOVEDAD_PAE_FK" Association="SigacModel.SIEDU_NOVEDAD_PAE_FK">
+            <End Role="SIEDU_PAE" EntitySet="SIEDU_PAE" />
+            <End Role="SIEDU_NOVEDAD_PAE" EntitySet="SIEDU_NOVEDAD_PAE" />
+          </AssociationSet>
+          <AssociationSet Name="SIEDU_PAE_CAPACITACION_PAE_FK" Association="SigacModel.SIEDU_PAE_CAPACITACION_PAE_FK">
+            <End Role="SIEDU_PAE" EntitySet="SIEDU_PAE" />
+            <End Role="SIEDU_PAE_CAPACITACION" EntitySet="SIEDU_PAE_CAPACITACION" />
+          </AssociationSet>
+          <AssociationSet Name="SIEDU_PAE_FORMACION_PAE_FK" Association="SigacModel.SIEDU_PAE_FORMACION_PAE_FK">
+            <End Role="SIEDU_PAE" EntitySet="SIEDU_PAE" />
+            <End Role="SIEDU_PAE_FORMACION" EntitySet="SIEDU_PAE_FORMACION" />
+          </AssociationSet>
+          <AssociationSet Name="SIEDU_PRESUPU_PAE_FK" Association="SigacModel.SIEDU_PRESUPU_PAE_FK">
+            <End Role="SIEDU_PAE_CAPACITACION" EntitySet="SIEDU_PAE_CAPACITACION" />
+            <End Role="SIEDU_PRESUPUESTO" EntitySet="SIEDU_PRESUPUESTO" />
+          </AssociationSet>
+          <AssociationSet Name="SIEDU_FORM_ESCUELAS_FORM_FK" Association="SigacModel.SIEDU_FORM_ESCUELAS_FORM_FK">
+            <End Role="SIEDU_PAE_FORMACION" EntitySet="SIEDU_PAE_FORMACION" />
+            <End Role="SIEDU_PAE_FORMA_ESCUELA" EntitySet="SIEDU_PAE_FORMA_ESCUELA" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="ASIGNATURAS">
           <Key>
@@ -1293,6 +1457,7 @@ FROM "SIGAC"."TIPOS" "TIPOS"</DefiningQuery>
           <Property Name="ARCH_FECHA_MOD" Type="DateTime" />
           <Property Name="ARCH_MAQUINA_MOD" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="ARCH_IP_MOD" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="SIEDU_NOVEDAD_PAE" Relationship="SigacModel.SIEDU_NOVEDAD_ARCHIVO_FK" FromRole="SIEDU_ARCHIVO" ToRole="SIEDU_NOVEDAD_PAE" />
         </EntityType>
         <EntityType Name="SIEDU_AUDITORIA">
           <Key>
@@ -1786,6 +1951,9 @@ FROM "SIGAC"."TIPOS" "TIPOS"</DefiningQuery>
           <Property Name="PAE_FECHA_MOD" Type="DateTime" />
           <Property Name="PAE_MAQUINA_MOD" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="PAE_IP_MOD" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="SIEDU_NOVEDAD_PAE" Relationship="SigacModel.SIEDU_NOVEDAD_PAE_FK" FromRole="SIEDU_PAE" ToRole="SIEDU_NOVEDAD_PAE" />
+          <NavigationProperty Name="SIEDU_PAE_CAPACITACION" Relationship="SigacModel.SIEDU_PAE_CAPACITACION_PAE_FK" FromRole="SIEDU_PAE" ToRole="SIEDU_PAE_CAPACITACION" />
+          <NavigationProperty Name="SIEDU_PAE_FORMACION" Relationship="SigacModel.SIEDU_PAE_FORMACION_PAE_FK" FromRole="SIEDU_PAE" ToRole="SIEDU_PAE_FORMACION" />
         </EntityType>
         <EntityType Name="SIEDU_PAE_CAPACITACION">
           <Key>
@@ -1822,6 +1990,8 @@ FROM "SIGAC"."TIPOS" "TIPOS"</DefiningQuery>
           <Property Name="CAPA_MAQUINA_MOD" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="CAPA_IP_MOD" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="CAPA_EXTERNO" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="SIEDU_PAE" Relationship="SigacModel.SIEDU_PAE_CAPACITACION_PAE_FK" FromRole="SIEDU_PAE_CAPACITACION" ToRole="SIEDU_PAE" />
+          <NavigationProperty Name="SIEDU_PRESUPUESTO" Relationship="SigacModel.SIEDU_PRESUPU_PAE_FK" FromRole="SIEDU_PAE_CAPACITACION" ToRole="SIEDU_PRESUPUESTO" />
         </EntityType>
         <EntityType Name="SIEDU_PAE_FORMACION">
           <Key>
@@ -1843,6 +2013,8 @@ FROM "SIGAC"."TIPOS" "TIPOS"</DefiningQuery>
           <Property Name="FORM_FECHA_MOD" Type="DateTime" />
           <Property Name="FORM_MAQUINA_MOD" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="FORM_IP_MOD" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="SIEDU_PAE" Relationship="SigacModel.SIEDU_PAE_FORMACION_PAE_FK" FromRole="SIEDU_PAE_FORMACION" ToRole="SIEDU_PAE" />
+          <NavigationProperty Name="SIEDU_PAE_FORMA_ESCUELA" Relationship="SigacModel.SIEDU_FORM_ESCUELAS_FORM_FK" FromRole="SIEDU_PAE_FORMACION" ToRole="SIEDU_PAE_FORMA_ESCUELA" />
         </EntityType>
         <EntityType Name="SIEDU_PARTICIPANTE_EVENTO">
           <Key>
@@ -1926,6 +2098,7 @@ FROM "SIGAC"."TIPOS" "TIPOS"</DefiningQuery>
           <Property Name="PPTO_FECHA_MOD" Type="DateTime" />
           <Property Name="PPTO_MAQUINA_MOD" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="PPTO_IP_MOD" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="SIEDU_PAE_CAPACITACION" Relationship="SigacModel.SIEDU_PRESUPU_PAE_FK" FromRole="SIEDU_PRESUPUESTO" ToRole="SIEDU_PAE_CAPACITACION" />
         </EntityType>
         <EntityType Name="SIEDU_TEMA">
           <Key>
@@ -2157,6 +2330,121 @@ FROM "SIGAC"."TIPOS" "TIPOS"</DefiningQuery>
             </Principal>
             <Dependent Role="SIEDU_TEMA1">
               <PropertyRef Name="TEMA_TEMA_PADRE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="SIEDU_NOVEDAD_PAE">
+          <Key>
+            <PropertyRef Name="NOVE_NOVE" />
+          </Key>
+          <Property Name="NOVE_NOVE" Type="Int16" Nullable="false" />
+          <Property Name="NOVE_PAE" Type="Int32" Nullable="false" />
+          <Property Name="NOVE_FECHA" Type="DateTime" Nullable="false" />
+          <Property Name="NOVE_PROCEDI" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="NOVE_TPO_DOC" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="NOVE_NRO_DOC" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="NOVE_FECHA_DOC" Type="DateTime" Nullable="false" />
+          <Property Name="NOVE_OBSERVA" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="NOVE_ANEXO_PDF" Type="Int32" />
+          <Property Name="NOVE_USU_CREA" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="NOVE_FECHA_CREA" Type="DateTime" Nullable="false" />
+          <Property Name="NOVE_MAQUINA_CREA" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="NOVE_IP_CREA" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="NOVE_USU_MOD" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="NOVE_FECHA_MOD" Type="DateTime" />
+          <Property Name="NOVE_MAQUINA_MOD" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="NOVE_IP_MOD" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="SIEDU_ARCHIVO" Relationship="SigacModel.SIEDU_NOVEDAD_ARCHIVO_FK" FromRole="SIEDU_NOVEDAD_PAE" ToRole="SIEDU_ARCHIVO" />
+          <NavigationProperty Name="SIEDU_PAE" Relationship="SigacModel.SIEDU_NOVEDAD_PAE_FK" FromRole="SIEDU_NOVEDAD_PAE" ToRole="SIEDU_PAE" />
+        </EntityType>
+        <EntityType Name="SIEDU_PAE_FORMA_ESCUELA">
+          <Key>
+            <PropertyRef Name="FRME_FORM" />
+            <PropertyRef Name="FRME_UDE_FUERZA" />
+            <PropertyRef Name="FRME_UDE_ESCU" />
+          </Key>
+          <Property Name="FRME_FORM" Type="Int32" Nullable="false" />
+          <Property Name="FRME_UDE_FUERZA" Type="Boolean" Nullable="false" />
+          <Property Name="FRME_UDE_ESCU" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="FRMS_USU_CREA" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="FRMS_FECHA_CREA" Type="DateTime" Nullable="false" />
+          <Property Name="FRMS_MAQUINA_CREA" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="FRMS_IP_CREA" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="FRMS_USU_MOD" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="FRMS_FECHA_MOD" Type="DateTime" />
+          <Property Name="FRMS_MAQUINA_MOD" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="FRMS_IP_MOD" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="SIEDU_PAE_FORMACION" Relationship="SigacModel.SIEDU_FORM_ESCUELAS_FORM_FK" FromRole="SIEDU_PAE_FORMA_ESCUELA" ToRole="SIEDU_PAE_FORMACION" />
+        </EntityType>
+        <Association Name="SIEDU_NOVEDAD_ARCHIVO_FK">
+          <End Type="SigacModel.SIEDU_ARCHIVO" Role="SIEDU_ARCHIVO" Multiplicity="0..1" />
+          <End Type="SigacModel.SIEDU_NOVEDAD_PAE" Role="SIEDU_NOVEDAD_PAE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SIEDU_ARCHIVO">
+              <PropertyRef Name="ARCH_ID" />
+            </Principal>
+            <Dependent Role="SIEDU_NOVEDAD_PAE">
+              <PropertyRef Name="NOVE_ANEXO_PDF" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SIEDU_NOVEDAD_PAE_FK">
+          <End Type="SigacModel.SIEDU_PAE" Role="SIEDU_PAE" Multiplicity="1" />
+          <End Type="SigacModel.SIEDU_NOVEDAD_PAE" Role="SIEDU_NOVEDAD_PAE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SIEDU_PAE">
+              <PropertyRef Name="PAE_PAE" />
+            </Principal>
+            <Dependent Role="SIEDU_NOVEDAD_PAE">
+              <PropertyRef Name="NOVE_PAE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SIEDU_PAE_CAPACITACION_PAE_FK">
+          <End Type="SigacModel.SIEDU_PAE" Role="SIEDU_PAE" Multiplicity="1" />
+          <End Type="SigacModel.SIEDU_PAE_CAPACITACION" Role="SIEDU_PAE_CAPACITACION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SIEDU_PAE">
+              <PropertyRef Name="PAE_PAE" />
+            </Principal>
+            <Dependent Role="SIEDU_PAE_CAPACITACION">
+              <PropertyRef Name="CAPA_PAE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SIEDU_PAE_FORMACION_PAE_FK">
+          <End Type="SigacModel.SIEDU_PAE" Role="SIEDU_PAE" Multiplicity="1" />
+          <End Type="SigacModel.SIEDU_PAE_FORMACION" Role="SIEDU_PAE_FORMACION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SIEDU_PAE">
+              <PropertyRef Name="PAE_PAE" />
+            </Principal>
+            <Dependent Role="SIEDU_PAE_FORMACION">
+              <PropertyRef Name="FORM_PAE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SIEDU_PRESUPU_PAE_FK">
+          <End Type="SigacModel.SIEDU_PAE_CAPACITACION" Role="SIEDU_PAE_CAPACITACION" Multiplicity="1" />
+          <End Type="SigacModel.SIEDU_PRESUPUESTO" Role="SIEDU_PRESUPUESTO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SIEDU_PAE_CAPACITACION">
+              <PropertyRef Name="CAPA_CAPA" />
+            </Principal>
+            <Dependent Role="SIEDU_PRESUPUESTO">
+              <PropertyRef Name="PPTO_CAPA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SIEDU_FORM_ESCUELAS_FORM_FK">
+          <End Type="SigacModel.SIEDU_PAE_FORMACION" Role="SIEDU_PAE_FORMACION" Multiplicity="1" />
+          <End Type="SigacModel.SIEDU_PAE_FORMA_ESCUELA" Role="SIEDU_PAE_FORMA_ESCUELA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SIEDU_PAE_FORMACION">
+              <PropertyRef Name="FORM_FORM" />
+            </Principal>
+            <Dependent Role="SIEDU_PAE_FORMA_ESCUELA">
+              <PropertyRef Name="FRME_FORM" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -3052,6 +3340,46 @@ FROM "SIGAC"."TIPOS" "TIPOS"</DefiningQuery>
                 <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
                 <ScalarProperty Name="TIPO" ColumnName="TIPO" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SIEDU_NOVEDAD_PAE">
+            <EntityTypeMapping TypeName="SigacModel.SIEDU_NOVEDAD_PAE">
+              <MappingFragment StoreEntitySet="SIEDU_NOVEDAD_PAE">
+                <ScalarProperty Name="NOVE_IP_MOD" ColumnName="NOVE_IP_MOD" />
+                <ScalarProperty Name="NOVE_MAQUINA_MOD" ColumnName="NOVE_MAQUINA_MOD" />
+                <ScalarProperty Name="NOVE_FECHA_MOD" ColumnName="NOVE_FECHA_MOD" />
+                <ScalarProperty Name="NOVE_USU_MOD" ColumnName="NOVE_USU_MOD" />
+                <ScalarProperty Name="NOVE_IP_CREA" ColumnName="NOVE_IP_CREA" />
+                <ScalarProperty Name="NOVE_MAQUINA_CREA" ColumnName="NOVE_MAQUINA_CREA" />
+                <ScalarProperty Name="NOVE_FECHA_CREA" ColumnName="NOVE_FECHA_CREA" />
+                <ScalarProperty Name="NOVE_USU_CREA" ColumnName="NOVE_USU_CREA" />
+                <ScalarProperty Name="NOVE_ANEXO_PDF" ColumnName="NOVE_ANEXO_PDF" />
+                <ScalarProperty Name="NOVE_OBSERVA" ColumnName="NOVE_OBSERVA" />
+                <ScalarProperty Name="NOVE_FECHA_DOC" ColumnName="NOVE_FECHA_DOC" />
+                <ScalarProperty Name="NOVE_NRO_DOC" ColumnName="NOVE_NRO_DOC" />
+                <ScalarProperty Name="NOVE_TPO_DOC" ColumnName="NOVE_TPO_DOC" />
+                <ScalarProperty Name="NOVE_PROCEDI" ColumnName="NOVE_PROCEDI" />
+                <ScalarProperty Name="NOVE_FECHA" ColumnName="NOVE_FECHA" />
+                <ScalarProperty Name="NOVE_PAE" ColumnName="NOVE_PAE" />
+                <ScalarProperty Name="NOVE_NOVE" ColumnName="NOVE_NOVE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SIEDU_PAE_FORMA_ESCUELA">
+            <EntityTypeMapping TypeName="SigacModel.SIEDU_PAE_FORMA_ESCUELA">
+              <MappingFragment StoreEntitySet="SIEDU_PAE_FORMA_ESCUELA">
+                <ScalarProperty Name="FRMS_IP_MOD" ColumnName="FRMS_IP_MOD" />
+                <ScalarProperty Name="FRMS_MAQUINA_MOD" ColumnName="FRMS_MAQUINA_MOD" />
+                <ScalarProperty Name="FRMS_FECHA_MOD" ColumnName="FRMS_FECHA_MOD" />
+                <ScalarProperty Name="FRMS_USU_MOD" ColumnName="FRMS_USU_MOD" />
+                <ScalarProperty Name="FRMS_IP_CREA" ColumnName="FRMS_IP_CREA" />
+                <ScalarProperty Name="FRMS_MAQUINA_CREA" ColumnName="FRMS_MAQUINA_CREA" />
+                <ScalarProperty Name="FRMS_FECHA_CREA" ColumnName="FRMS_FECHA_CREA" />
+                <ScalarProperty Name="FRMS_USU_CREA" ColumnName="FRMS_USU_CREA" />
+                <ScalarProperty Name="FRME_UDE_ESCU" ColumnName="FRME_UDE_ESCU" />
+                <ScalarProperty Name="FRME_UDE_FUERZA" ColumnName="FRME_UDE_FUERZA" />
+                <ScalarProperty Name="FRME_FORM" ColumnName="FRME_FORM" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

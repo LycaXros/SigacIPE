@@ -14,6 +14,12 @@ namespace SIGAC.Layers.Bussiness.Model
     
     public partial class SIEDU_PAE_FORMACION
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public SIEDU_PAE_FORMACION()
+        {
+            this.SIEDU_PAE_FORMA_ESCUELA = new HashSet<SIEDU_PAE_FORMA_ESCUELA>();
+        }
+    
         public int FORM_FORM { get; set; }
         public int FORM_PAE { get; set; }
         public Nullable<short> FORM_DOM_PROCE { get; set; }
@@ -30,5 +36,9 @@ namespace SIGAC.Layers.Bussiness.Model
         public Nullable<System.DateTime> FORM_FECHA_MOD { get; set; }
         public string FORM_MAQUINA_MOD { get; set; }
         public string FORM_IP_MOD { get; set; }
+    
+        public virtual SIEDU_PAE SIEDU_PAE { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<SIEDU_PAE_FORMA_ESCUELA> SIEDU_PAE_FORMA_ESCUELA { get; set; }
     }
 }

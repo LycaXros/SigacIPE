@@ -1,0 +1,20 @@
+﻿
+
+///
+/// En RECINTOS. (Clase del SIGAC)
+///
+
+
+        public string TransformNota
+        {
+
+            get
+            {
+                if (NOTA == null)
+                    return string.Empty;
+                return Layers.Application.DataTransformUtility.StringFromByte(NOTA, System.Text.Encoding.ASCII);
+            }
+        } 
+        
+
+.

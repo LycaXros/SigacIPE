@@ -78,6 +78,7 @@
     <Compile Include="Application\AppContext.cs" />
     <Compile Include="Application\DataTransformUtility.cs" />
     <Compile Include="Application\ExceptionUtility.cs" />
+    <Compile Include="Application\MachineInformation.cs" />
     <Compile Include="Bussiness\Model\ACTIVOS.cs">
       <DependentUpon>OracleSigacModel.tt</DependentUpon>
     </Compile>
@@ -207,6 +208,9 @@
     <Compile Include="Bussiness\Model\SIEDU_NECESIDAD_E.cs">
       <DependentUpon>OracleSigacModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Bussiness\Model\SIEDU_NOVEDAD_PAE.cs">
+      <DependentUpon>OracleSigacModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Bussiness\Model\SIEDU_PAE.cs">
       <DependentUpon>OracleSigacModel.tt</DependentUpon>
     </Compile>
@@ -214,6 +218,9 @@
       <DependentUpon>OracleSigacModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Bussiness\Model\SIEDU_PAE_FORMACION.cs">
+      <DependentUpon>OracleSigacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bussiness\Model\SIEDU_PAE_FORMA_ESCUELA.cs">
       <DependentUpon>OracleSigacModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Bussiness\Model\SIEDU_PARTICIPANTE_EVENTO.cs">
@@ -302,6 +309,7 @@
       <LastGenOutput>OracleSigacModel.cs</LastGenOutput>
     </Content>
     <Content Include="ReadMe.txt" />
+    <Content Include="Repository para codigos.txt" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
