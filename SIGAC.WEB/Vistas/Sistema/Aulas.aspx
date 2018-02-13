@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SIGAC.Master" AutoEventWireup="true" CodeBehind="Asignaturas.aspx.cs" Inherits="SIGAC.WEB.Vistas.Sistema.Asignaturas" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SIGAC.Master" AutoEventWireup="true" CodeBehind="Aulas.aspx.cs" Inherits="SIGAC.WEB.Vistas.Sistema.Aulas" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="StyleCPH" runat="server">
 </asp:Content>
