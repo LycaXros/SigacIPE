@@ -21,7 +21,7 @@
                         </div>
                         <div class="col6">
                             <asp:LinkButton ID="btnBuscar" runat="server" Visible="True" TabIndex="17" CssClass="btn btn-success" OnClick="btnBuscar_Click" Width="100px"><span class="glyphicon glyphicon-search"></span>&nbsp; Buscar</asp:LinkButton>
-                            <asp:LinkButton ID="btnGenerarPAE" runat="server" Visible="True" TabIndex="17" CssClass="btn btn-success" Width="140px"><span class="glyphicon glyphicon-file"></span>&nbsp; Generar PAE</asp:LinkButton>
+                            <asp:LinkButton ID="btnGenerarPAE" OnClick="btnGenerarPAE_Click" runat="server" Visible="True" TabIndex="17" CssClass="btn btn-success" Width="140px"><span class="glyphicon glyphicon-file"></span>&nbsp; Generar PAE</asp:LinkButton>
                             <asp:LinkButton ID="btnActivarVigencia"  OnClick="btnActivarVigencia_Click" runat="server" Visible="True" TabIndex="17" CssClass="btn btn-success" Width="160px"><span class="glyphicon glyphicon-ok"></span>&nbsp; Activar Vigencia</asp:LinkButton>
                         </div>
                     </div>
@@ -129,8 +129,8 @@
                                     &nbsp;
                                 </div>
                                 <div class="col3">
-                                    <a class="btn btn-danger">CANCELAR</a>
-                                    <a class="btn btn-primary">GUARDAR</a>
+                                    <span onclick="document.getElementById('idModal').style.display='none'" class="btn btn-danger">CANCELAR</span>
+                                    <asp:Button CommandName="" ID="btnGuardarVigenciaPae" runat="server" Text="GUARDAR" CssClass="btn btn-primary" OnClick="btnGuardarVigenciaPae_Click" />
                                 </div>
                             </div>
                             <br />
