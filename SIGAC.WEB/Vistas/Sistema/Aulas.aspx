@@ -15,10 +15,7 @@
                         <div class="col1">
                             <p>&nbsp;</p>
                         </div>
-                        <%--<div class="col3">
-                            asp:TextBox runat="server" />
-                            <asp:DropDownList runat="server" ID="selectCurso" CssClass="form-control" Width="100%" AutoPostBack="true"></asp:DropDownList>
-                        </div>--%>
+                        <%# Eval("AULAS") %>
                         <div class="col8">
                             <div class="input-group">
                                 <asp:TextBox runat="server" ID="textboxFiltro" CssClass="form-control" />
@@ -119,7 +116,7 @@
                 </div>
             </div>
         </div>
-        <div class="panel panel-custom">
+        <div class="panel panel-custom" style="text-align: left">
             <div class="panel-heading">
                 <h4 class="panel-title">Añadir/Editar</h4>
             </div>
@@ -128,14 +125,18 @@
                     <div class="GridRow">
                         <div class="col4">
                             <asp:RequiredFieldValidator
-                                ControlToValidate="comboboxCurso" Display="Dynamic" Text="*" ValidationGroup="FormVal"
-                                ID="requiredCurso" runat="server" ErrorMessage="Curso es requerido"></asp:RequiredFieldValidator>
-                            <label>Curso</label>
+                                ControlToValidate="textboxAula" Display="Dynamic" Text="*" ValidationGroup="FormVal"
+                                ID="requiredAula" runat="server" ErrorMessage="Curso es requerido"></asp:RequiredFieldValidator>
+                          <label>Aula</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                             
                         </div>
                         <div class="col6">
-                            <ajax:ComboBox ID="comboboxCurso" runat="server" AutoCompleteMode="SuggestAppend"
-                                CaseSensitive="false" DropDownStyle="DropDownList" CssClass="form-control">
-                            </ajax:ComboBox>
+                            <asp:TextBox runat="server" ID="textboxAula" CssClass="form-control" />
+                        
+
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        
+
                         </div>
                     </div>
                     <div class="GridRow">
@@ -147,6 +148,16 @@
                         </div>
                         <div class="col6">
                             <asp:TextBox runat="server" ID="textboxNombre" CssClass="form-control" />
+                        </div>
+                        <div class="col4">
+                            <asp:RequiredFieldValidator
+                                ControlToValidate="textboxUbicacion" Display="Dynamic" Text="*" ValidationGroup="FormVal"
+                                ID="RequiredFieldUbicacion" runat="server" ErrorMessage="Nombre es requerido"></asp:RequiredFieldValidator>
+                              <label>Ubicacion</label>
+
+                        </div>
+                             <div class="col6">
+                            <asp:TextBox runat="server" ID="textboxUbicacion" CssClass="form-control" />
                         </div>
                     </div>
                     <div class="GridRow">
@@ -162,9 +173,7 @@
                     </div>
                     <div class="GridRow">
                         <div class="col4">
-                            <%--<asp:RequiredFieldValidator
-                                ControlToValidate="fileUploadContenido" Display="Dynamic" Text="*" ValidationGroup="FormVal"
-                                ID="requiredContenido" runat="server" ErrorMessage="Nombre es requerido"></asp:RequiredFieldValidator>--%>
+                            <%# Eval("ESCUELA") %>
                             <label>Contenido</label>
                         </div>
                         <div class="col6">
@@ -172,7 +181,7 @@
                     </div>
                     <div class="GridRow">
                         <div class="col4">
-                            <label>Observacion</label>
+                            <label>Nota</label>
                         </div>
                         <div class="col6">
                             <asp:TextBox TextMode="MultiLine" ID="textboxObservacion" Height="100px" runat="server" CssClass="form-control"></asp:TextBox>
@@ -181,34 +190,39 @@
                     <div class="GridRow">
                         <div class="col4">
                             <asp:RequiredFieldValidator
-                                ControlToValidate="textboxHoras" Display="Dynamic" Text="*" ValidationGroup="FormVal"
-                                ID="requiredHoras" runat="server" ErrorMessage="Nombre es requerido"></asp:RequiredFieldValidator>
-                            <label>Horas</label>
+                                ControlToValidate="comboboxRecintos" Display="Dynamic" Text="*" ValidationGroup="FormVal"
+                                ID="requiredRecinto" runat="server" ErrorMessage="Nombre es requerido"></asp:RequiredFieldValidator>
+                           <label>Recintos</label>
                         </div>
                         <div class="col6">
-                            <asp:TextBox runat="server" ID="textboxHoras" TextMode="Number" Text="form-control"/>
+                            <ajax:ComboBox ID="comboboxRecintos" runat="server" AutoCompleteMode="SuggestAppend"
+                                CaseSensitive="false" DropDownStyle="DropDownList" CssClass="form-control" Width="250px">
+                            </ajax:ComboBox>
                         </div>
-                    </div>
-                    <div class="GridRow">
-                        <div class="col2">
+
+                         <div class="col4">
                             <asp:RequiredFieldValidator
-                                ControlToValidate="textboxHoras" Display="Dynamic" Text="*" ValidationGroup="FormVal"
-                                ID="RequiredFieldValidator1" runat="server" ErrorMessage="Nombre es requerido"></asp:RequiredFieldValidator>
-                            <label>Fecha Inicio:</label>
+                                ControlToValidate="comboboxEscuela" Display="Dynamic" Text="*" ValidationGroup="FormVal"
+                                ID="RequiredFieldEscuela" runat="server" ErrorMessage="Nombre es requerido"></asp:RequiredFieldValidator>
+                            <label>Escuela</label>
                         </div>
-                        <div class="col3">
-                            <asp:TextBox runat="server" ID="textboxFechaInicio" TextMode="Date" Text="form-control" />
+                        <div class="col6">
+                            <ajax:ComboBox ID="comboboxEscuela" runat="server" AutoCompleteMode="SuggestAppend"
+                                CaseSensitive="false" DropDownStyle="DropDownList" CssClass="form-control" Width="250px">
+                            </ajax:ComboBox>
                         </div>
-                        <div class="col2">
-                            <asp:RequiredFieldValidator
-                                ControlToValidate="textboxHoras" Display="Dynamic" Text="*" ValidationGroup="FormVal"
-                                ID="RequiredFieldValidator2" runat="server" ErrorMessage="Nombre es requerido"></asp:RequiredFieldValidator>
-                            <label>Fecha Fin:</label>
+                 
+                        <div class="col6">
+                            <asp:LinkButton ID="btneditar" runat="server" Visible="True" TabIndex="17" CssClass="btn btn-primary" Width="100px"><span class="glyphicon glyphicon-search"></span>&nbsp; Editar</asp:LinkButton>
+                            <asp:LinkButton ID="btnGrabar" runat="server" Visible="True" TabIndex="17" CssClass="btn btn-success" Width="140px"><span class="glyphicon glyphicon-file"></span>&nbsp; Grabar</asp:LinkButton>
+                            <asp:LinkButton ID="btncancelar" runat="server" Visible="True" TabIndex="17" CssClass="btn btn-danger" Width="160px"><span class="glyphicon glyphicon-ok"></span>&nbsp; Cancelar</asp:LinkButton>
                         </div>
-                        <div class="col3">
-                            <asp:TextBox runat="server" ID="textboxFechaFin" TextMode="Date" Text="form-control" />
-                        </div>
+
+
+                </div>
+
                     </div>
+        
                 </div>
             </div>
         </div>
