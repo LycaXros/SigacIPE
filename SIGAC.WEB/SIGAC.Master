@@ -108,8 +108,8 @@
                                 </li>
                                 <li><a href="#"><i class="fas fa-cog"></i>SISTEMA</a>
                                     <ul style="z-index: 9999;">
-                                        <li><a href="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>">RECINTOS</a></li>
-                                        <li><a href="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>">ESCUELA</a></li>
+                                        <li><a href="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>Sistema/Recintos">RECINTOS</a></li>
+                                        <li><a href="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>Sistema/Escuelas">ESCUELA</a></li>
                                         <li><a href="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>Sistema/Aulas">AULAS</a></li>
                                         <li><a href="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>Sistema/Cursos">CURSOS</a></li>
                                         <li><a href="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>Sistema/Asignaturas">ASIGNATURAS</a></li>

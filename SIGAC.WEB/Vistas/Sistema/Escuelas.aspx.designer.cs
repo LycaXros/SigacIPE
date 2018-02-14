@@ -10,16 +10,16 @@
 namespace SIGAC.WEB.Vistas.Sistema {
     
     
-    public partial class Aulas {
+    public partial class Escuelas {
         
         /// <summary>
-        /// textboxFiltro control.
+        /// txtFiltro control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox textboxFiltro;
+        protected global::System.Web.UI.WebControls.TextBox txtFiltro;
         
         /// <summary>
         /// buttonFiltro control.
@@ -31,156 +31,129 @@ namespace SIGAC.WEB.Vistas.Sistema {
         protected global::System.Web.UI.WebControls.LinkButton buttonFiltro;
         
         /// <summary>
-        /// gridViewAulas control.
+        /// gridViewEcuelas control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gridViewAulas;
+        protected global::System.Web.UI.WebControls.GridView gridViewEcuelas;
         
         /// <summary>
-        /// requiredAula control.
+        /// lblAccion control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator requiredAula;
+        protected global::System.Web.UI.WebControls.Label lblAccion;
         
         /// <summary>
-        /// textboxAula control.
+        /// RequiredFieldValidator1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox textboxAula;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
         
         /// <summary>
-        /// requiredNombre control.
+        /// txtNombre control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator requiredNombre;
+        protected global::System.Web.UI.WebControls.TextBox txtNombre;
         
         /// <summary>
-        /// textboxNombre control.
+        /// RequiredFieldValidator2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox textboxNombre;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
         
         /// <summary>
-        /// RequiredFieldUbicacion control.
+        /// txtDir control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldUbicacion;
+        protected global::System.Web.UI.WebControls.TextBox txtDir;
         
         /// <summary>
-        /// textboxUbicacion control.
+        /// RequiredFieldValidator3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox textboxUbicacion;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator3;
         
         /// <summary>
-        /// requiredDescripcion control.
+        /// txtTel1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator requiredDescripcion;
+        protected global::System.Web.UI.WebControls.TextBox txtTel1;
         
         /// <summary>
-        /// textboxDescripcion control.
+        /// txtTel2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox textboxDescripcion;
+        protected global::System.Web.UI.WebControls.TextBox txtTel2;
         
         /// <summary>
-        /// textboxObservacion control.
+        /// txtNotas control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox textboxObservacion;
+        protected global::System.Web.UI.WebControls.TextBox txtNotas;
         
         /// <summary>
-        /// requiredRecinto control.
+        /// ddlEstado control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator requiredRecinto;
+        protected global::System.Web.UI.WebControls.DropDownList ddlEstado;
         
         /// <summary>
-        /// comboboxRecintos control.
+        /// ValidationSummary1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.ComboBox comboboxRecintos;
+        protected global::System.Web.UI.WebControls.ValidationSummary ValidationSummary1;
         
         /// <summary>
-        /// RequiredFieldEscuela control.
+        /// btnAgregar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldEscuela;
+        protected global::System.Web.UI.WebControls.Button btnAgregar;
         
         /// <summary>
-        /// comboboxEscuela control.
+        /// btnCancelar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.ComboBox comboboxEscuela;
-        
-        /// <summary>
-        /// btneditar control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btneditar;
-        
-        /// <summary>
-        /// btnGrabar control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnGrabar;
-        
-        /// <summary>
-        /// btncancelar control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btncancelar;
+        protected global::System.Web.UI.WebControls.Button btnCancelar;
     }
 }
