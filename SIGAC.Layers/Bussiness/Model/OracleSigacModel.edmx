@@ -442,6 +442,24 @@ warning 6013: The table/view 'SIGAC.PROVEEDOR' does not have a primary key defin
           <Property Name="ENTI_MAQUINA_MOD" Type="varchar2" MaxLength="100" />
           <Property Name="ENTI_IP_MOD" Type="varchar2" MaxLength="100" />
         </EntityType>
+        <EntityType Name="SIEDU_EVAL_CATEGORIA">
+          <Key>
+            <PropertyRef Name="EVCR_EVAL" />
+            <PropertyRef Name="EVCR_FUERZA" />
+            <PropertyRef Name="EVCR_ID_CATEGORIA" />
+          </Key>
+          <Property Name="EVCR_EVAL" Type="number" Precision="8" Scale="0" Nullable="false" />
+          <Property Name="EVCR_FUERZA" Type="number" Precision="1" Scale="0" Nullable="false" />
+          <Property Name="EVCR_ID_CATEGORIA" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="EVCR_USU_CREA" Type="varchar2" MaxLength="30" Nullable="false" />
+          <Property Name="EVCR_FECHA_CREA" Type="date" Nullable="false" />
+          <Property Name="EVCR_MAQUINA_CREA" Type="varchar2" MaxLength="100" Nullable="false" />
+          <Property Name="EVCR_IP_CREA" Type="varchar2" MaxLength="100" Nullable="false" />
+          <Property Name="EVCR_USU_MOD" Type="varchar2" MaxLength="30" />
+          <Property Name="EVCR_FECHA_MOD" Type="date" />
+          <Property Name="EVCR_MAQUINA_MOD" Type="varchar2" MaxLength="100" />
+          <Property Name="EVCR_IP_MOD" Type="varchar2" MaxLength="100" />
+        </EntityType>
         <EntityType Name="SIEDU_EVAL_DESARROLLO">
           <Key>
             <PropertyRef Name="EVDE_EVAL" />
@@ -496,6 +514,26 @@ warning 6013: The table/view 'SIGAC.PROVEEDOR' does not have a primary key defin
           <Property Name="EVPA_FECHA_MOD" Type="date" />
           <Property Name="EVPA_MAQUINA_MOD" Type="varchar2" MaxLength="100" />
           <Property Name="EVPA_IP_MOD" Type="varchar2" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="SIEDU_EVAL_PREGUNTA">
+          <Key>
+            <PropertyRef Name="EVPRE_EVAL" />
+            <PropertyRef Name="EVPRE_PREG" />
+          </Key>
+          <Property Name="EVPRE_EVAL" Type="number" Precision="8" Scale="0" Nullable="false" />
+          <Property Name="EVPRE_PREG" Type="number" Precision="6" Scale="0" Nullable="false" />
+          <Property Name="EVPRE_ORDEN" Type="number" Precision="4" Scale="0" Nullable="false" />
+          <Property Name="EVPRE_COMP" Type="number" Precision="4" Scale="0" Nullable="false" />
+          <Property Name="EVPRE_PEVAL_FACTOR" Type="number" Precision="8" Scale="0" Nullable="false" />
+          <Property Name="EVPRE_VLR_PORC" Type="number" Precision="5" Scale="2" />
+          <Property Name="EVPRE_USU_CREA" Type="varchar2" MaxLength="30" Nullable="false" />
+          <Property Name="EVPRE_FECHA_CREA" Type="date" Nullable="false" />
+          <Property Name="EVPRE_MAQUINA_CREA" Type="varchar2" MaxLength="100" Nullable="false" />
+          <Property Name="EVPRE_IP_CREA" Type="varchar2" MaxLength="100" Nullable="false" />
+          <Property Name="EVPRE_USU_MOD" Type="varchar2" MaxLength="30" />
+          <Property Name="EVPRE_FECHA_MOD" Type="date" />
+          <Property Name="EVPRE_MAQUINA_MOD" Type="varchar2" MaxLength="100" />
+          <Property Name="EVPRE_IP_MOD" Type="varchar2" MaxLength="100" />
         </EntityType>
         <EntityType Name="SIEDU_EVALUACION">
           <Key>
@@ -811,6 +849,21 @@ warning 6002: The table/view 'SIGAC.SIEDU_LOG' does not have a primary key defin
           <Property Name="FORM_MAQUINA_MOD" Type="varchar2" MaxLength="100" />
           <Property Name="FORM_IP_MOD" Type="varchar2" MaxLength="100" />
         </EntityType>
+        <EntityType Name="SIEDU_PARAMETRO_EVALUACION">
+          <Key>
+            <PropertyRef Name="PEVAL_PEVAL" />
+          </Key>
+          <Property Name="PEVAL_PEVAL" Type="number" Precision="8" Scale="0" Nullable="false" />
+          <Property Name="PEVAL_DESCRI" Type="varchar2" MaxLength="200" Nullable="false" />
+          <Property Name="PEVAL_USU_CREA" Type="varchar2" MaxLength="30" Nullable="false" />
+          <Property Name="PEVAL_FECHA_CREA" Type="date" Nullable="false" />
+          <Property Name="PEVAL_MAQUINA_CREA" Type="varchar2" MaxLength="100" Nullable="false" />
+          <Property Name="PEVAL_IP_CREA" Type="varchar2" MaxLength="100" Nullable="false" />
+          <Property Name="PEVAL_USU_MOD" Type="varchar2" MaxLength="30" />
+          <Property Name="PEVAL_FECHA_MOD" Type="date" />
+          <Property Name="PEVAL_MAQUINA_MOD" Type="varchar2" MaxLength="100" />
+          <Property Name="PEVAL_IP_MOD" Type="varchar2" MaxLength="100" />
+        </EntityType>
         <EntityType Name="SIEDU_PARTICIPANTE_EVENTO">
           <Key>
             <PropertyRef Name="PARE_PARE" />
@@ -974,6 +1027,114 @@ warning 6002: The table/view 'SIGAC.TIPOS' does not have a primary key defined. 
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="SIEDU_CIERRE_CAPACITA_FK">
+          <End Role="SIEDU_PAE_CAPACITACION" Type="Self.SIEDU_PAE_CAPACITACION" Multiplicity="1" />
+          <End Role="SIEDU_CIERRE_PAE" Type="Self.SIEDU_CIERRE_PAE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SIEDU_PAE_CAPACITACION">
+              <PropertyRef Name="CAPA_CAPA" />
+            </Principal>
+            <Dependent Role="SIEDU_CIERRE_PAE">
+              <PropertyRef Name="RPAE_CAPA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SIEDU_CIERRE_FORMACION_FK">
+          <End Role="SIEDU_PAE_FORMACION" Type="Self.SIEDU_PAE_FORMACION" Multiplicity="1" />
+          <End Role="SIEDU_CIERRE_PAE" Type="Self.SIEDU_CIERRE_PAE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SIEDU_PAE_FORMACION">
+              <PropertyRef Name="FORM_FORM" />
+            </Principal>
+            <Dependent Role="SIEDU_CIERRE_PAE">
+              <PropertyRef Name="RPAE_FORM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SIEDU_CIERRE_NOVEDAD_PAE_FK">
+          <End Role="SIEDU_NOVEDAD_PAE" Type="Self.SIEDU_NOVEDAD_PAE" Multiplicity="1" />
+          <End Role="SIEDU_CIERRE_PAE" Type="Self.SIEDU_CIERRE_PAE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SIEDU_NOVEDAD_PAE">
+              <PropertyRef Name="NOVE_NOVE" />
+            </Principal>
+            <Dependent Role="SIEDU_CIERRE_PAE">
+              <PropertyRef Name="RPAE_NOVE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SIEDU_CONSOLIDA_CAPACITA_FK">
+          <End Role="SIEDU_PAE_CAPACITACION" Type="Self.SIEDU_PAE_CAPACITACION" Multiplicity="0..1" />
+          <End Role="SIEDU_CONSOLIDA_PAE" Type="Self.SIEDU_CONSOLIDA_PAE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SIEDU_PAE_CAPACITACION">
+              <PropertyRef Name="CAPA_CAPA" />
+            </Principal>
+            <Dependent Role="SIEDU_CONSOLIDA_PAE">
+              <PropertyRef Name="CPAE_CAPA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SIEDU_CONSOLIDA_FORMACION_FK">
+          <End Role="SIEDU_PAE_FORMACION" Type="Self.SIEDU_PAE_FORMACION" Multiplicity="0..1" />
+          <End Role="SIEDU_CONSOLIDA_PAE" Type="Self.SIEDU_CONSOLIDA_PAE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SIEDU_PAE_FORMACION">
+              <PropertyRef Name="FORM_FORM" />
+            </Principal>
+            <Dependent Role="SIEDU_CONSOLIDA_PAE">
+              <PropertyRef Name="CPAE_FORM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SIEDU_CONSOLIDA_NECESIDAD_FK">
+          <End Role="SIEDU_NECESIDAD" Type="Self.SIEDU_NECESIDAD" Multiplicity="1" />
+          <End Role="SIEDU_CONSOLIDA_PAE" Type="Self.SIEDU_CONSOLIDA_PAE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SIEDU_NECESIDAD">
+              <PropertyRef Name="NECE_NECE" />
+            </Principal>
+            <Dependent Role="SIEDU_CONSOLIDA_PAE">
+              <PropertyRef Name="CPAE_NECE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SIEDU_EVAL_CATEGORIA_EVAL_FK">
+          <End Role="SIEDU_EVALUACION" Type="Self.SIEDU_EVALUACION" Multiplicity="1" />
+          <End Role="SIEDU_EVAL_CATEGORIA" Type="Self.SIEDU_EVAL_CATEGORIA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SIEDU_EVALUACION">
+              <PropertyRef Name="EVAL_EVAL" />
+            </Principal>
+            <Dependent Role="SIEDU_EVAL_CATEGORIA">
+              <PropertyRef Name="EVCR_EVAL" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SIEDU_EVAL_PREGUNTA_COMPE_FK">
+          <End Role="SIEDU_COMPETENCIA" Type="Self.SIEDU_COMPETENCIA" Multiplicity="1" />
+          <End Role="SIEDU_EVAL_PREGUNTA" Type="Self.SIEDU_EVAL_PREGUNTA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SIEDU_COMPETENCIA">
+              <PropertyRef Name="COMP_COMP" />
+            </Principal>
+            <Dependent Role="SIEDU_EVAL_PREGUNTA">
+              <PropertyRef Name="EVPRE_COMP" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SIEDU_EVAL_PREGUNTA_PREG_FK">
+          <End Role="SIEDU_PREGUNTA" Type="Self.SIEDU_PREGUNTA" Multiplicity="1" />
+          <End Role="SIEDU_EVAL_PREGUNTA" Type="Self.SIEDU_EVAL_PREGUNTA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SIEDU_PREGUNTA">
+              <PropertyRef Name="PREG_PREG" />
+            </Principal>
+            <Dependent Role="SIEDU_EVAL_PREGUNTA">
+              <PropertyRef Name="EVPRE_PREG" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="SIEDU_EVENTO_ESCU_EVAL_FK">
           <End Role="SIEDU_EVALUACION" Type="Self.SIEDU_EVALUACION" Multiplicity="0..1" />
           <End Role="SIEDU_EVENTO_ESCUELA" Type="Self.SIEDU_EVENTO_ESCUELA" Multiplicity="*" />
@@ -1046,6 +1207,30 @@ warning 6002: The table/view 'SIGAC.TIPOS' does not have a primary key defined. 
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="SIEDU_PREG_PAR_EVAL_FACTOR_FK">
+          <End Role="SIEDU_PARAMETRO_EVALUACION" Type="Self.SIEDU_PARAMETRO_EVALUACION" Multiplicity="1" />
+          <End Role="SIEDU_EVAL_PREGUNTA" Type="Self.SIEDU_EVAL_PREGUNTA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SIEDU_PARAMETRO_EVALUACION">
+              <PropertyRef Name="PEVAL_PEVAL" />
+            </Principal>
+            <Dependent Role="SIEDU_EVAL_PREGUNTA">
+              <PropertyRef Name="EVPRE_PEVAL_FACTOR" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SIEDU_PREGUNTA_EVALUACION_FK">
+          <End Role="SIEDU_EVALUACION" Type="Self.SIEDU_EVALUACION" Multiplicity="1" />
+          <End Role="SIEDU_EVAL_PREGUNTA" Type="Self.SIEDU_EVAL_PREGUNTA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SIEDU_EVALUACION">
+              <PropertyRef Name="EVAL_EVAL" />
+            </Principal>
+            <Dependent Role="SIEDU_EVAL_PREGUNTA">
+              <PropertyRef Name="EVPRE_EVAL" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="SIEDU_PRESUPU_PAE_FK">
           <End Role="SIEDU_PAE_CAPACITACION" Type="Self.SIEDU_PAE_CAPACITACION" Multiplicity="1" />
           <End Role="SIEDU_PRESUPUESTO" Type="Self.SIEDU_PRESUPUESTO" Multiplicity="*" />
@@ -1112,9 +1297,11 @@ warning 6002: The table/view 'SIGAC.TIPOS' does not have a primary key defined. 
           <EntitySet Name="SIEDU_DOMINIO" EntityType="Self.SIEDU_DOMINIO" Schema="SIGAC" store:Type="Tables" />
           <EntitySet Name="SIEDU_EMPLEADO_EXTERNO" EntityType="Self.SIEDU_EMPLEADO_EXTERNO" Schema="SIGAC" store:Type="Tables" />
           <EntitySet Name="SIEDU_ENTIDAD" EntityType="Self.SIEDU_ENTIDAD" Schema="SIGAC" store:Type="Tables" />
+          <EntitySet Name="SIEDU_EVAL_CATEGORIA" EntityType="Self.SIEDU_EVAL_CATEGORIA" Schema="SIGAC" store:Type="Tables" />
           <EntitySet Name="SIEDU_EVAL_DESARROLLO" EntityType="Self.SIEDU_EVAL_DESARROLLO" Schema="SIGAC" store:Type="Tables" />
           <EntitySet Name="SIEDU_EVAL_GRADO" EntityType="Self.SIEDU_EVAL_GRADO" Schema="SIGAC" store:Type="Tables" />
           <EntitySet Name="SIEDU_EVAL_PARTICIPANTE" EntityType="Self.SIEDU_EVAL_PARTICIPANTE" Schema="SIGAC" store:Type="Tables" />
+          <EntitySet Name="SIEDU_EVAL_PREGUNTA" EntityType="Self.SIEDU_EVAL_PREGUNTA" Schema="SIGAC" store:Type="Tables" />
           <EntitySet Name="SIEDU_EVALUACION" EntityType="Self.SIEDU_EVALUACION" Schema="SIGAC" store:Type="Tables" />
           <EntitySet Name="SIEDU_EVENTO" EntityType="Self.SIEDU_EVENTO" Schema="SIGAC" store:Type="Tables" />
           <EntitySet Name="SIEDU_EVENTO_CATEGORIA" EntityType="Self.SIEDU_EVENTO_CATEGORIA" Schema="SIGAC" store:Type="Tables" />
@@ -1128,6 +1315,7 @@ warning 6002: The table/view 'SIGAC.TIPOS' does not have a primary key defined. 
           <EntitySet Name="SIEDU_PAE_CAPACITACION" EntityType="Self.SIEDU_PAE_CAPACITACION" Schema="SIGAC" store:Type="Tables" />
           <EntitySet Name="SIEDU_PAE_FORMA_ESCUELA" EntityType="Self.SIEDU_PAE_FORMA_ESCUELA" Schema="SIGAC" store:Type="Tables" />
           <EntitySet Name="SIEDU_PAE_FORMACION" EntityType="Self.SIEDU_PAE_FORMACION" Schema="SIGAC" store:Type="Tables" />
+          <EntitySet Name="SIEDU_PARAMETRO_EVALUACION" EntityType="Self.SIEDU_PARAMETRO_EVALUACION" Schema="SIGAC" store:Type="Tables" />
           <EntitySet Name="SIEDU_PARTICIPANTE_EVENTO" EntityType="Self.SIEDU_PARTICIPANTE_EVENTO" Schema="SIGAC" store:Type="Tables" />
           <EntitySet Name="SIEDU_PERSONA" EntityType="Self.SIEDU_PERSONA" Schema="SIGAC" store:Type="Tables" />
           <EntitySet Name="SIEDU_PREGUNTA" EntityType="Self.SIEDU_PREGUNTA" Schema="SIGAC" store:Type="Tables" />
@@ -1241,6 +1429,42 @@ FROM "SIGAC"."TIPOS" "TIPOS"</DefiningQuery>
             <End Role="SIEDU_ENTIDAD" EntitySet="SIEDU_ENTIDAD" />
             <End Role="SIEDU_CONVENIO" EntitySet="SIEDU_CONVENIO" />
           </AssociationSet>
+          <AssociationSet Name="SIEDU_CIERRE_CAPACITA_FK" Association="Self.SIEDU_CIERRE_CAPACITA_FK">
+            <End Role="SIEDU_PAE_CAPACITACION" EntitySet="SIEDU_PAE_CAPACITACION" />
+            <End Role="SIEDU_CIERRE_PAE" EntitySet="SIEDU_CIERRE_PAE" />
+          </AssociationSet>
+          <AssociationSet Name="SIEDU_CIERRE_FORMACION_FK" Association="Self.SIEDU_CIERRE_FORMACION_FK">
+            <End Role="SIEDU_PAE_FORMACION" EntitySet="SIEDU_PAE_FORMACION" />
+            <End Role="SIEDU_CIERRE_PAE" EntitySet="SIEDU_CIERRE_PAE" />
+          </AssociationSet>
+          <AssociationSet Name="SIEDU_CIERRE_NOVEDAD_PAE_FK" Association="Self.SIEDU_CIERRE_NOVEDAD_PAE_FK">
+            <End Role="SIEDU_NOVEDAD_PAE" EntitySet="SIEDU_NOVEDAD_PAE" />
+            <End Role="SIEDU_CIERRE_PAE" EntitySet="SIEDU_CIERRE_PAE" />
+          </AssociationSet>
+          <AssociationSet Name="SIEDU_CONSOLIDA_CAPACITA_FK" Association="Self.SIEDU_CONSOLIDA_CAPACITA_FK">
+            <End Role="SIEDU_PAE_CAPACITACION" EntitySet="SIEDU_PAE_CAPACITACION" />
+            <End Role="SIEDU_CONSOLIDA_PAE" EntitySet="SIEDU_CONSOLIDA_PAE" />
+          </AssociationSet>
+          <AssociationSet Name="SIEDU_CONSOLIDA_FORMACION_FK" Association="Self.SIEDU_CONSOLIDA_FORMACION_FK">
+            <End Role="SIEDU_PAE_FORMACION" EntitySet="SIEDU_PAE_FORMACION" />
+            <End Role="SIEDU_CONSOLIDA_PAE" EntitySet="SIEDU_CONSOLIDA_PAE" />
+          </AssociationSet>
+          <AssociationSet Name="SIEDU_CONSOLIDA_NECESIDAD_FK" Association="Self.SIEDU_CONSOLIDA_NECESIDAD_FK">
+            <End Role="SIEDU_NECESIDAD" EntitySet="SIEDU_NECESIDAD" />
+            <End Role="SIEDU_CONSOLIDA_PAE" EntitySet="SIEDU_CONSOLIDA_PAE" />
+          </AssociationSet>
+          <AssociationSet Name="SIEDU_EVAL_CATEGORIA_EVAL_FK" Association="Self.SIEDU_EVAL_CATEGORIA_EVAL_FK">
+            <End Role="SIEDU_EVALUACION" EntitySet="SIEDU_EVALUACION" />
+            <End Role="SIEDU_EVAL_CATEGORIA" EntitySet="SIEDU_EVAL_CATEGORIA" />
+          </AssociationSet>
+          <AssociationSet Name="SIEDU_EVAL_PREGUNTA_COMPE_FK" Association="Self.SIEDU_EVAL_PREGUNTA_COMPE_FK">
+            <End Role="SIEDU_COMPETENCIA" EntitySet="SIEDU_COMPETENCIA" />
+            <End Role="SIEDU_EVAL_PREGUNTA" EntitySet="SIEDU_EVAL_PREGUNTA" />
+          </AssociationSet>
+          <AssociationSet Name="SIEDU_EVAL_PREGUNTA_PREG_FK" Association="Self.SIEDU_EVAL_PREGUNTA_PREG_FK">
+            <End Role="SIEDU_PREGUNTA" EntitySet="SIEDU_PREGUNTA" />
+            <End Role="SIEDU_EVAL_PREGUNTA" EntitySet="SIEDU_EVAL_PREGUNTA" />
+          </AssociationSet>
           <AssociationSet Name="SIEDU_EVENTO_ESCU_EVAL_FK" Association="Self.SIEDU_EVENTO_ESCU_EVAL_FK">
             <End Role="SIEDU_EVALUACION" EntitySet="SIEDU_EVALUACION" />
             <End Role="SIEDU_EVENTO_ESCUELA" EntitySet="SIEDU_EVENTO_ESCUELA" />
@@ -1264,6 +1488,14 @@ FROM "SIGAC"."TIPOS" "TIPOS"</DefiningQuery>
           <AssociationSet Name="SIEDU_PAE_FORMACION_PAE_FK" Association="Self.SIEDU_PAE_FORMACION_PAE_FK">
             <End Role="SIEDU_PAE" EntitySet="SIEDU_PAE" />
             <End Role="SIEDU_PAE_FORMACION" EntitySet="SIEDU_PAE_FORMACION" />
+          </AssociationSet>
+          <AssociationSet Name="SIEDU_PREG_PAR_EVAL_FACTOR_FK" Association="Self.SIEDU_PREG_PAR_EVAL_FACTOR_FK">
+            <End Role="SIEDU_PARAMETRO_EVALUACION" EntitySet="SIEDU_PARAMETRO_EVALUACION" />
+            <End Role="SIEDU_EVAL_PREGUNTA" EntitySet="SIEDU_EVAL_PREGUNTA" />
+          </AssociationSet>
+          <AssociationSet Name="SIEDU_PREGUNTA_EVALUACION_FK" Association="Self.SIEDU_PREGUNTA_EVALUACION_FK">
+            <End Role="SIEDU_EVALUACION" EntitySet="SIEDU_EVALUACION" />
+            <End Role="SIEDU_EVAL_PREGUNTA" EntitySet="SIEDU_EVAL_PREGUNTA" />
           </AssociationSet>
           <AssociationSet Name="SIEDU_PRESUPU_PAE_FK" Association="Self.SIEDU_PRESUPU_PAE_FK">
             <End Role="SIEDU_PAE_CAPACITACION" EntitySet="SIEDU_PAE_CAPACITACION" />
@@ -1378,6 +1610,53 @@ FROM "SIGAC"."TIPOS" "TIPOS"</DefiningQuery>
             <End Role="SIEDU_PAE_FORMACION" EntitySet="SIEDU_PAE_FORMACION" />
             <End Role="SIEDU_PAE_FORMA_ESCUELA" EntitySet="SIEDU_PAE_FORMA_ESCUELA" />
           </AssociationSet>
+          <EntitySet Name="SIEDU_EVAL_CATEGORIA" EntityType="SigacModel.SIEDU_EVAL_CATEGORIA" />
+          <EntitySet Name="SIEDU_EVAL_PREGUNTA" EntityType="SigacModel.SIEDU_EVAL_PREGUNTA" />
+          <EntitySet Name="SIEDU_PARAMETRO_EVALUACION" EntityType="SigacModel.SIEDU_PARAMETRO_EVALUACION" />
+          <AssociationSet Name="SIEDU_CIERRE_CAPACITA_FK" Association="SigacModel.SIEDU_CIERRE_CAPACITA_FK">
+            <End Role="SIEDU_PAE_CAPACITACION" EntitySet="SIEDU_PAE_CAPACITACION" />
+            <End Role="SIEDU_CIERRE_PAE" EntitySet="SIEDU_CIERRE_PAE" />
+          </AssociationSet>
+          <AssociationSet Name="SIEDU_CIERRE_FORMACION_FK" Association="SigacModel.SIEDU_CIERRE_FORMACION_FK">
+            <End Role="SIEDU_PAE_FORMACION" EntitySet="SIEDU_PAE_FORMACION" />
+            <End Role="SIEDU_CIERRE_PAE" EntitySet="SIEDU_CIERRE_PAE" />
+          </AssociationSet>
+          <AssociationSet Name="SIEDU_CIERRE_NOVEDAD_PAE_FK" Association="SigacModel.SIEDU_CIERRE_NOVEDAD_PAE_FK">
+            <End Role="SIEDU_NOVEDAD_PAE" EntitySet="SIEDU_NOVEDAD_PAE" />
+            <End Role="SIEDU_CIERRE_PAE" EntitySet="SIEDU_CIERRE_PAE" />
+          </AssociationSet>
+          <AssociationSet Name="SIEDU_EVAL_PREGUNTA_COMPE_FK" Association="SigacModel.SIEDU_EVAL_PREGUNTA_COMPE_FK">
+            <End Role="SIEDU_COMPETENCIA" EntitySet="SIEDU_COMPETENCIA" />
+            <End Role="SIEDU_EVAL_PREGUNTA" EntitySet="SIEDU_EVAL_PREGUNTA" />
+          </AssociationSet>
+          <AssociationSet Name="SIEDU_CONSOLIDA_CAPACITA_FK" Association="SigacModel.SIEDU_CONSOLIDA_CAPACITA_FK">
+            <End Role="SIEDU_PAE_CAPACITACION" EntitySet="SIEDU_PAE_CAPACITACION" />
+            <End Role="SIEDU_CONSOLIDA_PAE" EntitySet="SIEDU_CONSOLIDA_PAE" />
+          </AssociationSet>
+          <AssociationSet Name="SIEDU_CONSOLIDA_FORMACION_FK" Association="SigacModel.SIEDU_CONSOLIDA_FORMACION_FK">
+            <End Role="SIEDU_PAE_FORMACION" EntitySet="SIEDU_PAE_FORMACION" />
+            <End Role="SIEDU_CONSOLIDA_PAE" EntitySet="SIEDU_CONSOLIDA_PAE" />
+          </AssociationSet>
+          <AssociationSet Name="SIEDU_CONSOLIDA_NECESIDAD_FK" Association="SigacModel.SIEDU_CONSOLIDA_NECESIDAD_FK">
+            <End Role="SIEDU_NECESIDAD" EntitySet="SIEDU_NECESIDAD" />
+            <End Role="SIEDU_CONSOLIDA_PAE" EntitySet="SIEDU_CONSOLIDA_PAE" />
+          </AssociationSet>
+          <AssociationSet Name="SIEDU_EVAL_CATEGORIA_EVAL_FK" Association="SigacModel.SIEDU_EVAL_CATEGORIA_EVAL_FK">
+            <End Role="SIEDU_EVALUACION" EntitySet="SIEDU_EVALUACION" />
+            <End Role="SIEDU_EVAL_CATEGORIA" EntitySet="SIEDU_EVAL_CATEGORIA" />
+          </AssociationSet>
+          <AssociationSet Name="SIEDU_EVAL_PREGUNTA_PREG_FK" Association="SigacModel.SIEDU_EVAL_PREGUNTA_PREG_FK">
+            <End Role="SIEDU_PREGUNTA" EntitySet="SIEDU_PREGUNTA" />
+            <End Role="SIEDU_EVAL_PREGUNTA" EntitySet="SIEDU_EVAL_PREGUNTA" />
+          </AssociationSet>
+          <AssociationSet Name="SIEDU_PREG_PAR_EVAL_FACTOR_FK" Association="SigacModel.SIEDU_PREG_PAR_EVAL_FACTOR_FK">
+            <End Role="SIEDU_PARAMETRO_EVALUACION" EntitySet="SIEDU_PARAMETRO_EVALUACION" />
+            <End Role="SIEDU_EVAL_PREGUNTA" EntitySet="SIEDU_EVAL_PREGUNTA" />
+          </AssociationSet>
+          <AssociationSet Name="SIEDU_PREGUNTA_EVALUACION_FK" Association="SigacModel.SIEDU_PREGUNTA_EVALUACION_FK">
+            <End Role="SIEDU_EVALUACION" EntitySet="SIEDU_EVALUACION" />
+            <End Role="SIEDU_EVAL_PREGUNTA" EntitySet="SIEDU_EVAL_PREGUNTA" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="ASIGNATURAS">
           <Key>
@@ -1491,6 +1770,9 @@ FROM "SIGAC"."TIPOS" "TIPOS"</DefiningQuery>
           <Property Name="RPAE_FECHA_MOD" Type="DateTime" />
           <Property Name="RPAE_MAQUINA_MOD" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="RPAE_IP_MOD" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="SIEDU_PAE_CAPACITACION" Relationship="SigacModel.SIEDU_CIERRE_CAPACITA_FK" FromRole="SIEDU_CIERRE_PAE" ToRole="SIEDU_PAE_CAPACITACION" />
+          <NavigationProperty Name="SIEDU_PAE_FORMACION" Relationship="SigacModel.SIEDU_CIERRE_FORMACION_FK" FromRole="SIEDU_CIERRE_PAE" ToRole="SIEDU_PAE_FORMACION" />
+          <NavigationProperty Name="SIEDU_NOVEDAD_PAE" Relationship="SigacModel.SIEDU_CIERRE_NOVEDAD_PAE_FK" FromRole="SIEDU_CIERRE_PAE" ToRole="SIEDU_NOVEDAD_PAE" />
         </EntityType>
         <EntityType Name="SIEDU_COBERTURA">
           <Key>
@@ -1527,6 +1809,7 @@ FROM "SIGAC"."TIPOS" "TIPOS"</DefiningQuery>
           <Property Name="COMP_FECHA_MOD" Type="DateTime" />
           <Property Name="COMP_MAQUINA_MOD" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="COMP_IP_MOD" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="SIEDU_EVAL_PREGUNTA" Relationship="SigacModel.SIEDU_EVAL_PREGUNTA_COMPE_FK" FromRole="SIEDU_COMPETENCIA" ToRole="SIEDU_EVAL_PREGUNTA" />
         </EntityType>
         <EntityType Name="SIEDU_COMPETENCIA_EVENTO">
           <Key>
@@ -1561,6 +1844,9 @@ FROM "SIGAC"."TIPOS" "TIPOS"</DefiningQuery>
           <Property Name="CPAE_FECHA_MOD" Type="DateTime" />
           <Property Name="CPAE_MAQUINA_MOD" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="CPAE_IP_MOD" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="SIEDU_PAE_CAPACITACION" Relationship="SigacModel.SIEDU_CONSOLIDA_CAPACITA_FK" FromRole="SIEDU_CONSOLIDA_PAE" ToRole="SIEDU_PAE_CAPACITACION" />
+          <NavigationProperty Name="SIEDU_PAE_FORMACION" Relationship="SigacModel.SIEDU_CONSOLIDA_FORMACION_FK" FromRole="SIEDU_CONSOLIDA_PAE" ToRole="SIEDU_PAE_FORMACION" />
+          <NavigationProperty Name="SIEDU_NECESIDAD" Relationship="SigacModel.SIEDU_CONSOLIDA_NECESIDAD_FK" FromRole="SIEDU_CONSOLIDA_PAE" ToRole="SIEDU_NECESIDAD" />
         </EntityType>
         <EntityType Name="SIEDU_CONVENIO">
           <Key>
@@ -1765,6 +2051,8 @@ FROM "SIGAC"."TIPOS" "TIPOS"</DefiningQuery>
           <Property Name="EVAL_MAQUINA_MOD" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="EVAL_IP_MOD" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="SIEDU_EVENTO_ESCUELA" Relationship="SigacModel.SIEDU_EVENTO_ESCU_EVAL_FK" FromRole="SIEDU_EVALUACION" ToRole="SIEDU_EVENTO_ESCUELA" />
+          <NavigationProperty Name="SIEDU_EVAL_CATEGORIA" Relationship="SigacModel.SIEDU_EVAL_CATEGORIA_EVAL_FK" FromRole="SIEDU_EVALUACION" ToRole="SIEDU_EVAL_CATEGORIA" />
+          <NavigationProperty Name="SIEDU_EVAL_PREGUNTA" Relationship="SigacModel.SIEDU_PREGUNTA_EVALUACION_FK" FromRole="SIEDU_EVALUACION" ToRole="SIEDU_EVAL_PREGUNTA" />
         </EntityType>
         <EntityType Name="SIEDU_EVENTO">
           <Key>
@@ -1916,6 +2204,7 @@ FROM "SIGAC"."TIPOS" "TIPOS"</DefiningQuery>
           <Property Name="NECE_FECHA_MOD" Type="DateTime" />
           <Property Name="NECE_MAQUINA_MOD" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="NECE_IP_MOD" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="SIEDU_CONSOLIDA_PAE" Relationship="SigacModel.SIEDU_CONSOLIDA_NECESIDAD_FK" FromRole="SIEDU_NECESIDAD" ToRole="SIEDU_CONSOLIDA_PAE" />
         </EntityType>
         <EntityType Name="SIEDU_NECESIDAD_E">
           <Key>
@@ -1992,6 +2281,8 @@ FROM "SIGAC"."TIPOS" "TIPOS"</DefiningQuery>
           <Property Name="CAPA_EXTERNO" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="SIEDU_PAE" Relationship="SigacModel.SIEDU_PAE_CAPACITACION_PAE_FK" FromRole="SIEDU_PAE_CAPACITACION" ToRole="SIEDU_PAE" />
           <NavigationProperty Name="SIEDU_PRESUPUESTO" Relationship="SigacModel.SIEDU_PRESUPU_PAE_FK" FromRole="SIEDU_PAE_CAPACITACION" ToRole="SIEDU_PRESUPUESTO" />
+          <NavigationProperty Name="SIEDU_CIERRE_PAE" Relationship="SigacModel.SIEDU_CIERRE_CAPACITA_FK" FromRole="SIEDU_PAE_CAPACITACION" ToRole="SIEDU_CIERRE_PAE" />
+          <NavigationProperty Name="SIEDU_CONSOLIDA_PAE" Relationship="SigacModel.SIEDU_CONSOLIDA_CAPACITA_FK" FromRole="SIEDU_PAE_CAPACITACION" ToRole="SIEDU_CONSOLIDA_PAE" />
         </EntityType>
         <EntityType Name="SIEDU_PAE_FORMACION">
           <Key>
@@ -2015,6 +2306,8 @@ FROM "SIGAC"."TIPOS" "TIPOS"</DefiningQuery>
           <Property Name="FORM_IP_MOD" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="SIEDU_PAE" Relationship="SigacModel.SIEDU_PAE_FORMACION_PAE_FK" FromRole="SIEDU_PAE_FORMACION" ToRole="SIEDU_PAE" />
           <NavigationProperty Name="SIEDU_PAE_FORMA_ESCUELA" Relationship="SigacModel.SIEDU_FORM_ESCUELAS_FORM_FK" FromRole="SIEDU_PAE_FORMACION" ToRole="SIEDU_PAE_FORMA_ESCUELA" />
+          <NavigationProperty Name="SIEDU_CIERRE_PAE" Relationship="SigacModel.SIEDU_CIERRE_FORMACION_FK" FromRole="SIEDU_PAE_FORMACION" ToRole="SIEDU_CIERRE_PAE" />
+          <NavigationProperty Name="SIEDU_CONSOLIDA_PAE" Relationship="SigacModel.SIEDU_CONSOLIDA_FORMACION_FK" FromRole="SIEDU_PAE_FORMACION" ToRole="SIEDU_CONSOLIDA_PAE" />
         </EntityType>
         <EntityType Name="SIEDU_PARTICIPANTE_EVENTO">
           <Key>
@@ -2078,6 +2371,7 @@ FROM "SIGAC"."TIPOS" "TIPOS"</DefiningQuery>
           <Property Name="PREG_FECHA_MOD" Type="DateTime" />
           <Property Name="PREG_MAQUINA_MOD" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="PREG_IP_MOD" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="SIEDU_EVAL_PREGUNTA" Relationship="SigacModel.SIEDU_EVAL_PREGUNTA_PREG_FK" FromRole="SIEDU_PREGUNTA" ToRole="SIEDU_EVAL_PREGUNTA" />
         </EntityType>
         <EntityType Name="SIEDU_PRESUPUESTO">
           <Key>
@@ -2356,6 +2650,7 @@ FROM "SIGAC"."TIPOS" "TIPOS"</DefiningQuery>
           <Property Name="NOVE_IP_MOD" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="SIEDU_ARCHIVO" Relationship="SigacModel.SIEDU_NOVEDAD_ARCHIVO_FK" FromRole="SIEDU_NOVEDAD_PAE" ToRole="SIEDU_ARCHIVO" />
           <NavigationProperty Name="SIEDU_PAE" Relationship="SigacModel.SIEDU_NOVEDAD_PAE_FK" FromRole="SIEDU_NOVEDAD_PAE" ToRole="SIEDU_PAE" />
+          <NavigationProperty Name="SIEDU_CIERRE_PAE" Relationship="SigacModel.SIEDU_CIERRE_NOVEDAD_PAE_FK" FromRole="SIEDU_NOVEDAD_PAE" ToRole="SIEDU_CIERRE_PAE" />
         </EntityType>
         <EntityType Name="SIEDU_PAE_FORMA_ESCUELA">
           <Key>
@@ -2445,6 +2740,197 @@ FROM "SIGAC"."TIPOS" "TIPOS"</DefiningQuery>
             </Principal>
             <Dependent Role="SIEDU_PAE_FORMA_ESCUELA">
               <PropertyRef Name="FRME_FORM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="SIEDU_EVAL_CATEGORIA">
+          <Key>
+            <PropertyRef Name="EVCR_EVAL" />
+            <PropertyRef Name="EVCR_FUERZA" />
+            <PropertyRef Name="EVCR_ID_CATEGORIA" />
+          </Key>
+          <Property Name="EVCR_EVAL" Type="Int32" Nullable="false" />
+          <Property Name="EVCR_FUERZA" Type="Boolean" Nullable="false" />
+          <Property Name="EVCR_ID_CATEGORIA" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="EVCR_USU_CREA" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="EVCR_FECHA_CREA" Type="DateTime" Nullable="false" />
+          <Property Name="EVCR_MAQUINA_CREA" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="EVCR_IP_CREA" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="EVCR_USU_MOD" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="EVCR_FECHA_MOD" Type="DateTime" />
+          <Property Name="EVCR_MAQUINA_MOD" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="EVCR_IP_MOD" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="SIEDU_EVALUACION" Relationship="SigacModel.SIEDU_EVAL_CATEGORIA_EVAL_FK" FromRole="SIEDU_EVAL_CATEGORIA" ToRole="SIEDU_EVALUACION" />
+        </EntityType>
+        <EntityType Name="SIEDU_EVAL_PREGUNTA">
+          <Key>
+            <PropertyRef Name="EVPRE_EVAL" />
+            <PropertyRef Name="EVPRE_PREG" />
+          </Key>
+          <Property Name="EVPRE_EVAL" Type="Int32" Nullable="false" />
+          <Property Name="EVPRE_PREG" Type="Int32" Nullable="false" />
+          <Property Name="EVPRE_ORDEN" Type="Int16" Nullable="false" />
+          <Property Name="EVPRE_COMP" Type="Int16" Nullable="false" />
+          <Property Name="EVPRE_PEVAL_FACTOR" Type="Int32" Nullable="false" />
+          <Property Name="EVPRE_VLR_PORC" Type="Decimal" Precision="5" Scale="2" />
+          <Property Name="EVPRE_USU_CREA" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="EVPRE_FECHA_CREA" Type="DateTime" Nullable="false" />
+          <Property Name="EVPRE_MAQUINA_CREA" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="EVPRE_IP_CREA" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="EVPRE_USU_MOD" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="EVPRE_FECHA_MOD" Type="DateTime" />
+          <Property Name="EVPRE_MAQUINA_MOD" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="EVPRE_IP_MOD" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="SIEDU_COMPETENCIA" Relationship="SigacModel.SIEDU_EVAL_PREGUNTA_COMPE_FK" FromRole="SIEDU_EVAL_PREGUNTA" ToRole="SIEDU_COMPETENCIA" />
+          <NavigationProperty Name="SIEDU_PREGUNTA" Relationship="SigacModel.SIEDU_EVAL_PREGUNTA_PREG_FK" FromRole="SIEDU_EVAL_PREGUNTA" ToRole="SIEDU_PREGUNTA" />
+          <NavigationProperty Name="SIEDU_PARAMETRO_EVALUACION" Relationship="SigacModel.SIEDU_PREG_PAR_EVAL_FACTOR_FK" FromRole="SIEDU_EVAL_PREGUNTA" ToRole="SIEDU_PARAMETRO_EVALUACION" />
+          <NavigationProperty Name="SIEDU_EVALUACION" Relationship="SigacModel.SIEDU_PREGUNTA_EVALUACION_FK" FromRole="SIEDU_EVAL_PREGUNTA" ToRole="SIEDU_EVALUACION" />
+        </EntityType>
+        <EntityType Name="SIEDU_PARAMETRO_EVALUACION">
+          <Key>
+            <PropertyRef Name="PEVAL_PEVAL" />
+          </Key>
+          <Property Name="PEVAL_PEVAL" Type="Int32" Nullable="false" />
+          <Property Name="PEVAL_DESCRI" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="PEVAL_USU_CREA" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="PEVAL_FECHA_CREA" Type="DateTime" Nullable="false" />
+          <Property Name="PEVAL_MAQUINA_CREA" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PEVAL_IP_CREA" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PEVAL_USU_MOD" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="PEVAL_FECHA_MOD" Type="DateTime" />
+          <Property Name="PEVAL_MAQUINA_MOD" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PEVAL_IP_MOD" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="SIEDU_EVAL_PREGUNTA" Relationship="SigacModel.SIEDU_PREG_PAR_EVAL_FACTOR_FK" FromRole="SIEDU_PARAMETRO_EVALUACION" ToRole="SIEDU_EVAL_PREGUNTA" />
+        </EntityType>
+        <Association Name="SIEDU_CIERRE_CAPACITA_FK">
+          <End Type="SigacModel.SIEDU_PAE_CAPACITACION" Role="SIEDU_PAE_CAPACITACION" Multiplicity="1" />
+          <End Type="SigacModel.SIEDU_CIERRE_PAE" Role="SIEDU_CIERRE_PAE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SIEDU_PAE_CAPACITACION">
+              <PropertyRef Name="CAPA_CAPA" />
+            </Principal>
+            <Dependent Role="SIEDU_CIERRE_PAE">
+              <PropertyRef Name="RPAE_CAPA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SIEDU_CIERRE_FORMACION_FK">
+          <End Type="SigacModel.SIEDU_PAE_FORMACION" Role="SIEDU_PAE_FORMACION" Multiplicity="1" />
+          <End Type="SigacModel.SIEDU_CIERRE_PAE" Role="SIEDU_CIERRE_PAE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SIEDU_PAE_FORMACION">
+              <PropertyRef Name="FORM_FORM" />
+            </Principal>
+            <Dependent Role="SIEDU_CIERRE_PAE">
+              <PropertyRef Name="RPAE_FORM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SIEDU_CIERRE_NOVEDAD_PAE_FK">
+          <End Type="SigacModel.SIEDU_NOVEDAD_PAE" Role="SIEDU_NOVEDAD_PAE" Multiplicity="1" />
+          <End Type="SigacModel.SIEDU_CIERRE_PAE" Role="SIEDU_CIERRE_PAE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SIEDU_NOVEDAD_PAE">
+              <PropertyRef Name="NOVE_NOVE" />
+            </Principal>
+            <Dependent Role="SIEDU_CIERRE_PAE">
+              <PropertyRef Name="RPAE_NOVE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SIEDU_EVAL_PREGUNTA_COMPE_FK">
+          <End Type="SigacModel.SIEDU_COMPETENCIA" Role="SIEDU_COMPETENCIA" Multiplicity="1" />
+          <End Type="SigacModel.SIEDU_EVAL_PREGUNTA" Role="SIEDU_EVAL_PREGUNTA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SIEDU_COMPETENCIA">
+              <PropertyRef Name="COMP_COMP" />
+            </Principal>
+            <Dependent Role="SIEDU_EVAL_PREGUNTA">
+              <PropertyRef Name="EVPRE_COMP" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SIEDU_CONSOLIDA_CAPACITA_FK">
+          <End Type="SigacModel.SIEDU_PAE_CAPACITACION" Role="SIEDU_PAE_CAPACITACION" Multiplicity="0..1" />
+          <End Type="SigacModel.SIEDU_CONSOLIDA_PAE" Role="SIEDU_CONSOLIDA_PAE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SIEDU_PAE_CAPACITACION">
+              <PropertyRef Name="CAPA_CAPA" />
+            </Principal>
+            <Dependent Role="SIEDU_CONSOLIDA_PAE">
+              <PropertyRef Name="CPAE_CAPA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SIEDU_CONSOLIDA_FORMACION_FK">
+          <End Type="SigacModel.SIEDU_PAE_FORMACION" Role="SIEDU_PAE_FORMACION" Multiplicity="0..1" />
+          <End Type="SigacModel.SIEDU_CONSOLIDA_PAE" Role="SIEDU_CONSOLIDA_PAE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SIEDU_PAE_FORMACION">
+              <PropertyRef Name="FORM_FORM" />
+            </Principal>
+            <Dependent Role="SIEDU_CONSOLIDA_PAE">
+              <PropertyRef Name="CPAE_FORM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SIEDU_CONSOLIDA_NECESIDAD_FK">
+          <End Type="SigacModel.SIEDU_NECESIDAD" Role="SIEDU_NECESIDAD" Multiplicity="1" />
+          <End Type="SigacModel.SIEDU_CONSOLIDA_PAE" Role="SIEDU_CONSOLIDA_PAE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SIEDU_NECESIDAD">
+              <PropertyRef Name="NECE_NECE" />
+            </Principal>
+            <Dependent Role="SIEDU_CONSOLIDA_PAE">
+              <PropertyRef Name="CPAE_NECE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SIEDU_EVAL_CATEGORIA_EVAL_FK">
+          <End Type="SigacModel.SIEDU_EVALUACION" Role="SIEDU_EVALUACION" Multiplicity="1" />
+          <End Type="SigacModel.SIEDU_EVAL_CATEGORIA" Role="SIEDU_EVAL_CATEGORIA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SIEDU_EVALUACION">
+              <PropertyRef Name="EVAL_EVAL" />
+            </Principal>
+            <Dependent Role="SIEDU_EVAL_CATEGORIA">
+              <PropertyRef Name="EVCR_EVAL" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SIEDU_EVAL_PREGUNTA_PREG_FK">
+          <End Type="SigacModel.SIEDU_PREGUNTA" Role="SIEDU_PREGUNTA" Multiplicity="1" />
+          <End Type="SigacModel.SIEDU_EVAL_PREGUNTA" Role="SIEDU_EVAL_PREGUNTA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SIEDU_PREGUNTA">
+              <PropertyRef Name="PREG_PREG" />
+            </Principal>
+            <Dependent Role="SIEDU_EVAL_PREGUNTA">
+              <PropertyRef Name="EVPRE_PREG" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SIEDU_PREG_PAR_EVAL_FACTOR_FK">
+          <End Type="SigacModel.SIEDU_PARAMETRO_EVALUACION" Role="SIEDU_PARAMETRO_EVALUACION" Multiplicity="1" />
+          <End Type="SigacModel.SIEDU_EVAL_PREGUNTA" Role="SIEDU_EVAL_PREGUNTA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SIEDU_PARAMETRO_EVALUACION">
+              <PropertyRef Name="PEVAL_PEVAL" />
+            </Principal>
+            <Dependent Role="SIEDU_EVAL_PREGUNTA">
+              <PropertyRef Name="EVPRE_PEVAL_FACTOR" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SIEDU_PREGUNTA_EVALUACION_FK">
+          <End Type="SigacModel.SIEDU_EVALUACION" Role="SIEDU_EVALUACION" Multiplicity="1" />
+          <End Type="SigacModel.SIEDU_EVAL_PREGUNTA" Role="SIEDU_EVAL_PREGUNTA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SIEDU_EVALUACION">
+              <PropertyRef Name="EVAL_EVAL" />
+            </Principal>
+            <Dependent Role="SIEDU_EVAL_PREGUNTA">
+              <PropertyRef Name="EVPRE_EVAL" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -3380,6 +3866,59 @@ FROM "SIGAC"."TIPOS" "TIPOS"</DefiningQuery>
                 <ScalarProperty Name="FRME_UDE_ESCU" ColumnName="FRME_UDE_ESCU" />
                 <ScalarProperty Name="FRME_UDE_FUERZA" ColumnName="FRME_UDE_FUERZA" />
                 <ScalarProperty Name="FRME_FORM" ColumnName="FRME_FORM" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SIEDU_EVAL_CATEGORIA">
+            <EntityTypeMapping TypeName="SigacModel.SIEDU_EVAL_CATEGORIA">
+              <MappingFragment StoreEntitySet="SIEDU_EVAL_CATEGORIA">
+                <ScalarProperty Name="EVCR_IP_MOD" ColumnName="EVCR_IP_MOD" />
+                <ScalarProperty Name="EVCR_MAQUINA_MOD" ColumnName="EVCR_MAQUINA_MOD" />
+                <ScalarProperty Name="EVCR_FECHA_MOD" ColumnName="EVCR_FECHA_MOD" />
+                <ScalarProperty Name="EVCR_USU_MOD" ColumnName="EVCR_USU_MOD" />
+                <ScalarProperty Name="EVCR_IP_CREA" ColumnName="EVCR_IP_CREA" />
+                <ScalarProperty Name="EVCR_MAQUINA_CREA" ColumnName="EVCR_MAQUINA_CREA" />
+                <ScalarProperty Name="EVCR_FECHA_CREA" ColumnName="EVCR_FECHA_CREA" />
+                <ScalarProperty Name="EVCR_USU_CREA" ColumnName="EVCR_USU_CREA" />
+                <ScalarProperty Name="EVCR_ID_CATEGORIA" ColumnName="EVCR_ID_CATEGORIA" />
+                <ScalarProperty Name="EVCR_FUERZA" ColumnName="EVCR_FUERZA" />
+                <ScalarProperty Name="EVCR_EVAL" ColumnName="EVCR_EVAL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SIEDU_EVAL_PREGUNTA">
+            <EntityTypeMapping TypeName="SigacModel.SIEDU_EVAL_PREGUNTA">
+              <MappingFragment StoreEntitySet="SIEDU_EVAL_PREGUNTA">
+                <ScalarProperty Name="EVPRE_IP_MOD" ColumnName="EVPRE_IP_MOD" />
+                <ScalarProperty Name="EVPRE_MAQUINA_MOD" ColumnName="EVPRE_MAQUINA_MOD" />
+                <ScalarProperty Name="EVPRE_FECHA_MOD" ColumnName="EVPRE_FECHA_MOD" />
+                <ScalarProperty Name="EVPRE_USU_MOD" ColumnName="EVPRE_USU_MOD" />
+                <ScalarProperty Name="EVPRE_IP_CREA" ColumnName="EVPRE_IP_CREA" />
+                <ScalarProperty Name="EVPRE_MAQUINA_CREA" ColumnName="EVPRE_MAQUINA_CREA" />
+                <ScalarProperty Name="EVPRE_FECHA_CREA" ColumnName="EVPRE_FECHA_CREA" />
+                <ScalarProperty Name="EVPRE_USU_CREA" ColumnName="EVPRE_USU_CREA" />
+                <ScalarProperty Name="EVPRE_VLR_PORC" ColumnName="EVPRE_VLR_PORC" />
+                <ScalarProperty Name="EVPRE_PEVAL_FACTOR" ColumnName="EVPRE_PEVAL_FACTOR" />
+                <ScalarProperty Name="EVPRE_COMP" ColumnName="EVPRE_COMP" />
+                <ScalarProperty Name="EVPRE_ORDEN" ColumnName="EVPRE_ORDEN" />
+                <ScalarProperty Name="EVPRE_PREG" ColumnName="EVPRE_PREG" />
+                <ScalarProperty Name="EVPRE_EVAL" ColumnName="EVPRE_EVAL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SIEDU_PARAMETRO_EVALUACION">
+            <EntityTypeMapping TypeName="SigacModel.SIEDU_PARAMETRO_EVALUACION">
+              <MappingFragment StoreEntitySet="SIEDU_PARAMETRO_EVALUACION">
+                <ScalarProperty Name="PEVAL_IP_MOD" ColumnName="PEVAL_IP_MOD" />
+                <ScalarProperty Name="PEVAL_MAQUINA_MOD" ColumnName="PEVAL_MAQUINA_MOD" />
+                <ScalarProperty Name="PEVAL_FECHA_MOD" ColumnName="PEVAL_FECHA_MOD" />
+                <ScalarProperty Name="PEVAL_USU_MOD" ColumnName="PEVAL_USU_MOD" />
+                <ScalarProperty Name="PEVAL_IP_CREA" ColumnName="PEVAL_IP_CREA" />
+                <ScalarProperty Name="PEVAL_MAQUINA_CREA" ColumnName="PEVAL_MAQUINA_CREA" />
+                <ScalarProperty Name="PEVAL_FECHA_CREA" ColumnName="PEVAL_FECHA_CREA" />
+                <ScalarProperty Name="PEVAL_USU_CREA" ColumnName="PEVAL_USU_CREA" />
+                <ScalarProperty Name="PEVAL_DESCRI" ColumnName="PEVAL_DESCRI" />
+                <ScalarProperty Name="PEVAL_PEVAL" ColumnName="PEVAL_PEVAL" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

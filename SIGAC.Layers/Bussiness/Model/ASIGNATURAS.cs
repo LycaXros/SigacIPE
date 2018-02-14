@@ -12,7 +12,7 @@ namespace SIGAC.Layers.Bussiness.Model
     using System;
     using System.Collections.Generic;
     using System.Linq;
-
+    
     public partial class ASIGNATURAS
     {
         public decimal ID { get; set; }
@@ -34,6 +34,7 @@ namespace SIGAC.Layers.Bussiness.Model
         public string HORA1 { get; set; }
         public string HORA2 { get; set; }
         public Nullable<decimal> TIPO { get; set; }
+
 
 
         public string NOMBRE_CURSO

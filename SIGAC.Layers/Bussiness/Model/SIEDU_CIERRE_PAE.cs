@@ -28,5 +28,9 @@ namespace SIGAC.Layers.Bussiness.Model
         public Nullable<System.DateTime> RPAE_FECHA_MOD { get; set; }
         public string RPAE_MAQUINA_MOD { get; set; }
         public string RPAE_IP_MOD { get; set; }
+    
+        public virtual SIEDU_PAE_CAPACITACION SIEDU_PAE_CAPACITACION { get; set; }
+        public virtual SIEDU_PAE_FORMACION SIEDU_PAE_FORMACION { get; set; }
+        public virtual SIEDU_NOVEDAD_PAE SIEDU_NOVEDAD_PAE { get; set; }
     }
 }

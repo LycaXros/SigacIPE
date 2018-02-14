@@ -12,25 +12,24 @@ namespace SIGAC.Layers.Bussiness.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class SIEDU_PREGUNTA
+    public partial class SIEDU_PARAMETRO_EVALUACION
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public SIEDU_PREGUNTA()
+        public SIEDU_PARAMETRO_EVALUACION()
         {
             this.SIEDU_EVAL_PREGUNTA = new HashSet<SIEDU_EVAL_PREGUNTA>();
         }
     
-        public int PREG_PREG { get; set; }
-        public short PREG_DOM_TIPO { get; set; }
-        public string PREG_DESCRI { get; set; }
-        public string PREG_USU_CREA { get; set; }
-        public System.DateTime PREG_FECHA_CREA { get; set; }
-        public string PREG_MAQUINA_CREA { get; set; }
-        public string PREG_IP_CREA { get; set; }
-        public string PREG_USU_MOD { get; set; }
-        public Nullable<System.DateTime> PREG_FECHA_MOD { get; set; }
-        public string PREG_MAQUINA_MOD { get; set; }
-        public string PREG_IP_MOD { get; set; }
+        public int PEVAL_PEVAL { get; set; }
+        public string PEVAL_DESCRI { get; set; }
+        public string PEVAL_USU_CREA { get; set; }
+        public System.DateTime PEVAL_FECHA_CREA { get; set; }
+        public string PEVAL_MAQUINA_CREA { get; set; }
+        public string PEVAL_IP_CREA { get; set; }
+        public string PEVAL_USU_MOD { get; set; }
+        public Nullable<System.DateTime> PEVAL_FECHA_MOD { get; set; }
+        public string PEVAL_MAQUINA_MOD { get; set; }
+        public string PEVAL_IP_MOD { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SIEDU_EVAL_PREGUNTA> SIEDU_EVAL_PREGUNTA { get; set; }

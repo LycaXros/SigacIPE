@@ -14,6 +14,12 @@ namespace SIGAC.Layers.Bussiness.Model
     
     public partial class SIEDU_NOVEDAD_PAE
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public SIEDU_NOVEDAD_PAE()
+        {
+            this.SIEDU_CIERRE_PAE = new HashSet<SIEDU_CIERRE_PAE>();
+        }
+    
         public short NOVE_NOVE { get; set; }
         public int NOVE_PAE { get; set; }
         public System.DateTime NOVE_FECHA { get; set; }
@@ -34,5 +40,7 @@ namespace SIGAC.Layers.Bussiness.Model
     
         public virtual SIEDU_ARCHIVO SIEDU_ARCHIVO { get; set; }
         public virtual SIEDU_PAE SIEDU_PAE { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<SIEDU_CIERRE_PAE> SIEDU_CIERRE_PAE { get; set; }
     }
 }

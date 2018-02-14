@@ -14,6 +14,12 @@ namespace SIGAC.Layers.Bussiness.Model
     
     public partial class SIEDU_COMPETENCIA
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public SIEDU_COMPETENCIA()
+        {
+            this.SIEDU_EVAL_PREGUNTA = new HashSet<SIEDU_EVAL_PREGUNTA>();
+        }
+    
         public short COMP_COMP { get; set; }
         public string COMP_DESCRI { get; set; }
         public short COMP_DOM_TPCOMPE { get; set; }
@@ -25,5 +31,8 @@ namespace SIGAC.Layers.Bussiness.Model
         public Nullable<System.DateTime> COMP_FECHA_MOD { get; set; }
         public string COMP_MAQUINA_MOD { get; set; }
         public string COMP_IP_MOD { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<SIEDU_EVAL_PREGUNTA> SIEDU_EVAL_PREGUNTA { get; set; }
     }
 }

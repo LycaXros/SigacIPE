@@ -72,5 +72,8 @@ namespace SIGAC.Layers.Bussiness.Model
         public virtual DbSet<TIPOS> TIPOS { get; set; }
         public virtual DbSet<SIEDU_NOVEDAD_PAE> SIEDU_NOVEDAD_PAE { get; set; }
         public virtual DbSet<SIEDU_PAE_FORMA_ESCUELA> SIEDU_PAE_FORMA_ESCUELA { get; set; }
+        public virtual DbSet<SIEDU_EVAL_CATEGORIA> SIEDU_EVAL_CATEGORIA { get; set; }
+        public virtual DbSet<SIEDU_EVAL_PREGUNTA> SIEDU_EVAL_PREGUNTA { get; set; }
+        public virtual DbSet<SIEDU_PARAMETRO_EVALUACION> SIEDU_PARAMETRO_EVALUACION { get; set; }
     }
 }

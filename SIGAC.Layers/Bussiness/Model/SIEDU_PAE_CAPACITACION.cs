@@ -18,6 +18,8 @@ namespace SIGAC.Layers.Bussiness.Model
         public SIEDU_PAE_CAPACITACION()
         {
             this.SIEDU_PRESUPUESTO = new HashSet<SIEDU_PRESUPUESTO>();
+            this.SIEDU_CIERRE_PAE = new HashSet<SIEDU_CIERRE_PAE>();
+            this.SIEDU_CONSOLIDA_PAE = new HashSet<SIEDU_CONSOLIDA_PAE>();
         }
     
         public int CAPA_CAPA { get; set; }
@@ -55,5 +57,9 @@ namespace SIGAC.Layers.Bussiness.Model
         public virtual SIEDU_PAE SIEDU_PAE { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SIEDU_PRESUPUESTO> SIEDU_PRESUPUESTO { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<SIEDU_CIERRE_PAE> SIEDU_CIERRE_PAE { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<SIEDU_CONSOLIDA_PAE> SIEDU_CONSOLIDA_PAE { get; set; }
     }
 }

@@ -175,6 +175,9 @@
     <Compile Include="Bussiness\Model\SIEDU_EVALUACION.cs">
       <DependentUpon>OracleSigacModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Bussiness\Model\SIEDU_EVAL_CATEGORIA.cs">
+      <DependentUpon>OracleSigacModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Bussiness\Model\SIEDU_EVAL_DESARROLLO.cs">
       <DependentUpon>OracleSigacModel.tt</DependentUpon>
     </Compile>
@@ -182,6 +185,9 @@
       <DependentUpon>OracleSigacModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Bussiness\Model\SIEDU_EVAL_PARTICIPANTE.cs">
+      <DependentUpon>OracleSigacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bussiness\Model\SIEDU_EVAL_PREGUNTA.cs">
       <DependentUpon>OracleSigacModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Bussiness\Model\SIEDU_EVENTO.cs">
@@ -221,6 +227,9 @@
       <DependentUpon>OracleSigacModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Bussiness\Model\SIEDU_PAE_FORMA_ESCUELA.cs">
+      <DependentUpon>OracleSigacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bussiness\Model\SIEDU_PARAMETRO_EVALUACION.cs">
       <DependentUpon>OracleSigacModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Bussiness\Model\SIEDU_PARTICIPANTE_EVENTO.cs">

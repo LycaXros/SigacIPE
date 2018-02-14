@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="209305121e084ed28bb36df17c62ddce" Name="Diagram1" ZoomLevel="40">
+      <Diagram DiagramId="209305121e084ed28bb36df17c62ddce" Name="Diagram1" ZoomLevel="59">
         <EntityTypeShape EntityType="SigacModel.ASIGNATURAS" Width="1.5" PointX="7.75" PointY="0.75" />
         <EntityTypeShape EntityType="SigacModel.DEPARTAMENTO" Width="1.5" PointX="0.75" PointY="1.625" />
         <EntityTypeShape EntityType="SigacModel.EMPLEADO" Width="1.5" PointX="3" PointY="1" />
@@ -63,6 +63,20 @@
         <AssociationConnector Association="SigacModel.SIEDU_PAE_FORMACION_PAE_FK" />
         <AssociationConnector Association="SigacModel.SIEDU_PRESUPU_PAE_FK" />
         <AssociationConnector Association="SigacModel.SIEDU_FORM_ESCUELAS_FORM_FK" />
+        <EntityTypeShape EntityType="SigacModel.SIEDU_EVAL_CATEGORIA" Width="1.5" PointX="3" PointY="26.5" />
+        <EntityTypeShape EntityType="SigacModel.SIEDU_EVAL_PREGUNTA" Width="1.5" PointX="24" PointY="11.5" />
+        <EntityTypeShape EntityType="SigacModel.SIEDU_PARAMETRO_EVALUACION" Width="1.5" PointX="21.75" PointY="28.125" />
+        <AssociationConnector Association="SigacModel.SIEDU_CIERRE_CAPACITA_FK" />
+        <AssociationConnector Association="SigacModel.SIEDU_CIERRE_FORMACION_FK" />
+        <AssociationConnector Association="SigacModel.SIEDU_CIERRE_NOVEDAD_PAE_FK" />
+        <AssociationConnector Association="SigacModel.SIEDU_EVAL_PREGUNTA_COMPE_FK" />
+        <AssociationConnector Association="SigacModel.SIEDU_CONSOLIDA_CAPACITA_FK" />
+        <AssociationConnector Association="SigacModel.SIEDU_CONSOLIDA_FORMACION_FK" />
+        <AssociationConnector Association="SigacModel.SIEDU_CONSOLIDA_NECESIDAD_FK" />
+        <AssociationConnector Association="SigacModel.SIEDU_EVAL_CATEGORIA_EVAL_FK" />
+        <AssociationConnector Association="SigacModel.SIEDU_EVAL_PREGUNTA_PREG_FK" />
+        <AssociationConnector Association="SigacModel.SIEDU_PREG_PAR_EVAL_FACTOR_FK" />
+        <AssociationConnector Association="SigacModel.SIEDU_PREGUNTA_EVALUACION_FK" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
