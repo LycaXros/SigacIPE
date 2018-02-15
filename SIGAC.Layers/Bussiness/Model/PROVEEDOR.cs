@@ -12,23 +12,18 @@ namespace SIGAC.Layers.Bussiness.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class RECINTOS
+    public partial class PROVEEDOR
     {
-        public decimal ID { get; set; }
+        public int ID { get; set; }
         public string NOMBRE { get; set; }
+        public string DESCRIPCION { get; set; }
         public string DIRECCION { get; set; }
-        public string TELEFONO1 { get; set; }
-        public string TELEFONO2 { get; set; }
+        public Nullable<int> TIPO { get; set; }
+        public string TELEFONOS { get; set; }
+        public string EMAIL { get; set; }
+        public Nullable<long> RNC { get; set; }
+        public byte[] ACTIVIDADES { get; set; }
         public byte[] NOTA { get; set; }
-        public Nullable<decimal> ESTATUS { get; set; }
-        public string TransformNota
-        {
-            get
-            {
-                if (NOTA == null)
-                    return string.Empty;
-                return Layers.Application.DataTransformUtility.StringFromByte(NOTA, System.Text.Encoding.ASCII);
-            }
-        }
+        public Nullable<bool> ESTATUS { get; set; }
     }
 }

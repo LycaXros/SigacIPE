@@ -39,8 +39,8 @@ namespace SIGAC.Layers.Bussiness.Model
         public string NOVE_IP_MOD { get; set; }
     
         public virtual SIEDU_ARCHIVO SIEDU_ARCHIVO { get; set; }
-        public virtual SIEDU_PAE SIEDU_PAE { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SIEDU_CIERRE_PAE> SIEDU_CIERRE_PAE { get; set; }
+        public virtual SIEDU_PAE SIEDU_PAE { get; set; }
     }
 }

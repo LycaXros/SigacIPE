@@ -17,9 +17,9 @@ namespace SIGAC.Layers.Bussiness.Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public SIEDU_PAE_FORMACION()
         {
-            this.SIEDU_PAE_FORMA_ESCUELA = new HashSet<SIEDU_PAE_FORMA_ESCUELA>();
             this.SIEDU_CIERRE_PAE = new HashSet<SIEDU_CIERRE_PAE>();
             this.SIEDU_CONSOLIDA_PAE = new HashSet<SIEDU_CONSOLIDA_PAE>();
+            this.SIEDU_PAE_FORMA_ESCUELA = new HashSet<SIEDU_PAE_FORMA_ESCUELA>();
         }
     
         public int FORM_FORM { get; set; }
@@ -39,12 +39,12 @@ namespace SIGAC.Layers.Bussiness.Model
         public string FORM_MAQUINA_MOD { get; set; }
         public string FORM_IP_MOD { get; set; }
     
-        public virtual SIEDU_PAE SIEDU_PAE { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<SIEDU_PAE_FORMA_ESCUELA> SIEDU_PAE_FORMA_ESCUELA { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SIEDU_CIERRE_PAE> SIEDU_CIERRE_PAE { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SIEDU_CONSOLIDA_PAE> SIEDU_CONSOLIDA_PAE { get; set; }
+        public virtual SIEDU_PAE SIEDU_PAE { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<SIEDU_PAE_FORMA_ESCUELA> SIEDU_PAE_FORMA_ESCUELA { get; set; }
     }
 }

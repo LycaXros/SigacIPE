@@ -99,6 +99,12 @@
     <Compile Include="Bussiness\Model\EMPLEADO.cs">
       <DependentUpon>OracleSigacModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Bussiness\Model\ESCUELA.cs">
+      <DependentUpon>OracleSigacModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bussiness\Model\MOVIMIENTO_ACTIVO.cs">
+      <DependentUpon>OracleSigacModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Bussiness\Model\MOVIMIENTO_PERSONAL.cs">
       <DependentUpon>OracleSigacModel.tt</DependentUpon>
     </Compile>
@@ -131,6 +137,9 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>OracleSigacModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Bussiness\Model\PROVEEDOR.cs">
+      <DependentUpon>OracleSigacModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Bussiness\Model\RECINTOS.cs">
       <DependentUpon>OracleSigacModel.tt</DependentUpon>
@@ -326,10 +335,6 @@
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
-    <EntityDeploy Include="Bussiness\Model\OracleSigacModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>OracleSigacModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
     <EntityDeploy Include="Bussiness\Model\OracleSiathModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>OracleSiathModel.Designer.cs</LastGenOutput>
@@ -337,6 +342,10 @@
     <None Include="Bussiness\Model\OracleSiathModel.edmx.diagram">
       <DependentUpon>OracleSiathModel.edmx</DependentUpon>
     </None>
+    <EntityDeploy Include="Bussiness\Model\OracleSigacModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>OracleSigacModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
     <None Include="Bussiness\Model\OracleSigacModel.edmx.diagram">
       <DependentUpon>OracleSigacModel.edmx</DependentUpon>
     </None>

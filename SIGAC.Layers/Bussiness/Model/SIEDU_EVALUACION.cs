@@ -17,9 +17,9 @@ namespace SIGAC.Layers.Bussiness.Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public SIEDU_EVALUACION()
         {
-            this.SIEDU_EVENTO_ESCUELA = new HashSet<SIEDU_EVENTO_ESCUELA>();
             this.SIEDU_EVAL_CATEGORIA = new HashSet<SIEDU_EVAL_CATEGORIA>();
             this.SIEDU_EVAL_PREGUNTA = new HashSet<SIEDU_EVAL_PREGUNTA>();
+            this.SIEDU_EVENTO_ESCUELA = new HashSet<SIEDU_EVENTO_ESCUELA>();
         }
     
         public int EVAL_EVAL { get; set; }
@@ -42,10 +42,10 @@ namespace SIGAC.Layers.Bussiness.Model
         public string EVAL_IP_MOD { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<SIEDU_EVENTO_ESCUELA> SIEDU_EVENTO_ESCUELA { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SIEDU_EVAL_CATEGORIA> SIEDU_EVAL_CATEGORIA { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SIEDU_EVAL_PREGUNTA> SIEDU_EVAL_PREGUNTA { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<SIEDU_EVENTO_ESCUELA> SIEDU_EVENTO_ESCUELA { get; set; }
     }
 }
