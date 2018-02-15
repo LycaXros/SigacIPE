@@ -1472,3 +1472,629 @@ Stack Trace:
    en System.Web.UI.WebControls.GridView.DataBind()
    en SIGAC.WEB.Vistas.Sistema.Aulas.RefreshGridDataSource(IEnumerable dataSource, String source) en E:\PROYECTS\SIGAC\SIGAC.WEB\Vistas\Sistema\Aulas.aspx.cs:línea 165
 
+********** 15/2/2018 9:42:51 a. m. **********
+Exception Type: System.InvalidOperationException
+Exception: La secuencia no contiene elementos
+Source: Buscando datos del CONTEXT, usando el DropDownList con las vigencias
+Stack Trace: 
+   en System.Linq.Enumerable.First[TSource](IEnumerable`1 source)
+   en System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.<GetElementFunction>b__0[TResult](IEnumerable`1 sequence)
+   en System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.ExecuteSingle[TResult](IEnumerable`1 query, Expression queryRoot)
+   en System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.System.Linq.IQueryProvider.Execute[TResult](Expression expression)
+   en System.Data.Entity.Internal.Linq.DbQueryProvider.Execute[TResult](Expression expression)
+   en System.Linq.Queryable.First[TSource](IQueryable`1 source)
+   en SIGAC.WEB.Vistas.Adm_Pae.btnBuscar_Click(Object sender, EventArgs e)
+
+********** 15/2/2018 9:56:20 a. m. **********
+Exception Type: System.Data.Entity.Validation.DbEntityValidationException
+Exception: Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+Source: Boton de Guardar Vigencia
+Stack Trace: 
+   en System.Data.Entity.Internal.InternalContext.SaveChanges()
+   en System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   en System.Data.Entity.DbContext.SaveChanges()
+   en SIGAC.WEB.Vistas.Adm_Pae.ActivarVigencia()
+   en SIGAC.WEB.Vistas.Adm_Pae.btnGuardarVigenciaPae_Click(Object sender, EventArgs e)
+
+********** 15/2/2018 10:10:10 a. m. **********
+Exception Type: System.Data.Entity.Validation.DbEntityValidationException
+Exception: Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+Source: no se
+Stack Trace: 
+   en System.Data.Entity.Internal.InternalContext.SaveChanges()
+   en System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   en System.Data.Entity.DbContext.SaveChanges()
+   en SIGAC.WEB.Vistas.Adm_Pae.ActivarVigencia() en E:\Proyecto\sigac\SIGAC.WEB\Vistas\AdministrarPAE\Adm_Pae.aspx.cs:línea 343
+
+********** 15/2/2018 10:13:28 a. m. **********
+Exception Type: System.Data.Entity.Validation.DbEntityValidationException
+Exception: Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+Source: Boton de Guardar Vigencia
+Stack Trace: 
+   en System.Data.Entity.Internal.InternalContext.SaveChanges()
+   en System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   en System.Data.Entity.DbContext.SaveChanges()
+   en SIGAC.WEB.Vistas.Adm_Pae.ActivarVigencia()
+   en SIGAC.WEB.Vistas.Adm_Pae.btnGuardarVigenciaPae_Click(Object sender, EventArgs e)
+
+********** 15/2/2018 10:21:59 a. m. **********
+Inner Exception Type: System.Data.Entity.Core.UpdateException
+Inner Exception: An error occurred while updating the entries. See the inner exception for details.
+Inner Source: EntityFramework
+Inner Stack Trace: 
+   en System.Data.Entity.Core.Mapping.Update.Internal.UpdateTranslator.Update()
+   en System.Data.Entity.Core.EntityClient.Internal.EntityAdapter.<Update>b__2(UpdateTranslator ut)
+   en System.Data.Entity.Core.EntityClient.Internal.EntityAdapter.Update[T](T noChangesResult, Func`2 updateFunction)
+   en System.Data.Entity.Core.EntityClient.Internal.EntityAdapter.Update()
+   en System.Data.Entity.Core.Objects.ObjectContext.<SaveChangesToStore>b__35()
+   en System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   en System.Data.Entity.Core.Objects.ObjectContext.SaveChangesToStore(SaveOptions options, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction)
+   en System.Data.Entity.Core.Objects.ObjectContext.<>c__DisplayClass2a.<SaveChangesInternal>b__27()
+   en System.Data.Entity.Infrastructure.DefaultExecutionStrategy.Execute[TResult](Func`1 operation)
+   en System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   en System.Data.Entity.Core.Objects.ObjectContext.SaveChanges(SaveOptions options)
+   en System.Data.Entity.Internal.InternalContext.SaveChanges()
+Exception Type: System.Data.Entity.Infrastructure.DbUpdateException
+Exception: An error occurred while updating the entries. See the inner exception for details.
+Source: Boton de Guardar Vigencia
+Stack Trace: 
+   en System.Data.Entity.Internal.InternalContext.SaveChanges()
+   en System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   en System.Data.Entity.DbContext.SaveChanges()
+   en SIGAC.WEB.Vistas.Adm_Pae.ActivarVigencia()
+   en SIGAC.WEB.Vistas.Adm_Pae.btnGuardarVigenciaPae_Click(Object sender, EventArgs e)
+
+********** 15/2/2018 10:23:53 a. m. **********
+Inner Exception Type: System.Data.Entity.Core.UpdateException
+Inner Exception: An error occurred while updating the entries. See the inner exception for details.
+Inner Source: EntityFramework
+Inner Stack Trace: 
+   en System.Data.Entity.Core.Mapping.Update.Internal.UpdateTranslator.Update()
+   en System.Data.Entity.Core.EntityClient.Internal.EntityAdapter.<Update>b__2(UpdateTranslator ut)
+   en System.Data.Entity.Core.EntityClient.Internal.EntityAdapter.Update[T](T noChangesResult, Func`2 updateFunction)
+   en System.Data.Entity.Core.EntityClient.Internal.EntityAdapter.Update()
+   en System.Data.Entity.Core.Objects.ObjectContext.<SaveChangesToStore>b__35()
+   en System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   en System.Data.Entity.Core.Objects.ObjectContext.SaveChangesToStore(SaveOptions options, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction)
+   en System.Data.Entity.Core.Objects.ObjectContext.<>c__DisplayClass2a.<SaveChangesInternal>b__27()
+   en System.Data.Entity.Infrastructure.DefaultExecutionStrategy.Execute[TResult](Func`1 operation)
+   en System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   en System.Data.Entity.Core.Objects.ObjectContext.SaveChanges(SaveOptions options)
+   en System.Data.Entity.Internal.InternalContext.SaveChanges()
+Exception Type: System.Data.Entity.Infrastructure.DbUpdateException
+Exception: An error occurred while updating the entries. See the inner exception for details.
+Source: Boton de Guardar Vigencia
+Stack Trace: 
+   en System.Data.Entity.Internal.InternalContext.SaveChanges()
+   en System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   en System.Data.Entity.DbContext.SaveChanges()
+   en SIGAC.WEB.Vistas.Adm_Pae.ActivarVigencia()
+   en SIGAC.WEB.Vistas.Adm_Pae.btnGuardarVigenciaPae_Click(Object sender, EventArgs e)
+
+********** 15/2/2018 10:24:37 a. m. **********
+Exception Type: System.Data.Entity.Validation.DbEntityValidationException
+Exception: Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+Source: no se
+Stack Trace: 
+   en System.Data.Entity.Internal.InternalContext.SaveChanges()
+   en System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   en System.Data.Entity.DbContext.SaveChanges()
+   en SIGAC.WEB.Vistas.Adm_Pae.ActivarVigencia()
+
+********** 15/2/2018 10:25:15 a. m. **********
+Exception Type: System.Data.Entity.Validation.DbEntityValidationException
+Exception: Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+Source: Boton de Guardar Vigencia
+Stack Trace: 
+   en System.Data.Entity.Internal.InternalContext.SaveChanges()
+   en System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   en System.Data.Entity.DbContext.SaveChanges()
+   en SIGAC.WEB.Vistas.Adm_Pae.ActivarVigencia()
+   en SIGAC.WEB.Vistas.Adm_Pae.btnGuardarVigenciaPae_Click(Object sender, EventArgs e)
+
+********** 15/2/2018 10:28:14 a. m. **********
+Inner Exception Type: System.Data.Entity.Core.UpdateException
+Inner Exception: An error occurred while updating the entries. See the inner exception for details.
+Inner Source: EntityFramework
+Inner Stack Trace: 
+   en System.Data.Entity.Core.Mapping.Update.Internal.UpdateTranslator.Update()
+   en System.Data.Entity.Core.EntityClient.Internal.EntityAdapter.<Update>b__2(UpdateTranslator ut)
+   en System.Data.Entity.Core.EntityClient.Internal.EntityAdapter.Update[T](T noChangesResult, Func`2 updateFunction)
+   en System.Data.Entity.Core.EntityClient.Internal.EntityAdapter.Update()
+   en System.Data.Entity.Core.Objects.ObjectContext.<SaveChangesToStore>b__35()
+   en System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   en System.Data.Entity.Core.Objects.ObjectContext.SaveChangesToStore(SaveOptions options, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction)
+   en System.Data.Entity.Core.Objects.ObjectContext.<>c__DisplayClass2a.<SaveChangesInternal>b__27()
+   en System.Data.Entity.Infrastructure.DefaultExecutionStrategy.Execute[TResult](Func`1 operation)
+   en System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   en System.Data.Entity.Core.Objects.ObjectContext.SaveChanges(SaveOptions options)
+   en System.Data.Entity.Internal.InternalContext.SaveChanges()
+Exception Type: System.Data.Entity.Infrastructure.DbUpdateException
+Exception: An error occurred while updating the entries. See the inner exception for details.
+Source: Boton de Guardar Vigencia
+Stack Trace: 
+   en System.Data.Entity.Internal.InternalContext.SaveChanges()
+   en System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   en System.Data.Entity.DbContext.SaveChanges()
+   en SIGAC.WEB.Vistas.Adm_Pae.ActivarVigencia()
+   en SIGAC.WEB.Vistas.Adm_Pae.btnGuardarVigenciaPae_Click(Object sender, EventArgs e)
+
+********** 15/2/2018 10:29:41 a. m. **********
+Inner Exception Type: System.Data.Entity.Core.UpdateException
+Inner Exception: An error occurred while updating the entries. See the inner exception for details.
+Inner Source: EntityFramework
+Inner Stack Trace: 
+   en System.Data.Entity.Core.Mapping.Update.Internal.UpdateTranslator.Update()
+   en System.Data.Entity.Core.EntityClient.Internal.EntityAdapter.<Update>b__2(UpdateTranslator ut)
+   en System.Data.Entity.Core.EntityClient.Internal.EntityAdapter.Update[T](T noChangesResult, Func`2 updateFunction)
+   en System.Data.Entity.Core.EntityClient.Internal.EntityAdapter.Update()
+   en System.Data.Entity.Core.Objects.ObjectContext.<SaveChangesToStore>b__35()
+   en System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   en System.Data.Entity.Core.Objects.ObjectContext.SaveChangesToStore(SaveOptions options, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction)
+   en System.Data.Entity.Core.Objects.ObjectContext.<>c__DisplayClass2a.<SaveChangesInternal>b__27()
+   en System.Data.Entity.Infrastructure.DefaultExecutionStrategy.Execute[TResult](Func`1 operation)
+   en System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   en System.Data.Entity.Core.Objects.ObjectContext.SaveChanges(SaveOptions options)
+   en System.Data.Entity.Internal.InternalContext.SaveChanges()
+Exception Type: System.Data.Entity.Infrastructure.DbUpdateException
+Exception: An error occurred while updating the entries. See the inner exception for details.
+Source: Boton de Guardar Vigencia
+Stack Trace: 
+   en System.Data.Entity.Internal.InternalContext.SaveChanges()
+   en System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   en System.Data.Entity.DbContext.SaveChanges()
+   en SIGAC.WEB.Vistas.Adm_Pae.ActivarVigencia()
+   en SIGAC.WEB.Vistas.Adm_Pae.btnGuardarVigenciaPae_Click(Object sender, EventArgs e)
+
+********** 15/2/2018 10:31:33 a. m. **********
+Exception Type: System.NullReferenceException
+Exception: Referencia a objeto no establecida como instancia de un objeto.
+Source: Boton de Guardar Vigencia
+Stack Trace: 
+   en SIGAC.WEB.Vistas.Adm_Pae.GenerarPae()
+   en SIGAC.WEB.Vistas.Adm_Pae.btnGuardarVigenciaPae_Click(Object sender, EventArgs e)
+
+********** 15/2/2018 10:34:04 a. m. **********
+Exception Type: System.NullReferenceException
+Exception: Referencia a objeto no establecida como instancia de un objeto.
+Source: Boton de Guardar Vigencia
+Stack Trace: 
+   en SIGAC.Layers.Application.classFTPServer.get_stringFTPServer() en E:\PROYECTS\SIGAC\SIGAC.Layers\Application\classFTPServer.cs:línea 29
+   en SIGAC.Layers.Application.classFTPServer.subirArchivosAlFTP(String stringNombreArchivo, String stringExtension, Stream streamArchivo, String IdRelacion, stringCarpetasFTP stringCarpetaFTP) en E:\PROYECTS\SIGAC\SIGAC.Layers\Application\classFTPServer.cs:línea 54
+   en SIGAC.WEB.Vistas.Adm_Pae.GenerarPae()
+   en SIGAC.WEB.Vistas.Adm_Pae.btnGuardarVigenciaPae_Click(Object sender, EventArgs e)
+
+********** 15/2/2018 10:43:00 a. m. **********
+Inner Exception Type: System.Data.Entity.Core.UpdateException
+Inner Exception: An error occurred while updating the entries. See the inner exception for details.
+Inner Source: EntityFramework
+Inner Stack Trace: 
+   en System.Data.Entity.Core.Mapping.Update.Internal.UpdateTranslator.Update()
+   en System.Data.Entity.Core.EntityClient.Internal.EntityAdapter.<Update>b__2(UpdateTranslator ut)
+   en System.Data.Entity.Core.EntityClient.Internal.EntityAdapter.Update[T](T noChangesResult, Func`2 updateFunction)
+   en System.Data.Entity.Core.EntityClient.Internal.EntityAdapter.Update()
+   en System.Data.Entity.Core.Objects.ObjectContext.<SaveChangesToStore>b__35()
+   en System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   en System.Data.Entity.Core.Objects.ObjectContext.SaveChangesToStore(SaveOptions options, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction)
+   en System.Data.Entity.Core.Objects.ObjectContext.<>c__DisplayClass2a.<SaveChangesInternal>b__27()
+   en System.Data.Entity.Infrastructure.DefaultExecutionStrategy.Execute[TResult](Func`1 operation)
+   en System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   en System.Data.Entity.Core.Objects.ObjectContext.SaveChanges(SaveOptions options)
+   en System.Data.Entity.Internal.InternalContext.SaveChanges()
+Exception Type: System.Data.Entity.Infrastructure.DbUpdateException
+Exception: An error occurred while updating the entries. See the inner exception for details.
+Source: Boton de Guardar Vigencia
+Stack Trace: 
+   en System.Data.Entity.Internal.InternalContext.SaveChanges()
+   en System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   en System.Data.Entity.DbContext.SaveChanges()
+   en SIGAC.WEB.Vistas.Adm_Pae.GenerarPae()
+   en SIGAC.WEB.Vistas.Adm_Pae.btnGuardarVigenciaPae_Click(Object sender, EventArgs e)
+
+********** 15/2/2018 11:33:49 a. m. **********
+Exception Type: System.NullReferenceException
+Exception: Referencia a objeto no establecida como instancia de un objeto.
+Source: Boton de Guardar Vigencia
+Stack Trace: 
+   en SIGAC.Layers.Application.classFTPServer.get_stringFTPUsuario()
+   en SIGAC.Layers.Application.classFTPServer.subirArchivosAlFTP(String stringNombreArchivo, String stringExtension, Stream streamArchivo, String IdRelacion, stringCarpetasFTP stringCarpetaFTP)
+   en SIGAC.WEB.Vistas.Adm_Pae.GenerarPae()
+   en SIGAC.WEB.Vistas.Adm_Pae.btnGuardarVigenciaPae_Click(Object sender, EventArgs e)
+
+********** 15/2/2018 12:05:47 p. m. **********
+Exception Type: System.Web.HttpException
+Exception: No se encontró ningún campo o propiedad 'no' en el origen de datos seleccionado.
+Source: Buscando datos del CONTEXT, usando el DropDownList con las vigencias
+Stack Trace: 
+   en System.Web.UI.WebControls.BoundField.TryGetSimplePropertyValue(Object dataItem, Object& data)
+   en System.Web.UI.WebControls.BoundField.GetValue(Control controlContainer)
+   en System.Web.UI.WebControls.BoundField.OnDataBindField(Object sender, EventArgs e)
+   en System.Web.UI.Control.OnDataBinding(EventArgs e)
+   en System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   en System.Web.UI.Control.DataBind()
+   en System.Web.UI.Control.DataBindChildren()
+   en System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   en System.Web.UI.Control.DataBind()
+   en System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   en System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   en System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   en System.Web.UI.DataSourceView.Select(DataSourceSelectArguments arguments, DataSourceViewSelectCallback callback)
+   en System.Web.UI.WebControls.DataBoundControl.PerformSelect()
+   en System.Web.UI.WebControls.BaseDataBoundControl.DataBind()
+   en System.Web.UI.WebControls.GridView.DataBind()
+   en SIGAC.WEB.Vistas.Adm_Pae.btnBuscar_Click(Object sender, EventArgs e)
+
+********** 15/2/2018 12:53:25 p. m. **********
+Exception Type: System.Web.HttpException
+Exception: No se encontró ningún campo o propiedad 'NOVE_NRO_DOC ' en el origen de datos seleccionado.
+Source: Buscando datos del CONTEXT, usando el DropDownList con las vigencias
+Stack Trace: 
+   en System.Web.UI.WebControls.BoundField.TryGetSimplePropertyValue(Object dataItem, Object& data)
+   en System.Web.UI.WebControls.BoundField.GetValue(Control controlContainer)
+   en System.Web.UI.WebControls.BoundField.OnDataBindField(Object sender, EventArgs e)
+   en System.Web.UI.Control.OnDataBinding(EventArgs e)
+   en System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   en System.Web.UI.Control.DataBind()
+   en System.Web.UI.Control.DataBindChildren()
+   en System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   en System.Web.UI.Control.DataBind()
+   en System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   en System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   en System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   en System.Web.UI.DataSourceView.Select(DataSourceSelectArguments arguments, DataSourceViewSelectCallback callback)
+   en System.Web.UI.WebControls.DataBoundControl.PerformSelect()
+   en System.Web.UI.WebControls.BaseDataBoundControl.DataBind()
+   en System.Web.UI.WebControls.GridView.DataBind()
+   en SIGAC.WEB.Vistas.Adm_Pae.btnBuscar_Click(Object sender, EventArgs e) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\AdministrarPAE\Adm_Pae.aspx.cs:línea 148
+
+********** 15/2/2018 1:28:58 p. m. **********
+Exception Type: System.NotSupportedException
+Exception: LINQ to Entities does not recognize the method 'System.String ToShortDateString()' method, and this method cannot be translated into a store expression.
+Source: Buscando datos del CONTEXT, usando el DropDownList con las vigencias
+Stack Trace: 
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.DefaultTranslator.Translate(ExpressionConverter parent, MethodCallExpression call)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.TypedTranslate(ExpressionConverter parent, MethodCallExpression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.NewTranslator.TypedTranslate(ExpressionConverter parent, NewExpression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateLambda(LambdaExpression lambda, DbExpression input)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateLambda(LambdaExpression lambda, DbExpression input, DbExpressionBinding& binding)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.OneLambdaTranslator.Translate(ExpressionConverter parent, MethodCallExpression call, DbExpression& source, DbExpressionBinding& sourceBinding, DbExpression& lambda)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.SelectTranslator.Translate(ExpressionConverter parent, MethodCallExpression call)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.SequenceMethodTranslator.Translate(ExpressionConverter parent, MethodCallExpression call, SequenceMethod sequenceMethod)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.TypedTranslate(ExpressionConverter parent, MethodCallExpression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.Convert()
+   en System.Data.Entity.Core.Objects.ELinq.ELinqQueryState.GetExecutionPlan(Nullable`1 forMergeOption)
+   en System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__6()
+   en System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   en System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__5()
+   en System.Data.Entity.Infrastructure.DefaultExecutionStrategy.Execute[TResult](Func`1 operation)
+   en System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   en System.Data.Entity.Core.Objects.ObjectQuery`1.<System.Collections.Generic.IEnumerable<T>.GetEnumerator>b__0()
+   en System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   en System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   en System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   en SIGAC.WEB.Vistas.Adm_Pae.btnBuscar_Click(Object sender, EventArgs e) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\AdministrarPAE\Adm_Pae.aspx.cs:línea 157
+
+********** 15/2/2018 1:29:00 p. m. **********
+Exception Type: System.NotSupportedException
+Exception: LINQ to Entities does not recognize the method 'System.String ToShortDateString()' method, and this method cannot be translated into a store expression.
+Source: Buscando datos del CONTEXT, usando el DropDownList con las vigencias
+Stack Trace: 
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.DefaultTranslator.Translate(ExpressionConverter parent, MethodCallExpression call)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.TypedTranslate(ExpressionConverter parent, MethodCallExpression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.NewTranslator.TypedTranslate(ExpressionConverter parent, NewExpression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateLambda(LambdaExpression lambda, DbExpression input)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateLambda(LambdaExpression lambda, DbExpression input, DbExpressionBinding& binding)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.OneLambdaTranslator.Translate(ExpressionConverter parent, MethodCallExpression call, DbExpression& source, DbExpressionBinding& sourceBinding, DbExpression& lambda)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.SelectTranslator.Translate(ExpressionConverter parent, MethodCallExpression call)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.SequenceMethodTranslator.Translate(ExpressionConverter parent, MethodCallExpression call, SequenceMethod sequenceMethod)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.TypedTranslate(ExpressionConverter parent, MethodCallExpression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.Convert()
+   en System.Data.Entity.Core.Objects.ELinq.ELinqQueryState.GetExecutionPlan(Nullable`1 forMergeOption)
+   en System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__6()
+   en System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   en System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__5()
+   en System.Data.Entity.Infrastructure.DefaultExecutionStrategy.Execute[TResult](Func`1 operation)
+   en System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   en System.Data.Entity.Core.Objects.ObjectQuery`1.<System.Collections.Generic.IEnumerable<T>.GetEnumerator>b__0()
+   en System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   en System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   en System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   en SIGAC.WEB.Vistas.Adm_Pae.btnBuscar_Click(Object sender, EventArgs e) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\AdministrarPAE\Adm_Pae.aspx.cs:línea 157
+
+********** 15/2/2018 1:29:01 p. m. **********
+Exception Type: System.NotSupportedException
+Exception: LINQ to Entities does not recognize the method 'System.String ToShortDateString()' method, and this method cannot be translated into a store expression.
+Source: Buscando datos del CONTEXT, usando el DropDownList con las vigencias
+Stack Trace: 
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.DefaultTranslator.Translate(ExpressionConverter parent, MethodCallExpression call)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.TypedTranslate(ExpressionConverter parent, MethodCallExpression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.NewTranslator.TypedTranslate(ExpressionConverter parent, NewExpression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateLambda(LambdaExpression lambda, DbExpression input)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateLambda(LambdaExpression lambda, DbExpression input, DbExpressionBinding& binding)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.OneLambdaTranslator.Translate(ExpressionConverter parent, MethodCallExpression call, DbExpression& source, DbExpressionBinding& sourceBinding, DbExpression& lambda)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.SelectTranslator.Translate(ExpressionConverter parent, MethodCallExpression call)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.SequenceMethodTranslator.Translate(ExpressionConverter parent, MethodCallExpression call, SequenceMethod sequenceMethod)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.TypedTranslate(ExpressionConverter parent, MethodCallExpression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.Convert()
+   en System.Data.Entity.Core.Objects.ELinq.ELinqQueryState.GetExecutionPlan(Nullable`1 forMergeOption)
+   en System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__6()
+   en System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   en System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__5()
+   en System.Data.Entity.Infrastructure.DefaultExecutionStrategy.Execute[TResult](Func`1 operation)
+   en System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   en System.Data.Entity.Core.Objects.ObjectQuery`1.<System.Collections.Generic.IEnumerable<T>.GetEnumerator>b__0()
+   en System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   en System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   en System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   en SIGAC.WEB.Vistas.Adm_Pae.btnBuscar_Click(Object sender, EventArgs e) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\AdministrarPAE\Adm_Pae.aspx.cs:línea 157
+
+********** 15/2/2018 1:29:02 p. m. **********
+Exception Type: System.NotSupportedException
+Exception: LINQ to Entities does not recognize the method 'System.String ToShortDateString()' method, and this method cannot be translated into a store expression.
+Source: Buscando datos del CONTEXT, usando el DropDownList con las vigencias
+Stack Trace: 
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.DefaultTranslator.Translate(ExpressionConverter parent, MethodCallExpression call)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.TypedTranslate(ExpressionConverter parent, MethodCallExpression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.NewTranslator.TypedTranslate(ExpressionConverter parent, NewExpression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateLambda(LambdaExpression lambda, DbExpression input)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateLambda(LambdaExpression lambda, DbExpression input, DbExpressionBinding& binding)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.OneLambdaTranslator.Translate(ExpressionConverter parent, MethodCallExpression call, DbExpression& source, DbExpressionBinding& sourceBinding, DbExpression& lambda)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.SelectTranslator.Translate(ExpressionConverter parent, MethodCallExpression call)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.SequenceMethodTranslator.Translate(ExpressionConverter parent, MethodCallExpression call, SequenceMethod sequenceMethod)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.TypedTranslate(ExpressionConverter parent, MethodCallExpression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.Convert()
+   en System.Data.Entity.Core.Objects.ELinq.ELinqQueryState.GetExecutionPlan(Nullable`1 forMergeOption)
+   en System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__6()
+   en System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   en System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__5()
+   en System.Data.Entity.Infrastructure.DefaultExecutionStrategy.Execute[TResult](Func`1 operation)
+   en System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   en System.Data.Entity.Core.Objects.ObjectQuery`1.<System.Collections.Generic.IEnumerable<T>.GetEnumerator>b__0()
+   en System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   en System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   en System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   en SIGAC.WEB.Vistas.Adm_Pae.btnBuscar_Click(Object sender, EventArgs e) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\AdministrarPAE\Adm_Pae.aspx.cs:línea 157
+
+********** 15/2/2018 1:29:39 p. m. **********
+Exception Type: System.NotSupportedException
+Exception: LINQ to Entities does not recognize the method 'System.String ToShortDateString()' method, and this method cannot be translated into a store expression.
+Source: Buscando datos del CONTEXT, usando el DropDownList con las vigencias
+Stack Trace: 
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.DefaultTranslator.Translate(ExpressionConverter parent, MethodCallExpression call)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.TypedTranslate(ExpressionConverter parent, MethodCallExpression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.NewTranslator.TypedTranslate(ExpressionConverter parent, NewExpression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateLambda(LambdaExpression lambda, DbExpression input)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateLambda(LambdaExpression lambda, DbExpression input, DbExpressionBinding& binding)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.OneLambdaTranslator.Translate(ExpressionConverter parent, MethodCallExpression call, DbExpression& source, DbExpressionBinding& sourceBinding, DbExpression& lambda)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.SelectTranslator.Translate(ExpressionConverter parent, MethodCallExpression call)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.SequenceMethodTranslator.Translate(ExpressionConverter parent, MethodCallExpression call, SequenceMethod sequenceMethod)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.TypedTranslate(ExpressionConverter parent, MethodCallExpression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.Convert()
+   en System.Data.Entity.Core.Objects.ELinq.ELinqQueryState.GetExecutionPlan(Nullable`1 forMergeOption)
+   en System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__6()
+   en System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   en System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__5()
+   en System.Data.Entity.Infrastructure.DefaultExecutionStrategy.Execute[TResult](Func`1 operation)
+   en System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   en System.Data.Entity.Core.Objects.ObjectQuery`1.<System.Collections.Generic.IEnumerable<T>.GetEnumerator>b__0()
+   en System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   en System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   en System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   en SIGAC.WEB.Vistas.Adm_Pae.btnBuscar_Click(Object sender, EventArgs e) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\AdministrarPAE\Adm_Pae.aspx.cs:línea 157
+
+********** 15/2/2018 1:29:40 p. m. **********
+Exception Type: System.NotSupportedException
+Exception: LINQ to Entities does not recognize the method 'System.String ToShortDateString()' method, and this method cannot be translated into a store expression.
+Source: Buscando datos del CONTEXT, usando el DropDownList con las vigencias
+Stack Trace: 
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.DefaultTranslator.Translate(ExpressionConverter parent, MethodCallExpression call)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.TypedTranslate(ExpressionConverter parent, MethodCallExpression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.NewTranslator.TypedTranslate(ExpressionConverter parent, NewExpression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateLambda(LambdaExpression lambda, DbExpression input)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateLambda(LambdaExpression lambda, DbExpression input, DbExpressionBinding& binding)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.OneLambdaTranslator.Translate(ExpressionConverter parent, MethodCallExpression call, DbExpression& source, DbExpressionBinding& sourceBinding, DbExpression& lambda)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.SelectTranslator.Translate(ExpressionConverter parent, MethodCallExpression call)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.SequenceMethodTranslator.Translate(ExpressionConverter parent, MethodCallExpression call, SequenceMethod sequenceMethod)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.TypedTranslate(ExpressionConverter parent, MethodCallExpression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.Convert()
+   en System.Data.Entity.Core.Objects.ELinq.ELinqQueryState.GetExecutionPlan(Nullable`1 forMergeOption)
+   en System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__6()
+   en System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   en System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__5()
+   en System.Data.Entity.Infrastructure.DefaultExecutionStrategy.Execute[TResult](Func`1 operation)
+   en System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   en System.Data.Entity.Core.Objects.ObjectQuery`1.<System.Collections.Generic.IEnumerable<T>.GetEnumerator>b__0()
+   en System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   en System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   en System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   en SIGAC.WEB.Vistas.Adm_Pae.btnBuscar_Click(Object sender, EventArgs e) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\AdministrarPAE\Adm_Pae.aspx.cs:línea 157
+
+********** 15/2/2018 1:30:34 p. m. **********
+Exception Type: System.NotSupportedException
+Exception: LINQ to Entities does not recognize the method 'System.String ToShortDateString()' method, and this method cannot be translated into a store expression.
+Source: Buscando datos del CONTEXT, usando el DropDownList con las vigencias
+Stack Trace: 
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.DefaultTranslator.Translate(ExpressionConverter parent, MethodCallExpression call)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.TypedTranslate(ExpressionConverter parent, MethodCallExpression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.NewTranslator.TypedTranslate(ExpressionConverter parent, NewExpression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateLambda(LambdaExpression lambda, DbExpression input)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateLambda(LambdaExpression lambda, DbExpression input, DbExpressionBinding& binding)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.OneLambdaTranslator.Translate(ExpressionConverter parent, MethodCallExpression call, DbExpression& source, DbExpressionBinding& sourceBinding, DbExpression& lambda)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.SelectTranslator.Translate(ExpressionConverter parent, MethodCallExpression call)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.SequenceMethodTranslator.Translate(ExpressionConverter parent, MethodCallExpression call, SequenceMethod sequenceMethod)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.TypedTranslate(ExpressionConverter parent, MethodCallExpression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.Convert()
+   en System.Data.Entity.Core.Objects.ELinq.ELinqQueryState.GetExecutionPlan(Nullable`1 forMergeOption)
+   en System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__6()
+   en System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   en System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__5()
+   en System.Data.Entity.Infrastructure.DefaultExecutionStrategy.Execute[TResult](Func`1 operation)
+   en System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   en System.Data.Entity.Core.Objects.ObjectQuery`1.<System.Collections.Generic.IEnumerable<T>.GetEnumerator>b__0()
+   en System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   en System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   en System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   en SIGAC.WEB.Vistas.Adm_Pae.btnBuscar_Click(Object sender, EventArgs e) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\AdministrarPAE\Adm_Pae.aspx.cs:línea 157
+
+********** 15/2/2018 1:30:36 p. m. **********
+Exception Type: System.NotSupportedException
+Exception: LINQ to Entities does not recognize the method 'System.String ToShortDateString()' method, and this method cannot be translated into a store expression.
+Source: Buscando datos del CONTEXT, usando el DropDownList con las vigencias
+Stack Trace: 
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.DefaultTranslator.Translate(ExpressionConverter parent, MethodCallExpression call)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.TypedTranslate(ExpressionConverter parent, MethodCallExpression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.NewTranslator.TypedTranslate(ExpressionConverter parent, NewExpression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateLambda(LambdaExpression lambda, DbExpression input)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateLambda(LambdaExpression lambda, DbExpression input, DbExpressionBinding& binding)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.OneLambdaTranslator.Translate(ExpressionConverter parent, MethodCallExpression call, DbExpression& source, DbExpressionBinding& sourceBinding, DbExpression& lambda)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.SelectTranslator.Translate(ExpressionConverter parent, MethodCallExpression call)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.SequenceMethodTranslator.Translate(ExpressionConverter parent, MethodCallExpression call, SequenceMethod sequenceMethod)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.TypedTranslate(ExpressionConverter parent, MethodCallExpression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.Convert()
+   en System.Data.Entity.Core.Objects.ELinq.ELinqQueryState.GetExecutionPlan(Nullable`1 forMergeOption)
+   en System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__6()
+   en System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   en System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__5()
+   en System.Data.Entity.Infrastructure.DefaultExecutionStrategy.Execute[TResult](Func`1 operation)
+   en System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   en System.Data.Entity.Core.Objects.ObjectQuery`1.<System.Collections.Generic.IEnumerable<T>.GetEnumerator>b__0()
+   en System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   en System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   en System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   en SIGAC.WEB.Vistas.Adm_Pae.btnBuscar_Click(Object sender, EventArgs e) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\AdministrarPAE\Adm_Pae.aspx.cs:línea 157
+
+********** 15/2/2018 1:37:14 p. m. **********
+Exception Type: System.NotSupportedException
+Exception: LINQ to Entities does not recognize the method 'System.String ToShortDateString()' method, and this method cannot be translated into a store expression.
+Source: Buscando datos del CONTEXT, usando el DropDownList con las vigencias
+Stack Trace: 
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.DefaultTranslator.Translate(ExpressionConverter parent, MethodCallExpression call)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.TypedTranslate(ExpressionConverter parent, MethodCallExpression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.NewTranslator.TypedTranslate(ExpressionConverter parent, NewExpression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateLambda(LambdaExpression lambda, DbExpression input)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateLambda(LambdaExpression lambda, DbExpression input, DbExpressionBinding& binding)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.OneLambdaTranslator.Translate(ExpressionConverter parent, MethodCallExpression call, DbExpression& source, DbExpressionBinding& sourceBinding, DbExpression& lambda)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.SelectTranslator.Translate(ExpressionConverter parent, MethodCallExpression call)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.SequenceMethodTranslator.Translate(ExpressionConverter parent, MethodCallExpression call, SequenceMethod sequenceMethod)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.TypedTranslate(ExpressionConverter parent, MethodCallExpression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.Convert()
+   en System.Data.Entity.Core.Objects.ELinq.ELinqQueryState.GetExecutionPlan(Nullable`1 forMergeOption)
+   en System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__6()
+   en System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   en System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__5()
+   en System.Data.Entity.Infrastructure.DefaultExecutionStrategy.Execute[TResult](Func`1 operation)
+   en System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   en System.Data.Entity.Core.Objects.ObjectQuery`1.<System.Collections.Generic.IEnumerable<T>.GetEnumerator>b__0()
+   en System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   en System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   en System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   en SIGAC.WEB.Vistas.Adm_Pae.btnBuscar_Click(Object sender, EventArgs e)
+
+********** 15/2/2018 1:38:23 p. m. **********
+Exception Type: System.Web.HttpException
+Exception: No se encontró ningún campo o propiedad 'Numero_Documento ' en el origen de datos seleccionado.
+Source: Buscando datos del CONTEXT, usando el DropDownList con las vigencias
+Stack Trace: 
+   en System.Web.UI.WebControls.BoundField.TryGetSimplePropertyValue(Object dataItem, Object& data)
+   en System.Web.UI.WebControls.BoundField.GetValue(Control controlContainer)
+   en System.Web.UI.WebControls.BoundField.OnDataBindField(Object sender, EventArgs e)
+   en System.Web.UI.Control.OnDataBinding(EventArgs e)
+   en System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   en System.Web.UI.Control.DataBind()
+   en System.Web.UI.Control.DataBindChildren()
+   en System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   en System.Web.UI.Control.DataBind()
+   en System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   en System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   en System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   en System.Web.UI.DataSourceView.Select(DataSourceSelectArguments arguments, DataSourceViewSelectCallback callback)
+   en System.Web.UI.WebControls.DataBoundControl.PerformSelect()
+   en System.Web.UI.WebControls.BaseDataBoundControl.DataBind()
+   en System.Web.UI.WebControls.GridView.DataBind()
+   en SIGAC.WEB.Vistas.Adm_Pae.btnBuscar_Click(Object sender, EventArgs e)
+
+********** 15/2/2018 1:38:59 p. m. **********
+Exception Type: System.Web.HttpException
+Exception: No se encontró ningún campo o propiedad 'Numero_Documento ' en el origen de datos seleccionado.
+Source: Buscando datos del CONTEXT, usando el DropDownList con las vigencias
+Stack Trace: 
+   en System.Web.UI.WebControls.BoundField.TryGetSimplePropertyValue(Object dataItem, Object& data)
+   en System.Web.UI.WebControls.BoundField.GetValue(Control controlContainer)
+   en System.Web.UI.WebControls.BoundField.OnDataBindField(Object sender, EventArgs e)
+   en System.Web.UI.Control.OnDataBinding(EventArgs e)
+   en System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   en System.Web.UI.Control.DataBind()
+   en System.Web.UI.Control.DataBindChildren()
+   en System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   en System.Web.UI.Control.DataBind()
+   en System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   en System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   en System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   en System.Web.UI.DataSourceView.Select(DataSourceSelectArguments arguments, DataSourceViewSelectCallback callback)
+   en System.Web.UI.WebControls.DataBoundControl.PerformSelect()
+   en System.Web.UI.WebControls.BaseDataBoundControl.DataBind()
+   en System.Web.UI.WebControls.GridView.DataBind()
+   en SIGAC.WEB.Vistas.Adm_Pae.btnBuscar_Click(Object sender, EventArgs e)
+

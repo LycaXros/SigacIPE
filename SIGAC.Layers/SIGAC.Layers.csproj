@@ -76,7 +76,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Application\AppContext.cs" />
-    <Compile Include="Application\classFTPServer.cs" />
     <Compile Include="Application\DataTransformUtility.cs" />
     <Compile Include="Application\DatosUsu.cs" />
     <Compile Include="Application\ExceptionUtility.cs" />
@@ -93,6 +92,7 @@
     <Compile Include="Bussiness\Model\AULAS_ACTIVOS.cs">
       <DependentUpon>OracleSigacModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Bussiness\Model\Constantes\Constantes.cs" />
     <Compile Include="Bussiness\Model\DEPARTAMENTO.cs">
       <DependentUpon>OracleSigacModel.tt</DependentUpon>
     </Compile>

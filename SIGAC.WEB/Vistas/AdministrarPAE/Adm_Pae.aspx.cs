@@ -23,6 +23,7 @@ using System.Text.RegularExpressions;
 using System.IO;
 using System.Drawing;
 using Newtonsoft.Json;
+using System.Data.Entity.Validation;
 
 namespace SIGAC.WEB.Vistas
 {
@@ -42,8 +43,9 @@ namespace SIGAC.WEB.Vistas
         /// <param name="e"></param>
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (IsPostBack)
+                return;
             dbEntity = new SigacEntities();
-            getdataAdministrarPAE();
             fillYears();
         }
 
@@ -55,15 +57,11 @@ namespace SIGAC.WEB.Vistas
             try
             {
                 var Years = dbEntity.SIEDU_PAE
-                    .Where(x => x.PAE_ESTADO.CompareTo("1") == 0)
+                    .Where(x => x.PAE_ESTADO.CompareTo("C") == 0)
                 .GroupBy(x => x.PAE_VIGENCIA)
                 .Select(name => name.FirstOrDefault().PAE_VIGENCIA)
                 .ToList();
 
-                if (Years.Count == 0)
-                    ActiveButtons(true);
-                else
-                    ActiveButtons(false);
 
 
                 if (!Years.Contains(DateTime.Now.Year.ToString()))
@@ -72,19 +70,6 @@ namespace SIGAC.WEB.Vistas
                 }
 
                 Years = Years.OrderByDescending(x => x).ToList();
-
-                //using (var i = new Entities())
-                //{
-                //    var Years = from dominio in i.SIEDU_DOMINIO
-                //                group dominio by dominio.VIGENTE into dom
-                //                select dom
-                //}
-
-                foreach (var item in Years)
-                {
-                    ddlVigencia.Items.Add(item.ToString());
-                }
-
                 ddlVigencia.DataSource = Years;
                 ddlVigencia.DataBind();
             }
@@ -94,12 +79,27 @@ namespace SIGAC.WEB.Vistas
             }
         }
 
-        private void ActiveButtons(bool val)
+        private void ActiveButtons(string estado)
         {
-            btnActivarVigencia.Visible = val;
-            btnGenerarPAE.Visible = !val;
-            btnGenerarPAE.Enabled = !val;
-            btnActivarVigencia.Enabled = val;
+            btnActivarVigencia.Visible = false;
+            btnGenerarPAE.Visible = false;
+            btnGenerarPAE.Enabled = false;
+            btnActivarVigencia.Enabled = false;
+
+            switch (estado)
+            {
+                case ConstantesPae.EnModificacion:
+                case ConstantesPae.EnConstruccion:
+                    btnGenerarPAE.Visible = true;
+                    btnGenerarPAE.Enabled = true;
+                    break;
+                case ConstantesPae.Cerrada:
+                    btnActivarVigencia.Enabled = true;
+                    btnActivarVigencia.Visible = true;
+                    break;
+
+            }
+
         }
         #endregion  Metodo Load de la Pagina de Recintos
 
@@ -126,13 +126,53 @@ namespace SIGAC.WEB.Vistas
 
             try
             {
-                //stringSqlQuery = "SELECT * FROM /*/* WHERE ID = :codigo";
-                //gvAdministrarPae.DataSource = conseguirDataFromDatabase.getData(stringSqlQuery, "codigo", ddlVigencia.SelectedValue.ToString());
-                //gvAdministrarPae.DataBind();
-            }
-            catch (Exception)
-            {
+                string vigencia = ddlVigencia.SelectedItem.Value;
+                using (dbEntity = new SigacEntities())
+                {
+                    var otro = dbEntity.SIEDU_PAE
+                        .Where(x => x.PAE_VIGENCIA.Equals(vigencia))
+                        .Select(x => x).FirstOrDefault();
 
+                    // var ot2 = otro.SIEDU_NOVEDAD_PAE as List<SIEDU_NOVEDAD_PAE>;
+
+                    var query = dbEntity.SIEDU_PAE
+                        .Join(dbEntity.SIEDU_NOVEDAD_PAE,
+                                Pae => Pae.PAE_PAE, Novedad => Novedad.NOVE_PAE,
+                                (Pae, Novedad) => new { Pae, Novedad })
+
+                        .Where(x => x.Pae.PAE_VIGENCIA.Equals(vigencia))
+                        .Select(x => x.Novedad)
+                        .ToList()
+                        .Join(dbEntity.SIEDU_ARCHIVO,
+                            novedad => novedad.NOVE_ANEXO_PDF,
+                            arch => arch.ARCH_ID,
+                            (novedad, arch) => new
+                            {
+                                Vigencia = novedad.NOVE_PAE,
+                                Procedimiento = novedad.NOVE_PROCEDI,
+                                Tipo_Documento = novedad.NOVE_TPO_DOC,
+                                Numero_Documento = novedad.NOVE_NRO_DOC,
+                                Fecha_Documento = novedad.NOVE_FECHA_DOC.ToShortDateString(),
+                                Observacion = novedad.NOVE_OBSERVA,
+                                Link = Layers.GlobalVariables.RecursosUrl + arch.ARCH_NOMBRE,
+                                Titulo = arch.ARCH_TITULO,
+                                Fecha = novedad.NOVE_FECHA.ToShortDateString(),
+                                Usuario = novedad.NOVE_USU_MOD
+                            }).ToList();
+
+                    string estado =
+                        dbEntity.SIEDU_PAE
+                        .Where(x => x.PAE_VIGENCIA.Equals(vigencia))
+                        .Select(x => x.PAE_ESTADO).First();
+                    ActiveButtons(estado);
+                    
+                    gvAdministrarPae.DataSource = query;
+                    gvAdministrarPae.DataBind();
+                }
+            }
+            catch (Exception ex)
+            {
+                Layers.Application.ExceptionUtility.LogException(ex, "Buscando datos del CONTEXT, usando el DropDownList con las vigencias");
             }
 
         }
@@ -211,7 +251,8 @@ namespace SIGAC.WEB.Vistas
         {
             string valueIndex = ddlVigencia.SelectedItem.Value;
 
-            string tipoDocumento = ddlTipoDocumento.SelectedItem.Text;
+            //string tipoDocumento = ddlTipoDocumento.SelectedItem.Text;
+            string tipoDocumento = "Prueba";
             string numDoc = txtNumeroDocumento.Text.Trim();
             string obser = txtObservaciones.Text.Trim();
             DateTime fecha = DateTime.Parse(fechaDoc.Value);
@@ -224,16 +265,16 @@ namespace SIGAC.WEB.Vistas
                 string extensionArchivo = Path.GetExtension(fuAnexo.PostedFile.FileName);
                 Stream streamArchivo = fuAnexo.PostedFile.InputStream;
 
-                string NewID = (dbEntity.SIEDU_ARCHIVO.Count() + 1).ToString();
+                int NewID = (dbEntity.SIEDU_ARCHIVO.Count() + 1);
 
-                string nombreArchivoNuevo = string.Format("{3}{0}_{1}{2}", DateTime.Now.ToString("yyyy-MM-dd_HHmmss"), NewID, extensionArchivo, Enum.GetName(typeof(Layers.Application.classFTPServer.stringCarpetasFTP), Layers.Application.classFTPServer.stringCarpetasFTP.Docs));
+                string nombreArchivoNuevo = string.Format("{3}{0}_{1}{2}", DateTime.Now.ToString("yyyy-MM-dd_HHmmss"), NewID, extensionArchivo, Enum.GetName(typeof(Layers.Data.FtpContext.carpetas), Layers.Data.FtpContext.carpetas.Root));
 
                 //rutaImagen = @"Imagenes/Upload/" + nombreArchivoNuevo;
 
-                if (extensionArchivo.ToLower() == "pdf")
+                if (extensionArchivo.ToLower() == ".txt")
                 {
 
-                    Layers.Application.classFTPServer.subirArchivosAlFTP(nombreArchivo, extensionArchivo, streamArchivo, NewID, Layers.Application.classFTPServer.stringCarpetasFTP.Docs);
+                    Layers.Data.FtpContext.sendFile(streamArchivo, nombreArchivo, extensionArchivo, NewID, Layers.Data.FtpContext.carpetas.Root);
 
                 }
 
@@ -242,9 +283,9 @@ namespace SIGAC.WEB.Vistas
 
                     ARCH_NOMBRE = nombreArchivo,
                     ARCH_EXT = extensionArchivo,
-                    ARCH_CONTENT_TYPE= tipoDocumento,
+                    ARCH_CONTENT_TYPE = tipoDocumento,
                     ARCH_TITULO = $"PDF=>PAE-{nombreArchivoNuevo}",
-                    
+
                     ARCH_IP_CREA = usuario.IpUsuario,
                     ARCH_USU_CREA = usuario.UsuarioName,
                     ARCH_MAQUINA_CREA = usuario.MachineName,
@@ -260,16 +301,23 @@ namespace SIGAC.WEB.Vistas
 
                 dbEntity.SIEDU_ARCHIVO.Add(archivo);
                 dbEntity.SaveChanges();
+                string tituloCompleto = $"PDF=>PAE-{nombreArchivoNuevo}";
+                int archID = dbEntity.SIEDU_ARCHIVO
+                    .Where(x => x.ARCH_TITULO.Equals(tituloCompleto))
+                    .Select(x => x.ARCH_ID).First();
+                int paeID = dbEntity.SIEDU_PAE
+                    .Where(x => x.PAE_VIGENCIA.Equals(valueIndex))
+                    .Select(x => x.PAE_PAE).First();
                 var novedad = new SIEDU_NOVEDAD_PAE()
                 {
-                    NOVE_PAE = int.Parse(valueIndex),
+                    NOVE_PAE = paeID,
                     NOVE_FECHA = DateTime.Now,
                     NOVE_PROCEDI = "N/A",
                     NOVE_TPO_DOC = tipoDocumento,
                     NOVE_NRO_DOC = numDoc,
                     NOVE_OBSERVA = obser,
                     NOVE_FECHA_DOC = fecha,
-                    NOVE_ANEXO_PDF = archivo.ARCH_ID,
+                    NOVE_ANEXO_PDF = archID,
 
 
                     NOVE_IP_CREA = usuario.IpUsuario,
@@ -286,7 +334,22 @@ namespace SIGAC.WEB.Vistas
 
                 dbEntity.SIEDU_NOVEDAD_PAE
                     .Add(novedad);
+                dbEntity.SaveChanges();
 
+                var pae = dbEntity.SIEDU_PAE
+                    .Where(x => x.PAE_VIGENCIA.Equals(valueIndex))
+                    .Select(x => x).First();
+                if (pae.PAE_ESTADO.Equals(ConstantesPae.EnConstruccion) || pae.PAE_ESTADO.Equals(ConstantesPae.Cerrada))
+                
+                    pae.PAE_ESTADO = ConstantesPae.Cerrada;
+                
+                else if (pae.PAE_ESTADO.Equals(ConstantesPae.Cerrada))
+                    pae.PAE_ESTADO = ConstantesPae.EnModificacion;
+
+                pae.PAE_IP_MOD = usuario.IpUsuario;
+                pae.PAE_USU_MOD = usuario.UsuarioName;
+                pae.PAE_MAQUINA_MOD = usuario.MachineName;
+                pae.PAE_FECHA_MOD = usuario.Fecha;
                 dbEntity.SaveChanges();
 
             }
@@ -294,17 +357,26 @@ namespace SIGAC.WEB.Vistas
 
         private void ActivarVigencia()
         {
-            string valueIndex = ddlVigencia.SelectedItem.Value;
-            using (dbEntity = new SigacEntities())
+            try
             {
-                var usuario = new Layers.Application.DatosUsu();
 
-                dbEntity.SIEDU_PAE
-                    .Add(new SIEDU_PAE()
+                string valueIndex = ddlVigencia.SelectedItem.Value;
+
+                using (dbEntity = new SigacEntities())
+                {
+                    bool existePae = dbEntity.SIEDU_PAE
+                        .Where(x => x.PAE_VIGENCIA.Equals(valueIndex))
+                        .Count() > 0;
+
+                    if (existePae)
+                        return;
+
+                    var usuario = new Layers.Application.DatosUsu();
+                    var PAE = new SIEDU_PAE()
                     {
-                        PAE_ESTADO = "En Construccion",
+                        PAE_ESTADO = ConstantesPae.EnConstruccion,
                         PAE_VIGENCIA = valueIndex,
-                        PAE_NECE_YA_IMPORTADA = string.Empty,
+                        PAE_NECE_YA_IMPORTADA = ConstantesPae.NoImportada,
 
                         PAE_IP_CREA = usuario.IpUsuario,
                         PAE_USU_CREA = usuario.UsuarioName,
@@ -316,10 +388,29 @@ namespace SIGAC.WEB.Vistas
                         PAE_MAQUINA_MOD = usuario.MachineName,
                         PAE_FECHA_MOD = usuario.Fecha
 
-                    });
+                    };
 
-                dbEntity.SaveChanges();
+                    dbEntity.SIEDU_PAE
+                        .Add(PAE);
 
+                    dbEntity.SaveChanges();
+
+                }
+            }
+            catch (DbEntityValidationException e)
+            {
+                Layers.Application.ExceptionUtility.LogException(e, "no se");
+                foreach (var eve in e.EntityValidationErrors)
+                {
+                    Console.WriteLine("Entity of type \"{0}\" in state \"{1}\" has the following validation errors:",
+                        eve.Entry.Entity.GetType().Name, eve.Entry.State);
+                    foreach (var ve in eve.ValidationErrors)
+                    {
+                        Console.WriteLine("- Property: \"{0}\", Error: \"{1}\"",
+                            ve.PropertyName, ve.ErrorMessage);
+                    }
+                }
+                throw;
             }
         }
 

@@ -46,7 +46,8 @@ namespace SIGAC.Layers.Data
         {
             try
             {
-                FtpWebRequest request = (FtpWebRequest)WebRequest.Create(GlobalVariables.FTPServer + findFolder(folder) + fileName + fileExtention);
+                fileName = string.Format("{3}{0}_{1}{2}", DateTime.Now.ToString("yyyy-MM-dd_HHmmss"), id, fileExtention, Enum.GetName(typeof(carpetas), folder));
+                FtpWebRequest request = (FtpWebRequest)WebRequest.Create(GlobalVariables.FTPServer + findFolder(folder) + fileName);
 
                 request.Method = WebRequestMethods.Ftp.UploadFile;
 

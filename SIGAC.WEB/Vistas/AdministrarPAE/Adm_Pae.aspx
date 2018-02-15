@@ -21,8 +21,8 @@
                         </div>
                         <div class="col6">
                             <asp:LinkButton ID="btnBuscar" runat="server" Visible="True" TabIndex="17" CssClass="btn btn-success" OnClick="btnBuscar_Click" Width="100px"><span class="glyphicon glyphicon-search"></span>&nbsp; Buscar</asp:LinkButton>
-                            <asp:LinkButton ID="btnGenerarPAE" OnClick="btnGenerarPAE_Click" runat="server" Visible="True" TabIndex="17" CssClass="btn btn-success" Width="140px"><span class="glyphicon glyphicon-file"></span>&nbsp; Generar PAE</asp:LinkButton>
-                            <asp:LinkButton ID="btnActivarVigencia"  OnClick="btnActivarVigencia_Click" runat="server" Visible="True" TabIndex="17" CssClass="btn btn-success" Width="160px"><span class="glyphicon glyphicon-ok"></span>&nbsp; Activar Vigencia</asp:LinkButton>
+                            <asp:LinkButton ID="btnGenerarPAE" OnClick="btnGenerarPAE_Click" runat="server" Visible="false"  Enable="False" TabIndex="17" CssClass="btn btn-success" Width="140px"><span class="glyphicon glyphicon-file"></span>&nbsp; Generar PAE</asp:LinkButton>
+                            <asp:LinkButton ID="btnActivarVigencia"  OnClick="btnActivarVigencia_Click" runat="server" Visible="False" Enabled="false" TabIndex="17" CssClass="btn btn-success" Width="160px"><span class="glyphicon glyphicon-ok"></span>&nbsp; Activar Vigencia</asp:LinkButton>
                         </div>
                     </div>
                 </div>
@@ -33,25 +33,39 @@
                     <div class="panel-heading">
                         <h4 class="panel-title">Consultas</h4>
                     </div>
-                    <div class="panel panel-primary" style="width: 980px; overflow: scroll; margin-left: 10px; padding: 15px; margin-top: 10px;">
+                    <div class="panel panel-primary" style=" overflow: scroll; margin-left: 10px; padding: 15px; margin-top: 10px;">
                         <table>
                             <tr>
                                 <td>
-                                    <asp:GridView ID="gvAdministrarPae" runat="server" AutoGenerateColumns="False" Width="930px" CssClass="grid sortable {disableSortCols: [1]} " AllowPaging="True" EmptyDataText="**NO HAY DATOS QUE MOSTRAR**" PageSize="7" ShowFooter="True" ShowHeaderWhenEmpty="True">
+                                    <asp:GridView ID="gvAdministrarPae" runat="server" AutoGenerateColumns="False" CssClass="grid sortable {disableSortCols: [1]} " AllowPaging="True" EmptyDataText="**NO HAY DATOS QUE MOSTRAR**" PageSize="7" ShowFooter="True" ShowHeaderWhenEmpty="True">
                                         <Columns>
-                                            <asp:BoundField DataField="no" HeaderText="VIGENCIA" SortExpression="no">
+                                            <asp:BoundField DataField="Vigencia" HeaderText="VIGENCIA" SortExpression="Vigencia">
                                                 <HeaderStyle CssClass="celdaHead" Width="70px" />
                                                 <ItemStyle CssClass="celdaCenter" />
                                             </asp:BoundField>
-                                            <asp:BoundField HeaderText="PROCEDIMIENTO"></asp:BoundField>
+                                            <asp:BoundField DataField="Procedimiento"
+                                                 HeaderText="PROCEDIMIENTO"></asp:BoundField>
 
-                                            <asp:BoundField DataField="Descripcion" HeaderText="TIPO DE DOCUMENTO"></asp:BoundField>
-                                            <asp:BoundField HeaderText="NUMERO DE DOCUMENTO"></asp:BoundField>
-                                            <asp:BoundField HeaderText="FECHA DE DOCUMENTO"></asp:BoundField>
-                                            <asp:BoundField HeaderText="OBSERVACIONES"></asp:BoundField>
-                                            <asp:TemplateField HeaderText="ANEXO"></asp:TemplateField>
-                                            <asp:BoundField HeaderText="USUARIO"></asp:BoundField>
-                                            <asp:BoundField HeaderText="FECHA PROCEDIMIENTO"></asp:BoundField>
+                                            <asp:BoundField DataField="Tipo_Documento"
+                                                 HeaderText="TIPO DE DOCUMENTO"></asp:BoundField>
+
+                                            <asp:BoundField DataField="Numero_Documento"
+                                                  HeaderText="NUMERO DE DOCUMENTO"></asp:BoundField>
+
+                                            <asp:BoundField DataField="Fecha_Documento"
+                                                  HeaderText="FECHA DE DOCUMENTO"></asp:BoundField>
+
+                                            <asp:BoundField DataField="Observacion"
+                                                  HeaderText="OBSERVACIONES"></asp:BoundField>
+                                            <asp:TemplateField HeaderText="ANEXO">
+                                                <ItemTemplate>
+                                                    <a href="<%# Eval("Link") %>" download="<%# Eval("Titulo") %>" target="_blank" ><%# Eval("Titulo") %></a>
+                                                </ItemTemplate>
+                                            </asp:TemplateField>
+                                            <asp:BoundField  DataField="Usuario"
+                                                 HeaderText="USUARIO"></asp:BoundField>
+                                            <asp:BoundField  DataField="Fecha"
+                                                  HeaderText="FECHA PROCEDIMIENTO"></asp:BoundField>
 
                                         </Columns>
                                     </asp:GridView>
