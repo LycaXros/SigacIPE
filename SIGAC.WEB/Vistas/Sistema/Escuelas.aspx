@@ -6,7 +6,7 @@
     <div class="GridContainer">
         <div class="panel panel-custom">
             <div class="panel-heading">
-                <h4 class="panel-title">Busqueda de Recintos</h4>
+                <h4 class="panel-title">Busqueda de Escuela</h4>
                 <h6 class="panel-text">Por Nombre</h6>
             </div>
             <div class="panel-body">
@@ -42,7 +42,7 @@
                         <p>&nbsp;</p>
                     </div>
                     <div class="col8 w3-responsive">
-                        <asp:GridView runat="server" ID="gridViewEcuelas" DataKeyNames="ID" AutoGenerateColumns="false" ShowHeaderWhenEmpty="True"
+                        <asp:GridView runat="server" ID="gridViewEcuelas" DataKeyNames="ID" AutoGenerateColumns="False" ShowHeaderWhenEmpty="True"
                             AllowPaging="True" CssClass="w3-table-all" OnRowDataBound="gridViewRecintos_RowDataBound"
                             OnRowUpdating="gridViewRecintos_RowUpdating" OnRowEditing="gridViewRecintos_RowEditing"
                             OnRowDeleting="gridViewRecintos_RowDeleting" OnRowCancelingEdit="gridViewRecintos_RowCancelingEdit"
@@ -54,13 +54,13 @@
                                 <asp:CommandField ButtonType="Link" HeaderText="Opciones"
                                     ShowEditButton="true" ShowDeleteButton="true"
                                     EditText="Editar" DeleteText="Eliminar" />
-                                <asp:TemplateField HeaderText="Id del Recinto" SortExpression="ID">
+                                <asp:TemplateField HeaderText="ID" SortExpression="ID">
                                     <ItemTemplate>
                                         <asp:Label ID="lblID" runat="server" Text='<%# Eval("ID") %>'></asp:Label>
                                     </ItemTemplate>
                                 </asp:TemplateField>
                                 
-                                <asp:TemplateField HeaderText="Nombre del Recinto">
+                                <asp:TemplateField HeaderText="Recinto">
                                     <ItemTemplate>
                                         <asp:Label ID="lblNombre" runat="server" Text='<%# Eval("ID_RECINTO") %>'></asp:Label>
                                     </ItemTemplate>
@@ -69,7 +69,7 @@
                                     </EditItemTemplate>
                                 </asp:TemplateField>
                                 
-                                <asp:TemplateField  HeaderText="Direccion del Recinto">
+                                <asp:TemplateField  HeaderText="Nombre del Recinto">
                                     <ItemTemplate>
                                         <asp:Label ID="lblDir" runat="server" Text='<%# Eval("DESCRIPCION") %>'></asp:Label>
                                     </ItemTemplate>
@@ -78,7 +78,7 @@
                                     </EditItemTemplate>
                                 </asp:TemplateField>
 
-                                <asp:TemplateField  HeaderText="1er Telefono">
+                                <asp:TemplateField  HeaderText="Telefono">
                                     <ItemTemplate>
                                         <asp:Label ID="lblTel1" runat="server" Text='<%# Eval("TELEFONO") %>'></asp:Label>
                                     </ItemTemplate>
@@ -96,14 +96,14 @@
                                     </EditItemTemplate>
                                 </asp:TemplateField>
 
-                                <asp:TemplateField HeaderText="Estatus">
+                                <asp:TemplateField HeaderText="Email">
                             
                                     <EditItemTemplate>
                                         <asp:TextBox ID="e_txtTel2" TextMode="Phone" Text='<%# Eval("RESPONSABLE") %>' runat="server" />
                                     </EditItemTemplate>
                                 </asp:TemplateField>
                                 
-                                <asp:TemplateField HeaderText="Notas">
+                                <asp:TemplateField HeaderText="Responsable">
                                     <ItemTemplate>
                                        <p id="lbNotas" runat="server"> <%#Eval("TransformNota") %></p>
                                     </ItemTemplate>
@@ -113,7 +113,7 @@
                                     </EditItemTemplate>
                                 </asp:TemplateField>
                                
-                                <asp:TemplateField HeaderText="Estado">
+                                <asp:TemplateField HeaderText="Estatus">
                                     <ItemTemplate>
                                         <asp:Label ID="lblEstado" runat="server" Text='<%# Eval("ESTATUS") %>'></asp:Label>
                                     </ItemTemplate>
@@ -142,15 +142,45 @@
                     width: 350px;
                     height: auto;
                 }
+            
+.ajax__combobox_buttoncontainer button {
+    background-image: url('mvwres://AjaxControlToolkit, Version=18.1.0.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e/AjaxControlToolkit.Images.ComboBox.Arrow-Down.gif');
+}
+
+.ajax__combobox_buttoncontainer button {
+    background-position: center;
+    background-repeat: no-repeat;
+    border-color: ButtonFace;
+    height: 15px;
+    width: 15px;
+}
+
             </style>
             <div class="panel panel-body">
                 <div class="GridRow">
+
+
+                    <div class="col4">
+                        <asp:RequiredFieldValidator
+                            ControlToValidate="comboboxRecintos" Display="Dynamic" Text="*" ValidationGroup="FormVal"
+                            ID="RequiredFieldValidator4" runat="server" ErrorMessage="Nombre es requerido"></asp:RequiredFieldValidator>
+                        <label>Recinto:</label>
+                    </div>
+
+                    <div class="col6">
+                            <ajax:ComboBox ID="comboboxRecintos" runat="server" AutoCompleteMode="SuggestAppend"
+                                CaseSensitive="false" DropDownStyle="DropDownList" CssClass="form-control" Width="250px">
+                            </ajax:ComboBox>
+                    </div>
+
+
                     <div class="col4">
                         <asp:RequiredFieldValidator
                             ControlToValidate="txtNombre" Display="Dynamic" Text="*" ValidationGroup="FormVal"
                             ID="RequiredFieldValidator1" runat="server" ErrorMessage="Nombre es requerido"></asp:RequiredFieldValidator>
-                        <label>Nombre del Recinto:</label>
+                        <label>Nombre de la Escuela:</label>
                     </div>
+
                     <div class="col6">
                         <asp:TextBox ID="txtNombre" runat="server" CssClass="inputStyle" />
                     </div>
@@ -159,12 +189,12 @@
                 <div class="GridRow">
                     <div class="col4">
                         <asp:RequiredFieldValidator
-                            ControlToValidate="txtDir" Display="Dynamic" Text="*" ValidationGroup="FormVal"
+                            ControlToValidate="txtDescripcion" Display="Dynamic" Text="*" ValidationGroup="FormVal"
                             ID="RequiredFieldValidator2" runat="server" ErrorMessage="Direccion es requerida"></asp:RequiredFieldValidator>
-                        <label>Direccion del Recinto:</label>
+                        <label>Descripcion de la escuela:</label>
                     </div>
                     <div class="col6">
-                        <asp:TextBox ID="txtDir" runat="server" CssClass="inputStyle" />
+                        <asp:TextBox ID="txtDescripcion" TextMode="MultiLine" runat="server" Height="124px" Width="400px" />
                     </div>
                 </div>
                 <br />
@@ -194,10 +224,30 @@
                         <label>Notas:</label>
                     </div>
                     <div class="col6">
-                        <asp:TextBox ID="txtNotas" TextMode="MultiLine" runat="server" Height="200px" Width="400" />
+                        <asp:TextBox ID="txtNotas" TextMode="MultiLine" runat="server" Height="127px" Width="400px" />
                     </div>
                 </div>
                 <br />
+
+
+                             <div class="GridRow">
+                    <div class="col4">
+                        <label>Email:</label>
+                    </div>
+                    <div class="col6">
+                        <asp:TextBox ID="txtEmail" runat="server" CssClass="inputStyle" />
+                    </div>
+                </div>
+
+                             <div class="GridRow">
+                    <div class="col4">
+                        R<label>esponsable:</label>
+                    </div>
+                    <div class="col6">
+                        <asp:TextBox ID="txtresponsable" runat="server" CssClass="inputStyle" />
+                    </div>
+                </div>
+
                 <div class="GridRow">
                     <div class="col4">
                         <label>Estado:</label>

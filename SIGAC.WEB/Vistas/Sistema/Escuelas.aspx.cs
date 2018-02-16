@@ -24,17 +24,20 @@ namespace SIGAC.WEB.Vistas.Sistema
         {
             if (!gridViewEcuelas.AllowPaging)
                 gridViewEcuelas.AllowPaging = true;
+
             using (dbContext = new Layers.Bussiness.Model.SigacEntities())
             {
-                var datosRecintos = dbContext.RECINTOS
-                    .Where(x => x.ESTATUS == 1)
+                var datosEscuelas = dbContext.ESCUELA
+                    .Where(x => x.ESTATUS == "Activo")
                     .ToList();
-                RefreshGridDataSource(datosRecintos, "Escuelas Fill Grid Method");
+              
+
+                RefreshGridDataSource(datosEscuelas, "Escuelas Fill Grid Method");
 
             }
         }
 
-        private void RefreshGridDataSource(List<Layers.Bussiness.Model.RECINTOS> datasource, string source)
+        private void RefreshGridDataSource(List<Layers.Bussiness.Model.ESCUELA> datasource, string source)
             
         {
             try
@@ -58,8 +61,8 @@ namespace SIGAC.WEB.Vistas.Sistema
             using (dbContext = new Layers.Bussiness.Model.SigacEntities())
             {
                 string texto = txtFiltro.Text.Trim();
-                var resultados = dbContext.RECINTOS
-                    .Where(x => x.NOMBRE.Contains(texto) && x.ESTATUS == 1).ToList();
+                var resultados = dbContext.ESCUELA
+                    .Where(x => x.NOMBRE.Contains(texto) && x.ESTATUS == "Activo").ToList();
 
                 RefreshGridDataSource(resultados, "Recintos resultados de busqueda");
             }
@@ -74,11 +77,15 @@ namespace SIGAC.WEB.Vistas.Sistema
         private void CleanForm()
         {
             txtNombre.Text = string.Empty;
-            txtDir.Text = string.Empty;
+            txtDescripcion.Text = string.Empty;
+            txtEmail.Text = string.Empty;
+            txtresponsable.Text = string.Empty;
+            txtEmail.Text = string.Empty;
             txtTel1.Text = string.Empty;
             txtTel2.Text = string.Empty;
             txtNotas.Text = string.Empty;
             ddlEstado.SelectedIndex = 0;
+            comboboxRecintos.SelectedIndex = 0;
         }
 
         protected void btnAdd_Click(object sender, EventArgs e)
@@ -89,66 +96,87 @@ namespace SIGAC.WEB.Vistas.Sistema
                 {
                     try
                     {
-                        dbContext.RECINTOS.Add(PrepareModel());
+                        dbContext.ESCUELA.Add(PrepareModel());
                         dbContext.SaveChanges();
                         CleanForm();
                     }
                     catch (Exception ex)
                     {
 
-                        Layers.Application.ExceptionUtility.LogException(ex, "Recintos V");
+                        Layers.Application.ExceptionUtility.LogException(ex, "Escuela V");
                     }
                     FillGrid();
                 }
             }
         }
 
-        private Layers.Bussiness.Model.RECINTOS PrepareModel()
+        private Layers.Bussiness.Model.ESCUELA PrepareModel()
         {
             string nombre = txtNombre.Text;
-            string dir = txtDir.Text;
+            string Email = txtEmail.Text;
             string tel1 = txtTel1.Text;
             string tel2 = txtTel2.Text;
+
+            var descripcion = Layers.Application.DataTransformUtility.StringToByte(txtDescripcion.Text, System.Text.Encoding.ASCII);
+            string Responsable = txtresponsable.Text;
+            string Estado = ddlEstado.SelectedValue;
+            string recintos = comboboxRecintos.SelectedValue;
+
+
+          
+
+
             var notas = //Convert.FromBase64String(txtNotas.Text.Trim().ToString());
                 Layers.Application.DataTransformUtility.StringToByte(txtNotas.Text.Trim().ToString(), System.Text.Encoding.ASCII);
             int estado = int.Parse(ddlEstado.SelectedItem.Value);
 
-            Layers.Bussiness.Model.RECINTOS recinto = new Layers.Bussiness.Model.RECINTOS()
+            Layers.Bussiness.Model.ESCUELA escuela = new Layers.Bussiness.Model.ESCUELA()
             {
+                ID_RECINTO = Convert.ToInt32(recintos),
                 NOMBRE = nombre,
-                DIRECCION = dir,
-                TELEFONO1 = tel1,
+                DESCRIPCION = descripcion,
+                EMAIL = Email,
+                TELEFONO = tel1,
                 TELEFONO2 = tel2,
                 NOTA = notas,
-                ESTATUS = estado,
+                ESTATUS = Estado,
+                RESPONSABLE = Responsable
             };
 
-            return recinto;
+            return escuela;
         }
 
         protected void gridViewRecintos_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
             GridViewRow row = gridViewEcuelas.Rows[e.RowIndex];
             int argId = Convert.ToInt32(gridViewEcuelas.DataKeys[e.RowIndex].Values[0]);
+            string ID_RECINTO = (row.FindControl("e_comboboxRecintos") as TextBox).Text;
             string nombre = (row.FindControl("e_txtNombre") as TextBox).Text;
-            string dir = (row.FindControl("e_txtDir") as TextBox).Text;
+            string DESCRIPCION = (row.FindControl("e_txtDescripcion") as TextBox).Text;
+            string EMAIL = (row.FindControl("e_txtEmail") as TextBox).Text;
+            string ESTATUS = (row.FindControl("e_ddlEstado") as TextBox).Text;
+            string RESPONSABLE = (row.FindControl("e_txtresponsable") as TextBox).Text;
             string tel1 = (row.FindControl("e_txtTel1") as TextBox).Text;
             string tel2 = (row.FindControl("e_txtTel2") as TextBox).Text;
+
             var notas = //new byte[16]; Convert.FromBase64String(txtNotas.Text.Trim().ToString());
+              Layers.Application.DataTransformUtility.StringToByte((row.FindControl("e_txtNotas") as TextBox).Text.Trim().ToString(), System.Text.Encoding.ASCII);
+
+            var descripcion = //new byte[16]; Convert.FromBase64String(txtNotas.Text.Trim().ToString());
                 Layers.Application.DataTransformUtility.StringToByte((row.FindControl("e_txtNotas") as TextBox).Text.Trim().ToString(), System.Text.Encoding.ASCII);
             int estado = int.Parse(  (row.FindControl("e_ddlEstado") as DropDownList).SelectedItem.Value  );
             using (dbContext = new Layers.Bussiness.Model.SigacEntities())
             {
                 try
                 {
-                    var recinto = dbContext.RECINTOS
+                    var escuela = dbContext.ESCUELA
                                     .Where(x => x.ID == argId).FirstOrDefault();
-                    recinto.NOMBRE = nombre;
-                    recinto.DIRECCION = dir;
-                    recinto.TELEFONO1 = tel1;
-                    recinto.TELEFONO2 = tel2;
-                    recinto.NOTA = notas;
-                    recinto.ESTATUS = estado;
+                    escuela.NOMBRE = nombre;
+                    escuela.DESCRIPCION = descripcion;
+                    escuela.TELEFONO = tel1;
+                    escuela.TELEFONO2 = tel2;
+                    escuela.NOTA = notas;
+                    escuela.ESTATUS = ddlEstado.SelectedValue;
                     dbContext.SaveChanges();
 
                 }
@@ -185,9 +213,9 @@ namespace SIGAC.WEB.Vistas.Sistema
             {
                 try
                 {
-                    var recinto = dbContext.RECINTOS
+                    var recinto = dbContext.ESCUELA
                                     .Where(x => x.ID == argId).First();
-                    recinto.ESTATUS = 0;
+                    recinto.ESTATUS = "Activo";
                     dbContext.SaveChanges();
 
                 }
