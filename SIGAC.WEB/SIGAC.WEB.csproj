@@ -378,6 +378,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Vistas\AdministrarPAE\Adm_Pae.aspx" />
+    <Content Include="Vistas\AdministrarPAE\coverturas.aspx" />
     <Content Include="Vistas\AdministrarProgramas\AdministrarProgramas_Buscar.aspx" />
     <Content Include="Vistas\Sistema\Aulas.aspx" />
     <Content Include="Vistas\Sistema\Asignaturas.aspx" />
@@ -573,6 +574,13 @@
     </Compile>
     <Compile Include="Vistas\AdministrarPAE\Adm_Pae.aspx.designer.cs">
       <DependentUpon>Adm_Pae.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\AdministrarPAE\coverturas.aspx.cs">
+      <DependentUpon>coverturas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\AdministrarPAE\coverturas.aspx.designer.cs">
+      <DependentUpon>coverturas.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vistas\AdministrarProgramas\AdministrarProgramas_Buscar.aspx.cs">
       <DependentUpon>AdministrarProgramas_Buscar.aspx</DependentUpon>
