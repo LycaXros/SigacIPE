@@ -382,7 +382,6 @@
     <Content Include="Vistas\Sistema\Aulas.aspx" />
     <Content Include="Vistas\Sistema\Asignaturas.aspx" />
     <Content Include="Vistas\Sistema\Cursos.aspx" />
-    <Content Include="Vistas\Sistema\Escuelas.aspx" />
     <Content Include="Vistas\Sistema\Recintos.aspx" />
     <Content Include="Vistas\Sistema\Usuarios.aspx" />
     <Content Include="Web.config">
@@ -601,13 +600,6 @@
     </Compile>
     <Compile Include="Vistas\Sistema\Cursos.aspx.designer.cs">
       <DependentUpon>Cursos.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Vistas\Sistema\Escuelas.aspx.cs">
-      <DependentUpon>Escuelas.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Vistas\Sistema\Escuelas.aspx.designer.cs">
-      <DependentUpon>Escuelas.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vistas\Sistema\Recintos.aspx.cs">
       <DependentUpon>Recintos.aspx</DependentUpon>
