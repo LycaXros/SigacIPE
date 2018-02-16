@@ -129,7 +129,6 @@
                                     <label>ANEXO</label>
                                 </div>
                                 <div class="col5">
-                                    <asp:Label ID="lbAnexo" runat="server" Text="Label"></asp:Label>
                                     <asp:FileUpload ID="fuAnexo" runat="server" AllowMultiple="false"/>
                                 </div>
 

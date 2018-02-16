@@ -148,17 +148,18 @@ namespace SIGAC.WEB.Vistas
                             arch => arch.ARCH_ID,
                             (novedad, arch) => new
                             {
-                                Vigencia = novedad.NOVE_PAE,
+                                Vigencia = novedad.SIEDU_PAE.PAE_VIGENCIA,
                                 Procedimiento = novedad.NOVE_PROCEDI,
                                 Tipo_Documento = novedad.NOVE_TPO_DOC,
                                 Numero_Documento = novedad.NOVE_NRO_DOC,
                                 Fecha_Documento = novedad.NOVE_FECHA_DOC.ToShortDateString(),
                                 Observacion = novedad.NOVE_OBSERVA,
-                                Link = Layers.GlobalVariables.RecursosUrl + arch.ARCH_NOMBRE,
+                                Link = Layers.GlobalVariables.RecursosUrl + arch.ARCH_TITULO.Substring(arch.ARCH_TITULO.IndexOf('-')+1),
                                 Titulo = arch.ARCH_TITULO,
                                 Fecha = novedad.NOVE_FECHA.ToShortDateString(),
                                 Usuario = novedad.NOVE_USU_MOD
-                            }).ToList();
+                            }).ToList()
+                            .OrderBy(x =>x.Fecha).ToList();
 
                     string estado =
                         dbEntity.SIEDU_PAE
@@ -239,7 +240,7 @@ namespace SIGAC.WEB.Vistas
                     default:
                         throw new ArgumentException();
                 }
-
+                Response.RedirectToRoute("PAE.Administrar");
             }
             catch (Exception ex)
             {
