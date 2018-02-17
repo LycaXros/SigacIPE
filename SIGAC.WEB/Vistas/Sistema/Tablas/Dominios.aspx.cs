@@ -65,7 +65,7 @@ namespace SIGAC.WEB.Vistas.Sistema.Tablas
                         VIGENTE = vigencia
                     });
                     dbEntity.SaveChanges();
-
+                    Response.RedirectToRoute("Sistema.Tablas.Dominios");
                 }
 
             }
@@ -91,7 +91,7 @@ namespace SIGAC.WEB.Vistas.Sistema.Tablas
                             DESCRIPCION = descripcion
                         });
                     dbEntity.SaveChanges();
-                    Response.Redirect(Request.RawUrl);
+                    Response.RedirectToRoute("Sistema.Tablas.Dominios");
                 }
             }
             catch (Exception ex)

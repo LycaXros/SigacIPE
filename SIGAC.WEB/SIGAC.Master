@@ -71,7 +71,7 @@
                                 <li><a href="#"><i class="fas fa-sticky-note"></i>ADMINISTRAR PAE</a>
                                     <ul style="z-index: 9999;">
                                         <li><a href="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>PAE/Administrar">ADMINISTRAR PAE</a></li>
-                                        <li><a href="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>">ADMINISTRAR COBERTURAS</a></li>
+                                        <li><a href="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>PAE/Coberturas">ADMINISTRAR COBERTURAS</a></li>
                                         <li><a href="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>">ADMINISTRAR NECESIDADES</a></li>
                                         <li><a href="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>">ADMINISTRAR NECESIDADES CAPACITACION</a></li>
                                         <li><a href="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>">ADMINISTRAR COBERTURAS FORMACION</a></li>
@@ -116,6 +116,11 @@
                                         <li><a href="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>Sistema/Usuarios">USUARIOS</a></li>
                                         <li><a href="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>">GRUPOS</a></li>
                                         <li><a href="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>">PERMISOS</a></li>
+                                        <li><a href="#"><i class="fas fa-flag"></i>Tablas</a>
+                                            <ul>
+                                                <li><a href="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>Sistema_Tablas/Dominios">DOMINIOS</a></li>
+                                            </ul>
+                                        </li>
                                     </ul>
                                 </li>
                             </ul>

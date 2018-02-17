@@ -13,7 +13,6 @@ namespace SIGAC.WEB
             //
             //Sistema
             //
-            //
             routes.MapPageRoute("Sistema.Aulas", "Sistema/Aulas", "~/Vistas/Sistema/Aulas.aspx");
             routes.MapPageRoute("Sistema.Usuarios", "Sistema/Usuarios", "~/Vistas/Sistema/Usuarios.aspx");
             routes.MapPageRoute("Sistema.Cursos", "Sistema/Cursos", "~/Vistas/Sistema/Cursos.aspx");
@@ -21,6 +20,10 @@ namespace SIGAC.WEB
             routes.MapPageRoute("Sistema.Escuelas", "Sistema/Escuelas", "~/Vistas/Sistema/Escuelas.aspx");
             routes.MapPageRoute("Sistema.Asignaturas", "Sistema/Asignaturas", "~/Vistas/Sistema/Asignaturas.aspx");
             routes.MapPageRoute("Sistema.Asignaturas.Edit", "Sistema/Asignaturas/{id}", "~/Vistas/Sistema/Asignaturas.aspx");
+            //
+            //Sistema.Tablas
+            //
+            routes.MapPageRoute("Sistema.Tablas.Dominios", "Sistema_Tablas/Dominios", "~/Vistas/Sistema/Tablas/Dominios.aspx");
 
 
             //
@@ -32,6 +35,7 @@ namespace SIGAC.WEB
             // PAE
             //
             routes.MapPageRoute("PAE.Administrar", "PAE/Administrar", "~/Vistas/AdministrarPAE/Adm_Pae.aspx");
+            routes.MapPageRoute("PAE.Coberturas", "PAE/Coberturas", "~/Vistas/AdministrarPAE/Coverturas.aspx");
 
             //
             // Default, Login, ErrorPage

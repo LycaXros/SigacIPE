@@ -56,10 +56,12 @@ namespace SIGAC.WEB.Vistas
         {
             try
             {
-                var Years = dbEntity.SIEDU_PAE
-                    .Where(x => x.PAE_ESTADO.CompareTo("C") == 0)
-                .GroupBy(x => x.PAE_VIGENCIA)
-                .Select(name => name.FirstOrDefault().PAE_VIGENCIA)
+                var Years = dbEntity.SIEDU_DOMINIO
+                    .Join(dbEntity.SIEDU_TIPO_DOMINIO, 
+                    dom => dom.ID_TIPO_DOMINIO, type => type.ID_TIPO_DOMINIO , 
+                    (dom, type) => new {dom, type })
+                    .Where(x => x.type.NOMBRE.Equals("VIGENCIA"))
+                    .Select(y => y.dom.NOMBRE)
                 .ToList();
 
 

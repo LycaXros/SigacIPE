@@ -104,7 +104,7 @@
                                     <asp:Button ID="Button1" runat="server"
                                         OnClick="BtnAgregarDominio_Click"
                                         Text="Agregar" CssClass="btn btn-success" />
-
+                                    <a href="<%= SIGAC.Layers.GlobalVariables.ServerUrl%>Sistema_Tablas/Dominios" class="btn btn-danger">Cancelar</a>
                                 </div>
 
                             </div>

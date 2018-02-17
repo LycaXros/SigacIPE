@@ -15,7 +15,7 @@ namespace SIGAC.WEB.Vistas.Sistema
     public partial class Asignaturas : System.Web.UI.Page
     {
         SigacEntities SIGACEntities = null;
-        SiathEntities SIATHEntities = null;
+        //SiathEntities SIATHEntities = null;
 
         protected void Page_Load(object sender, EventArgs e)
         {

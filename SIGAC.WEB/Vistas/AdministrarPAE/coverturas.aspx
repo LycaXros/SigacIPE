@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SIGAC.Master" AutoEventWireup="true" CodeBehind="coverturas.aspx.cs" Inherits="SIGAC.WEB.Vistas.AdministrarPAE.coverturas" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SIGAC.Master" AutoEventWireup="true" CodeBehind="Coverturas.aspx.cs" Inherits="SIGAC.WEB.Vistas.AdministrarPAE.coverturas" %>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="BodyCPH" runat="server">
     <div class="GridContainer">

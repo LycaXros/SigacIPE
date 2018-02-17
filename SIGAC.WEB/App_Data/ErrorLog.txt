@@ -1990,3 +1990,55 @@ Stack Trace:
    en SIGAC.WEB.Vistas.Sistema.Tablas.Dominios.gridTipoDeDominio_RowCommand(Object sender, GridViewCommandEventArgs e) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\Sistema\Tablas\Dominios.aspx.cs:línea 91
 >>>>>>> ce83c62a88a0220d67046ca15eba7aca58083bf8
 
+********** 17/2/2018 9:26:26 a. m. **********
+Inner Exception Type: System.Data.Entity.Core.UpdateException
+Inner Exception: An error occurred while updating the entries. See the inner exception for details.
+Inner Source: EntityFramework
+Inner Stack Trace: 
+   en System.Data.Entity.Core.Mapping.Update.Internal.UpdateTranslator.Update()
+   en System.Data.Entity.Core.EntityClient.Internal.EntityAdapter.<Update>b__2(UpdateTranslator ut)
+   en System.Data.Entity.Core.EntityClient.Internal.EntityAdapter.Update[T](T noChangesResult, Func`2 updateFunction)
+   en System.Data.Entity.Core.EntityClient.Internal.EntityAdapter.Update()
+   en System.Data.Entity.Core.Objects.ObjectContext.<SaveChangesToStore>b__35()
+   en System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   en System.Data.Entity.Core.Objects.ObjectContext.SaveChangesToStore(SaveOptions options, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction)
+   en System.Data.Entity.Core.Objects.ObjectContext.<>c__DisplayClass2a.<SaveChangesInternal>b__27()
+   en System.Data.Entity.Infrastructure.DefaultExecutionStrategy.Execute[TResult](Func`1 operation)
+   en System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   en System.Data.Entity.Core.Objects.ObjectContext.SaveChanges(SaveOptions options)
+   en System.Data.Entity.Internal.InternalContext.SaveChanges()
+Exception Type: System.Data.Entity.Infrastructure.DbUpdateException
+Exception: An error occurred while updating the entries. See the inner exception for details.
+Source: Agregando tipo de Dominio
+Stack Trace: 
+   en System.Data.Entity.Internal.InternalContext.SaveChanges()
+   en System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   en System.Data.Entity.DbContext.SaveChanges()
+   en SIGAC.WEB.Vistas.Sistema.Tablas.Dominios.BtnAgregarTipoDominio_Click(Object sender, EventArgs e) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\Sistema\Tablas\Dominios.aspx.cs:línea 93
+
+********** 17/2/2018 9:27:26 a. m. **********
+Exception Type: System.Threading.ThreadAbortException
+Exception: Subproceso anulado.
+Source: Agregando tipo de Dominio
+Stack Trace: 
+   en System.Threading.Thread.AbortInternal()
+   en System.Threading.Thread.Abort(Object stateInfo)
+   en System.Web.HttpResponse.AbortCurrentThread()
+   en System.Web.HttpResponse.End()
+   en System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   en System.Web.HttpResponse.Redirect(String url)
+   en SIGAC.WEB.Vistas.Sistema.Tablas.Dominios.BtnAgregarTipoDominio_Click(Object sender, EventArgs e) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\Sistema\Tablas\Dominios.aspx.cs:línea 94
+
+********** 17/2/2018 9:30:10 a. m. **********
+Exception Type: System.Threading.ThreadAbortException
+Exception: Subproceso anulado.
+Source: Viendo listado de Dominos
+Stack Trace: 
+   en System.Threading.Thread.AbortInternal()
+   en System.Threading.Thread.Abort(Object stateInfo)
+   en System.Web.HttpResponse.AbortCurrentThread()
+   en System.Web.HttpResponse.End()
+   en System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   en System.Web.HttpResponse.Redirect(String url)
+   en SIGAC.WEB.Vistas.Sistema.Tablas.Dominios.BtnAgregarDominio_Click(Object sender, EventArgs e) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\Sistema\Tablas\Dominios.aspx.cs:línea 68
+
