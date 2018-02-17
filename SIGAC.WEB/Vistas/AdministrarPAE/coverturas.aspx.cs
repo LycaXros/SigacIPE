@@ -34,14 +34,14 @@ namespace SIGAC.WEB.Vistas.AdministrarPAE
         {
             if (!IsPostBack)
             {
-                FillGrid();
-                llenapae();
-                llenaescuela();
+                LlenarDdlEstrategias();
+                LlenarDdlVigencia();
+                LlenarDdlEscuelas();
             }
 
         }
 
-        private void FillGrid()
+        private void LlenarDdlEstrategias()
         {
             using (dbEntity = new SigacEntities())
             {
@@ -49,51 +49,63 @@ namespace SIGAC.WEB.Vistas.AdministrarPAE
                    (from dominio in dbEntity.SIEDU_DOMINIO
                     join tipoDominio in dbEntity.SIEDU_TIPO_DOMINIO on dominio.ID_TIPO_DOMINIO equals tipoDominio.ID_TIPO_DOMINIO
                     where tipoDominio.NOMBRE == "ESTRATEGIA"
-                    select dominio).ToList();
+                    orderby tipoDominio.NOMBRE descending
+                    select new
+                    {
+                        ID = dominio.ID_DOMINIO,
+                        Nombre = dominio.NOMBRE
+                    }
+                    ).ToList();
+                query.Add(new
+                {
+                    ID = (short)-1,
+                    Nombre = "Seleccione"
+                });
 
-                var query2 =
-                    dbEntity.SIEDU_DOMINIO
-                    .Join(dbEntity.SIEDU_TIPO_DOMINIO,
-                        dom => dom.ID_TIPO_DOMINIO,
-                        type => type.ID_TIPO_DOMINIO,
-                        (dom, type) => new { Dominio = dom, Tipo = type })
-                        .Where(x => x.Tipo.NOMBRE == "ESTRATEGIA")
-                        .Select(x => x.Dominio)
-                        .Distinct()
-                        .ToList();
+                //var query2 =
+                //    dbEntity.SIEDU_DOMINIO
+                //    .Join(dbEntity.SIEDU_TIPO_DOMINIO,
+                //        dom => dom.ID_TIPO_DOMINIO,
+                //        type => type.ID_TIPO_DOMINIO,
+                //        (dom, type) => new { Dominio = dom, Tipo = type })
+                //        .Where(x => x.Tipo.NOMBRE == "ESTRATEGIA")
+                //        .Select(x => x.Dominio)
+                //        .Distinct()
+                //        .ToList();
 
-                ddlEstrategia.DataValueField = "ID_Dominio";
-                ddlEstrategia.DataTextField = "NOMBRE";
+                ddlEstrategia.DataValueField = "ID";
+                ddlEstrategia.DataTextField = "Nombre";
                 ddlEstrategia.DataSource = query;
                 ddlEstrategia.DataBind();
+                ddlEstrategia.SelectedValue = ddlEstrategia.Items.FindByValue("-1").Value;
+
 
 
             }
         }
 
-        private void llenapae()
+        private void LlenarDdlVigencia()
         {
 
             using (dbEntity = new SigacEntities())
             {
                 var query =
-                   (from SIEDU_PAE in dbEntity.SIEDU_PAE
-                    where SIEDU_PAE.PAE_PAE > 0
-                    select SIEDU_PAE).ToList();
+                   (from dominio in dbEntity.SIEDU_DOMINIO
+                    join tipoDominio in dbEntity.SIEDU_TIPO_DOMINIO on dominio.ID_TIPO_DOMINIO equals tipoDominio.ID_TIPO_DOMINIO
+                    where tipoDominio.NOMBRE == "VIGENCIA"
+                    orderby tipoDominio.NOMBRE descending
+                    select dominio.NOMBRE
+                    ).ToList();
 
-                ddlpae.DataValueField = "PAE_PAE";
-                ddlpae.DataTextField = "PAE_VIGENCIA";
-                ddlpae.DataSource = query;
-                ddlpae.DataBind();
-
-
+                ddlVigencia.DataSource = query;
+                ddlVigencia.DataBind();
 
             }
 
 
 
         }
-        private void llenaescuela()
+        private void LlenarDdlEscuelas()
         {
             using (dbEntity = new SigacEntities())
             {
@@ -101,22 +113,64 @@ namespace SIGAC.WEB.Vistas.AdministrarPAE
                 var query =
                 (from ESCUELA in dbEntity.ESCUELA
                  where ESCUELA.ESTATUS == "Activo"
-                 select ESCUELA).ToList();
+                 select new
+                 {
+                     ID = ESCUELA.ID,
+                     Nombre = ESCUELA.NOMBRE
+                 }).ToList();
+
+                query.Add(
+                    new {
+                        ID = -1m,
+                        Nombre = "Seleccione"
+                    });
 
                 ddlEscuela.DataValueField = "ID";
-                ddlEscuela.DataTextField = "NOMBRE";
+                ddlEscuela.DataTextField = "Nombre";
                 ddlEscuela.DataSource = query;
                 ddlEscuela.DataBind();
+                ddlEscuela.SelectedValue = ddlEscuela.Items.FindByValue("-1").Value;
 
             }
         }
 
         protected void btnBuscar_Click(object sender, EventArgs e)
         {
+            string estrategia = ddlEstrategia.SelectedItem.Value;
+            string escuela = ddlEscuela.SelectedItem.Value;
 
-            llenagrid(ddlpae.SelectedIndex);
+            if (estrategia.Equals("-1") || escuela.Equals("-1"))
+            {
+                LlenarGrid();
+            }
+            else
+            {
+                LlenarGrid(escuela, estrategia);
+            }
+            //llenagrid(ddlpae.SelectedIndex);
 
         }
+
+        private void LlenarGrid(string escuela = "", string estrategia = "")
+        {
+            string vigencia = ddlVigencia.SelectedItem.Value; try
+            {
+                using (dbEntity = new SigacEntities())
+                {
+
+                    IList query = null;
+                    if (string.IsNullOrEmpty(escuela) && string.IsNullOrEmpty(estrategia))
+                    {
+                        query = dbEntity.SIEDU_COBERTURA.ToList();
+                    } 
+                }
+            }
+            catch (Exception ex)
+            {
+                Layers.Application.ExceptionUtility.LogException(ex, "Llenando los datos del grid");
+            }
+        }
+
         private void llenagrid(int vigencia)
             {
 
