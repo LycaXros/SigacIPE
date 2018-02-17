@@ -7,117 +7,117 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SIGAC.WEB.Vistas {
+namespace SIGAC.WEB.Vistas.Sistema.Tablas {
     
     
-    public partial class Adm_Pae {
+    public partial class Dominios {
         
         /// <summary>
-        /// ddlVigencia control.
+        /// TxtNuevoTipo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlVigencia;
+        protected global::System.Web.UI.WebControls.TextBox TxtNuevoTipo;
         
         /// <summary>
-        /// btnBuscar control.
+        /// TxtDescripcionNuevo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnBuscar;
+        protected global::System.Web.UI.WebControls.TextBox TxtDescripcionNuevo;
         
         /// <summary>
-        /// btnGenerarPAE control.
+        /// BtnAgregarTipoDominio control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnGenerarPAE;
+        protected global::System.Web.UI.WebControls.Button BtnAgregarTipoDominio;
         
         /// <summary>
-        /// btnActivarVigencia control.
+        /// gridTipoDeDominio control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnActivarVigencia;
+        protected global::System.Web.UI.WebControls.GridView gridTipoDeDominio;
         
         /// <summary>
-        /// pn_resultados control.
+        /// Id_tipo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pn_resultados;
+        protected global::System.Web.UI.WebControls.HiddenField Id_tipo;
         
         /// <summary>
-        /// gvAdministrarPae control.
+        /// LabelTituloDom control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvAdministrarPae;
+        protected global::System.Web.UI.WebControls.Label LabelTituloDom;
         
         /// <summary>
-        /// ddlTipoDocumento control.
+        /// txtNombreDom control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlTipoDocumento;
+        protected global::System.Web.UI.WebControls.TextBox txtNombreDom;
         
         /// <summary>
-        /// txtNumeroDocumento control.
+        /// txtDescDom control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNumeroDocumento;
+        protected global::System.Web.UI.WebControls.TextBox txtDescDom;
         
         /// <summary>
-        /// fechaDoc control.
+        /// txtVigenciaDom control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl fechaDoc;
+        protected global::System.Web.UI.WebControls.TextBox txtVigenciaDom;
         
         /// <summary>
-        /// txtObservaciones control.
+        /// Button1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtObservaciones;
+        protected global::System.Web.UI.WebControls.Button Button1;
         
         /// <summary>
-        /// fuAnexo control.
+        /// LabelTitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload fuAnexo;
+        protected global::System.Web.UI.WebControls.Label LabelTitle;
         
         /// <summary>
-        /// btnGuardarVigenciaPae control.
+        /// listadoDominos control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnGuardarVigenciaPae;
+        protected global::System.Web.UI.WebControls.ListView listadoDominos;
     }
 }

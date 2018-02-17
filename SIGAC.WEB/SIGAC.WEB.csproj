@@ -385,6 +385,7 @@
     <Content Include="Vistas\Sistema\Cursos.aspx" />
     <Content Include="Vistas\Sistema\Escuelas.aspx" />
     <Content Include="Vistas\Sistema\Recintos.aspx" />
+    <Content Include="Vistas\Sistema\Tablas\Dominios.aspx" />
     <Content Include="Vistas\Sistema\Usuarios.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -623,6 +624,13 @@
     </Compile>
     <Compile Include="Vistas\Sistema\Recintos.aspx.designer.cs">
       <DependentUpon>Recintos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Sistema\Tablas\Dominios.aspx.cs">
+      <DependentUpon>Dominios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\Sistema\Tablas\Dominios.aspx.designer.cs">
+      <DependentUpon>Dominios.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vistas\Sistema\Usuarios.aspx.cs">
       <DependentUpon>Usuarios.aspx</DependentUpon>
