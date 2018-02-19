@@ -99,6 +99,7 @@
     <Compile Include="Bussiness\Model\EMPLEADO.cs">
       <DependentUpon>OracleSigacModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Bussiness\Model\Entidades.cs" />
     <Compile Include="Bussiness\Model\ESCUELA.cs">
       <DependentUpon>OracleSigacModel.tt</DependentUpon>
     </Compile>

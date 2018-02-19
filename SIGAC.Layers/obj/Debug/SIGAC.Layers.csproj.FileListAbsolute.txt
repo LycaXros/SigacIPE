@@ -55,3 +55,4 @@ E:\Proyecto\sigac\SIGAC.Layers\bin\Debug\EntityFramework.xml
 E:\Proyecto\sigac\SIGAC.Layers\bin\Debug\EntityFramework.SqlServer.xml
 E:\Proyecto\sigac\SIGAC.Layers\obj\Debug\SIGAC.Layers.dll
 E:\Proyecto\sigac\SIGAC.Layers\obj\Debug\SIGAC.Layers.pdb
+E:\Proyecto\sigac\SIGAC.Layers\obj\Debug\SIGAC.Layers.csprojResolveAssemblyReference.cache

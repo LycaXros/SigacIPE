@@ -275,7 +275,7 @@ nav {
             left: 0;
             width: 100%;
             margin: 0;
-            text-align: left;
+            /*text-align: left;*/
         }
 
             #cssmenu > ul > li.has-sub > a:after, #cssmenu > ul > li.has-sub > a:before, #cssmenu ul ul > li.has-sub > a:after, #cssmenu ul ul > li.has-sub > a:before {

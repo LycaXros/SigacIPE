@@ -69,7 +69,23 @@
                         <table>
                             <tr>
                                 <td>
-                                    <asp:GridView ID="gvAdministrarPae" runat="server" AutoGenerateColumns="False" CssClass="grid sortable {disableSortCols: [1]} " AllowPaging="True" EmptyDataText="**NO HAY DATOS QUE MOSTRAR**" PageSize="7" ShowFooter="True" ShowHeaderWhenEmpty="True">
+                                    <asp:GridView ID="gvAdministrarPae" runat="server" 
+                                        AutoGenerateColumns="False" CssClass="grid sortable {disableSortCols: [1]} " 
+                                        AllowPaging="True" EmptyDataText="**NO HAY DATOS QUE MOSTRAR**" PageSize="7" 
+                                        ShowFooter="True" ShowHeaderWhenEmpty="True">
+
+                                        <Columns>
+                                            <asp:CommandField ShowDeleteButton="True"></asp:CommandField>
+                                            <asp:BoundField HeaderText="REGIONAL"></asp:BoundField>
+                                            <asp:BoundField HeaderText="UNIDAD FISICA"></asp:BoundField>
+                                            <asp:BoundField HeaderText="UNIDAD DEPENDE"></asp:BoundField>
+                                            <asp:BoundField HeaderText="NIVEL ACADEMICO"></asp:BoundField>
+                                            <asp:BoundField HeaderText="PROGRAMA ACADEMICO"></asp:BoundField>
+                                            <asp:BoundField HeaderText="NECESIDAD"></asp:BoundField>
+                                            <asp:BoundField HeaderText="PROCESO"></asp:BoundField>
+                                            <asp:BoundField HeaderText="ESTRATEGIA"></asp:BoundField>
+                                            <asp:BoundField HeaderText="ORIGEN"></asp:BoundField>
+                                        </Columns>
                                     </asp:GridView>
                                 </td>
                             </tr>
@@ -204,10 +220,6 @@
                                 </tfoot>
                             </table>
 
-                            <div class="col3">
-                            </div>
-
-                            <br />
                         </div>
                     </div>
                 </div>
