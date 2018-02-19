@@ -90,8 +90,14 @@ namespace SIGAC.WEB.Vistas.AdministrarPAE
                     where tipoDominio.NOMBRE == "VIGENCIA"
                     orderby tipoDominio.NOMBRE descending
                     select dominio.NOMBRE
-                    ).ToList();
+                    )
+                    .ToList()
+                    .Join(dbEntity.SIEDU_PAE, nom => nom, pae => pae.PAE_VIGENCIA,
+                    (nom, pae) => new { Nombre = nom, ID_PAE = pae.PAE_PAE})
+                    .ToList();
 
+                ddlVigencia.DataTextField = "Nombre";
+                ddlVigencia.DataValueField = "ID_PAE";
                 ddlVigencia.DataSource = query;
                 ddlVigencia.DataBind();
 
@@ -125,18 +131,19 @@ namespace SIGAC.WEB.Vistas.AdministrarPAE
 
         protected void btnBuscar_Click(object sender, EventArgs e)
         {
+            String vigencia = ddlVigencia.SelectedValue;
             string estrategia = ddlEstrategia.SelectedItem.Value;
             string escuela = ddlEscuela.SelectedItem.Value;
 
-            if (estrategia.Equals("-1") || escuela.Equals("-1"))
-            {
-                LlenarGrid();
-            }
-            else
-            {
-                LlenarGrid(escuela, estrategia);
-            }
-            //llenagrid(ddlpae.SelectedIndex);
+            //if (estrategia.Equals("-1") || escuela.Equals("-1"))
+            //{
+            //    LlenarGrid();
+            //}
+            //else
+            //{
+            //    LlenarGrid(escuela, estrategia);
+            //}
+            llenagrid(Convert.ToInt32(vigencia));
 
         }
 
@@ -166,15 +173,32 @@ namespace SIGAC.WEB.Vistas.AdministrarPAE
             using (dbEntity = new SigacEntities())
             {
                 var SIEDU_COBERTURA = dbEntity.SIEDU_COBERTURA
-                     .Select(y => y)
                      .Where(z => z.COBE_PAE == vigencia)
                      .OrderBy(x => x.COBE_COBE)
                      .OrderBy(X => X.COBE_UDE_ESCU)
                      .ToList();
 
-                //RefreshGridDataSource(SIEDU_COBERTURA, "Aulas Fill Grid Method");
+                
+                RefreshGridDataSource(SIEDU_COBERTURA, "covertura Fill Grid Method");
 
             }
         }
+
+
+        private void RefreshGridDataSource(IEnumerable dataSource, string source)
+        {
+            try
+            {
+                gv_menu.DataSource = dataSource;
+                gv_menu.DataBind();
+            }
+            catch (Exception ex)
+            {
+
+             //   ExceptionUtility.LogException(ex, source);
+            }
+        }
+
+        // bool validar(dynamic x) => x.COBE_PAE == vigencia;
     }
 }
