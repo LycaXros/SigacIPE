@@ -300,6 +300,7 @@
     <Content Include="Content\Imagenes\LogoIPE.png" />
     <Content Include="Content\Imagenes\nofoto.jpg" />
     <Content Include="Controles\Banner.ascx" />
+    <Content Include="Controles\NavPrincipal.ascx" />
     <Content Include="Controles\PiePagina.ascx" />
     <Content Include="ErrorPage.aspx" />
     <Content Include="Login.aspx" />
@@ -378,7 +379,8 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Vistas\AdministrarPAE\Adm_Pae.aspx" />
-    <Content Include="Vistas\AdministrarPAE\Coverturas.aspx" />
+    <Content Include="Vistas\AdministrarPAE\Coberturas.aspx" />
+    <Content Include="Vistas\AdministrarPAE\Necesidades.aspx" />
     <Content Include="Vistas\AdministrarProgramas\AdministrarProgramas_Buscar.aspx" />
     <Content Include="Vistas\Sistema\Aulas.aspx" />
     <Content Include="Vistas\Sistema\Asignaturas.aspx" />
@@ -528,6 +530,13 @@
     <Compile Include="Controles\Banner.ascx.designer.cs">
       <DependentUpon>Banner.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Controles\NavPrincipal.ascx.cs">
+      <DependentUpon>NavPrincipal.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\NavPrincipal.ascx.designer.cs">
+      <DependentUpon>NavPrincipal.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Controles\PiePagina.ascx.cs">
       <DependentUpon>PiePagina.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -576,12 +585,19 @@
     <Compile Include="Vistas\AdministrarPAE\Adm_Pae.aspx.designer.cs">
       <DependentUpon>Adm_Pae.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Vistas\AdministrarPAE\Coverturas.aspx.cs">
-      <DependentUpon>Coverturas.aspx</DependentUpon>
+    <Compile Include="Vistas\AdministrarPAE\Coberturas.aspx.cs">
+      <DependentUpon>Coberturas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Vistas\AdministrarPAE\Coverturas.aspx.designer.cs">
-      <DependentUpon>Coverturas.aspx</DependentUpon>
+    <Compile Include="Vistas\AdministrarPAE\Coberturas.aspx.designer.cs">
+      <DependentUpon>Coberturas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\AdministrarPAE\Necesidades.aspx.cs">
+      <DependentUpon>Necesidades.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\AdministrarPAE\Necesidades.aspx.designer.cs">
+      <DependentUpon>Necesidades.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vistas\AdministrarProgramas\AdministrarProgramas_Buscar.aspx.cs">
       <DependentUpon>AdministrarProgramas_Buscar.aspx</DependentUpon>

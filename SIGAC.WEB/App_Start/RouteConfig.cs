@@ -35,7 +35,8 @@ namespace SIGAC.WEB
             // PAE
             //
             routes.MapPageRoute("PAE.Administrar", "PAE/Administrar", "~/Vistas/AdministrarPAE/Adm_Pae.aspx");
-            routes.MapPageRoute("PAE.Coberturas", "PAE/Coberturas", "~/Vistas/AdministrarPAE/Coverturas.aspx");
+            routes.MapPageRoute("PAE.Coberturas", "PAE/Coberturas", "~/Vistas/AdministrarPAE/Coberturas.aspx");
+            routes.MapPageRoute("PAE.Necesidades", "PAE/Necesidades", "~/Vistas/AdministrarPAE/Necesidades.aspx");
 
             //
             // Default, Login, ErrorPage

@@ -27,7 +27,7 @@ using System.Data.Entity.Validation;
 
 namespace SIGAC.WEB.Vistas.AdministrarPAE
 {
-    public partial class coverturas : System.Web.UI.Page
+    public partial class Coberturas : System.Web.UI.Page
     {
         Layers.Bussiness.Model.SigacEntities dbEntity = null;
         protected void Page_Load(object sender, EventArgs e)
@@ -56,12 +56,7 @@ namespace SIGAC.WEB.Vistas.AdministrarPAE
                         Nombre = dominio.NOMBRE
                     }
                     ).ToList();
-                query.Add(new
-                {
-                    ID = (short)-1,
-                    Nombre = "Seleccione"
-                });
-
+                
                 //var query2 =
                 //    dbEntity.SIEDU_DOMINIO
                 //    .Join(dbEntity.SIEDU_TIPO_DOMINIO,
@@ -77,7 +72,7 @@ namespace SIGAC.WEB.Vistas.AdministrarPAE
                 ddlEstrategia.DataTextField = "Nombre";
                 ddlEstrategia.DataSource = query;
                 ddlEstrategia.DataBind();
-                ddlEstrategia.SelectedValue = ddlEstrategia.Items.FindByValue("-1").Value;
+                ddlEstrategia.Items.Insert(0, new ListItem("Seleccione","-1"));
 
 
 
@@ -118,18 +113,12 @@ namespace SIGAC.WEB.Vistas.AdministrarPAE
                      ID = ESCUELA.ID,
                      Nombre = ESCUELA.NOMBRE
                  }).ToList();
-
-                query.Add(
-                    new {
-                        ID = -1m,
-                        Nombre = "Seleccione"
-                    });
-
+                
                 ddlEscuela.DataValueField = "ID";
                 ddlEscuela.DataTextField = "Nombre";
                 ddlEscuela.DataSource = query;
                 ddlEscuela.DataBind();
-                ddlEscuela.SelectedValue = ddlEscuela.Items.FindByValue("-1").Value;
+                ddlEscuela.Items.Insert(0, new ListItem("Seleccione", "-1"));
 
             }
         }
@@ -162,7 +151,7 @@ namespace SIGAC.WEB.Vistas.AdministrarPAE
                     if (string.IsNullOrEmpty(escuela) && string.IsNullOrEmpty(estrategia))
                     {
                         query = dbEntity.SIEDU_COBERTURA.ToList();
-                    } 
+                    }
                 }
             }
             catch (Exception ex)
@@ -172,7 +161,7 @@ namespace SIGAC.WEB.Vistas.AdministrarPAE
         }
 
         private void llenagrid(int vigencia)
-            {
+        {
 
             using (dbEntity = new SigacEntities())
             {
@@ -183,7 +172,7 @@ namespace SIGAC.WEB.Vistas.AdministrarPAE
                      .OrderBy(X => X.COBE_UDE_ESCU)
                      .ToList();
 
-              //RefreshGridDataSource(SIEDU_COBERTURA, "Aulas Fill Grid Method");
+                //RefreshGridDataSource(SIEDU_COBERTURA, "Aulas Fill Grid Method");
 
             }
         }

@@ -10,7 +10,7 @@
 namespace SIGAC.WEB.Vistas.AdministrarPAE {
     
     
-    public partial class coverturas {
+    public partial class Coberturas {
         
         /// <summary>
         /// ddlVigencia control.

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SIGAC.Master" AutoEventWireup="true" CodeBehind="Coverturas.aspx.cs" Inherits="SIGAC.WEB.Vistas.AdministrarPAE.coverturas" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SIGAC.Master" AutoEventWireup="true" CodeBehind="Coberturas.aspx.cs" Inherits="SIGAC.WEB.Vistas.AdministrarPAE.Coberturas" %>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="BodyCPH" runat="server">
     <div class="GridContainer">
@@ -65,7 +65,9 @@
                 <div class="GridRow">
                     <div class="col1">
                         <p>
-                            <asp:GridView ID="gv_menu" runat="server" AutoGenerateColumns="False" CssClass="grid sortable {disableSortCols: [1]} " Width="930px">
+                            <asp:GridView ID="gv_menu" runat="server" AutoGenerateColumns="False" 
+                                CssClass="grid sortable {disableSortCols: [1]} " Width="930px" 
+                               >
                                 <Columns>
                                     <asp:BoundField DataField="no" HeaderText="Codigo." SortExpression="no">
                                         <HeaderStyle CssClass="celdaHead" Width="70px" />
