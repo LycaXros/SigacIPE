@@ -85,13 +85,13 @@ namespace SIGAC.WEB.Vistas.AdministrarPAE {
         protected global::System.Web.UI.WebControls.DropDownList AgregarU_DependeDDL;
         
         /// <summary>
-        /// AgregarNivelDDl control.
+        /// AgregarNivelDDL control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList AgregarNivelDDl;
+        protected global::System.Web.UI.WebControls.DropDownList AgregarNivelDDL;
         
         /// <summary>
         /// AgregarProgramaDDL control.

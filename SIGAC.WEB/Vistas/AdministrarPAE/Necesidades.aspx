@@ -113,7 +113,8 @@
                                         <td>REGIONAL</td>
                                         <td>
                                             <asp:DropDownList ID="AgregarRegionalDDL" runat="server"
-                                                CssClass="form-control" AppendDataBoundItems="true">
+                                                OnSelectedIndexChanged="AgregarRegionalDDL_SelectedIndexChanged"
+                                                Enabled="false" CssClass="form-control" >
                                                 <asp:ListItem Value="-1">Seleccione</asp:ListItem>
                                             </asp:DropDownList>
                                         </td>
@@ -123,7 +124,7 @@
                                         <td>UNIDAD FISICA</td>
                                         <td colspan="2">
                                             <asp:DropDownList ID="AgregarU_FisicaDDL" runat="server"
-                                                CssClass="form-control" AppendDataBoundItems="true">
+                                                Enabled="false" CssClass="form-control" >
                                                 <asp:ListItem Value="-1">Seleccione</asp:ListItem>
                                             </asp:DropDownList>
                                         </td>
@@ -140,8 +141,8 @@
                                     <tr>
                                         <td>NIVEL ACADEMICO</td>
                                         <td>
-                                            <asp:DropDownList ID="AgregarNivelDDl" runat="server"
-                                                CssClass="form-control" AppendDataBoundItems="true">
+                                            <asp:DropDownList ID="AgregarNivelDDL" runat="server" OnSelectedIndexChanged="AgregarNivelDDL_SelectedIndexChanged"
+                                                CssClass="form-control" >
                                                 <asp:ListItem Value="-1">Seleccione</asp:ListItem>
                                             </asp:DropDownList>
                                         </td>
@@ -151,7 +152,7 @@
                                         <td>PROGRAMA ACADEMICO</td>
                                         <td colspan="2">
                                             <asp:DropDownList ID="AgregarProgramaDDL" runat="server"
-                                                CssClass="form-control" AppendDataBoundItems="true">
+                                                Enabled="false"  CssClass="form-control" >
                                                 <asp:ListItem Value="-1">Seleccione</asp:ListItem>
                                             </asp:DropDownList>
                                         </td>
