@@ -24,6 +24,7 @@ using System.IO;
 using System.Drawing;
 using Newtonsoft.Json;
 using System.Data.Entity.Validation;
+using SIGAC.Layers.Application;
 
 namespace SIGAC.WEB.Vistas.AdministrarPAE
 {
@@ -195,7 +196,7 @@ namespace SIGAC.WEB.Vistas.AdministrarPAE
             catch (Exception ex)
             {
 
-             //   ExceptionUtility.LogException(ex, source);
+                ExceptionUtility.LogException(ex, source);
             }
         }
 

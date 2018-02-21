@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using SIGAC.Layers.Bussiness.Model;
 using System.Collections;
+using SIGAC.Layers.Application;
 
 namespace SIGAC.WEB.Vistas.AdministrarPAE
 {
@@ -14,6 +15,8 @@ namespace SIGAC.WEB.Vistas.AdministrarPAE
         private Entidades _dbEntity = null;
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (IsPostBack)
+                return;
             FillDdl();
         }
 
@@ -27,23 +30,21 @@ namespace SIGAC.WEB.Vistas.AdministrarPAE
                     (dom, type) => new { dom, type })
                     .Where(x => x.type.NOMBRE.Equals("VIGENCIA"))
                     .OrderByDescending(x => x.dom.NOMBRE)
-                    .Select(y => y.dom.NOMBRE)
+                    .Select(y => y.dom.NOMBRE )
                 .ToList();
 
 
-
-                if (!Years.Contains(DateTime.Now.Year.ToString()))
+                var actualYear = DateTime.Now.Year.ToString() ;
+                if (!Years.Contains(actualYear)) 
                 {
-                    Years.Insert(0, DateTime.Now.Year.ToString());
+                    Years.Insert(0, actualYear);
                 }
-
+                
+                var escuelas = _dbEntity.Siath.SIGAC_UNIDADES_DEPENDENCIA;
                 BuscarVigenciaDDL.DataSource = Years;
                 BuscarVigenciaDDL.DataBind();
-
-                var escuelas = _dbEntity.Siath.SIGAC_UNIDADES_DEPENDENCIA;
-
-
-                BuscarEscuelaDDL.Items.Insert(0, new ListItem("Seleccione", "0"));
+                //BuscarVigenciaDDL.Items.Insert(0, new ListItem("Seleccione", "0"));
+                
 
             }
         }
@@ -91,7 +92,10 @@ namespace SIGAC.WEB.Vistas.AdministrarPAE
 
                 var listaNivelAcademico = _dbEntity.Siath.SIGAC_NIVELES_ACADEMICOS
                     .Select(x => new { ID = x.ID_NIVEL_ACADEMICO, Nombre = x.DESCRIPCION }).Distinct().ToList();
+                PrepararDropDowns("AgregarRegionalDDL", listaRegiones, new KeyValuePair<string, string>("Codigo", "Nombre"));
+                PrepararDropDowns("AgregarU_DependeDDL", listaUnidadDepende, new KeyValuePair<string, string>("ID", "Descripcion"));
                 PrepararDropDowns("AgregarNivelDDL", listaNivelAcademico, new KeyValuePair<string, string>("ID", "Nombre"));
+                OpenModal("modalAgregar");
             }
         }
 
@@ -118,8 +122,8 @@ namespace SIGAC.WEB.Vistas.AdministrarPAE
         {
             try
             {
-
-                using (var control = Page.FindControl(ddlID) as DropDownList)
+                var control = (Page.GetControl(ddlID) as DropDownList);
+                if (control != null)
                 {
                     control.DataTextField = campos.Value;
                     control.DataValueField = campos.Key;
@@ -131,7 +135,7 @@ namespace SIGAC.WEB.Vistas.AdministrarPAE
             }
             catch (Exception ex)
             {
-                Layers.Application.ExceptionUtility.LogException(ex, "Preparacion de Dropdowns");
+                ExceptionUtility.LogException(ex, "Preparacion de Dropdowns");
             }
         }
 

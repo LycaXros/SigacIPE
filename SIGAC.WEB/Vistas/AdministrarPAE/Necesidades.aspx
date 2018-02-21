@@ -191,7 +191,7 @@
 
             <%-- Modal Asociar Proceso --%>
 
-            <div id="modalAsociar" <%--class="w3-modal"--%>>
+            <div id="modalAsociar" class="w3-modal">
 
                 <div class="w3-modal-content">
                     <div class="w3-container">

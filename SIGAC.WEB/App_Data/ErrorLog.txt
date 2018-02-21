@@ -2042,3 +2042,23 @@ Stack Trace:
    en System.Web.HttpResponse.Redirect(String url)
    en SIGAC.WEB.Vistas.Sistema.Tablas.Dominios.BtnAgregarDominio_Click(Object sender, EventArgs e) en E:\Proyecto\sigac\SIGAC.WEB\Vistas\Sistema\Tablas\Dominios.aspx.cs:línea 68
 
+********** 21/2/2018 9:01:50 a. m. **********
+Exception Type: System.NullReferenceException
+Exception: Referencia a objeto no establecida como instancia de un objeto.
+Source: Preparacion de Dropdowns
+Stack Trace: 
+   en SIGAC.WEB.Vistas.AdministrarPAE.Necesidades.PrepararDropDowns(String ddlID, IList data, KeyValuePair`2 campos) en E:\PROYECTS\SIGAC\SIGAC.WEB\Vistas\AdministrarPAE\Necesidades.aspx.cs:línea 124
+
+********** 21/2/2018 9:48:51 a. m. **********
+Exception Type: System.Web.HttpException
+Exception: DataBinding: '<>f__AnonymousType8`2[[System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]' no contiene una propiedad con el nombre 'ID'.
+Source: Preparacion de Dropdowns
+Stack Trace: 
+   en System.Web.UI.DataBinder.GetPropertyValue(Object container, String propName)
+   en System.Web.UI.DataBinder.GetPropertyValue(Object container, String propName, String format)
+   en System.Web.UI.WebControls.ListControl.PerformDataBinding(IEnumerable dataSource)
+   en System.Web.UI.WebControls.ListControl.OnDataBinding(EventArgs e)
+   en System.Web.UI.WebControls.ListControl.PerformSelect()
+   en System.Web.UI.WebControls.BaseDataBoundControl.DataBind()
+   en SIGAC.WEB.Vistas.AdministrarPAE.Necesidades.PrepararDropDowns(String ddlID, IList data, KeyValuePair`2 campos)
+

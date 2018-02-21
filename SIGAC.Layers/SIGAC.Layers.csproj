@@ -79,6 +79,7 @@
     <Compile Include="Application\DataTransformUtility.cs" />
     <Compile Include="Application\DatosUsu.cs" />
     <Compile Include="Application\ExceptionUtility.cs" />
+    <Compile Include="Application\Extensions.cs" />
     <Compile Include="Application\MachineInformation.cs" />
     <Compile Include="Bussiness\Model\ACTIVOS.cs">
       <DependentUpon>OracleSigacModel.tt</DependentUpon>
