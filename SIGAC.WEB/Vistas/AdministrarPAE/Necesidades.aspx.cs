@@ -30,21 +30,29 @@ namespace SIGAC.WEB.Vistas.AdministrarPAE
                     (dom, type) => new { dom, type })
                     .Where(x => x.type.NOMBRE.Equals("VIGENCIA"))
                     .OrderByDescending(x => x.dom.NOMBRE)
-                    .Select(y => y.dom.NOMBRE )
+                    .Select(y => y.dom.NOMBRE)
                 .ToList();
 
 
-                var actualYear = DateTime.Now.Year.ToString() ;
-                if (!Years.Contains(actualYear)) 
+                var actualYear = DateTime.Now.Year.ToString();
+                if (!Years.Contains(actualYear))
                 {
                     Years.Insert(0, actualYear);
                 }
-                
-                var escuelas = _dbEntity.Siath.SIGAC_UNIDADES_DEPENDENCIA;
+
+                var escuelas = _dbEntity.Sigac.ESCUELA
+                    .Select(x => new
+                    {
+                        ID = x.ID,
+                        Nombre = x.NOMBRE
+                    }).ToList();
+
                 BuscarVigenciaDDL.DataSource = Years;
                 BuscarVigenciaDDL.DataBind();
+
+                PrepararDropDowns("BuscarEscuelaDDL", escuelas, new KeyValuePair<string, string>("ID", "Nombre"));
                 //BuscarVigenciaDDL.Items.Insert(0, new ListItem("Seleccione", "0"));
-                
+
 
             }
         }
@@ -56,7 +64,7 @@ namespace SIGAC.WEB.Vistas.AdministrarPAE
             switch (comando)
             {
                 case "Buscar":
-
+                    LlenarGridPrincipal();
                     break;
                 case "Agregar":
                     AgregarVigenciaHidden.Value = vigencia;
@@ -71,6 +79,22 @@ namespace SIGAC.WEB.Vistas.AdministrarPAE
                     AsociarVigenciaHidden.Value = string.Empty;
                     return;
             }
+        }
+
+        private void LlenarGridPrincipal()
+        {
+            string vigencia = BuscarVigenciaDDL.SelectedItem.Value;
+            string escuela = BuscarEscuelaDDL.SelectedItem.Value;
+            //REGIONAL          
+            //UNIDAD FISICA     
+            //UNIDAD DEPENDE    
+            //NIVEL ACADEMICO   
+            //PROGRAMA ACADEMICO
+            //NECESIDAD         
+            //PROCESO           
+            //ESTRATEGIA        
+            //ORIGEN            
+            
         }
 
         private void PrepareModalAsociar()
@@ -147,7 +171,7 @@ namespace SIGAC.WEB.Vistas.AdministrarPAE
                 var listaUnidadFisica = _dbEntity.Siath.SIGAC_UNIDADES_DEPENDENCIA
                     .Where(x => x.REGI_CODIGO.Equals(value))
                     .Select(x => x.SIGLA_FISICA).Distinct().ToList();
-                
+
                 PrepararDropDowns("AgregarU_FisicaDDL", listaUnidadFisica, new KeyValuePair<string, string>("ID", "Nombre"));
             }
         }

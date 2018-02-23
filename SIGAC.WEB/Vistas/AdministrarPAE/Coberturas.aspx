@@ -67,31 +67,22 @@
                         <p>
                             <asp:GridView ID="gv_menu" runat="server" AutoGenerateColumns="False" 
                                 CssClass="grid sortable {disableSortCols: [1]} " Width="930px" 
-                               >
+                                DataKeyNames="DataRowID"   OnRowDeleting="gv_menu_RowDeleting"
+                                OnRowDataBound="gv_menu_RowDataBound" >
                                 <Columns>
-                                    <asp:ButtonField CommandName="ver" HeaderText="Ver" Text="Ver">
-                                        <HeaderStyle CssClass="celdaHead" Width="15px" />
-                                        <ItemStyle CssClass="celdaCenter" />
-                                    </asp:ButtonField>
-                                    <asp:BoundField HeaderText="COB" DataField="COBE_COBE" SortExpression="no">
-                                        <HeaderStyle CssClass="celdaHead" />
-                                    </asp:BoundField>
-                                    <asp:BoundField DataField="COBE_PAE" HeaderText="Vigencia">
-                                        <HeaderStyle CssClass="celdaHead" Width="70px" />
-                                        <ItemStyle CssClass="celdaCenter" />
-                                    </asp:BoundField>
-                                    <asp:BoundField DataField="COBE_UDE_ESCU" HeaderText="ESCUELA">
-                                        <HeaderStyle CssClass="celdaHead" Width="200px" />
-                                        <ItemStyle CssClass="celdaJust" />
-                                    </asp:BoundField>
-                                    <asp:BoundField DataField="COBE_UDE_UFISI" HeaderText="UNIDAD">
-                                        <HeaderStyle CssClass="celdaHead" Width="100px" />
-                                        <ItemStyle CssClass="celdaJust" />
-                                    <ItemStyle CssClass="celdaCenter" />
-                                    </asp:BoundField>
-                                    <asp:BoundField DataField="COBE_DOM_ESTRA" HeaderText="ESTATEGIA">
-                                        <HeaderStyle CssClass="celdaHead" Width="100px" />
-                                    </asp:BoundField>
+                                    <asp:BoundField HeaderText="ID" Visible="false"
+                                        DataField="DataRowID" />
+
+                                    <asp:BoundField HeaderText="ESCUELA"
+                                        DataField="EscuelaName" />
+                                    <asp:BoundField HeaderText="UNIDAD"
+                                        DataField="UnidadName" />
+                                    <asp:BoundField HeaderText="ESTRATEGIA"
+                                        DataField="EstrategiaName" />
+                                    <asp:CommandField ShowDeleteButton="true"
+                                         DeleteText="Eliminar" ButtonType="Link" />
+
+
                                 </Columns>
                             </asp:GridView>
                         </p>

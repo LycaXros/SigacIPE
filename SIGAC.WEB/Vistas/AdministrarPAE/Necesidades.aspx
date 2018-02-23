@@ -69,9 +69,9 @@
                         <table>
                             <tr>
                                 <td>
-                                    <asp:GridView ID="gvAdministrarPae" runat="server" 
-                                        AutoGenerateColumns="False" CssClass="grid sortable {disableSortCols: [1]} " 
-                                        AllowPaging="True" EmptyDataText="**NO HAY DATOS QUE MOSTRAR**" PageSize="7" 
+                                    <asp:GridView ID="gvAdministrarPae" runat="server"
+                                        AutoGenerateColumns="False" CssClass="grid sortable {disableSortCols: [1]} "
+                                        AllowPaging="True" EmptyDataText="**NO HAY DATOS QUE MOSTRAR**" PageSize="7"
                                         ShowFooter="True" ShowHeaderWhenEmpty="True">
 
                                         <Columns>
@@ -114,7 +114,7 @@
                                         <td>
                                             <asp:DropDownList ID="AgregarRegionalDDL" runat="server"
                                                 OnSelectedIndexChanged="AgregarRegionalDDL_SelectedIndexChanged"
-                                                Enabled="false" CssClass="form-control" >
+                                                Enabled="false" CssClass="form-control">
                                                 <asp:ListItem Value="-1">Seleccione</asp:ListItem>
                                             </asp:DropDownList>
                                         </td>
@@ -124,7 +124,7 @@
                                         <td>UNIDAD FISICA</td>
                                         <td colspan="2">
                                             <asp:DropDownList ID="AgregarU_FisicaDDL" runat="server"
-                                                Enabled="false" CssClass="form-control" >
+                                                Enabled="false" CssClass="form-control">
                                                 <asp:ListItem Value="-1">Seleccione</asp:ListItem>
                                             </asp:DropDownList>
                                         </td>
@@ -142,7 +142,7 @@
                                         <td>NIVEL ACADEMICO</td>
                                         <td>
                                             <asp:DropDownList ID="AgregarNivelDDL" runat="server" OnSelectedIndexChanged="AgregarNivelDDL_SelectedIndexChanged"
-                                                CssClass="form-control" >
+                                                CssClass="form-control">
                                                 <asp:ListItem Value="-1">Seleccione</asp:ListItem>
                                             </asp:DropDownList>
                                         </td>
@@ -152,7 +152,7 @@
                                         <td>PROGRAMA ACADEMICO</td>
                                         <td colspan="2">
                                             <asp:DropDownList ID="AgregarProgramaDDL" runat="server"
-                                                Enabled="false"  CssClass="form-control" >
+                                                Enabled="false" CssClass="form-control">
                                                 <asp:ListItem Value="-1">Seleccione</asp:ListItem>
                                             </asp:DropDownList>
                                         </td>
@@ -199,27 +199,62 @@
                         <asp:HiddenField runat="server" ID="AsociarVigenciaHidden" />
                         <span onclick="document.getElementById('modalAsociar').style.display='none'" class="w3-button w3-display-topright">&times;</span>
                         <div class="">
-                            <table class="table table-striped">
-                                <thead>
-                                    <tr>
-                                        <th>NIVEL ACADEMICO</th>
-                                        <th colspan="2">PROGRAMA ACADEMICO</th>
-                                        <th>PROCESO</th>
-                                        <th>ESTRATEGIA</th>
-                                    </tr>
-                                </thead>
-                                <tfoot>
-                                    <tr>
-                                        <td colspan="4">&nbsp;</td>
-                                        <td>
-                                            <span onclick="document.getElementById('modalAsociar').style.display='none'" class="btn btn-danger">CANCELAR</span>
-                                            &nbsp;
+
+                            <asp:ListView ID="ListView1" runat="server"
+                                GroupPlaceholderID="groupPlacehoder1"
+                                ItemPlaceholderID="itemsPlaceholder">
+                                <LayoutTemplate>
+
+                                    <table class="table table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>NIVEL ACADEMICO</th>
+                                                <th colspan="2">PROGRAMA ACADEMICO</th>
+                                                <th>PROCESO</th>
+                                                <th>ESTRATEGIA</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <asp:PlaceHolder runat="server" ID="groupPlacehoder1"></asp:PlaceHolder>
+                                        </tbody>
+                                        <tfoot>
+                                            <tr>
+                                                <td colspan="4">&nbsp;</td>
+                                                <td>
+                                                    <span onclick="document.getElementById('modalAsociar').style.display='none'" class="btn btn-danger">CANCELAR</span>
+                                                    &nbsp;
                                             <asp:Button CommandName="" ID="Button1" runat="server" Text="GUARDAR" CssClass="btn btn-primary" />
 
-                                        </td>
+                                                </td>
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+
+                                </LayoutTemplate>
+                                <GroupTemplate>
+                                    <tr>
+                                        <asp:PlaceHolder runat="server" ID="itemsPlaceholder"></asp:PlaceHolder>
                                     </tr>
-                                </tfoot>
-                            </table>
+                                </GroupTemplate>
+                                <ItemTemplate>
+
+                                    <td> <%# Eval("NivelAcademico") %></td>
+                                    <td colspan="2"> <%# Eval("ProgramaAcademico") %></td>
+                                    <td> <%# Eval("ProcesoName") %></td>
+                                    <td> <%# Eval("EstrategiaName") %></td>
+                                </ItemTemplate>
+                                <EditItemTemplate>
+                                    <td> <%# Eval("NivelAcademico") %></td>
+                                    <td colspan="2"> <%# Eval("ProgramaAcademico") %></td>
+                                    <td>
+                                        <asp:DropDownList runat="server" ID="ddlProceso"></asp:DropDownList>
+                                    </td>
+                                </EditItemTemplate>
+                                <EmptyDataTemplate>
+                                    <h3>No hay Datos que mostrar</h3>
+                                </EmptyDataTemplate>
+                            </asp:ListView>
+
 
                         </div>
                     </div>

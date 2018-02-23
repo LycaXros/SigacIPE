@@ -132,39 +132,80 @@ namespace SIGAC.WEB.Vistas.AdministrarPAE
 
         protected void btnBuscar_Click(object sender, EventArgs e)
         {
-            String vigencia = ddlVigencia.SelectedValue;
-            string estrategia = ddlEstrategia.SelectedItem.Value;
-            string escuela = ddlEscuela.SelectedItem.Value;
-
-            //if (estrategia.Equals("-1") || escuela.Equals("-1"))
-            //{
-            //    LlenarGrid();
-            //}
-            //else
-            //{
-            //    LlenarGrid(escuela, estrategia);
-            //}
-            llenagrid(Convert.ToInt32(vigencia));
+            string vigencia = ddlVigencia.SelectedValue;
+            CallGrid();
+            //llenagrid(Convert.ToInt32(vigencia));
 
         }
 
-        private void LlenarGrid(string escuela = "", string estrategia = "")
+        private void CallGrid()
         {
-            string vigencia = ddlVigencia.SelectedItem.Value; try
+            short estrategia =  short.Parse(ddlEstrategia.SelectedItem.Value);
+            short escuela =     short.Parse(ddlEscuela.SelectedItem.Value);
+
+            if (estrategia.Equals(-1) || escuela.Equals(-1))
+            {
+                LlenarGrid();
+            }
+            else
+            {
+                LlenarGrid(escuela, estrategia);
+            }
+        }
+
+        private void LlenarGrid(short escuela = 0, short estrategia = 0)
+        {
+            int vigencia = int.Parse(ddlVigencia.SelectedItem.Value);
+            try
             {
                 using (dbEntity = new SigacEntities())
                 {
 
                     IList query = null;
-                    if (string.IsNullOrEmpty(escuela) && string.IsNullOrEmpty(estrategia))
+                    if ( escuela == 0 || estrategia == 0)
                     {
-                        query = dbEntity.SIEDU_COBERTURA.ToList();
+                        query =(
+                            from coberturas in dbEntity.SIEDU_COBERTURA 
+                            join esc in dbEntity.ESCUELA on coberturas.COBE_UDE_ESCU equals esc.ID
+                            join estra in dbEntity.SIEDU_DOMINIO on coberturas.COBE_DOM_ESTRA equals estra.ID_DOMINIO
+                            where coberturas.COBE_PAE.Equals(vigencia)
+                            select new
+                            {
+                                DataRowID = coberturas.COBE_COBE,
+                                EscuelaName = esc.NOMBRE,
+                                UnidadName = coberturas.COBE_UDE_UFISI,
+                                EstrategiaName = estra.NOMBRE
+                            }
+                            
+                            ).ToList();
+                        
                     }
+                    else
+                    {
+                        query = (
+                            from coberturas in dbEntity.SIEDU_COBERTURA
+                            join esc in dbEntity.ESCUELA on coberturas.COBE_UDE_ESCU equals esc.ID
+                            join estra in dbEntity.SIEDU_DOMINIO on coberturas.COBE_DOM_ESTRA equals estra.ID_DOMINIO
+                            where coberturas.COBE_PAE.Equals(vigencia)
+                                && estra.ID_DOMINIO.Equals(estrategia)
+                                && esc.ID.Equals(escuela)
+                            select new
+                            {
+                                DataRowID = coberturas.COBE_COBE,
+                                EscuelaName = esc.NOMBRE,
+                                UnidadName = coberturas.COBE_UDE_UFISI,
+                                EstrategiaName = estra.NOMBRE
+                            }
+
+                            ).ToList();
+                    }
+
+                    RefreshGridDataSource(query, "covertura Fill Grid Method");
                 }
             }
             catch (Exception ex)
             {
-                Layers.Application.ExceptionUtility.LogException(ex, "Llenando los datos del grid");
+                ExceptionUtility.LogException(ex, "Llenando los datos del grid");
             }
         }
 
@@ -199,6 +240,29 @@ namespace SIGAC.WEB.Vistas.AdministrarPAE
                 ExceptionUtility.LogException(ex, source);
             }
         }
+
+        protected void gv_menu_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            int rowID = Convert.ToInt32(gv_menu.DataKeys[e.RowIndex].Values[0]);
+            using (dbEntity = new SigacEntities())
+            {
+                var cobertura = dbEntity.SIEDU_COBERTURA
+                    .First(x => x.COBE_COBE.Equals(rowID));
+                dbEntity.SIEDU_COBERTURA.Remove(cobertura);
+                dbEntity.SaveChanges();
+                
+            }
+            CallGrid();
+        }
+
+        protected void gv_menu_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.DataRow && e.Row.RowIndex != gv_menu.EditIndex)
+            {
+                (e.Row.Cells[4].Controls[1] as LinkButton).Attributes["onclick"] = "return confirm('Desea Eliminar este registro?');";
+            }
+        }
+
 
         // bool validar(dynamic x) => x.COBE_PAE == vigencia;
     }
